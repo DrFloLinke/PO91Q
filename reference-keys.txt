@@ -13,4 +13,9 @@ tab:glossary3
 fig:95
 fig:unnamed-chunk-86
 tab:glossary4
+tab:simdcode
+fig:disalc
+fig:causality
+fig:causalityfw
+tab:glossary5
 tab:glossaryfull

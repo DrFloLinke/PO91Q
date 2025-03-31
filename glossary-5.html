@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Introduction to R | PO91Q: Seminar Companion</title>
-  <meta name="description" content="Introduction to R | PO91Q: Seminar Companion" />
+  <title>Glossary | PO91Q: Seminar Companion</title>
+  <meta name="description" content="Glossary | PO91Q: Seminar Companion" />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Introduction to R | PO91Q: Seminar Companion" />
+  <meta property="og:title" content="Glossary | PO91Q: Seminar Companion" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to R | PO91Q: Seminar Companion" />
+  <meta name="twitter:title" content="Glossary | PO91Q: Seminar Companion" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="accessibility.html"/>
-<link rel="next" href="exercises.html"/>
+<link rel="prev" href="downloads.html"/>
+<link rel="next" href="list-of-references.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -308,171 +308,692 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction-to-r" class="section level1 unnumbered hasAnchor">
-<h1>Introduction to R<a href="introduction-to-r.html#introduction-to-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="installation" class="section level2 unnumbered hasAnchor">
-<h2>Installation<a href="introduction-to-r.html#installation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Today we start working with R and the first step is to install the program. Please follow these instructions:</p>
-<ol style="list-style-type: decimal">
-<li>Go to <a href="https://cran.r-project.org/mirrors.html" class="uri">https://cran.r-project.org/mirrors.html</a> and select a server from which you want to download R. It is convention to do this from the server which is nearest to you. Follow on-screen instructions and install the program.</li>
-<li>Go to <a href="https://rstudio.com/products/rstudio/download/" class="uri">https://rstudio.com/products/rstudio/download/</a> and download RStudio Desktop which is free. Install the program.</li>
-<li>Now open RStudio - you do not need to open R itself, as we will be operating it through RStudio.</li>
+<div id="glossary-5" class="section level1 unnumbered hasAnchor">
+<h1>Glossary<a href="glossary-5.html#glossary-5" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Unless otherwise noted, the definitions are taken from <span class="citation">Reiche (forthcoming)</span>.</p>
+<table style="width:100%; color: black; margin-left: auto; margin-right: auto;" class="table">
+<caption>
+<span id="tab:glossaryfull">Table 8: </span>Glossary for PO91Q
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Term
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+analysis
+</td>
+<td style="text-align:left;">
+A detailed evaluation of data to discover their structure and relevant information to answer a research question
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+asymmetry
+</td>
+<td style="text-align:left;">
+The notion that while X causes Y, Y does not cause X. It is established with temporal priority, manipulated events, and/or the independence of causes (see <span class="citation">Brady (2011)</span>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+attribute
+</td>
+<td style="text-align:left;">
+A component or characteristic of a concept
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+background concept
+</td>
+<td style="text-align:left;">
+The broad constellation of meanings and understandings associated with the concept <span class="citation">(Adcock &amp; Collier, 2001, p. 531)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+categorical
+</td>
+<td style="text-align:left;">
+Describing the qualitative categories of a characteristic, for example different religions
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+causal
+</td>
+<td style="text-align:left;">
+In order to establish a causal relationship, the following criteria must be met concurrently: <br>
+<ol>
+<li>
+Relevance of the variables within the broader theoretical and empirical context of the research
+<ol type="A">
+<li>
+Clear Theoretical Framework
+</li>
+<li>
+Clear conceptualization
+</li>
+<li>
+Exclusion of alternative explanations
+</li>
 </ol>
-<div class="bulb">
-<p>Whilst you need to install both R and RStudio, we will never be working with R directly. Instead, we will be operating it through RStudio.</p>
-</div>
-<hr />
-</div>
-<div id="r---getting-started" class="section level2 unnumbered hasAnchor">
-<h2>R - Getting Started<a href="introduction-to-r.html#r---getting-started" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In this worksheet and also in all other presentations and documents I use on this module, I am using two different fonts:</p>
-<ul>
-<li>Font for plain text</li>
-<li><code>A typewriter font for R functions, values, etc.</code></li>
-</ul>
-<p>I am also regularly including “screenshots” of operations in R with their output. Whenever you see these, please replicate them on your own computer. To start, let’s have a look at RStudio itself. When you open the programme, you are presented with the following screen:</p>
-<div class="figure"><span style="display:block;" id="fig:RStudio"></span>
-<img src="files/Week%201/RStudio.png" alt="\label{fig:RStudio}RStudio" width="60%" />
-<p class="caption">
-Figure 1: RStudio
-</p>
-</div>
-<p>It has – for now – three components to it. On the left hand-side you see the so-called <code>Console</code> into which you can enter the commands, and in which also most of the results will be displayed. On the right hands side, you see the <code>Workspace</code> which consists of an upper and a lower window. The upper window has three tabs in it. The tab <code>Environment</code> will provide you with a list of all the data sets you have loaded into R, and also of the objects and values you create (more on that later). Under the <code>History</code> tab, you find a history (I know, who would have thought it) of all the commands you have used. This can be very useful to retrace your steps. In the <code>Connections</code> tab you can connect to online sources. We will not use this tab.</p>
-<p>In the lower window, you have five tabs. Under <code>Files</code> you find the file structure of your computer. Once you have set a working directory (more on that in a moment), you can also view the files in your working directory here which gives you a good overview of the files you need to refer to for a particular project. The <code>Plots</code> tab will display the graphs we will be producing. <code>Packages</code> form the heart and soul of R and they make the program as powerful as it is (again, more on that later). RStudio also has a <code>Help</code> function, which is rarely very illuminating. I usually search for stuff online on “stackexchange”, as there is a large community of R users out there who share their knowledge and solutions to problems. We won’t use the last tab <code>Viewer</code>.</p>
-<div class="video">
-<p><strong>Introduction to R Studio</strong></p>
-<p>If you can’t get enough of my delightful German accent, then I have some videos for you in which I go through the respective components of the worksheet on screen. Here is the first:</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/D7p2OXwBur8?si=ECd7It03IArA6_BP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
-</div>
-<hr />
-</div>
-<div id="rscript" class="section level2 unnumbered hasAnchor">
-<h2>RScript<a href="introduction-to-r.html#rscript" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>If you read the previous section carefully, you will have noticed that I wrote that you <em>can</em> enter the commands” in the <code>Console</code>. You can, but you shouldn’t. What you should be using instead is an <code>RScript</code>. An <code>RScript</code> is a list of commands you use for a project (an essay, your dissertation, an article) to calculate quantities of interest, such as descriptive statistics in the form of mean, median and mode, and produce graphs.</p>
-<p>One of the foundations of scientific research is “reproducibility”“, or”replicability”. This means that “sufficient information exists with which to understand, evaluate, and build upon a prior work if a third party could replicate the results without any additional information from the author.” <span class="citation">King (1995, p. 444, emphasis removed)</span> This principle applies in academia more generally, because only if you understand what a person has done before you, you can pick their work up whether they left it, and push the boundaries of knowledge further. But a bit closer to home, it is also relevant for conducting quantitative research in assessments. We require you to submit an RScript (or a “do file” if you use Stata) now together with your actual essay. This is not only to check what you have done; data preparation is often the most time-consuming part (as you will soon discover), and this is a way to gain recognition for this work. So it is actually to your advantage, and not a mere plagiarism check.</p>
-<p>The creation of an RScript will allow you to open the raw data, and by running the script, to bring it to exactly where you left off. This saves you saving data sets which can take up a lot of work. If you back the script up properly, you also have an insurance against losing all your work a day before the assessment is due.</p>
-<p>To create an RScript, click File <span class="math inline">\(\rightarrow\)</span> New File <span class="math inline">\(\rightarrow\)</span> RScript. A fourth window opens, and your screen will now look something like this:</p>
-<div class="figure"><span style="display:block;" id="fig:RScript"></span>
-<img src="files/Week%201/rscript.png" alt="\label{fig:RScript}The RScript Window" width="60%" />
-<p class="caption">
-Figure 2: The RScript Window
-</p>
-</div>
-<p>You can now write your commands in the RScript, where a new line (for now) means a new command. If you want to execute a command, put the cursor on the line the command is on and press “command” / “enter” simultaneoulsy on a Mac and “Ctrl” / “Enter” on Windows.</p>
-<p>If you precede a line with #, you can write annotations to yourself, for example explaining what you do with a particular command. More on this in the next sub-section.</p>
-<p>Figure <a href="introduction-to-r.html#fig:RScriptex">3</a> shows the start of the RScript for this worksheet. I prefer a dark background, it’s easier on the eyes, especially when you work with R for long periods. You can change the settings in: Tools <span class="math inline">\(\rightarrow\)</span> Global Options <span class="math inline">\(\rightarrow\)</span> Appearance <span class="math inline">\(\rightarrow\)</span> Twilight.</p>
-<div class="figure"><span style="display:block;" id="fig:RScriptex"></span>
-<img src="files/Week%201/RScript_example.png" alt="\label{fig:RScriptex}Example of an RScript" width="75%" />
-<p class="caption">
-Figure 3: Example of an RScript
-</p>
-</div>
-<div class="bulb">
-<p><strong>More Themes</strong></p>
-<p>If you copy and paste the following code chunks into your “Console” and run one at a time, you will have even more themes<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> to choose from:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="introduction-to-r.html#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(</span>
-<span id="cb1-2"><a href="introduction-to-r.html#cb1-2" tabindex="-1"></a>  <span class="st">&quot;rsthemes&quot;</span>,</span>
-<span id="cb1-3"><a href="introduction-to-r.html#cb1-3" tabindex="-1"></a>  <span class="at">repos =</span> <span class="fu">c</span>(<span class="at">gadenbuie =</span> <span class="st">&#39;https://gadenbuie.r-universe.dev&#39;</span>, <span class="fu">getOption</span>(<span class="st">&quot;repos&quot;</span>))</span>
-<span id="cb1-4"><a href="introduction-to-r.html#cb1-4" tabindex="-1"></a>)</span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="introduction-to-r.html#cb2-1" tabindex="-1"></a>rsthemes<span class="sc">::</span><span class="fu">install_rsthemes</span>()</span></code></pre></div>
-<p>You can also download <a href="files/Week%205/Flos%20Dark%20Theme.rstheme">Flo’s Dark Theme</a><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> and then “add” it at the bottom of the “Appearance” menu.</p>
-</div>
-<div class="video">
-<p><strong>Appearance</strong></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/uq1SYDuC83Y?si=_pQDebuqh189K4C-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
-</div>
-<div id="rscript-structure" class="section level3 unnumbered hasAnchor">
-<h3>RScript Structure<a href="introduction-to-r.html#rscript-structure" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Well, I am German, and I like things neat and tidy, so I feel almost compelled to discuss how to properly organise an RScript. But apart from genetical dispositions, a well-organised RScript is also very much in the spirit of reproducibility. It simply makes sense to structure an RScript in such a way that another researcher is able to easily read and understand it.</p>
-<p>First of all, which commands to include? If you introduce me to your current girlfriend or boyfriend, I have no interest in learning about all your past relationships; they have not worked out. In a similar fashion, nobody wants to read through lines of code that are irrelvant. So you will only include in the RScript those commands which produce the output you actually include in the essay or article.</p>
-<p>I stated above that if you precede a line with #, you can write annotations to yourself. This is also a useful way to structure an RScript, for example into exercise numbers, sections of an essay /article, or different stages of data preparation (which we will be doing in due course).</p>
-<div class="video">
-<p><strong>RScript Structure</strong></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kmXRoQYiktk?si=LCooa7grSIw7vE5L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
-</div>
-<hr />
-</div>
-</div>
-<div id="first-steps-in-r" class="section level2 unnumbered hasAnchor">
-<h2>First Steps in R<a href="introduction-to-r.html#first-steps-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>But enough of the preliminary talk, let’s get started in R. In principle, you can think of R as a massive and powerful calculator. So I will use it as such to start of with. If you want to know what the sum of 5 and 3 is, you type:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="introduction-to-r.html#cb3-1" tabindex="-1"></a><span class="dv">5</span><span class="sc">+</span><span class="dv">3</span></span></code></pre></div>
-<p>and execute the line as previously explained. In everything that is to follow, commands will be shown in boxes with the output underneath preceded by a number in square brackets. So, including result, the calculation would look like this:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="introduction-to-r.html#cb4-1" tabindex="-1"></a><span class="dv">5</span><span class="sc">+</span><span class="dv">3</span></span>
-<span id="cb4-2"><a href="introduction-to-r.html#cb4-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">8</span></span></code></pre></div>
-<p>where the [1] indicates that the 8 is the first component of the result. In this case, we only have one component, so it’s superfluous really, but we will soon encounter situations in which results can have a number of different items.</p>
-<div class="bulb">
-<p>You can copy the code from this page by hovering over the code chunk and clicking the icon in the top-right hand corner. You can then paste it into your RScript.</p>
-</div>
-<p>A fundamental component of R is objects. You can define an object by way of a reversed arrow, and you can assign values, characters, or functions to them. If we want to assign the sum of 5 and 3 to an object called <code>result</code>, for example, we call<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="introduction-to-r.html#cb5-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="dv">5</span><span class="sc">+</span><span class="dv">3</span></span></code></pre></div>
-<p>If we now call the object, R will return its value, 8.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="introduction-to-r.html#cb6-1" tabindex="-1"></a>result</span>
-<span id="cb6-2"><a href="introduction-to-r.html#cb6-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">8</span></span></code></pre></div>
-<div class="bulb">
-<p>Make a habit of adding a note underneath each code chunk in your RScript (preceded with a <span style="color:black"><code>#</code></span>) in which you translate the code into plain English. This is especially useful for the lengthy complex chunks.</p>
-</div>
-<hr />
-</div>
-<div id="the-working-directory" class="section level2 unnumbered hasAnchor">
-<h2>The Working Directory<a href="introduction-to-r.html#the-working-directory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>It is imperative that you create a suitable filing system to organise the materials for all of your modules. At the very least you should have a folder called “University” or similar, in which you have a sub-folder for each module you take.</p>
-<p>In those modules in which you are working with R, you need to extend this system a little. I have created a schematic of what I have in mind in Figure <a href="introduction-to-r.html#fig:folder">4</a>.</p>
-<div class="figure"><span style="display:block;" id="fig:folder"></span>
-<img src="files/Week%201/Folder%20Structure.png" alt="\label{fig:folder}Folder Structure" width="70%" />
-<p class="caption">
-Figure 4: Folder Structure
-</p>
-</div>
-<p>You see that there is a sub-folder for each week of the module (I have only done three for illustrative purposes), and that each of these folders is divided into lecture and seminar in turn. Into these you can place the lecture and seminar materials, respectively. Create this system now for PO11Q.</p>
-<p>R works with so-called <code>Working Directories</code>. You can think of these as drawers from which R takes everything it needs to conduct the analysis (such as the data set), and into which it puts everything it produces (such as graph plots). As this will be an R-specific drawer within the seminar, create yet another sub-folder in your seminar folder, and call it something suitable, such as “PO11Q_Seminar_Week 1”. Do NOT call this “Working Directory”, as you will have many of those, rendering this name completely meaningless. Save the file <a href="files/Week%201/EU.xlsx">EU.xlsx</a> into this folder. Data are taken from <span class="citation">European Comission (n.d.)</span>.</p>
-<div class="warning">
-<p>Please set up this structure now. If I find you using a random folder on your desktop named “working directory” in the coming weeks, I am going to implode! I mean it.</p>
-</div>
-<p>Now we need to tell R to use this folder. If you know the file structure of your computer you can simply use the <code>setwd()</code> command, and enter the path. Here is an example from my computer:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="introduction-to-r.html#cb7-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/Warwick/Modules/PO91Q/Seminars/Week 1/R Week 1&quot;</span>)</span></code></pre></div>
-<p>If you don’t know the file structure of your computer, then you can click Session <span class="math inline">\(\rightarrow\)</span> Set Working Directory <span class="math inline">\(\rightarrow\)</span> Choose Directory.</p>
-<div class="video">
-<p><strong>Working Directory</strong></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZpWWnTSAfTU?si=fi9Zn304zv26nzB5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
-</div>
-<hr />
-</div>
-<div id="r-packages" class="section level2 unnumbered hasAnchor">
-<h2>R Packages<a href="introduction-to-r.html#r-packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>It would be difficult to overstate the importance of packages in R. The program has a number of “base” functions which enable the user to do many different basic things, but packages are extensions that allow you to do pretty much anything and everything with this software - this is one of the reasons why I love it so much. The first package we need to use will enable us to load an Excel sheet into R. It is called <code>readxl</code>. You can install any package with the command <code>install.packages()</code> where the package name goes, wrapped in quotation marks, into the brackets:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="introduction-to-r.html#cb8-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>)</span></code></pre></div>
-<p>We can then load this package into our library with the <code>library()</code> command.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="introduction-to-r.html#cb9-1" tabindex="-1"></a><span class="fu">library</span>(readxl)</span></code></pre></div>
-<div class="bulb">
-<p>Once you close R at the end of a session, the library will be reset. When you reopen R, you have to load the packages you require again. But you do not have to install them again.</p>
-</div>
-<hr />
-</div>
-<div id="saving" class="section level2 unnumbered hasAnchor">
-<h2>Saving<a href="introduction-to-r.html#saving" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Please now save this RScript into the same folder (working directory) as the raw data. When R asks before closing, there is no need to save the workspace or the data, as running the RScript on the raw data will bring you precisely to where you left off.</p>
-</div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p>Source: <a href="https://www.garrickadenbuie.com/project/rsthemes/" class="uri">https://www.garrickadenbuie.com/project/rsthemes/</a><a href="introduction-to-r.html#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>This is a variation of the <a href="https://draculatheme.com/rstudio">Dracula Theme</a>.<a href="introduction-to-r.html#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p>To “call” means to execute a command.<a href="introduction-to-r.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</li>
+<li>
+Asymmetry
+</li>
+<li>
+Significant (and sufficiently strong) statistical association
+</li>
 </ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+central limit theorem
+</td>
+<td style="text-align:left;">
+In random sampling with a large sample size – where n=30 is usually sufficient – the sampling distribution of the sample mean <span class="math inline">\(\bar{y}\)</span> will be approximately normally distributed, irrespective of the shape of the population distribution
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+concept
+</td>
+<td style="text-align:left;">
+Abstract ideas which form the building blocks of theories <span class="citation">(Clark et al., 2021, p. 150)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+conceptualization
+</td>
+<td style="text-align:left;">
+Formulating a systematized concept through reasoning about the background concept, in light of the goals of research <span class="citation">(Adcock &amp; Collier, 2001, p. 531)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+confidence interval
+</td>
+<td style="text-align:left;">
+A confidence interval constructs an interval of numbers which will contain the true parameter of the population (e.g. the mean) in <span class="math inline">\((1-\alpha)\)</span> times of cases. <span class="math inline">\(\alpha\)</span> is usually chosen to be small, so that our confidence interval has a probability of 95% or 99%.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+confidence level
+</td>
+<td style="text-align:left;">
+The confidence level is the probability with which the confidence interval is believed to contain the true parameter of the population and is defined as <span class="math inline">\((1-\alpha)\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+conflation
+</td>
+<td style="text-align:left;">
+A variable does not belong to the attribute in question, but to a different one <span class="citation">(Munck &amp; Verkuilen, 2002, pp. 13–14)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+constant
+</td>
+<td style="text-align:left;">
+A variable which does not vary
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+continuous
+</td>
+<td style="text-align:left;">
+Can assume any value within defined measurement boundaries
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+critical value
+</td>
+<td style="text-align:left;">
+The critical value is a threshold that determines the boundary for rejecting the null hypothesis (H<span class="math inline">\(_0\)</span>) in a hypothesis test. It is a point on the probability distribution of the test statistic beyond which the null hypothesis is rejected. The critical value is chosen based on the significance level (<span class="math inline">\(\alpha\)</span>) of the test, which represents the probability of making a Type I error (i.e., rejecting a true null hypothesis).
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+cross-sectional data
+</td>
+<td style="text-align:left;">
+Look at different units (or cross-sections) <span class="math inline">\(i\)</span> at a single point in time
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+data
+</td>
+<td style="text-align:left;">
+Derives from the Latin which means . For our purposes it is a collection of numbers (or quantities) for the purpose of analysis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+data set
+</td>
+<td style="text-align:left;">
+A collection of numerical values for individual observations, separated into distinctive variables
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+degrees of freedom
+</td>
+<td style="text-align:left;">
+Degrees of freedom express constraints on our estimation process by specifying how many values in the calculation are free to vary
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+democracy
+</td>
+<td style="text-align:left;">
+A system in which the population chooses and holds accountable elected representatives through fair, free, and contested, multi-party elections. The human rights, civil rights, and civil liberties of individuals are protected by law
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+dependent variable
+</td>
+<td style="text-align:left;">
+Is dependent through some statistical or stochastic process on the value of an independent variable
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+descriptive statistics
+</td>
+<td style="text-align:left;">
+Summarise information about the centre and variability of a variable
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+deviation
+</td>
+<td style="text-align:left;">
+The deviation <span class="math inline">\(d\)</span> of an observation <span class="math inline">\(y_{i}\)</span> from the sample mean <span class="math inline">\(\bar{y}\)</span> is the difference between them: <span class="math inline">\(d=y_{i}-\bar{y}\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+dichotomous
+</td>
+<td style="text-align:left;">
+Can only assume two mutually exclusive, but internally homogeneous qualitative categories
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+discrete
+</td>
+<td style="text-align:left;">
+The result of a counting process
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+distribution
+</td>
+<td style="text-align:left;">
+Refers to the display of the values a variable can assume, together with their respective absolute or relative frequency
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+generalisability
+</td>
+<td style="text-align:left;">
+The ability to apply the findings made on the basis of a representative sample to the population
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+histogram
+</td>
+<td style="text-align:left;">
+Displays through rectangles the frequency with which the values of a continuous variable occur in specific ranges
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+hypothesis
+</td>
+<td style="text-align:left;">
+In statistics, a hypothesis is a formal statement about a population parameter or relationship between variables. Hypotheses guide statistical tests to determine whether data support or refute them. The hypothesis suggesting an effect or difference is called the alternative hypothesis. The alternative hypothesis is always paired with a null-hypothesis, suggesting no effect or difference.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+independent variable
+</td>
+<td style="text-align:left;">
+Influences or helps us predict the level of a dependent variable. It is often treated as fixed, or “given” in statistical analysis, and is sometimes also called “explanatory variable”
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+interpretation
+</td>
+<td style="text-align:left;">
+The explanation of results to answer the research question
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+interquartile range
+</td>
+<td style="text-align:left;">
+The difference between the 3<span class="math inline">\(^{\text{rd}}\)</span> and the 1<span class="math inline">\(^{\text{st}}\)</span> quartiles
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+literature review
+</td>
+<td style="text-align:left;">
+An analytical summary of the literature relating to a particular topic with the objective of identifying a gap and thus motivating a research question
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+mean
+</td>
+<td style="text-align:left;">
+Is equal to the sum of the observations divided by the number of observations
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+measurement
+</td>
+<td style="text-align:left;">
+Refers to the selection of a measure or variable
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+median
+</td>
+<td style="text-align:left;">
+Separates the lower half from the upper half of observations
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+method
+</td>
+<td style="text-align:left;">
+A tool for systematic investigation
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+mode
+</td>
+<td style="text-align:left;">
+Is the most frequently occurring value
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+non-probability sampling
+</td>
+<td style="text-align:left;">
+In non-probability sampling not every unit has the same probability of being sampled
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+normal distribution
+</td>
+<td style="text-align:left;">
+The Normal Distribution is a bell-shaped probability distribution which is symmetrical around the mean
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+outlier
+</td>
+<td style="text-align:left;">
+Defined as a value larger than the third quartile plus 1.5 times the interquartile range, or the first quartile minus 1.5 times the interquartile range
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+p-value
+</td>
+<td style="text-align:left;">
+The p-value indicates the probability of obtaining a result equal to, or even more extreme than the observed value, assuming the null hypothesis is true. Common thresholds for significance are 0.05, 0.01, and 0.001. A smaller p-value suggests stronger evidence against the null hypothesis. The p-value is denoted as <span class="math inline">\(p\)</span>.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+parameter
+</td>
+<td style="text-align:left;">
+A parameter is the value a statistic would assume in the long run. It is also called the Expected Value
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+percentile
+</td>
+<td style="text-align:left;">
+In ordered data, the percentile refers to the value of a variable below which a certain proportion of observations falls
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+population
+</td>
+<td style="text-align:left;">
+Collection of all cases which possess certain pre-defined characteristics
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+population distribution
+</td>
+<td style="text-align:left;">
+The probability distribution of the population
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+primary data
+</td>
+<td style="text-align:left;">
+Primary data are data you have collected yourself
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+probability
+</td>
+<td style="text-align:left;">
+Refers to how many times out of a total number of cases a particular event occurs. We can also see it as the chance of a particular event occurring
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+probability sampling
+</td>
+<td style="text-align:left;">
+In probability sampling all units have the same probability of entering the sample. In addition, all possible combinations of n cases must have the same probability to be selected
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+QM
+</td>
+<td style="text-align:left;">
+The process of testing theoretical propositions through the analysis of numerical data in order to provide an answer to a research question
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+quartile
+</td>
+<td style="text-align:left;">
+Divides ordered data into four equal parts and indicates the percentage of observations that falls into the respective quartile and below
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+range
+</td>
+<td style="text-align:left;">
+The difference between the largest and the smallest observation
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+redundancy
+</td>
+<td style="text-align:left;">
+Two or more variables measure the same sub-attribute <span class="citation">(Munck &amp; Verkuilen, 2002, p. 13)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+reliability
+</td>
+<td style="text-align:left;">
+Refers to the extent to which repeated measurement produces the same results
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+representative sample
+</td>
+<td style="text-align:left;">
+A sample which contains all characteristic of the population in accurate proportions
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+research question
+</td>
+<td style="text-align:left;">
+A specific enquiry relating to a particular topic or subject. It forms the starting point of the research cycle
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+sample
+</td>
+<td style="text-align:left;">
+A sub-group of the population
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+sample distribution
+</td>
+<td style="text-align:left;">
+The probability distribution of a sample
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+sampling
+</td>
+<td style="text-align:left;">
+The process of selecting sampling units from the population
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+sampling distribution
+</td>
+<td style="text-align:left;">
+The probability distribution of a sample statistics, such as the mean. It can be derived from repeated sampling, or by estimation
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+sampling error
+</td>
+<td style="text-align:left;">
+The extent to which the mean of the population and the mean of the sample differ from one another
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+sampling method
+</td>
+<td style="text-align:left;">
+The way the sample is created
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+secondary data
+</td>
+<td style="text-align:left;">
+Secondary data are data which have been collected by somebody else
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+significance level
+</td>
+<td style="text-align:left;">
+The significance level, denoted by <span class="math inline">\(\alpha\)</span>, is the threshold used in hypothesis testing to determine if a result is statistically significant. It represents the probability of rejecting the null hypothesis when it’s actually true (a Type I error). Common levels are 0.05 or 0.01, indicating 5% or 1% risk. We will cover this properly in Week 9.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+significance test
+</td>
+<td style="text-align:left;">
+A significance test is a statistical method used to determine whether observed data provide enough evidence to reject a null hypothesis. It calculates a probability of observing data as extreme as, or more extreme than, the actual sample results, assuming the null hypothesis is true
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+Social Sciences
+</td>
+<td style="text-align:left;">
+Are concerned with the study of society and seek to scientifically describe and explain the behaviour of actors
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+standard deviation
+</td>
+<td style="text-align:left;">
+The standard deviation s is defined as <span class="math display">\[\begin{equation*}s=\sqrt{\frac{\text{sum of squared deviations}}{\text{sample size} -1}}=\sqrt{\frac{\Sigma(y_{i} - \bar{y})^2}{n-1}}\end{equation*}\]</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+standard error
+</td>
+<td style="text-align:left;">
+The standard deviation of the sampling distribution. It is defined as:<span class="math display">\[\begin{equation*}\sigma_{\bar{y}} = \frac{\sigma}{\sqrt{n}}\end{equation*}\]</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+symmetry
+</td>
+<td style="text-align:left;">
+In the context of causation, symmetry is understood as the law-like regularity of events. There needs to be a recipe (causal mechanism) which regularly produces effects from causes (see <span class="citation">Brady (2011)</span>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+systematized concept
+</td>
+<td style="text-align:left;">
+A specific formulation of a concept used by a given scholar or group of scholars; commonly involves an explicit definition <span class="citation">(Adcock &amp; Collier, 2001, p. 531)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+t-distribution
+</td>
+<td style="text-align:left;">
+The t-Distribution is bell-shaped and symmetrical around a mean of zero. Its shape is dependent on the degrees of freedom in the estimation process.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+test statistic
+</td>
+<td style="text-align:left;">
+A test statistic is a value calculated from the sample data that is used to decide whether to reject the null hypothesis (H<span class="math inline">\(_0\)</span>) in a hypothesis test. It quantifies the degree to which the observed data diverges from what is expected under the null hypothesis. In a t-test, the test statistic is a t-value, which measures the distance between the sample mean and the (hypothesised) population mean, expressed in units of standard errors.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+theory
+</td>
+<td style="text-align:left;">
+A formal set of ideas that is intended to explain why something happens or exists <span class="citation">(Oxford Learner’s Dictionaries, n.d.)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+Type I Error
+</td>
+<td style="text-align:left;">
+A Type I Error occurs when a null hypothesis (H<span class="math inline">\(_0\)</span>) that is actually true is incorrectly rejected. It is also known as a false positive errors, as it suggests that an effect of difference exists, when, in fact, it does not. The probability of committing a Type I Error is denoted by the significance level (<span class="math inline">\(\alpha\)</span>) of the test, which is typically set before conducting the test (e.g. <span class="math inline">\(\alpha\)</span> = 0.05). This means that there is a 5% chance of rejecting the true null hypothesis.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+Type II Error
+</td>
+<td style="text-align:left;">
+A Type II Error occurs when a null hypothesis (H<span class="math inline">\(_0\)</span>) that is actually false is incorrectly accepted (or not rejected). It is also known as a false negative error, as it suggests that no effect or difference exists when, in fact, there is one.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+validity
+</td>
+<td style="text-align:left;">
+The extent to which the measure (variable) you choose genuinely represents the concept in question. The word comes from the Latin word “validus” which means “strong”
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+variable
+</td>
+<td style="text-align:left;">
+An element of a conceptual component which varies. We also call these “measures”
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+variance
+</td>
+<td style="text-align:left;">
+Is equal to the squared standard deviation
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+z-score
+</td>
+<td style="text-align:left;">
+The z-score, sometimes also referred to as z-value, expresses in units of standard deviation how far an observation of interest falls away from the mean. It is defined as <span class="math display">\[\begin{equation*}z = \frac{\text{observation} - \text{mean}}{\text{standard deviation}}=\frac{y-\mu}{\sigma}\end{equation*}\]</span>
+</td>
+</tr>
+</tbody>
+</table>
+
 </div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="accessibility.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="exercises.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="downloads.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="list-of-references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

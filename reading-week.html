@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Introduction to R | PO91Q: Seminar Companion</title>
-  <meta name="description" content="Introduction to R | PO91Q: Seminar Companion" />
+  <title>Reading Week | PO91Q: Seminar Companion</title>
+  <meta name="description" content="Reading Week | PO91Q: Seminar Companion" />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Introduction to R | PO91Q: Seminar Companion" />
+  <meta property="og:title" content="Reading Week | PO91Q: Seminar Companion" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to R | PO91Q: Seminar Companion" />
+  <meta name="twitter:title" content="Reading Week | PO91Q: Seminar Companion" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="accessibility.html"/>
-<link rel="next" href="exercises.html"/>
+<link rel="prev" href="flashcards-4.html"/>
+<link rel="next" href="downloads.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -308,171 +308,27 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction-to-r" class="section level1 unnumbered hasAnchor">
-<h1>Introduction to R<a href="introduction-to-r.html#introduction-to-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="installation" class="section level2 unnumbered hasAnchor">
-<h2>Installation<a href="introduction-to-r.html#installation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Today we start working with R and the first step is to install the program. Please follow these instructions:</p>
-<ol style="list-style-type: decimal">
-<li>Go to <a href="https://cran.r-project.org/mirrors.html" class="uri">https://cran.r-project.org/mirrors.html</a> and select a server from which you want to download R. It is convention to do this from the server which is nearest to you. Follow on-screen instructions and install the program.</li>
-<li>Go to <a href="https://rstudio.com/products/rstudio/download/" class="uri">https://rstudio.com/products/rstudio/download/</a> and download RStudio Desktop which is free. Install the program.</li>
-<li>Now open RStudio - you do not need to open R itself, as we will be operating it through RStudio.</li>
-</ol>
-<div class="bulb">
-<p>Whilst you need to install both R and RStudio, we will never be working with R directly. Instead, we will be operating it through RStudio.</p>
-</div>
-<hr />
-</div>
-<div id="r---getting-started" class="section level2 unnumbered hasAnchor">
-<h2>R - Getting Started<a href="introduction-to-r.html#r---getting-started" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In this worksheet and also in all other presentations and documents I use on this module, I am using two different fonts:</p>
+<div id="reading-week" class="section level1 unnumbered hasAnchor">
+<h1>Reading Week<a href="reading-week.html#reading-week" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Reading week is not an institutionalised holiday, but I do expect you to put in about 10 hours of work for this module over the course of this week. Here are a few suggestions for activities to fill these 10 hours:</p>
 <ul>
-<li>Font for plain text</li>
-<li><code>A typewriter font for R functions, values, etc.</code></li>
+<li>Catch up on the reading</li>
+<li>Revise the material of Weeks 1-5, as we will switch to bivariate and multivariate analysis in Week 7.</li>
+<li>Go through the worksheets of Weeks 1-5 to make sure you are on top of things with R.</li>
+<li>Revise all R functions up to this point. I have created a <a href="https://drfloreiche.github.io/POQFlashcards/weekly-content-2.html#week-6-consolidating-weeks-1-5-1">Reading Week Consolidation Flashcard Section</a> for this.</li>
 </ul>
-<p>I am also regularly including “screenshots” of operations in R with their output. Whenever you see these, please replicate them on your own computer. To start, let’s have a look at RStudio itself. When you open the programme, you are presented with the following screen:</p>
-<div class="figure"><span style="display:block;" id="fig:RStudio"></span>
-<img src="files/Week%201/RStudio.png" alt="\label{fig:RStudio}RStudio" width="60%" />
-<p class="caption">
-Figure 1: RStudio
-</p>
+
 </div>
-<p>It has – for now – three components to it. On the left hand-side you see the so-called <code>Console</code> into which you can enter the commands, and in which also most of the results will be displayed. On the right hands side, you see the <code>Workspace</code> which consists of an upper and a lower window. The upper window has three tabs in it. The tab <code>Environment</code> will provide you with a list of all the data sets you have loaded into R, and also of the objects and values you create (more on that later). Under the <code>History</code> tab, you find a history (I know, who would have thought it) of all the commands you have used. This can be very useful to retrace your steps. In the <code>Connections</code> tab you can connect to online sources. We will not use this tab.</p>
-<p>In the lower window, you have five tabs. Under <code>Files</code> you find the file structure of your computer. Once you have set a working directory (more on that in a moment), you can also view the files in your working directory here which gives you a good overview of the files you need to refer to for a particular project. The <code>Plots</code> tab will display the graphs we will be producing. <code>Packages</code> form the heart and soul of R and they make the program as powerful as it is (again, more on that later). RStudio also has a <code>Help</code> function, which is rarely very illuminating. I usually search for stuff online on “stackexchange”, as there is a large community of R users out there who share their knowledge and solutions to problems. We won’t use the last tab <code>Viewer</code>.</p>
-<div class="video">
-<p><strong>Introduction to R Studio</strong></p>
-<p>If you can’t get enough of my delightful German accent, then I have some videos for you in which I go through the respective components of the worksheet on screen. Here is the first:</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/D7p2OXwBur8?si=ECd7It03IArA6_BP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
-</div>
-<hr />
-</div>
-<div id="rscript" class="section level2 unnumbered hasAnchor">
-<h2>RScript<a href="introduction-to-r.html#rscript" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>If you read the previous section carefully, you will have noticed that I wrote that you <em>can</em> enter the commands” in the <code>Console</code>. You can, but you shouldn’t. What you should be using instead is an <code>RScript</code>. An <code>RScript</code> is a list of commands you use for a project (an essay, your dissertation, an article) to calculate quantities of interest, such as descriptive statistics in the form of mean, median and mode, and produce graphs.</p>
-<p>One of the foundations of scientific research is “reproducibility”“, or”replicability”. This means that “sufficient information exists with which to understand, evaluate, and build upon a prior work if a third party could replicate the results without any additional information from the author.” <span class="citation">King (1995, p. 444, emphasis removed)</span> This principle applies in academia more generally, because only if you understand what a person has done before you, you can pick their work up whether they left it, and push the boundaries of knowledge further. But a bit closer to home, it is also relevant for conducting quantitative research in assessments. We require you to submit an RScript (or a “do file” if you use Stata) now together with your actual essay. This is not only to check what you have done; data preparation is often the most time-consuming part (as you will soon discover), and this is a way to gain recognition for this work. So it is actually to your advantage, and not a mere plagiarism check.</p>
-<p>The creation of an RScript will allow you to open the raw data, and by running the script, to bring it to exactly where you left off. This saves you saving data sets which can take up a lot of work. If you back the script up properly, you also have an insurance against losing all your work a day before the assessment is due.</p>
-<p>To create an RScript, click File <span class="math inline">\(\rightarrow\)</span> New File <span class="math inline">\(\rightarrow\)</span> RScript. A fourth window opens, and your screen will now look something like this:</p>
-<div class="figure"><span style="display:block;" id="fig:RScript"></span>
-<img src="files/Week%201/rscript.png" alt="\label{fig:RScript}The RScript Window" width="60%" />
-<p class="caption">
-Figure 2: The RScript Window
-</p>
-</div>
-<p>You can now write your commands in the RScript, where a new line (for now) means a new command. If you want to execute a command, put the cursor on the line the command is on and press “command” / “enter” simultaneoulsy on a Mac and “Ctrl” / “Enter” on Windows.</p>
-<p>If you precede a line with #, you can write annotations to yourself, for example explaining what you do with a particular command. More on this in the next sub-section.</p>
-<p>Figure <a href="introduction-to-r.html#fig:RScriptex">3</a> shows the start of the RScript for this worksheet. I prefer a dark background, it’s easier on the eyes, especially when you work with R for long periods. You can change the settings in: Tools <span class="math inline">\(\rightarrow\)</span> Global Options <span class="math inline">\(\rightarrow\)</span> Appearance <span class="math inline">\(\rightarrow\)</span> Twilight.</p>
-<div class="figure"><span style="display:block;" id="fig:RScriptex"></span>
-<img src="files/Week%201/RScript_example.png" alt="\label{fig:RScriptex}Example of an RScript" width="75%" />
-<p class="caption">
-Figure 3: Example of an RScript
-</p>
-</div>
-<div class="bulb">
-<p><strong>More Themes</strong></p>
-<p>If you copy and paste the following code chunks into your “Console” and run one at a time, you will have even more themes<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> to choose from:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="introduction-to-r.html#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(</span>
-<span id="cb1-2"><a href="introduction-to-r.html#cb1-2" tabindex="-1"></a>  <span class="st">&quot;rsthemes&quot;</span>,</span>
-<span id="cb1-3"><a href="introduction-to-r.html#cb1-3" tabindex="-1"></a>  <span class="at">repos =</span> <span class="fu">c</span>(<span class="at">gadenbuie =</span> <span class="st">&#39;https://gadenbuie.r-universe.dev&#39;</span>, <span class="fu">getOption</span>(<span class="st">&quot;repos&quot;</span>))</span>
-<span id="cb1-4"><a href="introduction-to-r.html#cb1-4" tabindex="-1"></a>)</span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="introduction-to-r.html#cb2-1" tabindex="-1"></a>rsthemes<span class="sc">::</span><span class="fu">install_rsthemes</span>()</span></code></pre></div>
-<p>You can also download <a href="files/Week%205/Flos%20Dark%20Theme.rstheme">Flo’s Dark Theme</a><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> and then “add” it at the bottom of the “Appearance” menu.</p>
-</div>
-<div class="video">
-<p><strong>Appearance</strong></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/uq1SYDuC83Y?si=_pQDebuqh189K4C-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
-</div>
-<div id="rscript-structure" class="section level3 unnumbered hasAnchor">
-<h3>RScript Structure<a href="introduction-to-r.html#rscript-structure" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Well, I am German, and I like things neat and tidy, so I feel almost compelled to discuss how to properly organise an RScript. But apart from genetical dispositions, a well-organised RScript is also very much in the spirit of reproducibility. It simply makes sense to structure an RScript in such a way that another researcher is able to easily read and understand it.</p>
-<p>First of all, which commands to include? If you introduce me to your current girlfriend or boyfriend, I have no interest in learning about all your past relationships; they have not worked out. In a similar fashion, nobody wants to read through lines of code that are irrelvant. So you will only include in the RScript those commands which produce the output you actually include in the essay or article.</p>
-<p>I stated above that if you precede a line with #, you can write annotations to yourself. This is also a useful way to structure an RScript, for example into exercise numbers, sections of an essay /article, or different stages of data preparation (which we will be doing in due course).</p>
-<div class="video">
-<p><strong>RScript Structure</strong></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kmXRoQYiktk?si=LCooa7grSIw7vE5L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
-</div>
-<hr />
-</div>
-</div>
-<div id="first-steps-in-r" class="section level2 unnumbered hasAnchor">
-<h2>First Steps in R<a href="introduction-to-r.html#first-steps-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>But enough of the preliminary talk, let’s get started in R. In principle, you can think of R as a massive and powerful calculator. So I will use it as such to start of with. If you want to know what the sum of 5 and 3 is, you type:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="introduction-to-r.html#cb3-1" tabindex="-1"></a><span class="dv">5</span><span class="sc">+</span><span class="dv">3</span></span></code></pre></div>
-<p>and execute the line as previously explained. In everything that is to follow, commands will be shown in boxes with the output underneath preceded by a number in square brackets. So, including result, the calculation would look like this:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="introduction-to-r.html#cb4-1" tabindex="-1"></a><span class="dv">5</span><span class="sc">+</span><span class="dv">3</span></span>
-<span id="cb4-2"><a href="introduction-to-r.html#cb4-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">8</span></span></code></pre></div>
-<p>where the [1] indicates that the 8 is the first component of the result. In this case, we only have one component, so it’s superfluous really, but we will soon encounter situations in which results can have a number of different items.</p>
-<div class="bulb">
-<p>You can copy the code from this page by hovering over the code chunk and clicking the icon in the top-right hand corner. You can then paste it into your RScript.</p>
-</div>
-<p>A fundamental component of R is objects. You can define an object by way of a reversed arrow, and you can assign values, characters, or functions to them. If we want to assign the sum of 5 and 3 to an object called <code>result</code>, for example, we call<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="introduction-to-r.html#cb5-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="dv">5</span><span class="sc">+</span><span class="dv">3</span></span></code></pre></div>
-<p>If we now call the object, R will return its value, 8.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="introduction-to-r.html#cb6-1" tabindex="-1"></a>result</span>
-<span id="cb6-2"><a href="introduction-to-r.html#cb6-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">8</span></span></code></pre></div>
-<div class="bulb">
-<p>Make a habit of adding a note underneath each code chunk in your RScript (preceded with a <span style="color:black"><code>#</code></span>) in which you translate the code into plain English. This is especially useful for the lengthy complex chunks.</p>
-</div>
-<hr />
-</div>
-<div id="the-working-directory" class="section level2 unnumbered hasAnchor">
-<h2>The Working Directory<a href="introduction-to-r.html#the-working-directory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>It is imperative that you create a suitable filing system to organise the materials for all of your modules. At the very least you should have a folder called “University” or similar, in which you have a sub-folder for each module you take.</p>
-<p>In those modules in which you are working with R, you need to extend this system a little. I have created a schematic of what I have in mind in Figure <a href="introduction-to-r.html#fig:folder">4</a>.</p>
-<div class="figure"><span style="display:block;" id="fig:folder"></span>
-<img src="files/Week%201/Folder%20Structure.png" alt="\label{fig:folder}Folder Structure" width="70%" />
-<p class="caption">
-Figure 4: Folder Structure
-</p>
-</div>
-<p>You see that there is a sub-folder for each week of the module (I have only done three for illustrative purposes), and that each of these folders is divided into lecture and seminar in turn. Into these you can place the lecture and seminar materials, respectively. Create this system now for PO11Q.</p>
-<p>R works with so-called <code>Working Directories</code>. You can think of these as drawers from which R takes everything it needs to conduct the analysis (such as the data set), and into which it puts everything it produces (such as graph plots). As this will be an R-specific drawer within the seminar, create yet another sub-folder in your seminar folder, and call it something suitable, such as “PO11Q_Seminar_Week 1”. Do NOT call this “Working Directory”, as you will have many of those, rendering this name completely meaningless. Save the file <a href="files/Week%201/EU.xlsx">EU.xlsx</a> into this folder. Data are taken from <span class="citation">European Comission (n.d.)</span>.</p>
-<div class="warning">
-<p>Please set up this structure now. If I find you using a random folder on your desktop named “working directory” in the coming weeks, I am going to implode! I mean it.</p>
-</div>
-<p>Now we need to tell R to use this folder. If you know the file structure of your computer you can simply use the <code>setwd()</code> command, and enter the path. Here is an example from my computer:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="introduction-to-r.html#cb7-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/Warwick/Modules/PO91Q/Seminars/Week 1/R Week 1&quot;</span>)</span></code></pre></div>
-<p>If you don’t know the file structure of your computer, then you can click Session <span class="math inline">\(\rightarrow\)</span> Set Working Directory <span class="math inline">\(\rightarrow\)</span> Choose Directory.</p>
-<div class="video">
-<p><strong>Working Directory</strong></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZpWWnTSAfTU?si=fi9Zn304zv26nzB5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
-</div>
-<hr />
-</div>
-<div id="r-packages" class="section level2 unnumbered hasAnchor">
-<h2>R Packages<a href="introduction-to-r.html#r-packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>It would be difficult to overstate the importance of packages in R. The program has a number of “base” functions which enable the user to do many different basic things, but packages are extensions that allow you to do pretty much anything and everything with this software - this is one of the reasons why I love it so much. The first package we need to use will enable us to load an Excel sheet into R. It is called <code>readxl</code>. You can install any package with the command <code>install.packages()</code> where the package name goes, wrapped in quotation marks, into the brackets:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="introduction-to-r.html#cb8-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>)</span></code></pre></div>
-<p>We can then load this package into our library with the <code>library()</code> command.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="introduction-to-r.html#cb9-1" tabindex="-1"></a><span class="fu">library</span>(readxl)</span></code></pre></div>
-<div class="bulb">
-<p>Once you close R at the end of a session, the library will be reset. When you reopen R, you have to load the packages you require again. But you do not have to install them again.</p>
-</div>
-<hr />
-</div>
-<div id="saving" class="section level2 unnumbered hasAnchor">
-<h2>Saving<a href="introduction-to-r.html#saving" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Please now save this RScript into the same folder (working directory) as the raw data. When R asks before closing, there is no need to save the workspace or the data, as running the RScript on the raw data will bring you precisely to where you left off.</p>
-</div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p>Source: <a href="https://www.garrickadenbuie.com/project/rsthemes/" class="uri">https://www.garrickadenbuie.com/project/rsthemes/</a><a href="introduction-to-r.html#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>This is a variation of the <a href="https://draculatheme.com/rstudio">Dracula Theme</a>.<a href="introduction-to-r.html#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p>To “call” means to execute a command.<a href="introduction-to-r.html#fnref3" class="footnote-back">↩︎</a></p></li>
-</ol>
-</div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="accessibility.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="exercises.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="flashcards-4.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="downloads.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
