@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>MMM – Bivariate Regression | PO91Q: Seminar Companion</title>
-  <meta name="description" content="MMM – Bivariate Regression | PO91Q: Seminar Companion" />
+  <title>Variable Transformations and Exam Preparation | PO91Q: Seminar Companion</title>
+  <meta name="description" content="Variable Transformations and Exam Preparation | PO91Q: Seminar Companion" />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="MMM – Bivariate Regression | PO91Q: Seminar Companion" />
+  <meta property="og:title" content="Variable Transformations and Exam Preparation | PO91Q: Seminar Companion" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="MMM – Bivariate Regression | PO91Q: Seminar Companion" />
+  <meta name="twitter:title" content="Variable Transformations and Exam Preparation | PO91Q: Seminar Companion" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="flashcards-5.html"/>
-<link rel="next" href="mmm-model-fit.html"/>
+<link rel="prev" href="methods-methods-methods-2.html"/>
+<link rel="next" href="homework.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -414,130 +414,257 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="mmm-bivariate-regression" class="section level1 unnumbered hasAnchor">
-<h1>MMM – Bivariate Regression<a href="mmm-bivariate-regression.html#mmm-bivariate-regression" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This week we will be starting to conduct linear regression analysis in R.</p>
-<p>Just as in week 2 we will be working with the American National Election Studies (ANES), and to be more precise with the pilot survey conducted before the 2020 presidential election. If you haven’t already done so, you will have to register with ANES in order to download the data set. To do so, please follow <a href="https://electionstudies.org/data-center/2020-exploratory-testing-survey/">this link</a>.</p>
-<div id="data-prep-1" class="section level2 unnumbered hasAnchor">
-<h2>Data Prep<a href="mmm-bivariate-regression.html#data-prep-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Place the ANES data in a folder which you will be using as a working directory for this session. Open the “Code for Data Preparation” below, and copy this into an RScript. Remember to adjust the working directory with the <code>setwd()</code> command at the beginning. Then run the RScript and you will be ready to proceed to the video.</p>
-<div class="bluebox">
-<details>
-<summary>
-Code for Data Preparation
-</summary>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="mmm-bivariate-regression.html#cb78-1" tabindex="-1"></a><span class="do">######################################</span></span>
-<span id="cb78-2"><a href="mmm-bivariate-regression.html#cb78-2" tabindex="-1"></a><span class="co"># MMM - Week 4 - Data Preparation</span></span>
-<span id="cb78-3"><a href="mmm-bivariate-regression.html#cb78-3" tabindex="-1"></a><span class="do">######################################</span></span>
-<span id="cb78-4"><a href="mmm-bivariate-regression.html#cb78-4" tabindex="-1"></a></span>
-<span id="cb78-5"><a href="mmm-bivariate-regression.html#cb78-5" tabindex="-1"></a></span>
-<span id="cb78-6"><a href="mmm-bivariate-regression.html#cb78-6" tabindex="-1"></a><span class="co"># Set WD</span></span>
-<span id="cb78-7"><a href="mmm-bivariate-regression.html#cb78-7" tabindex="-1"></a><span class="fu">setwd</span>()</span>
-<span id="cb78-8"><a href="mmm-bivariate-regression.html#cb78-8" tabindex="-1"></a></span>
-<span id="cb78-9"><a href="mmm-bivariate-regression.html#cb78-9" tabindex="-1"></a><span class="co"># Load packages</span></span>
-<span id="cb78-10"><a href="mmm-bivariate-regression.html#cb78-10" tabindex="-1"></a></span>
-<span id="cb78-11"><a href="mmm-bivariate-regression.html#cb78-11" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb78-12"><a href="mmm-bivariate-regression.html#cb78-12" tabindex="-1"></a></span>
-<span id="cb78-13"><a href="mmm-bivariate-regression.html#cb78-13" tabindex="-1"></a><span class="co"># Load data set</span></span>
-<span id="cb78-14"><a href="mmm-bivariate-regression.html#cb78-14" tabindex="-1"></a></span>
-<span id="cb78-15"><a href="mmm-bivariate-regression.html#cb78-15" tabindex="-1"></a>anes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;anes.csv&quot;</span>)</span>
-<span id="cb78-16"><a href="mmm-bivariate-regression.html#cb78-16" tabindex="-1"></a></span>
-<span id="cb78-17"><a href="mmm-bivariate-regression.html#cb78-17" tabindex="-1"></a><span class="co"># Get rid of missing values for variables used in analysis today</span></span>
-<span id="cb78-18"><a href="mmm-bivariate-regression.html#cb78-18" tabindex="-1"></a></span>
-<span id="cb78-19"><a href="mmm-bivariate-regression.html#cb78-19" tabindex="-1"></a><span class="do">## 999 is equivalent to NA, so needs to be recoded</span></span>
-<span id="cb78-20"><a href="mmm-bivariate-regression.html#cb78-20" tabindex="-1"></a>anes<span class="sc">$</span>fttrump1 <span class="ot">&lt;-</span> <span class="fu">with</span>(anes, <span class="fu">replace</span>(fttrump1, fttrump1 <span class="sc">==</span> <span class="dv">999</span>, <span class="cn">NA</span>)) </span>
-<span id="cb78-21"><a href="mmm-bivariate-regression.html#cb78-21" tabindex="-1"></a>anes<span class="sc">$</span>income <span class="ot">&lt;-</span> <span class="fu">with</span>(anes, <span class="fu">replace</span>(income, income <span class="sc">==</span> <span class="dv">99</span>, <span class="cn">NA</span>)) </span>
-<span id="cb78-22"><a href="mmm-bivariate-regression.html#cb78-22" tabindex="-1"></a></span>
-<span id="cb78-23"><a href="mmm-bivariate-regression.html#cb78-23" tabindex="-1"></a>anes <span class="ot">&lt;-</span> <span class="fu">filter</span>(anes, </span>
-<span id="cb78-24"><a href="mmm-bivariate-regression.html#cb78-24" tabindex="-1"></a>               <span class="sc">!</span><span class="fu">is.na</span>(fttrump1),</span>
-<span id="cb78-25"><a href="mmm-bivariate-regression.html#cb78-25" tabindex="-1"></a>               <span class="sc">!</span><span class="fu">is.na</span>(age),</span>
-<span id="cb78-26"><a href="mmm-bivariate-regression.html#cb78-26" tabindex="-1"></a>               <span class="sc">!</span><span class="fu">is.na</span>(income))</span>
-<span id="cb78-27"><a href="mmm-bivariate-regression.html#cb78-27" tabindex="-1"></a></span>
-<span id="cb78-28"><a href="mmm-bivariate-regression.html#cb78-28" tabindex="-1"></a><span class="co"># Turn income variable into a numerical variable with mid-points of each level</span></span>
-<span id="cb78-29"><a href="mmm-bivariate-regression.html#cb78-29" tabindex="-1"></a></span>
-<span id="cb78-30"><a href="mmm-bivariate-regression.html#cb78-30" tabindex="-1"></a>anes<span class="sc">$</span>income <span class="ot">&lt;-</span> <span class="fu">factor</span>(anes<span class="sc">$</span>income)</span>
-<span id="cb78-31"><a href="mmm-bivariate-regression.html#cb78-31" tabindex="-1"></a><span class="fu">table</span>(anes<span class="sc">$</span>income)</span>
-<span id="cb78-32"><a href="mmm-bivariate-regression.html#cb78-32" tabindex="-1"></a>anes <span class="ot">&lt;-</span> anes <span class="sc">%&gt;%</span></span>
-<span id="cb78-33"><a href="mmm-bivariate-regression.html#cb78-33" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">income_fac =</span> <span class="fu">recode</span>(income,</span>
-<span id="cb78-34"><a href="mmm-bivariate-regression.html#cb78-34" tabindex="-1"></a>                             <span class="st">&#39;1&#39;</span><span class="ot">=</span> <span class="st">&quot;2500&quot;</span>,</span>
-<span id="cb78-35"><a href="mmm-bivariate-regression.html#cb78-35" tabindex="-1"></a>                             <span class="st">&#39;2&#39;</span><span class="ot">=</span> <span class="st">&quot;7499.5&quot;</span>,</span>
-<span id="cb78-36"><a href="mmm-bivariate-regression.html#cb78-36" tabindex="-1"></a>                             <span class="st">&#39;3&#39;</span><span class="ot">=</span> <span class="st">&quot;12499.5&quot;</span>,</span>
-<span id="cb78-37"><a href="mmm-bivariate-regression.html#cb78-37" tabindex="-1"></a>                             <span class="st">&#39;4&#39;</span><span class="ot">=</span> <span class="st">&quot;17499.5&quot;</span>,                       </span>
-<span id="cb78-38"><a href="mmm-bivariate-regression.html#cb78-38" tabindex="-1"></a>                             <span class="st">&#39;5&#39;</span><span class="ot">=</span> <span class="st">&quot;22499.5&quot;</span>,</span>
-<span id="cb78-39"><a href="mmm-bivariate-regression.html#cb78-39" tabindex="-1"></a>                             <span class="st">&#39;6&#39;</span><span class="ot">=</span> <span class="st">&quot;27499.5&quot;</span>,</span>
-<span id="cb78-40"><a href="mmm-bivariate-regression.html#cb78-40" tabindex="-1"></a>                             <span class="st">&#39;7&#39;</span><span class="ot">=</span> <span class="st">&quot;32499.5&quot;</span>,</span>
-<span id="cb78-41"><a href="mmm-bivariate-regression.html#cb78-41" tabindex="-1"></a>                             <span class="st">&#39;8&#39;</span><span class="ot">=</span> <span class="st">&quot;37499.5&quot;</span>,</span>
-<span id="cb78-42"><a href="mmm-bivariate-regression.html#cb78-42" tabindex="-1"></a>                             <span class="st">&#39;9&#39;</span><span class="ot">=</span> <span class="st">&quot;42499.5&quot;</span>,</span>
-<span id="cb78-43"><a href="mmm-bivariate-regression.html#cb78-43" tabindex="-1"></a>                             <span class="st">&#39;10&#39;</span><span class="ot">=</span> <span class="st">&quot;47499.5&quot;</span>,</span>
-<span id="cb78-44"><a href="mmm-bivariate-regression.html#cb78-44" tabindex="-1"></a>                             <span class="st">&#39;11&#39;</span><span class="ot">=</span> <span class="st">&quot;52499.5&quot;</span>,</span>
-<span id="cb78-45"><a href="mmm-bivariate-regression.html#cb78-45" tabindex="-1"></a>                             <span class="st">&#39;12&#39;</span><span class="ot">=</span> <span class="st">&quot;57499.5&quot;</span>,</span>
-<span id="cb78-46"><a href="mmm-bivariate-regression.html#cb78-46" tabindex="-1"></a>                             <span class="st">&#39;13&#39;</span><span class="ot">=</span> <span class="st">&quot;62499.5&quot;</span>,</span>
-<span id="cb78-47"><a href="mmm-bivariate-regression.html#cb78-47" tabindex="-1"></a>                             <span class="st">&#39;14&#39;</span><span class="ot">=</span> <span class="st">&quot;67499.5&quot;</span>,</span>
-<span id="cb78-48"><a href="mmm-bivariate-regression.html#cb78-48" tabindex="-1"></a>                             <span class="st">&#39;15&#39;</span><span class="ot">=</span> <span class="st">&quot;72499.5&quot;</span>,</span>
-<span id="cb78-49"><a href="mmm-bivariate-regression.html#cb78-49" tabindex="-1"></a>                             <span class="st">&#39;16&#39;</span><span class="ot">=</span> <span class="st">&quot;77499.5&quot;</span>,</span>
-<span id="cb78-50"><a href="mmm-bivariate-regression.html#cb78-50" tabindex="-1"></a>                             <span class="st">&#39;17&#39;</span><span class="ot">=</span> <span class="st">&quot;82499.5&quot;</span>,</span>
-<span id="cb78-51"><a href="mmm-bivariate-regression.html#cb78-51" tabindex="-1"></a>                             <span class="st">&#39;18&#39;</span><span class="ot">=</span> <span class="st">&quot;87499.5&quot;</span>,</span>
-<span id="cb78-52"><a href="mmm-bivariate-regression.html#cb78-52" tabindex="-1"></a>                             <span class="st">&#39;19&#39;</span><span class="ot">=</span> <span class="st">&quot;92499.5&quot;</span>,</span>
-<span id="cb78-53"><a href="mmm-bivariate-regression.html#cb78-53" tabindex="-1"></a>                             <span class="st">&#39;20&#39;</span><span class="ot">=</span> <span class="st">&quot;97499.5&quot;</span>,</span>
-<span id="cb78-54"><a href="mmm-bivariate-regression.html#cb78-54" tabindex="-1"></a>                             <span class="st">&#39;21&#39;</span><span class="ot">=</span> <span class="st">&quot;112499.5&quot;</span>,</span>
-<span id="cb78-55"><a href="mmm-bivariate-regression.html#cb78-55" tabindex="-1"></a>                             <span class="st">&#39;22&#39;</span><span class="ot">=</span> <span class="st">&quot;137499.5&quot;</span>,</span>
-<span id="cb78-56"><a href="mmm-bivariate-regression.html#cb78-56" tabindex="-1"></a>                             <span class="st">&#39;23&#39;</span><span class="ot">=</span> <span class="st">&quot;162499.5&quot;</span>,</span>
-<span id="cb78-57"><a href="mmm-bivariate-regression.html#cb78-57" tabindex="-1"></a>                             <span class="st">&#39;24&#39;</span><span class="ot">=</span> <span class="st">&quot;187499.5&quot;</span>,</span>
-<span id="cb78-58"><a href="mmm-bivariate-regression.html#cb78-58" tabindex="-1"></a>                             <span class="st">&#39;25&#39;</span><span class="ot">=</span> <span class="st">&quot;224999.5&quot;</span>,</span>
-<span id="cb78-59"><a href="mmm-bivariate-regression.html#cb78-59" tabindex="-1"></a>                             <span class="st">&#39;26&#39;</span><span class="ot">=</span> <span class="st">&quot;500000&quot;</span>))</span>
-<span id="cb78-60"><a href="mmm-bivariate-regression.html#cb78-60" tabindex="-1"></a></span>
-<span id="cb78-61"><a href="mmm-bivariate-regression.html#cb78-61" tabindex="-1"></a>anes<span class="sc">$</span>inc <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(anes<span class="sc">$</span>income_fac))</span>
-<span id="cb78-62"><a href="mmm-bivariate-regression.html#cb78-62" tabindex="-1"></a></span>
-<span id="cb78-63"><a href="mmm-bivariate-regression.html#cb78-63" tabindex="-1"></a><span class="co"># save data set for use in video</span></span>
-<span id="cb78-64"><a href="mmm-bivariate-regression.html#cb78-64" tabindex="-1"></a></span>
-<span id="cb78-65"><a href="mmm-bivariate-regression.html#cb78-65" tabindex="-1"></a><span class="fu">write.csv</span>(anes, <span class="st">&quot;anes_week4.csv&quot;</span>)</span></code></pre></div>
-</details>
+<div id="variable-transformations-and-exam-preparation" class="section level1 unnumbered hasAnchor">
+<h1>Variable Transformations and Exam Preparation<a href="variable-transformations-and-exam-preparation.html#variable-transformations-and-exam-preparation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="self-assessment-questions-5" class="section level2 unnumbered hasAnchor">
+<h2>Self-Assessment Questions<a href="variable-transformations-and-exam-preparation.html#self-assessment-questions-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>How does the concept of the conditional expected value relate to the interpretation of coefficients in multiple regression?</li>
+<li>How do you select variables for a multiple regression model?</li>
+<li>Why do we apply non-linear transformations to variables?</li>
+<li>How do you interpret the effect of a logarithmized variable?</li>
+<li>Using data from London wards <span class="citation">(London Data Store, 2013)</span> the regression models in Table <a href="case-study-1.html#tab:reg91">13</a> explain voter turnout in the 2012 mayoral elections.
+<ol style="list-style-type: lower-alpha">
+<li>interpret the intercept in Model 1</li>
+<li>interpret the slope coefficient in Model 1</li>
+<li>interpret the slope coefficients in Model 3</li>
+<li>explain why the size effect of the slope coefficients in Models 1 and 2 is so different</li>
+<li>interpret the model fit measure in Model 3</li>
+</ol></li>
+</ol>
+ 
+<center>
+<!-- preamble start -->
+
+    <script>
+
+      function styleCell_0mdrs0pqn77czk946g6e(i, j, css_id) {
+          var table = document.getElementById("tinytable_0mdrs0pqn77czk946g6e");
+          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_0mdrs0pqn77czk946g6e');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_0mdrs0pqn77czk946g6e(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_0mdrs0pqn77czk946g6e");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: 10, j: 0 },  ], css_id: 'tinytable_css_znwnnu0ol2iw0q48o4sn',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_xaz1a7dm6jsu0ha09v0y',}, 
+          { positions: [ { i: 2, j: 1 }, { i: 4, j: 1 }, { i: 6, j: 1 }, { i: 3, j: 1 }, { i: 8, j: 1 }, { i: 5, j: 1 }, { i: 3, j: 2 }, { i: 9, j: 2 }, { i: 3, j: 3 }, { i: 2, j: 2 }, { i: 9, j: 3 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 9, j: 1 }, { i: 8, j: 2 }, { i: 2, j: 3 }, { i: 4, j: 3 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 8, j: 3 },  ], css_id: 'tinytable_css_vtef3nto0bl0bc77pz7d',}, 
+          { positions: [ { i: 1, j: 0 },  ], css_id: 'tinytable_css_siyf74h4xdjlg9rrzdqm',}, 
+          { positions: [ { i: 10, j: 2 }, { i: 10, j: 1 }, { i: 10, j: 3 },  ], css_id: 'tinytable_css_rdhywhppqxb2dcurgcgs',}, 
+          { positions: [ { i: 7, j: 0 },  ], css_id: 'tinytable_css_pgdql5352cpo1d6k31ay',}, 
+          { positions: [ { i: 1, j: 1 }, { i: 1, j: 3 }, { i: 1, j: 2 },  ], css_id: 'tinytable_css_jte0f7a1ux9eu4m66s64',}, 
+          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_ickuhbqh8oalh8pegvcq',}, 
+          { positions: [ { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 },  ], css_id: 'tinytable_css_hlvgykf39uofnz3aja39',}, 
+          { positions: [ { i: 0, j: 2 }, { i: 0, j: 3 },  ], css_id: 'tinytable_css_86syo4tjdmn8qh4zr5ab',}, 
+          { positions: [ { i: 7, j: 3 }, { i: 7, j: 2 }, { i: 7, j: 1 },  ], css_id: 'tinytable_css_0rjxpp7aurdz53f3f4mk',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_0mdrs0pqn77czk946g6e(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_znwnnu0ol2iw0q48o4sn, .table th.tinytable_css_znwnnu0ol2iw0q48o4sn { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_xaz1a7dm6jsu0ha09v0y, .table th.tinytable_css_xaz1a7dm6jsu0ha09v0y { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_vtef3nto0bl0bc77pz7d, .table th.tinytable_css_vtef3nto0bl0bc77pz7d { text-align: center; }
+      .table td.tinytable_css_siyf74h4xdjlg9rrzdqm, .table th.tinytable_css_siyf74h4xdjlg9rrzdqm { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_rdhywhppqxb2dcurgcgs, .table th.tinytable_css_rdhywhppqxb2dcurgcgs { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_pgdql5352cpo1d6k31ay, .table th.tinytable_css_pgdql5352cpo1d6k31ay { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_jte0f7a1ux9eu4m66s64, .table th.tinytable_css_jte0f7a1ux9eu4m66s64 { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_ickuhbqh8oalh8pegvcq, .table th.tinytable_css_ickuhbqh8oalh8pegvcq { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_hlvgykf39uofnz3aja39, .table th.tinytable_css_hlvgykf39uofnz3aja39 { text-align: left; }
+      .table td.tinytable_css_86syo4tjdmn8qh4zr5ab, .table th.tinytable_css_86syo4tjdmn8qh4zr5ab { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_0rjxpp7aurdz53f3f4mk, .table th.tinytable_css_0rjxpp7aurdz53f3f4mk { text-align: center; border-bottom: solid black 0.05em; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_0mdrs0pqn77czk946g6e" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
+        <thead>
+<tr>
+<th scope="col" align="center" colspan=1> </th>
+<th scope="col" align="center" colspan=3>Dependent Variable:<br>Turnout in 2012 Mayoral Elections</th>
+</tr>
+        <caption><span id="tab:reg91">Table 13: </span> Regression Models for Self-Reflection Exercises.</caption>
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col">Bivariate<br>(1)</th>
+                <th scope="col">Bivariate<br>(2)</th>
+                <th scope="col">Multiple<br>(3)</th>
+              </tr>
+        </thead>
+        <tfoot><tr><td colspan='4'>+ p < 0.1, * p < 0.05, ** p < 0.01, *** p < 0.001</td></tr></tfoot>
+        <tbody>
+                <tr>
+                  <td>Age (median)</td>
+                  <td>0.740***</td>
+                  <td></td>
+                  <td>0.724***</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>(0.063)</td>
+                  <td></td>
+                  <td>(0.064)</td>
+                </tr>
+                <tr>
+                  <td>Crime Rate (per 1,000)</td>
+                  <td></td>
+                  <td>-0.009**</td>
+                  <td>-0.005+</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>(0.003)</td>
+                  <td>(0.003)</td>
+                </tr>
+                <tr>
+                  <td>Constant</td>
+                  <td>7.555***</td>
+                  <td>34.900***</td>
+                  <td>8.536***</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>(2.284)</td>
+                  <td>(0.319)</td>
+                  <td>(2.340)</td>
+                </tr>
+                <tr>
+                  <td>Num.Obs.</td>
+                  <td>625</td>
+                  <td>625</td>
+                  <td>625</td>
+                </tr>
+                <tr>
+                  <td>R2</td>
+                  <td>0.180</td>
+                  <td>0.015</td>
+                  <td>0.184</td>
+                </tr>
+                <tr>
+                  <td>R2 Adj.</td>
+                  <td>0.179</td>
+                  <td>0.014</td>
+                  <td>0.182</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+<div class="stop">
+<p>Please stop here and don’t go beyond this point until we have compared notes on your answers.</p>
 </div>
-<hr />
 </div>
-<div id="video-and-rscript-1" class="section level2 unnumbered hasAnchor">
-<h2>Video and RScript<a href="mmm-bivariate-regression.html#video-and-rscript-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You can find the video introducing you to this week’s method by way of a worked example below. You can also access the code I am typing up in the video in the “Code for Data Analysis” section. I would encourage you to type it yourself, though, as then code tends to better sink into the depths of your brain 😉</p>
-<div class="bluebox">
-<details>
-<summary>
-Code for Data Analysis
-</summary>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="mmm-bivariate-regression.html#cb79-1" tabindex="-1"></a><span class="do">######################################</span></span>
-<span id="cb79-2"><a href="mmm-bivariate-regression.html#cb79-2" tabindex="-1"></a><span class="co"># MMM - Week 4 - Bivariate Regression</span></span>
-<span id="cb79-3"><a href="mmm-bivariate-regression.html#cb79-3" tabindex="-1"></a><span class="do">######################################</span></span>
-<span id="cb79-4"><a href="mmm-bivariate-regression.html#cb79-4" tabindex="-1"></a></span>
-<span id="cb79-5"><a href="mmm-bivariate-regression.html#cb79-5" tabindex="-1"></a><span class="co"># Set WD</span></span>
-<span id="cb79-6"><a href="mmm-bivariate-regression.html#cb79-6" tabindex="-1"></a><span class="fu">setwd</span>()</span>
-<span id="cb79-7"><a href="mmm-bivariate-regression.html#cb79-7" tabindex="-1"></a></span>
-<span id="cb79-8"><a href="mmm-bivariate-regression.html#cb79-8" tabindex="-1"></a><span class="co"># Load packages</span></span>
-<span id="cb79-9"><a href="mmm-bivariate-regression.html#cb79-9" tabindex="-1"></a></span>
-<span id="cb79-10"><a href="mmm-bivariate-regression.html#cb79-10" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb79-11"><a href="mmm-bivariate-regression.html#cb79-11" tabindex="-1"></a></span>
-<span id="cb79-12"><a href="mmm-bivariate-regression.html#cb79-12" tabindex="-1"></a><span class="co"># Load data set</span></span>
-<span id="cb79-13"><a href="mmm-bivariate-regression.html#cb79-13" tabindex="-1"></a></span>
-<span id="cb79-14"><a href="mmm-bivariate-regression.html#cb79-14" tabindex="-1"></a>anes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;anes_week4.csv&quot;</span>)</span>
-<span id="cb79-15"><a href="mmm-bivariate-regression.html#cb79-15" tabindex="-1"></a></span>
-<span id="cb79-16"><a href="mmm-bivariate-regression.html#cb79-16" tabindex="-1"></a><span class="co"># Visualisation</span></span>
-<span id="cb79-17"><a href="mmm-bivariate-regression.html#cb79-17" tabindex="-1"></a><span class="do">############################</span></span>
-<span id="cb79-18"><a href="mmm-bivariate-regression.html#cb79-18" tabindex="-1"></a></span>
-<span id="cb79-19"><a href="mmm-bivariate-regression.html#cb79-19" tabindex="-1"></a><span class="fu">ggplot</span>(anes, <span class="fu">aes</span>(<span class="at">x =</span> inc, <span class="at">y =</span> fttrump1)) <span class="sc">+</span></span>
-<span id="cb79-20"><a href="mmm-bivariate-regression.html#cb79-20" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb79-21"><a href="mmm-bivariate-regression.html#cb79-21" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm)</span>
-<span id="cb79-22"><a href="mmm-bivariate-regression.html#cb79-22" tabindex="-1"></a></span>
-<span id="cb79-23"><a href="mmm-bivariate-regression.html#cb79-23" tabindex="-1"></a></span>
-<span id="cb79-24"><a href="mmm-bivariate-regression.html#cb79-24" tabindex="-1"></a><span class="co"># Regression</span></span>
-<span id="cb79-25"><a href="mmm-bivariate-regression.html#cb79-25" tabindex="-1"></a><span class="do">############################</span></span>
-<span id="cb79-26"><a href="mmm-bivariate-regression.html#cb79-26" tabindex="-1"></a></span>
-<span id="cb79-27"><a href="mmm-bivariate-regression.html#cb79-27" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(fttrump1 <span class="sc">~</span> inc, <span class="at">data =</span> anes)</span>
-<span id="cb79-28"><a href="mmm-bivariate-regression.html#cb79-28" tabindex="-1"></a></span>
-<span id="cb79-29"><a href="mmm-bivariate-regression.html#cb79-29" tabindex="-1"></a>model1</span></code></pre></div>
-</details>
+<div id="exam-preparation" class="section level2 unnumbered hasAnchor">
+<h2>Exam Preparation<a href="variable-transformations-and-exam-preparation.html#exam-preparation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We will go through the solutions to the mock exam today. Please prepare this exam and note questions about the module content which we will discuss.</p>
 </div>
-<div class="video">
-<p><strong>Bivariate Regression in R</strong></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xWamPdsgtcg?si=O7ueyTWxizRNxC87" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-</iframe>
+<div id="exercises-5" class="section level2 unnumbered hasAnchor">
+<h2>Exercises<a href="variable-transformations-and-exam-preparation.html#exercises-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We will be using the <a href="files/Week%2010/crime.csv">crime.csv</a> data set to analyse attitudes and experiences of crime in England and Wales. The dataset contains several variables relating to questions asked about experience and perceptions of crime to a representative sample along with demographic details on the respondents. Data are taken from <span class="citation">University of Manchester, Cathie Marsh Institute for Social Research (CMIST), UK Data Service, Office for National Statistics (2019)</span>.</p>
+<div id="data-prep-6" class="section level3 unnumbered hasAnchor">
+<h3>Data Prep<a href="variable-transformations-and-exam-preparation.html#data-prep-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Each respondent was randomly assigned to a different module, indicated by <code>split</code> and only asked a subsection of the questions. The <code>antisocx</code> variable is part of module A and asks for a score from respondents on how much antisocial behaviour is in the neighbourhood.</p>
+<ol style="list-style-type: decimal">
+<li>Create a new data set for those who were chosen for the ‘A’ module. Call this <code>crime.a</code>.</li>
+</ol>
+</div>
+<div id="working-with-regression-analysis" class="section level3 unnumbered hasAnchor">
+<h3>Working with Regression Analysis<a href="variable-transformations-and-exam-preparation.html#working-with-regression-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Previous research has suggested men perceive more antisocial behaviour in urban areas than rural areas.
+<ol style="list-style-type: lower-alpha">
+<li>Create a linear model using only male respondents from <code>crime.a</code> with the dependent variable <code>antisocx</code> and the independent variable <code>rural2</code>. Do your findings support previous research?</li>
+<li>Test the same model using only women. How do the two models differ?</li>
+<li>Using interaction effects test whether being in a rural area has a larger effect on women’s perception of antisocial behaviour compared to men’s?</li>
+<li>How would you test whether being female has an effect on the perception of higher antisocial behaviour in urban compared to rural areas?</li>
+</ol></li>
+<li>We will now be using the full <code>crime</code> data frame. The <code>wburgl</code> variable asks respondents how worried they are about being burgled with answers ranging from “Very worried” to “Not at all worried” along with “Not applicable” and “Don’t know”.
+<ol style="list-style-type: lower-alpha">
+<li>Recode those with “Not applicable” or “Don’t know” as NAs.</li>
+<li>Using <code>agegrp7</code> and <code>wburgl</code> as continuous variables, test the hypothesis that older people are more worried about being burgled.</li>
+<li>Using a dummy variable test whether those over 65 have are more worried about burglary then those who are younger.</li>
+<li>Using dummies test whether any of the age groups differ significantly from the youngest age group.</li>
+<li>What does the intercept in each of the three models represent?</li>
+</ol></li>
+</ol>
+</div>
+<div id="transformation-of-variables" class="section level3 unnumbered hasAnchor">
+<h3>Transformation of Variables<a href="variable-transformations-and-exam-preparation.html#transformation-of-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This Section uses the <a href="files/Week%2010/london_exercises.csv">london_exercises.csv</a> data set. You are already familiar with this data set from Week 7. The data are taken from <span class="citation">London Data Store (2013)</span>.</p>
+<ol style="list-style-type: decimal">
+<li>Unemployment rate, defined as the ratio of people in full time employment to population of working age is often said to be related to crime. Generate an unemployment rate variable for each of the wards.</li>
+<li>It is theorised that unemployment is a driving factor behind crime rates.
+<ol style="list-style-type: lower-alpha">
+<li>Plot a scatter graph with unemployment rate, crime rate, and the regression line that may be used to evaluate the theory. Describe the plot and the best fit line.</li>
+<li>Plot the graph again excluding wards with a crime rate greater than 500. Describe the plot and the best fit line.</li>
+<li>Plot another graph excluding wards with a crime rate of over 500 with the crime rate log transformed. Describe the plot and the best fit line.</li>
+<li>Build both models. Interpret both including the effect size. Which model fits the data better?</li>
+</ol></li>
+</ol>
+</div>
+<div id="going-further-2" class="section level3 unnumbered hasAnchor">
+<h3>Going Further<a href="variable-transformations-and-exam-preparation.html#going-further-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you want to do a little more in R, then please return to the <a href="files/Week%2010/crime.csv">crime.csv</a> data set again.</p>
+<ol style="list-style-type: decimal">
+<li>There are five variables which ask how worried the respondent is about being the victim of various crimes:
+<ol style="list-style-type: lower-alpha">
+<li>Create an additive variable called <code>worry</code> from these variables so that a score of 0 indicates the respondent answered all “Not at all worried” and a score of 15 indicates the respondent answered all “Very worried.” (<em>Tip: Make sure to clean the variables for NAs</em>).</li>
+<li>What are the mode, mean and median for <code>worry</code>?</li>
+<li>Describe the variable <code>educat3</code>. How could it be modified to be used as a continuous variable?</li>
+<li>Using <code>educat3</code> as both a continuous and factor variable evaluate the statement “Worry about being a victim of crime is higher in those with lower education levels.”</li>
+<li>What are the <span class="math inline">\(R^2\)</span> values for the two models calculated? Which is higher? Does this make that model better than the other?</li>
+<li>Calculate <span class="math inline">\(97.5\%\)</span> confidence intervals for the coefficients for those with GCSEs and those with Degrees. What does this tell you?</li>
+</ol></li>
+</ol>
 </div>
 </div>
 </div>
@@ -546,8 +673,8 @@ Code for Data Analysis
           </div>
         </div>
       </div>
-<a href="flashcards-5.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="mmm-model-fit.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="methods-methods-methods-2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="homework.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

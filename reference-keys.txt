@@ -31,5 +31,6 @@ tab:reg2
 tab:reg3
 tab:reg4
 tab:glossary9
+tab:glossary10
 tab:glossaryfull
 going-further-1
