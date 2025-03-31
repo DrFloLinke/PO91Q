@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Glossary | PO91Q: Seminar Companion</title>
-  <meta name="description" content="Glossary | PO91Q: Seminar Companion" />
+  <title>Bivariate Regression | PO91Q: Seminar Companion</title>
+  <meta name="description" content="Bivariate Regression | PO91Q: Seminar Companion" />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Glossary | PO91Q: Seminar Companion" />
+  <meta property="og:title" content="Bivariate Regression | PO91Q: Seminar Companion" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Glossary | PO91Q: Seminar Companion" />
+  <meta name="twitter:title" content="Bivariate Regression | PO91Q: Seminar Companion" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="homework-for-week-2.html"/>
-<link rel="next" href="flashcards.html"/>
+<link rel="prev" href="mmm-significance-testing.html"/>
+<link rel="next" href="homework-for-week-9.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -358,105 +358,466 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="glossary" class="section level1 unnumbered hasAnchor">
-<h1>Glossary<a href="glossary.html#glossary" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="bivariate-regression" class="section level1 unnumbered hasAnchor">
+<h1>Bivariate Regression<a href="bivariate-regression.html#bivariate-regression" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="self-assessment-questions-4" class="section level2 unnumbered hasAnchor">
+<h2>Self-Assessment Questions<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a><a href="bivariate-regression.html#self-assessment-questions-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>What does regression do?</li>
+<li>Why is there an error term in regression?</li>
+<li>How does OLS fit the regression line?</li>
+<li>Why do we need a measure to assess goodness of fit?</li>
+<li>Consider the causality framework of Week 5. To what extent is bivariate regression helpful to establish causality?</li>
+</ol>
+<div class="stop">
+<p>Please stop here and don’t go beyond this point until we have compared notes on your answers.</p>
+</div>
+<hr />
+</div>
+<div id="exercises-core" class="section level2 unnumbered hasAnchor">
+<h2>Exercises – Core<a href="bivariate-regression.html#exercises-core" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For the exercises you will be using the data set <a href="files/Week%208/london_exercises.csv">london_exercises</a>. We will analyse patterns of crime in London<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>. The dataset contains several variables for each of the London wards, describing, amongst other things, demographics of their population and the number of crimes committed in each of them in 2015. A full codebook is provided in the following Table:</p>
 <table style="width:100%; color: black; margin-left: auto; margin-right: auto;" class="table">
 <caption>
-<span id="tab:glossary1">Table 1: </span>Glossary Week 1
+<span id="tab:londoncode">Table 9: </span>Codebook for <code>london_exercises</code> Data Set
 </caption>
 <thead>
 <tr>
 <th style="text-align:left;">
-Term
+variable
 </th>
 <th style="text-align:left;">
-Description
+label
+</th>
+<th style="text-align:left;">
+year
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left;min-width: 1.25in; ">
-analysis
+ward
 </td>
 <td style="text-align:left;">
-A detailed evaluation of data to discover their structure and relevant information to answer a research question
+Ward name
+</td>
+<td style="text-align:left;">
+n/a
 </td>
 </tr>
 <tr>
 <td style="text-align:left;min-width: 1.25in; ">
-data
+inner
 </td>
 <td style="text-align:left;">
-Derives from the Latin which means . For our purposes it is a collection of numbers (or quantities) for the purpose of analysis
+Binary classification of whether the ward is inner or outer London (based on ONS classification)
+</td>
+<td style="text-align:left;">
+n/a
 </td>
 </tr>
 <tr>
 <td style="text-align:left;min-width: 1.25in; ">
-interpretation
+area
 </td>
 <td style="text-align:left;">
-The explanation of results to answer the research question
+Land area (km2)
+</td>
+<td style="text-align:left;">
+n/a
 </td>
 </tr>
 <tr>
 <td style="text-align:left;min-width: 1.25in; ">
-literature review
+population
 </td>
 <td style="text-align:left;">
-An analytical summary of the literature relating to a particular topic with the objective of identifying a gap and thus motivating a research question
+Population 2015
+</td>
+<td style="text-align:left;">
+2015
 </td>
 </tr>
 <tr>
 <td style="text-align:left;min-width: 1.25in; ">
-method
+children
 </td>
 <td style="text-align:left;">
-A tool for systematic investigation
+Number of people aged 0-15
+</td>
+<td style="text-align:left;">
+2015
 </td>
 </tr>
 <tr>
 <td style="text-align:left;min-width: 1.25in; ">
-QM
+adults
 </td>
 <td style="text-align:left;">
-The process of testing theoretical propositions through the analysis of numerical data in order to provide an answer to a research question
+Number of people aged 16-64
+</td>
+<td style="text-align:left;">
+2015
 </td>
 </tr>
 <tr>
 <td style="text-align:left;min-width: 1.25in; ">
-research question
+elderly
 </td>
 <td style="text-align:left;">
-A specific enquiry relating to a particular topic or subject. It forms the starting point of the research cycle
+Number of people aged 65+
+</td>
+<td style="text-align:left;">
+2015
 </td>
 </tr>
 <tr>
 <td style="text-align:left;min-width: 1.25in; ">
-Social Sciences
+age
 </td>
 <td style="text-align:left;">
-Are concerned with the study of society and seek to scientifically describe and explain the behaviour of actors
+Mean age of population
+</td>
+<td style="text-align:left;">
+2013
 </td>
 </tr>
 <tr>
 <td style="text-align:left;min-width: 1.25in; ">
-theory
+education
 </td>
 <td style="text-align:left;">
-A formal set of ideas that is intended to explain why something happens or exists <span class="citation">(Oxford Learner’s Dictionaries, n.d.)</span>
+Percentage of population with level 4 qualifications and above
+</td>
+<td style="text-align:left;">
+2011
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+crime
+</td>
+<td style="text-align:left;">
+Crimes committed per 1,000 residents
+</td>
+<td style="text-align:left;">
+2015
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+employed
+</td>
+<td style="text-align:left;">
+Number of people aged 16-64 in employment
+</td>
+<td style="text-align:left;">
+2015
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+benefits
+</td>
+<td style="text-align:left;">
+Percentage of population claiming work-related benefits
+</td>
+<td style="text-align:left;">
+2011
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+migration
+</td>
+<td style="text-align:left;">
+Net rate of worker-aged migration
+</td>
+<td style="text-align:left;">
+2012
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+income
+</td>
+<td style="text-align:left;">
+Median household income (GBP)
+</td>
+<td style="text-align:left;">
+2013
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+houseprice
+</td>
+<td style="text-align:left;">
+Median house price (GBP)
+</td>
+<td style="text-align:left;">
+2014
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+cars
+</td>
+<td style="text-align:left;">
+Average number of cars per household
+</td>
+<td style="text-align:left;">
+2011
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+turnout
+</td>
+<td style="text-align:left;">
+Turnout at the 2012 mayoral election (%)
+</td>
+<td style="text-align:left;">
+2012
 </td>
 </tr>
 </tbody>
 </table>
+<p>The data are taken from <span class="citation">London Data Store (2013)</span>.</p>
+<ol style="list-style-type: decimal">
+<li>Examine the London data. What hypothesis could be tested using the variables contained in the dataset?</li>
+<li>Crime rate is defined as the number of crimes committed per 1,000 people in a given area.
+<ol style="list-style-type: lower-alpha">
+<li>Evaluate the variable’s distribution using a histogram and summary statistics.</li>
+<li>Which wards had the most crimes committed in them? Find the names of wards in which the crime rate was higher than the 99th percentile of the variable’s distribution.</li>
+</ol></li>
+<li>London is divided into 32 Boroughs and the City of London. Examine the variation in crime on Borough level.
+<ol style="list-style-type: lower-alpha">
+<li>Calculate crime rate for each of the Boroughs.</li>
+<li>Present the Borough-level crime rates using a table and a bar chart, with Borough order descending by crime rate.</li>
+</ol></li>
+<li>Unemployment rate, defined as the ratio of people in full time employment to population of working age is often said to be related to crime.
+<ol style="list-style-type: lower-alpha">
+<li>Generate an unemployment rate variable for each of the wards.</li>
+<li>Examine the distribution of the unemployment rate in a similar manner as in Exercise 2.</li>
+<li>Create a scatter plot of the relationship between unemployment and crime. Make sure to choose the right axis for each of the variables and to label the axes correctly. Interpret the results.</li>
+<li>Calculate the correlation coefficient between these two variables and interpret its value.</li>
+</ol></li>
+<li>Estimate a regression model for the relationship between unemployment rate and crime rate.
+<ol style="list-style-type: lower-alpha">
+<li>Interpret the following:
+<ol style="list-style-type: lower-roman">
+<li>The intercept and its significance.</li>
+<li>The slope and its significance.</li>
+<li>The distribution of residuals. (Use a histogram).</li>
+<li>The <span class="math inline">\(R^2\)</span> statistic.</li>
+</ol></li>
+<li>Add the regression line to the scatter plot from Exercise 4.</li>
+<li>Calculate the 95% CI for the coefficient and the slope of the model.</li>
+<li>Using the model, predict the value of crime rate for an hypothetical ward with unemployment rate of <span class="math inline">\(0.4\)</span>.</li>
+</ol></li>
+<li>It can be hypothesised that a ward with higher median household income will have a lower rate of crime compared to a ward with lower median household income.
+<ol style="list-style-type: lower-alpha">
+<li>Run a regression model testing this hypothesis.</li>
+<li>Interpret the coefficients, their significance levels, and the <span class="math inline">\(R^2\)</span> of the model.</li>
+<li>Produce a scatter plot and add the regression line.</li>
+<li>What conclusions can you draw from the model and plot with regards to the hypothesis?</li>
+</ol></li>
+<li>The mean age of a ward can be said to influence the rate of crime in that ward.
+<ol style="list-style-type: lower-alpha">
+<li>Come up with a hypothesis for the relationship between the mean age of a ward and the rate of crime in that ward. Briefly justify why you chose this hypothesis.</li>
+<li>Run a regression model testing this hypothesis and interpret the results of the model. What does this interpretation suggest about your hypothesis?</li>
+</ol></li>
+<li>It can be hypothesised that a ward with a larger number of benefit recipients will have a higher rate of crime compared to a ward with fewer benefit recipients.%8
+<ol style="list-style-type: lower-alpha">
+<li>Explain some reasons why this might be the case.</li>
+<li>Run a regression model testing this hypothesis and interpret the results of the model. What does this interpretation suggest about your hypothesis?</li>
+<li>Produce a scatter plot and add the regression line.</li>
+<li>Compare the regression model with the models from Exercises 6 and 7. Which is better able to explain the crime rate of a ward and why?</li>
+</ol></li>
+</ol>
+</div>
+<div id="going-further-in-r" class="section level2 unnumbered hasAnchor">
+<h2>Going Further in R<a href="bivariate-regression.html#going-further-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>London Boroughs are classified as either ‘Inner’ or ‘Outer’ boroughs.
+<ol style="list-style-type: lower-alpha">
+<li>Recreate the scatter plot from Question 2 in the Core Exercises, but with different colours for the inner and outer boroughs subsetting the data to wards with a crime rate of below 500.</li>
+<li>Show the observations of the inner boroughs in red, and th outer boroughs in blue.</li>
+<li>Add a line of best fit to the plot, retaining red and blue for inner and outer boroughs, respectively.</li>
+<li>Estimate a regression model for the relationship between the unemployment rate and crime rate in inner and outer boroughs.
+<ol style="list-style-type: lower-roman">
+<li>Compare the coefficients for the two models, how can you interpret these?</li>
+<li>Compare and interpret the <span class="math inline">\(R^2\)</span> statistics. Does unemployment better explain crime in inner or outer boroughs?</li>
+<li>Using the models estimated predict what the crime rate would be in an inner and outer borough given a ward with and unemployment rate of <span class="math inline">\(0.45\)</span>.</li>
+</ol></li>
+</ol></li>
+</ol>
+</div>
+<div id="going-further---conceptual" class="section level2 unnumbered hasAnchor">
+<h2>Going Further - Conceptual<a href="bivariate-regression.html#going-further---conceptual" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Recall that:</p>
+<p><span class="math display">\[\begin{equation}\label{eq:beta1est}
+\hat{\beta_{0}} =  \bar{Y} - \hat{\beta_{1}}\bar{X}
+\end{equation}\]</span></p>
+<p> 
+ </p>
+<p><span class="math display">\[\begin{equation}
+\hat{\beta_{1}} = \dfrac{\Sigma_{i=1}^{N} (X_{i}-\bar{X})(Y_{i}-\bar{Y})}{\Sigma_{i=1}^{N} (X_{i} - \bar{X})^{2}}
+\end{equation}\]</span></p>
+<p>Now consider the following data set:</p>
+<table style="width:100%; color: black; width: auto !important; margin-left: auto; margin-right: auto;" class="table">
+<caption>
+<span id="tab:regdata">Table 10: </span>Regression Data Set
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+i
+</th>
+<th style="text-align:center;">
+age (x)
+</th>
+<th style="text-align:center;">
+income (y)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+1
+</td>
+<td style="text-align:center;width: 1.25in; ">
+22
+</td>
+<td style="text-align:center;width: 1.25in; ">
+700
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+2
+</td>
+<td style="text-align:center;width: 1.25in; ">
+19
+</td>
+<td style="text-align:center;width: 1.25in; ">
+650
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+3
+</td>
+<td style="text-align:center;width: 1.25in; ">
+56
+</td>
+<td style="text-align:center;width: 1.25in; ">
+2300
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+4
+</td>
+<td style="text-align:center;width: 1.25in; ">
+45
+</td>
+<td style="text-align:center;width: 1.25in; ">
+1900
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+5
+</td>
+<td style="text-align:center;width: 1.25in; ">
+37
+</td>
+<td style="text-align:center;width: 1.25in; ">
+2000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+6
+</td>
+<td style="text-align:center;width: 1.25in; ">
+23
+</td>
+<td style="text-align:center;width: 1.25in; ">
+900
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+7
+</td>
+<td style="text-align:center;width: 1.25in; ">
+32
+</td>
+<td style="text-align:center;width: 1.25in; ">
+1000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+8
+</td>
+<td style="text-align:center;width: 1.25in; ">
+65
+</td>
+<td style="text-align:center;width: 1.25in; ">
+2500
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+9
+</td>
+<td style="text-align:center;width: 1.25in; ">
+43
+</td>
+<td style="text-align:center;width: 1.25in; ">
+1800
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+10
+</td>
+<td style="text-align:center;width: 1.25in; ">
+48
+</td>
+<td style="text-align:center;width: 1.25in; ">
+1200
+</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: decimal">
+<li>Assuming a regression model of the type <span class="math inline">\(Y_{i}=\beta_{0}+ \beta_{1}X_{i}+\epsilon_{i}\)</span>, calculate the estimators for <span class="math inline">\(\beta_{0}\)</span> and <span class="math inline">\(\beta_{1}\)</span>. Use the above Table as a guide to the required intermediary calculations.</li>
+<li>Specify the SRF and interpret the estimators of <span class="math inline">\(\beta_{0}\)</span> and <span class="math inline">\(\beta_{1}\)</span>.</li>
+<li>Calculate the coefficient of determination, <span class="math inline">\(r^{2}\)</span>, with <span class="math inline">\(\hat{Y_{i}}= \widehat{-53.1} + \widehat{39.7} X_{i}\)</span>.</li>
+</ol>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="13">
+<li id="fn13"><p>Some of the content of this worksheet is taken from <span class="citation">Reiche (forthcoming)</span>.<a href="bivariate-regression.html#fnref13" class="footnote-back">↩︎</a></p></li>
+<li id="fn14"><p>These exercises are taken from Chapter 9 in <span class="citation">Reiche (forthcoming)</span>.<a href="bivariate-regression.html#fnref14" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="homework-for-week-2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="flashcards.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="mmm-significance-testing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="homework-for-week-9.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

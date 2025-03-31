@@ -19,4 +19,7 @@ fig:causality
 fig:causalityfw
 tab:glossary5
 tab:glossary7
+tab:londoncode
+tab:regdata
+tab:glossary8
 tab:glossaryfull
