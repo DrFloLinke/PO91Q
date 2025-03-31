@@ -1,0 +1,5 @@
+fig:RStudio
+fig:RScript
+fig:RScriptex
+fig:folder
+tab:glossary1
