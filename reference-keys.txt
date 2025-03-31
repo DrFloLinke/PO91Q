@@ -3,3 +3,6 @@ fig:RScript
 fig:RScriptex
 fig:folder
 tab:glossary1
+tab:ggplot2
+tab:glossary2
+tab:glossaryfull

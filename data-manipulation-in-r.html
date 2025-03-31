@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Data Manipulation in R | PO91Q: Seminar Companion</title>
+  <meta name="description" content="Data Manipulation in R | PO91Q: Seminar Companion" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Data Manipulation in R | PO91Q: Seminar Companion" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Data Manipulation in R | PO91Q: Seminar Companion" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="flashcards.html"/>
+<link rel="next" href="exercises-2.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="companion-features.html"><a href="companion-features.html"><i class="fa fa-check"></i>Companion Features</a></li>
+<li class="chapter" data-level="" data-path="accessibility.html"><a href="accessibility.html"><i class="fa fa-check"></i>Accessibility</a></li>
+<li class="part"><span><b>Week 1</b></span></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i>Introduction to R</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#installation"><i class="fa fa-check"></i>Installation</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#r---getting-started"><i class="fa fa-check"></i>R - Getting Started</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#rscript"><i class="fa fa-check"></i>RScript</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#rscript-structure"><i class="fa fa-check"></i>RScript Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#first-steps-in-r"><i class="fa fa-check"></i>First Steps in R</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#the-working-directory"><i class="fa fa-check"></i>The Working Directory</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#r-packages"><i class="fa fa-check"></i>R Packages</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#saving"><i class="fa fa-check"></i>Saving</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercises.html"><a href="exercises.html"><i class="fa fa-check"></i>Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercises.html"><a href="exercises.html#core-exercises"><i class="fa fa-check"></i>Core Exercises</a></li>
+<li class="chapter" data-level="" data-path="exercises.html"><a href="exercises.html#going-further"><i class="fa fa-check"></i>Going Further</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="homework-for-week-2.html"><a href="homework-for-week-2.html"><i class="fa fa-check"></i>Homework for Week 2</a></li>
+<li class="chapter" data-level="" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="flashcards.html"><a href="flashcards.html"><i class="fa fa-check"></i>Flashcards</a></li>
+<li class="part"><span><b>Week 2</b></span></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html"><i class="fa fa-check"></i>Data Manipulation in R</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#self-reflection-questions-group-work"><i class="fa fa-check"></i>Self-Reflection Questions – Group Work</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#opening-your-data-set"><i class="fa fa-check"></i>Opening your Data Set</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#viewing-the-data"><i class="fa fa-check"></i>Viewing the Data</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#variable-types-in-r"><i class="fa fa-check"></i>Variable Types in R</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#nominal-variables"><i class="fa fa-check"></i>Nominal Variables</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#ordinal-variables"><i class="fa fa-check"></i>Ordinal Variables</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#binary-dummy"><i class="fa fa-check"></i>Binary Dummy</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#sub-setting-data"><i class="fa fa-check"></i>Sub-Setting Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#by-variable"><i class="fa fa-check"></i>By Variable</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#by-observation"><i class="fa fa-check"></i>By Observation</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#keep-if-a-variable-has-a-certain-value"><i class="fa fa-check"></i>Keep if a variable has a certain value</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#ordering-data"><i class="fa fa-check"></i>Ordering Data</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#grouping-data"><i class="fa fa-check"></i>Grouping Data</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#combining-ordering-and-grouping-data"><i class="fa fa-check"></i>Combining Ordering and Grouping Data</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#descriptive-statistics"><i class="fa fa-check"></i>Descriptive Statistics</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#graphs"><i class="fa fa-check"></i>Graphs</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#basic-graphs"><i class="fa fa-check"></i>Basic Graphs</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#advanced-graphs"><i class="fa fa-check"></i>Advanced Graphs</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#even-more-advanced-graphs"><i class="fa fa-check"></i>Even More Advanced Graphs</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#organising-code-in-the-rscript"><i class="fa fa-check"></i>Organising Code in the RScript</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#captions-for-tables-and-figures-in-word"><i class="fa fa-check"></i>Captions for Tables and Figures in Word</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercises-2.html"><a href="exercises-2.html"><i class="fa fa-check"></i>Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercises-2.html"><a href="exercises-2.html#exploring-the-ess-core-exercises"><i class="fa fa-check"></i>Exploring the ESS – Core Exercises</a></li>
+<li class="chapter" data-level="" data-path="exercises-2.html"><a href="exercises-2.html#exploring-the-ess-going-further"><i class="fa fa-check"></i>Exploring the ESS – Going Further</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="homework-for-week-3.html"><a href="homework-for-week-3.html"><i class="fa fa-check"></i>Homework for Week 3</a></li>
+<li class="chapter" data-level="" data-path="glossary-1.html"><a href="glossary-1.html"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="flashcards-1.html"><a href="flashcards-1.html"><i class="fa fa-check"></i>Flashcards</a></li>
+<li class="part"><span><b>Downloads</b></span></li>
+<li class="chapter" data-level="" data-path="downloads.html"><a href="downloads.html"><i class="fa fa-check"></i>Downloads</a>
+<ul>
+<li class="chapter" data-level="" data-path="downloads.html"><a href="downloads.html#documents"><i class="fa fa-check"></i>Documents</a></li>
+<li class="chapter" data-level="" data-path="downloads.html"><a href="downloads.html#data-sets"><i class="fa fa-check"></i>Data Sets</a></li>
+<li class="chapter" data-level="" data-path="downloads.html"><a href="downloads.html#r-scripts"><i class="fa fa-check"></i>R Scripts</a></li>
+</ul></li>
+<li class="part"><span><b>Glossary</b></span></li>
+<li class="chapter" data-level="" data-path="glossary-2.html"><a href="glossary-2.html"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="part"><span><b>List of References</b></span></li>
+<li class="chapter" data-level="" data-path="list-of-references.html"><a href="list-of-references.html"><i class="fa fa-check"></i>List of References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">PO91Q: Seminar Companion</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-manipulation-in-r" class="section level1 unnumbered hasAnchor">
+<h1>Data Manipulation in R<a href="data-manipulation-in-r.html#data-manipulation-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="self-reflection-questions-group-work" class="section level2 unnumbered hasAnchor">
+<h2>Self-Reflection Questions – Group Work<a href="data-manipulation-in-r.html#self-reflection-questions-group-work" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Why is it good practice to always use an RScript, rather than simply entering your commands into the console in R?</li>
+<li>Give an example of an unordered factor variable and an ordered one.</li>
+<li>Why are descriptive statistics useful?</li>
+<li>Give an example of a situation where you would need to transform a character variable into a factor variable.</li>
+<li>Why should you always create a new variable, instead of overwriting an existing one?</li>
+</ol>
+<p>These questions are taken from <span class="citation">Reiche (forthcoming)</span>.</p>
+<div class="stop">
+<p>Please stop here and don’t go beyond this point until we have compared notes on your answers.</p>
+</div>
+<hr />
+</div>
+<div id="opening-your-data-set" class="section level2 unnumbered hasAnchor">
+<h2>Opening your Data Set<a href="data-manipulation-in-r.html#opening-your-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We are now ready to open a data set in R - where it is called a “data frame”. For this, we create a new object <code>EU</code>, and ask R to read “Sheet 1”” of the Excel file “EU.xlsx” which we placed in the working directory earlier</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="data-manipulation-in-r.html#cb14-1" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb14-2"><a href="data-manipulation-in-r.html#cb14-2" tabindex="-1"></a>EU <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;EU.xlsx&quot;</span>, <span class="at">sheet=</span><span class="st">&quot;Sheet1&quot;</span>)</span></code></pre></div>
+<p>We can now use our data in R!</p>
+<div class="video">
+<p><strong>Loading the Data Set</strong></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MCScLgUH3x4?si=_kbSBL-s7cSCMouY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+</div>
+<div class="warning">
+<p>Please do not use the “Import Dataset” button in the Environment, but do this properly, manually. We sometimes need to set options for importing data sets, and the “pointy, clicky” approach won’t be able to offer you what you need.</p>
+</div>
+<hr />
+</div>
+<div id="viewing-the-data" class="section level2 unnumbered hasAnchor">
+<h2>Viewing the Data<a href="data-manipulation-in-r.html#viewing-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Unless you have been cheeky and opened the file in Excel to have a look, you have no idea yet, what the data look like. So it’s a good idea to view the data frame before doing anything with it. You can use the <code>View()</code> command to see the data frame:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="data-manipulation-in-r.html#cb15-1" tabindex="-1"></a><span class="fu">View</span>(EU)</span></code></pre></div>
+<p>If you only want to see the first 6 observations of each variable, use the <code>head()</code> command:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="data-manipulation-in-r.html#cb16-1" tabindex="-1"></a><span class="fu">head</span>(EU)</span>
+<span id="cb16-2"><a href="data-manipulation-in-r.html#cb16-2" tabindex="-1"></a><span class="co"># A tibble: 6 × 5</span></span>
+<span id="cb16-3"><a href="data-manipulation-in-r.html#cb16-3" tabindex="-1"></a>  country     pop18 access   area GDP_2015</span>
+<span id="cb16-4"><a href="data-manipulation-in-r.html#cb16-4" tabindex="-1"></a>  <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>       <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>  <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>  <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>    <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
+<span id="cb16-5"><a href="data-manipulation-in-r.html#cb16-5" tabindex="-1"></a><span class="dv">1</span> Belgium  <span class="dv">11413058</span>   <span class="dv">1951</span>  <span class="dv">30280</span>  <span class="fl">4.66e11</span></span>
+<span id="cb16-6"><a href="data-manipulation-in-r.html#cb16-6" tabindex="-1"></a><span class="dv">2</span> Bulgaria  <span class="dv">7050034</span>   <span class="dv">2007</span> <span class="dv">108560</span>  <span class="fl">1.22e11</span></span>
+<span id="cb16-7"><a href="data-manipulation-in-r.html#cb16-7" tabindex="-1"></a><span class="dv">3</span> Czechia  <span class="dv">10610055</span>   <span class="dv">2004</span>  <span class="dv">77230</span>  <span class="fl">3.19e11</span></span>
+<span id="cb16-8"><a href="data-manipulation-in-r.html#cb16-8" tabindex="-1"></a><span class="dv">4</span> Denmark   <span class="dv">5781190</span>   <span class="dv">1973</span>  <span class="dv">42430</span>  <span class="fl">2.46e11</span></span>
+<span id="cb16-9"><a href="data-manipulation-in-r.html#cb16-9" tabindex="-1"></a><span class="dv">5</span> Germany  <span class="dv">82850000</span>   <span class="dv">1951</span> <span class="dv">348540</span>  <span class="fl">3.60e12</span></span>
+<span id="cb16-10"><a href="data-manipulation-in-r.html#cb16-10" tabindex="-1"></a><span class="dv">6</span> Estonia   <span class="dv">1319133</span>   <span class="dv">2004</span>  <span class="dv">42390</span>  <span class="fl">3.51e10</span></span></code></pre></div>
+<p>If you simply want to know the variable names in the data frame, type:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="data-manipulation-in-r.html#cb17-1" tabindex="-1"></a><span class="fu">names</span>(EU)</span>
+<span id="cb17-2"><a href="data-manipulation-in-r.html#cb17-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">&quot;country&quot;</span>  <span class="st">&quot;pop18&quot;</span>    <span class="st">&quot;access&quot;</span>   <span class="st">&quot;area&quot;</span>     <span class="st">&quot;GDP_2015&quot;</span></span></code></pre></div>
+<p>The next one is a very important command, because it reveals not only the variable names and their first few observations, but also the nature of each variable (numerical, character, etc.). It is the <code>str()</code> command, where “str” stands for structure:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="data-manipulation-in-r.html#cb18-1" tabindex="-1"></a><span class="fu">str</span>(EU)</span>
+<span id="cb18-2"><a href="data-manipulation-in-r.html#cb18-2" tabindex="-1"></a>tibble [<span class="dv">28</span> × <span class="dv">5</span>] (S3<span class="sc">:</span> tbl_df<span class="sc">/</span>tbl<span class="sc">/</span>data.frame)</span>
+<span id="cb18-3"><a href="data-manipulation-in-r.html#cb18-3" tabindex="-1"></a> <span class="sc">$</span> country <span class="sc">:</span> chr [<span class="dv">1</span><span class="sc">:</span><span class="dv">28</span>] <span class="st">&quot;Belgium&quot;</span> <span class="st">&quot;Bulgaria&quot;</span> <span class="st">&quot;Czechia&quot;</span> <span class="st">&quot;Denmark&quot;</span> ...</span>
+<span id="cb18-4"><a href="data-manipulation-in-r.html#cb18-4" tabindex="-1"></a> <span class="sc">$</span> pop18   <span class="sc">:</span> num [<span class="dv">1</span><span class="sc">:</span><span class="dv">28</span>] <span class="dv">11413058</span> <span class="dv">7050034</span> <span class="dv">10610055</span> <span class="dv">5781190</span> <span class="dv">82850000</span> ...</span>
+<span id="cb18-5"><a href="data-manipulation-in-r.html#cb18-5" tabindex="-1"></a> <span class="sc">$</span> access  <span class="sc">:</span> num [<span class="dv">1</span><span class="sc">:</span><span class="dv">28</span>] <span class="dv">1951</span> <span class="dv">2007</span> <span class="dv">2004</span> <span class="dv">1973</span> <span class="dv">1951</span> ...</span>
+<span id="cb18-6"><a href="data-manipulation-in-r.html#cb18-6" tabindex="-1"></a> <span class="sc">$</span> area    <span class="sc">:</span> num [<span class="dv">1</span><span class="sc">:</span><span class="dv">28</span>] <span class="dv">30280</span> <span class="dv">108560</span> <span class="dv">77230</span> <span class="dv">42430</span> <span class="dv">348540</span> ...</span>
+<span id="cb18-7"><a href="data-manipulation-in-r.html#cb18-7" tabindex="-1"></a> <span class="sc">$</span> GDP_2015<span class="sc">:</span> num [<span class="dv">1</span><span class="sc">:</span><span class="dv">28</span>] <span class="fl">4.66e+11</span> <span class="fl">1.22e+11</span> <span class="fl">3.19e+11</span> <span class="fl">2.46e+11</span> <span class="fl">3.60e+12</span> ...</span></code></pre></div>
+<p>You can see that R has recognised most variables as numerical, one is displayed as a character variable. This is appropriate for some variables, such as <code>pop18</code>, but not for the ordinal variable <code>access</code> which is ordinal. We need to recode it, and all other variables we are unhappy with.</p>
+<hr />
+</div>
+<div id="variable-types-in-r" class="section level2 unnumbered hasAnchor">
+<h2>Variable Types in R<a href="data-manipulation-in-r.html#variable-types-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R distinguishes between a number of different variable types and here is a broad overview of them. This will help you in deciding which descriptive statistics to calculate, or into which variable type you need to recode (next step) to achieve what you want. There are two general types:</p>
+<ol style="list-style-type: decimal">
+<li><code>numeric</code> – numbers</li>
+<li><code>character</code> (also called string) – letters</li>
+</ol>
+<p>Within <code>numeric</code> we can distinguish between the following:</p>
+<ul>
+<li><code>factor</code> - nominal</li>
+<li><code>ordered factor</code> - ordinal</li>
+<li><code>integer</code> - numeric, but only “whole” numbers (discrete)</li>
+<li><code>numeric</code> - any number (interval or ratio)</li>
+</ul>
+<p>Numerical variables are already in the data set, we have to attend to nominal and ordinal variables.</p>
+<div id="nominal-variables" class="section level3 unnumbered hasAnchor">
+<h3>Nominal Variables<a href="data-manipulation-in-r.html#nominal-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In terms of the variable types we encountered in the lecture this week, the country name is a nominal variable. So we need to tell R to turn this into a factor variable. We do this as follows:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="data-manipulation-in-r.html#cb19-1" tabindex="-1"></a>EU<span class="sc">$</span>country <span class="ot">=</span> <span class="fu">factor</span>(EU<span class="sc">$</span>country)</span></code></pre></div>
+</div>
+<div id="ordinal-variables" class="section level3 unnumbered hasAnchor">
+<h3>Ordinal Variables<a href="data-manipulation-in-r.html#ordinal-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>As mentioned above, the variable <code>access</code> should be ordinal, and therefore has to be turned into an ordered factor. The command which follows is almost identical to producing a factor variable, only that we add the option <code>ordered = TRUE</code> at the end:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="data-manipulation-in-r.html#cb20-1" tabindex="-1"></a>EU<span class="sc">$</span>access_fac <span class="ot">=</span> <span class="fu">factor</span>(EU<span class="sc">$</span>access, <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>If you are familiar with European Studies, you will know that each accession wave has got a particular name. The 1973 enlargement, for example, is called the “First Enlargement”, the 1981 wave the Mediterranean Enlargement, and so forth. Let us create a new variable which uses these names instead of the years.</p>
+<p>This process is a little more involved, and requires a new package to be installed and loaded: <code>dplyr</code>. This package is part of the so-called <code>tidyverse</code> which is a suite of packages designed to make working with R simpler and commands shorter. You can install all of them by calling <code>install.packages("tidyverse")</code>. We then load the <code>tidyverse</code> with:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="data-manipulation-in-r.html#cb21-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<p>The command which follows takes a little explaining. We start by stating the dataframe we wish to assign the result to, <code>EU</code>. Then we name the data frame that contains the data we wish to manipulate, here also <code>EU</code>. The symbol which follows, <code>\%&gt;\%</code>, reads as “and then”, and is called a “pipe”. So we take the data frame <code>EU</code> “and then” carry out a function called <code>mutate</code>. It creates a new variable. This function in turn defines the new variable <code>wave</code> by recoding the variable <code>access_fac</code>. The command then specifies all categories of the “old” variable <code>access_fac</code> and what their respective values in the “new” variable <code>wave</code> are going to be. The categories in each are set in quotation marks, as they are factor / character categories.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="data-manipulation-in-r.html#cb22-1" tabindex="-1"></a>EU <span class="ot">&lt;-</span> EU <span class="sc">%&gt;%</span></span>
+<span id="cb22-2"><a href="data-manipulation-in-r.html#cb22-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">wave =</span> <span class="fu">recode</span>(access_fac, <span class="st">&#39;1951&#39;</span><span class="ot">=</span><span class="st">&quot;Founding&quot;</span>, </span>
+<span id="cb22-3"><a href="data-manipulation-in-r.html#cb22-3" tabindex="-1"></a>                       <span class="st">&#39;1973&#39;</span><span class="ot">=</span> <span class="st">&quot;First&quot;</span>,</span>
+<span id="cb22-4"><a href="data-manipulation-in-r.html#cb22-4" tabindex="-1"></a>                       <span class="st">&#39;1981&#39;</span><span class="ot">=</span> <span class="st">&quot;Mediterranean&quot;</span>,</span>
+<span id="cb22-5"><a href="data-manipulation-in-r.html#cb22-5" tabindex="-1"></a>                       <span class="st">&#39;1986&#39;</span> <span class="ot">=</span> <span class="st">&quot;Mediterranean&quot;</span>,</span>
+<span id="cb22-6"><a href="data-manipulation-in-r.html#cb22-6" tabindex="-1"></a>                       <span class="st">&#39;1995&#39;</span> <span class="ot">=</span> <span class="st">&quot;Cold War&quot;</span>,</span>
+<span id="cb22-7"><a href="data-manipulation-in-r.html#cb22-7" tabindex="-1"></a>                       <span class="st">&#39;2004&#39;</span> <span class="ot">=</span> <span class="st">&quot;Eastern&quot;</span>,</span>
+<span id="cb22-8"><a href="data-manipulation-in-r.html#cb22-8" tabindex="-1"></a>                       <span class="st">&#39;2007&#39;</span> <span class="ot">=</span> <span class="st">&quot;Eastern&quot;</span>,</span>
+<span id="cb22-9"><a href="data-manipulation-in-r.html#cb22-9" tabindex="-1"></a>                       <span class="st">&#39;2013&#39;</span> <span class="ot">=</span> <span class="st">&quot;Balkans&quot;</span>))</span></code></pre></div>
+<p>Please note that some colleagues in the department have decided to take a random dislike to the <code>tidyverse</code> as <strong>one</strong> of currently 22,250 packages<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> and might therefore require you to use base R in their modules. I am still using the <code>tidyverse</code> however, as:</p>
+<ul>
+<li>I think it is nonsense to exclude one package in particular</li>
+<li>my textbook, which is going to be the main textbook for this module once it is published, uses the <code>tidyverse</code></li>
+<li><code>GGPLOT2</code> which is part of the <code>tidyverse</code> simplifies code for generating figures significantly and will do for all but the most specific requirements</li>
+<li>a lot of support on <a href="https://stackexchange.com/">stackexchange</a> is geared toward the <code>tidyverse</code> as a lot of US-based data scientists work with this package, and so you will find it easier to solve problems</li>
+</ul>
+<p>But to keep everybody happy, I am providing the base R code whenever possible in a collapsible section like this one:</p>
+<div class="baser">
+<details>
+<summary>
+Base R Solution
+</summary>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="data-manipulation-in-r.html#cb23-1" tabindex="-1"></a>EU<span class="sc">$</span>wave <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb23-2"><a href="data-manipulation-in-r.html#cb23-2" tabindex="-1"></a>EU<span class="sc">$</span>wave[EU<span class="sc">$</span>access_fac<span class="sc">==</span><span class="st">&#39;1951&#39;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Founding&quot;</span></span>
+<span id="cb23-3"><a href="data-manipulation-in-r.html#cb23-3" tabindex="-1"></a>EU<span class="sc">$</span>wave[EU<span class="sc">$</span>access_fac<span class="sc">==</span><span class="st">&#39;1973&#39;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;First&quot;</span></span>
+<span id="cb23-4"><a href="data-manipulation-in-r.html#cb23-4" tabindex="-1"></a>EU<span class="sc">$</span>wave[EU<span class="sc">$</span>access_fac<span class="sc">==</span><span class="st">&#39;1981&#39;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Mediterranean&quot;</span></span>
+<span id="cb23-5"><a href="data-manipulation-in-r.html#cb23-5" tabindex="-1"></a>EU<span class="sc">$</span>wave[EU<span class="sc">$</span>access_fac<span class="sc">==</span><span class="st">&#39;1986&#39;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Mediterranean&quot;</span></span>
+<span id="cb23-6"><a href="data-manipulation-in-r.html#cb23-6" tabindex="-1"></a>EU<span class="sc">$</span>wave[EU<span class="sc">$</span>access_fac<span class="sc">==</span><span class="st">&#39;1995&#39;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Cold War&quot;</span></span>
+<span id="cb23-7"><a href="data-manipulation-in-r.html#cb23-7" tabindex="-1"></a>EU<span class="sc">$</span>wave[EU<span class="sc">$</span>access_fac<span class="sc">==</span><span class="st">&#39;2004&#39;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Eastern&quot;</span></span>
+<span id="cb23-8"><a href="data-manipulation-in-r.html#cb23-8" tabindex="-1"></a>EU<span class="sc">$</span>wave[EU<span class="sc">$</span>access_fac<span class="sc">==</span><span class="st">&#39;2007&#39;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Eastern&quot;</span></span>
+<span id="cb23-9"><a href="data-manipulation-in-r.html#cb23-9" tabindex="-1"></a>EU<span class="sc">$</span>wave[EU<span class="sc">$</span>access_fac<span class="sc">==</span><span class="st">&#39;2013&#39;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Balkans&quot;</span></span>
+<span id="cb23-10"><a href="data-manipulation-in-r.html#cb23-10" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="data-manipulation-in-r.html#cb23-11" tabindex="-1"></a>EU<span class="sc">$</span>wave <span class="ot">&lt;-</span> <span class="fu">factor</span>(EU<span class="sc">$</span>wave, <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+Here, we first create a new, empty variable called <code>wave</code> in the <code>EU</code> data set. We then create new values , for example <code>Founding</code> in the variable <code>EU$wave</code> for the condition (this is what the square brackets <code>[ ]</code> do) that the variable <code>access_fac</code> in the <code>EU</code> data set, equals a specific value. For <code>Founding</code> this is is <code>1951</code>. The last step is to turn the <code>wave</code> variable into an ordered factor.
+</details>
+</div>
+<p>But back to the recoding exercise itself. As the original variable <code>access_fac</code> was already an ordered factor, R (or the <code>mutate</code> function to be precise) also returns <code>wave</code> as an ordered factor. Had we not done this, <code>wave</code> would have been an unorderd factor (aka nominal variable). You can specify in an option to the <code>mutate</code> function whether you want the factor to be ordered or not:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="data-manipulation-in-r.html#cb24-1" tabindex="-1"></a>EU <span class="ot">&lt;-</span> EU <span class="sc">%&gt;%</span></span>
+<span id="cb24-2"><a href="data-manipulation-in-r.html#cb24-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">wave =</span> <span class="fu">recode</span>(access_fac, <span class="st">&#39;1951&#39;</span><span class="ot">=</span><span class="st">&quot;Founding&quot;</span>, </span>
+<span id="cb24-3"><a href="data-manipulation-in-r.html#cb24-3" tabindex="-1"></a>                       <span class="st">&#39;1973&#39;</span><span class="ot">=</span> <span class="st">&quot;First&quot;</span>,</span>
+<span id="cb24-4"><a href="data-manipulation-in-r.html#cb24-4" tabindex="-1"></a>                       <span class="st">&#39;1981&#39;</span><span class="ot">=</span> <span class="st">&quot;Mediterranean&quot;</span>,</span>
+<span id="cb24-5"><a href="data-manipulation-in-r.html#cb24-5" tabindex="-1"></a>                       <span class="st">&#39;1986&#39;</span> <span class="ot">=</span> <span class="st">&quot;Mediterranean&quot;</span>,</span>
+<span id="cb24-6"><a href="data-manipulation-in-r.html#cb24-6" tabindex="-1"></a>                       <span class="st">&#39;1995&#39;</span> <span class="ot">=</span> <span class="st">&quot;Cold War&quot;</span>,</span>
+<span id="cb24-7"><a href="data-manipulation-in-r.html#cb24-7" tabindex="-1"></a>                       <span class="st">&#39;2004&#39;</span> <span class="ot">=</span> <span class="st">&quot;Eastern&quot;</span>,</span>
+<span id="cb24-8"><a href="data-manipulation-in-r.html#cb24-8" tabindex="-1"></a>                       <span class="st">&#39;2007&#39;</span> <span class="ot">=</span> <span class="st">&quot;Eastern&quot;</span>,</span>
+<span id="cb24-9"><a href="data-manipulation-in-r.html#cb24-9" tabindex="-1"></a>                       <span class="st">&#39;2013&#39;</span> <span class="ot">=</span> <span class="st">&quot;Balkans&quot;</span>), <span class="at">ordered=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<p>An alternative procedure, producing exactly the same result is to use the <code>cut()</code> function on the <code>access</code> variable which literally cuts up a variable into chunks at the points we specify. This only works on numerical variables! We are fine to use it here, as we didn’t change <code>access</code>, and it is still numerical. Incidentally, this shows you the benefit of always creating a new variable instead of overwriting the original: there is no “back” button in R, if you mess up, you will have the pleasure to start from the beginning.</p>
+<p>Again, we use the <code>mutate</code> function, this time naming our new variable <code>wave1</code> (so as not to overwrite the <code>wave</code> variable we created with the <code>recode()</code> function). This time, we cut up the original variable at the accession years, and specify the levels, this time as <code>labels</code>. Labels denominate the output, whilst <code>level</code> are input. A factor only knows <code>levels</code> which is set by the <code>label</code> function. Here we have already created the levels with the <code>cut()</code> function, and assign labels to these in the second step.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="data-manipulation-in-r.html#cb25-1" tabindex="-1"></a>EU <span class="ot">&lt;-</span> EU <span class="sc">%&gt;%</span> </span>
+<span id="cb25-2"><a href="data-manipulation-in-r.html#cb25-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">wave1=</span><span class="fu">cut</span>(access, </span>
+<span id="cb25-3"><a href="data-manipulation-in-r.html#cb25-3" tabindex="-1"></a>                  <span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">1950</span>, <span class="dv">1951</span>, <span class="dv">1973</span>, <span class="dv">1986</span>, <span class="dv">1995</span>, <span class="dv">2007</span>, <span class="dv">2013</span>), </span>
+<span id="cb25-4"><a href="data-manipulation-in-r.html#cb25-4" tabindex="-1"></a>                  <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Founding&quot;</span>,<span class="st">&quot;First&quot;</span>,</span>
+<span id="cb25-5"><a href="data-manipulation-in-r.html#cb25-5" tabindex="-1"></a>                           <span class="st">&quot;Mediterranean&quot;</span>, </span>
+<span id="cb25-6"><a href="data-manipulation-in-r.html#cb25-6" tabindex="-1"></a>                           <span class="st">&quot;Cold War&quot;</span>, </span>
+<span id="cb25-7"><a href="data-manipulation-in-r.html#cb25-7" tabindex="-1"></a>                           <span class="st">&quot;Eastern&quot;</span>, </span>
+<span id="cb25-8"><a href="data-manipulation-in-r.html#cb25-8" tabindex="-1"></a>                           <span class="st">&quot;Balkans&quot;</span>))) </span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="data-manipulation-in-r.html#cb26-1" tabindex="-1"></a><span class="fu">levels</span>(EU<span class="sc">$</span>wave)</span>
+<span id="cb26-2"><a href="data-manipulation-in-r.html#cb26-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">&quot;Founding&quot;</span>      <span class="st">&quot;First&quot;</span>         <span class="st">&quot;Mediterranean&quot;</span> <span class="st">&quot;Cold War&quot;</span>      <span class="st">&quot;Eastern&quot;</span>      </span>
+<span id="cb26-3"><a href="data-manipulation-in-r.html#cb26-3" tabindex="-1"></a>[<span class="dv">6</span>] <span class="st">&quot;Balkans&quot;</span>      </span></code></pre></div>
+<div class="baser">
+<details>
+<summary>
+Base R Solution
+</summary>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="data-manipulation-in-r.html#cb27-1" tabindex="-1"></a>EU<span class="sc">$</span>wave <span class="ot">&lt;-</span> <span class="fu">cut</span>(EU<span class="sc">$</span>access, </span>
+<span id="cb27-2"><a href="data-manipulation-in-r.html#cb27-2" tabindex="-1"></a>                  <span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">1950</span>, <span class="dv">1951</span>, <span class="dv">1973</span>, <span class="dv">1986</span>, <span class="dv">1995</span>, <span class="dv">2007</span>, <span class="dv">2013</span>), </span>
+<span id="cb27-3"><a href="data-manipulation-in-r.html#cb27-3" tabindex="-1"></a>                  <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Founding&quot;</span>,<span class="st">&quot;First&quot;</span>,</span>
+<span id="cb27-4"><a href="data-manipulation-in-r.html#cb27-4" tabindex="-1"></a>                           <span class="st">&quot;Mediterranean&quot;</span>, </span>
+<span id="cb27-5"><a href="data-manipulation-in-r.html#cb27-5" tabindex="-1"></a>                           <span class="st">&quot;Cold War&quot;</span>, </span>
+<span id="cb27-6"><a href="data-manipulation-in-r.html#cb27-6" tabindex="-1"></a>                           <span class="st">&quot;Eastern&quot;</span>, </span>
+<span id="cb27-7"><a href="data-manipulation-in-r.html#cb27-7" tabindex="-1"></a>                           <span class="st">&quot;Balkans&quot;</span>))</span></code></pre></div>
+</details>
+</div>
+<div class="video">
+<p><strong>Recoding a Factor Variable</strong></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9_5IeNL3VP8?si=xVrgNuWG0L9kDZNo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+</div>
+<div class="video">
+<p><strong>Recoding Ordered Factor Variables</strong></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_WfmZprErV0?si=F6rRSJAkCvqBe_AT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+</div>
+</div>
+<div id="binary-dummy" class="section level3 unnumbered hasAnchor">
+<h3>Binary Dummy<a href="data-manipulation-in-r.html#binary-dummy" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Very often in political science we have yes/no scenarios, such as democracy yes or no, civil war, yes or no, etc. To analyse these scenarios, we can create so-called “dummy variables”. In the present example, let’s specify for each country whether it has been a founding member of the EU. It is a factor variable and so we do this exactly the same way as our initial recoding of the wave variable above:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="data-manipulation-in-r.html#cb28-1" tabindex="-1"></a>EU <span class="ot">&lt;-</span> EU <span class="sc">%&gt;%</span></span>
+<span id="cb28-2"><a href="data-manipulation-in-r.html#cb28-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">founding =</span> <span class="fu">recode</span>(access_fac, <span class="st">&#39;1951&#39;</span><span class="ot">=</span><span class="st">&quot;Yes&quot;</span>, </span>
+<span id="cb28-3"><a href="data-manipulation-in-r.html#cb28-3" tabindex="-1"></a>                       <span class="st">&#39;1973&#39;</span> <span class="ot">=</span> <span class="st">&quot;No&quot;</span>,</span>
+<span id="cb28-4"><a href="data-manipulation-in-r.html#cb28-4" tabindex="-1"></a>                       <span class="st">&#39;1981&#39;</span> <span class="ot">=</span> <span class="st">&quot;No&quot;</span>,</span>
+<span id="cb28-5"><a href="data-manipulation-in-r.html#cb28-5" tabindex="-1"></a>                       <span class="st">&#39;1986&#39;</span> <span class="ot">=</span> <span class="st">&quot;No&quot;</span>,</span>
+<span id="cb28-6"><a href="data-manipulation-in-r.html#cb28-6" tabindex="-1"></a>                       <span class="st">&#39;1995&#39;</span> <span class="ot">=</span> <span class="st">&quot;No&quot;</span>,</span>
+<span id="cb28-7"><a href="data-manipulation-in-r.html#cb28-7" tabindex="-1"></a>                       <span class="st">&#39;2004&#39;</span> <span class="ot">=</span> <span class="st">&quot;No&quot;</span>,</span>
+<span id="cb28-8"><a href="data-manipulation-in-r.html#cb28-8" tabindex="-1"></a>                       <span class="st">&#39;2007&#39;</span> <span class="ot">=</span> <span class="st">&quot;No&quot;</span>,</span>
+<span id="cb28-9"><a href="data-manipulation-in-r.html#cb28-9" tabindex="-1"></a>                       <span class="st">&#39;2013&#39;</span> <span class="ot">=</span> <span class="st">&quot;No&quot;</span>))</span>
+<span id="cb28-10"><a href="data-manipulation-in-r.html#cb28-10" tabindex="-1"></a></span>
+<span id="cb28-11"><a href="data-manipulation-in-r.html#cb28-11" tabindex="-1"></a><span class="co"># OR, much shorter</span></span>
+<span id="cb28-12"><a href="data-manipulation-in-r.html#cb28-12" tabindex="-1"></a></span>
+<span id="cb28-13"><a href="data-manipulation-in-r.html#cb28-13" tabindex="-1"></a>EU <span class="ot">&lt;-</span> EU <span class="sc">%&gt;%</span> </span>
+<span id="cb28-14"><a href="data-manipulation-in-r.html#cb28-14" tabindex="-1"></a>   <span class="fu">mutate</span>(<span class="at">founding =</span> <span class="fu">factor</span>(<span class="fu">ifelse</span>(access_fac<span class="sc">==</span><span class="st">&quot;1951&quot;</span>, <span class="st">&quot;Yes&quot;</span>, <span class="st">&quot;No&quot;</span>), </span>
+<span id="cb28-15"><a href="data-manipulation-in-r.html#cb28-15" tabindex="-1"></a>                              <span class="at">levels =</span><span class="fu">c</span>(<span class="st">&quot;Yes&quot;</span>, <span class="st">&quot;No&quot;</span>)))</span>
+<span id="cb28-16"><a href="data-manipulation-in-r.html#cb28-16" tabindex="-1"></a></span>
+<span id="cb28-17"><a href="data-manipulation-in-r.html#cb28-17" tabindex="-1"></a><span class="co"># the result is the same</span></span>
+<span id="cb28-18"><a href="data-manipulation-in-r.html#cb28-18" tabindex="-1"></a></span>
+<span id="cb28-19"><a href="data-manipulation-in-r.html#cb28-19" tabindex="-1"></a><span class="fu">str</span>(EU<span class="sc">$</span>founding)</span>
+<span id="cb28-20"><a href="data-manipulation-in-r.html#cb28-20" tabindex="-1"></a> Factor w<span class="sc">/</span> <span class="dv">2</span> levels <span class="st">&quot;Yes&quot;</span>,<span class="st">&quot;No&quot;</span><span class="sc">:</span> <span class="dv">1</span> <span class="dv">2</span> <span class="dv">2</span> <span class="dv">2</span> <span class="dv">1</span> <span class="dv">2</span> <span class="dv">2</span> <span class="dv">2</span> <span class="dv">2</span> <span class="dv">1</span> ...</span></code></pre></div>
+<div class="baser">
+<details>
+<summary>
+Base R Solution
+</summary>
+<p>Using <span style="color:black"><code>ifelse</code></span>, this is very similar, only the pipe disappears:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="data-manipulation-in-r.html#cb29-1" tabindex="-1"></a>EU<span class="sc">$</span>founding <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">ifelse</span>(EU<span class="sc">$</span>access_fac<span class="sc">==</span><span class="st">&quot;1951&quot;</span>, <span class="st">&quot;Yes&quot;</span>, <span class="st">&quot;No&quot;</span>), </span>
+<span id="cb29-2"><a href="data-manipulation-in-r.html#cb29-2" tabindex="-1"></a>                              <span class="at">levels =</span><span class="fu">c</span>(<span class="st">&quot;Yes&quot;</span>, <span class="st">&quot;No&quot;</span>))</span></code></pre></div>
+</details>
+</div>
+<p>The <code>ifelse</code> function is very handy, and is therefore worth explaining in a little more detail. It reads as <code>ifelse('condition', 'if condition met, then', 'otherwise')</code>. So, the above code reads as “if the value of the variable <code>access_fac</code> is equal to 1951, then code the observation as ‘Yes’, otherwise as ‘No’”.</p>
+<hr />
+</div>
+</div>
+<div id="sub-setting-data" class="section level2 unnumbered hasAnchor">
+<h2>Sub-Setting Data<a href="data-manipulation-in-r.html#sub-setting-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When we start analysing data, we rarely need all data at the same time. We might not need some variables, at all, for example, or we only want to work with certain observations, such as those countries in the “founding” wave. In these cases, we can subset the data. I will show you some examples of subsetting now.</p>
+<div id="by-variable" class="section level3 unnumbered hasAnchor">
+<h3>By Variable<a href="data-manipulation-in-r.html#by-variable" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you are sure you won’t need a variable (remember, there is no back button), you can simply drop (i.e. delete) it. Let’s do this with the <code>area</code> variable:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="data-manipulation-in-r.html#cb30-1" tabindex="-1"></a>EU<span class="sc">$</span>area <span class="ot">&lt;-</span> <span class="cn">NULL</span></span></code></pre></div>
+<p>If we are dropping multiple variables, we can either perform this operation each time, or use another command which allows us to operate with multiple variables at the same time. The <code>select()</code> command comes from the <code>tidyverse</code> package and specifies which variables we wish to keep:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="data-manipulation-in-r.html#cb31-1" tabindex="-1"></a>EU_pop <span class="ot">&lt;-</span> <span class="fu">select</span>(EU, country, pop18, access_fac, founding)</span></code></pre></div>
+<p>This creates a new data frame called <code>EU_pop</code> containing only the variables <code>country</code>, <code>pop18</code>, <code>access_fac</code>, and <code>founding</code>.</p>
+<div class="baser">
+<details>
+<summary>
+Base R Solution
+</summary>
+<p>The package documentation offers some <a href="https://dplyr.tidyverse.org/articles/base.html">basic instructions</a> how to convert the <span style="color:black"><code>tidyverse</code></span> (or <span style="color:black"><code>dyplyr</code></span>, to be precise) code into base R. But here is the solution for the previous code chunk:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="data-manipulation-in-r.html#cb32-1" tabindex="-1"></a>EU_pop <span class="ot">&lt;-</span> <span class="fu">subset</span>(EU, country, pop18, access_fac, founding)</span></code></pre></div>
+</details>
+</div>
+<p>We can, however, use the same command and tell R which variables to drop by adding a minus sign in from of the variables we want to delete. The following command produces exactly the same result as the one before:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="data-manipulation-in-r.html#cb33-1" tabindex="-1"></a>EU_pop1 <span class="ot">&lt;-</span> <span class="fu">select</span>(EU, <span class="sc">-</span>access, <span class="sc">-</span>GDP_2015)</span></code></pre></div>
+</div>
+<div id="by-observation" class="section level3 unnumbered hasAnchor">
+<h3>By Observation<a href="data-manipulation-in-r.html#by-observation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Instead of dropping and keeping variables, we can do the same thing to individual observations. Here, we use the <code>slice()</code> command (like a cake) and specify which slices we want to drop or keep. For example to drop the Benelux countries we would delete observations 1, 16 and 19:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="data-manipulation-in-r.html#cb34-1" tabindex="-1"></a>EU_nobenelux <span class="ot">&lt;-</span> <span class="fu">slice</span>(EU, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">16</span>, <span class="sc">-</span><span class="dv">19</span>)</span></code></pre></div>
+<div class="baser">
+<details>
+<summary>
+Base R Solution
+</summary>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="data-manipulation-in-r.html#cb35-1" tabindex="-1"></a>EU_pop <span class="ot">&lt;-</span> EU[<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">16</span>, <span class="sc">-</span><span class="dv">19</span>),]</span></code></pre></div>
+</details>
+</div>
+<p>Alternatively, if we were only interested in Benelux countries we would subset to only those observations:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="data-manipulation-in-r.html#cb36-1" tabindex="-1"></a>EU_benelux <span class="ot">&lt;-</span> <span class="fu">slice</span>(EU, <span class="dv">1</span>, <span class="dv">16</span>, <span class="dv">19</span>)</span></code></pre></div>
+<div class="baser">
+<details>
+<summary>
+Base R Solution
+</summary>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="data-manipulation-in-r.html#cb37-1" tabindex="-1"></a>EU_pop <span class="ot">&lt;-</span> EU[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">16</span>, <span class="dv">19</span>),]</span></code></pre></div>
+</details>
+</div>
+</div>
+<div id="keep-if-a-variable-has-a-certain-value" class="section level3 unnumbered hasAnchor">
+<h3>Keep if a variable has a certain value<a href="data-manipulation-in-r.html#keep-if-a-variable-has-a-certain-value" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>One of the most useful commands is <code>filter()</code>, as it allows us to keep all observations for which the value of a variable is of a particular number. For example if we wanted to conduct an analysis with all countries which have a population in excess of 10 million we could subset by:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="data-manipulation-in-r.html#cb38-1" tabindex="-1"></a>EU_pop_large <span class="ot">&lt;-</span> <span class="fu">filter</span>(EU, pop18 <span class="sc">&gt;</span> <span class="dv">10000000</span>)</span></code></pre></div>
+<div class="baser">
+<details>
+<summary>
+Base R Solution
+</summary>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="data-manipulation-in-r.html#cb39-1" tabindex="-1"></a>EU_pop_large <span class="ot">&lt;-</span> <span class="fu">subset</span>(EU, pop18 <span class="sc">&gt;</span> <span class="dv">10000000</span>)</span></code></pre></div>
+</details>
+</div>
+<p>Here is a list of some operators you can use for this purpose:</p>
+<table style="width:45%; color: black; margin-left: auto; margin-right: auto;" class="table">
+<thead>
+<tr>
+<th style="text-align:left;">
+Operator
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;min-width: 0.25in; ">
+&lt;
+</td>
+<td style="text-align:left;">
+less than
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 0.25in; ">
+&lt;=
+</td>
+<td style="text-align:left;">
+less than or equal to
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 0.25in; ">
+&gt;
+</td>
+<td style="text-align:left;">
+greater than
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 0.25in; ">
+&gt;=
+</td>
+<td style="text-align:left;">
+greater than or equal to
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 0.25in; ">
+==
+</td>
+<td style="text-align:left;">
+exactly equal to
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 0.25in; ">
+!=
+</td>
+<td style="text-align:left;">
+not equal to
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 0.25in; ">
+!x
+</td>
+<td style="text-align:left;">
+Not x
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 0.25in; ">
+x | y
+</td>
+<td style="text-align:left;">
+x OR y
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 0.25in; ">
+x &amp; y
+</td>
+<td style="text-align:left;">
+x AND y
+</td>
+</tr>
+</tbody>
+</table>
+<div class="video">
+<p><strong>Subsetting Data</strong></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6lsmiXvWK-U?si=uizPzqBH5g5An6Ki" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+</div>
+<hr />
+</div>
+</div>
+<div id="ordering-data" class="section level2 unnumbered hasAnchor">
+<h2>Ordering Data<a href="data-manipulation-in-r.html#ordering-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The data set in its original state is purposely not ordered by any criterion, such as alphabetical order of countries, etc. But we can use R to do exactly that. Let us work with a subset containing only three variables:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="data-manipulation-in-r.html#cb40-1" tabindex="-1"></a>EU_subset <span class="ot">&lt;-</span> <span class="fu">select</span>(EU, country, pop18, access)</span></code></pre></div>
+<p>It would be lovely if the command for ordering data would be called <code>order()</code>, but it is called <code>arrange()</code><a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>. Let’s order countries by ascending population in a new data frame called <code>eu_order</code>:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="data-manipulation-in-r.html#cb41-1" tabindex="-1"></a>eu_order <span class="ot">&lt;-</span> <span class="fu">arrange</span>(EU_subset, pop18)</span></code></pre></div>
+<div class="baser">
+<details>
+<summary>
+Base R Solution
+</summary>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="data-manipulation-in-r.html#cb42-1" tabindex="-1"></a>eu_order <span class="ot">&lt;-</span> EU_subset[<span class="fu">order</span>(EU_subset<span class="sc">$</span>pop18),]</span></code></pre></div>
+</details>
+</div>
+<p>We can now display the first 10 rows with the following command:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="data-manipulation-in-r.html#cb43-1" tabindex="-1"></a>eu_order[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,]</span>
+<span id="cb43-2"><a href="data-manipulation-in-r.html#cb43-2" tabindex="-1"></a><span class="co"># A tibble: 10 × 3</span></span>
+<span id="cb43-3"><a href="data-manipulation-in-r.html#cb43-3" tabindex="-1"></a>   country      pop18 access</span>
+<span id="cb43-4"><a href="data-manipulation-in-r.html#cb43-4" tabindex="-1"></a>   <span class="sc">&lt;</span>fct<span class="sc">&gt;</span>        <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>  <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
+<span id="cb43-5"><a href="data-manipulation-in-r.html#cb43-5" tabindex="-1"></a> <span class="dv">1</span> Malta       <span class="dv">475701</span>   <span class="dv">2004</span></span>
+<span id="cb43-6"><a href="data-manipulation-in-r.html#cb43-6" tabindex="-1"></a> <span class="dv">2</span> Luxembourg  <span class="dv">602005</span>   <span class="dv">1951</span></span>
+<span id="cb43-7"><a href="data-manipulation-in-r.html#cb43-7" tabindex="-1"></a> <span class="dv">3</span> Cyprus      <span class="dv">864236</span>   <span class="dv">2004</span></span>
+<span id="cb43-8"><a href="data-manipulation-in-r.html#cb43-8" tabindex="-1"></a> <span class="dv">4</span> Estonia    <span class="dv">1319133</span>   <span class="dv">2004</span></span>
+<span id="cb43-9"><a href="data-manipulation-in-r.html#cb43-9" tabindex="-1"></a> <span class="dv">5</span> Latvia     <span class="dv">1934379</span>   <span class="dv">2004</span></span>
+<span id="cb43-10"><a href="data-manipulation-in-r.html#cb43-10" tabindex="-1"></a> <span class="dv">6</span> Slovenia   <span class="dv">2066880</span>   <span class="dv">2004</span></span>
+<span id="cb43-11"><a href="data-manipulation-in-r.html#cb43-11" tabindex="-1"></a> <span class="dv">7</span> Lithuania  <span class="dv">2808901</span>   <span class="dv">2004</span></span>
+<span id="cb43-12"><a href="data-manipulation-in-r.html#cb43-12" tabindex="-1"></a> <span class="dv">8</span> Croatia    <span class="dv">4105493</span>   <span class="dv">2013</span></span>
+<span id="cb43-13"><a href="data-manipulation-in-r.html#cb43-13" tabindex="-1"></a> <span class="dv">9</span> Ireland    <span class="dv">4838259</span>   <span class="dv">1973</span></span>
+<span id="cb43-14"><a href="data-manipulation-in-r.html#cb43-14" tabindex="-1"></a><span class="dv">10</span> Slovakia   <span class="dv">5443120</span>   <span class="dv">2004</span></span></code></pre></div>
+<p>The content in the brackets refers to the rows (before the comma), and to the columns (after the comma). As we only want certain rows and displaying all variables, I have left the space after the comma blank.</p>
+<p>We can do the same thing in descending order by calling:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="data-manipulation-in-r.html#cb44-1" tabindex="-1"></a>eu_order <span class="ot">&lt;-</span> <span class="fu">arrange</span>(EU_subset, <span class="fu">desc</span>(pop18))</span>
+<span id="cb44-2"><a href="data-manipulation-in-r.html#cb44-2" tabindex="-1"></a>eu_order[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,]</span>
+<span id="cb44-3"><a href="data-manipulation-in-r.html#cb44-3" tabindex="-1"></a><span class="co"># A tibble: 10 × 3</span></span>
+<span id="cb44-4"><a href="data-manipulation-in-r.html#cb44-4" tabindex="-1"></a>   country           pop18 access</span>
+<span id="cb44-5"><a href="data-manipulation-in-r.html#cb44-5" tabindex="-1"></a>   <span class="sc">&lt;</span>fct<span class="sc">&gt;</span>             <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>  <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
+<span id="cb44-6"><a href="data-manipulation-in-r.html#cb44-6" tabindex="-1"></a> <span class="dv">1</span> Germany        <span class="dv">82850000</span>   <span class="dv">1951</span></span>
+<span id="cb44-7"><a href="data-manipulation-in-r.html#cb44-7" tabindex="-1"></a> <span class="dv">2</span> France         <span class="dv">67221943</span>   <span class="dv">1951</span></span>
+<span id="cb44-8"><a href="data-manipulation-in-r.html#cb44-8" tabindex="-1"></a> <span class="dv">3</span> United Kingdom <span class="dv">66238007</span>   <span class="dv">1973</span></span>
+<span id="cb44-9"><a href="data-manipulation-in-r.html#cb44-9" tabindex="-1"></a> <span class="dv">4</span> Italy          <span class="dv">60483973</span>   <span class="dv">1951</span></span>
+<span id="cb44-10"><a href="data-manipulation-in-r.html#cb44-10" tabindex="-1"></a> <span class="dv">5</span> Spain          <span class="dv">46659302</span>   <span class="dv">1986</span></span>
+<span id="cb44-11"><a href="data-manipulation-in-r.html#cb44-11" tabindex="-1"></a> <span class="dv">6</span> Poland         <span class="dv">37976687</span>   <span class="dv">2004</span></span>
+<span id="cb44-12"><a href="data-manipulation-in-r.html#cb44-12" tabindex="-1"></a> <span class="dv">7</span> Romania        <span class="dv">19523621</span>   <span class="dv">2007</span></span>
+<span id="cb44-13"><a href="data-manipulation-in-r.html#cb44-13" tabindex="-1"></a> <span class="dv">8</span> Netherlands    <span class="dv">17181084</span>   <span class="dv">1951</span></span>
+<span id="cb44-14"><a href="data-manipulation-in-r.html#cb44-14" tabindex="-1"></a> <span class="dv">9</span> Belgium        <span class="dv">11413058</span>   <span class="dv">1951</span></span>
+<span id="cb44-15"><a href="data-manipulation-in-r.html#cb44-15" tabindex="-1"></a><span class="dv">10</span> Greece         <span class="dv">10738868</span>   <span class="dv">1981</span></span></code></pre></div>
+<div class="baser">
+<details>
+<summary>
+Base R Solution
+</summary>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="data-manipulation-in-r.html#cb45-1" tabindex="-1"></a>eu_order <span class="ot">&lt;-</span> EU_subset[<span class="fu">order</span>(<span class="fu">desc</span>(EU_subset<span class="sc">$</span>pop18)),]</span></code></pre></div>
+</details>
+</div>
+<p>A neat feature of R is that it allows us to order observations by more than one variable. So for example, we could order them by ascending accession wave first, and then by ascending population in 2018 as follows:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="data-manipulation-in-r.html#cb46-1" tabindex="-1"></a>eu_order <span class="ot">&lt;-</span> <span class="fu">arrange</span>(EU_subset, access, pop18)</span>
+<span id="cb46-2"><a href="data-manipulation-in-r.html#cb46-2" tabindex="-1"></a></span>
+<span id="cb46-3"><a href="data-manipulation-in-r.html#cb46-3" tabindex="-1"></a>eu_order[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,]</span>
+<span id="cb46-4"><a href="data-manipulation-in-r.html#cb46-4" tabindex="-1"></a><span class="co"># A tibble: 10 × 3</span></span>
+<span id="cb46-5"><a href="data-manipulation-in-r.html#cb46-5" tabindex="-1"></a>   country           pop18 access</span>
+<span id="cb46-6"><a href="data-manipulation-in-r.html#cb46-6" tabindex="-1"></a>   <span class="sc">&lt;</span>fct<span class="sc">&gt;</span>             <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>  <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
+<span id="cb46-7"><a href="data-manipulation-in-r.html#cb46-7" tabindex="-1"></a> <span class="dv">1</span> Luxembourg       <span class="dv">602005</span>   <span class="dv">1951</span></span>
+<span id="cb46-8"><a href="data-manipulation-in-r.html#cb46-8" tabindex="-1"></a> <span class="dv">2</span> Belgium        <span class="dv">11413058</span>   <span class="dv">1951</span></span>
+<span id="cb46-9"><a href="data-manipulation-in-r.html#cb46-9" tabindex="-1"></a> <span class="dv">3</span> Netherlands    <span class="dv">17181084</span>   <span class="dv">1951</span></span>
+<span id="cb46-10"><a href="data-manipulation-in-r.html#cb46-10" tabindex="-1"></a> <span class="dv">4</span> Italy          <span class="dv">60483973</span>   <span class="dv">1951</span></span>
+<span id="cb46-11"><a href="data-manipulation-in-r.html#cb46-11" tabindex="-1"></a> <span class="dv">5</span> France         <span class="dv">67221943</span>   <span class="dv">1951</span></span>
+<span id="cb46-12"><a href="data-manipulation-in-r.html#cb46-12" tabindex="-1"></a> <span class="dv">6</span> Germany        <span class="dv">82850000</span>   <span class="dv">1951</span></span>
+<span id="cb46-13"><a href="data-manipulation-in-r.html#cb46-13" tabindex="-1"></a> <span class="dv">7</span> Ireland         <span class="dv">4838259</span>   <span class="dv">1973</span></span>
+<span id="cb46-14"><a href="data-manipulation-in-r.html#cb46-14" tabindex="-1"></a> <span class="dv">8</span> Denmark         <span class="dv">5781190</span>   <span class="dv">1973</span></span>
+<span id="cb46-15"><a href="data-manipulation-in-r.html#cb46-15" tabindex="-1"></a> <span class="dv">9</span> United Kingdom <span class="dv">66238007</span>   <span class="dv">1973</span></span>
+<span id="cb46-16"><a href="data-manipulation-in-r.html#cb46-16" tabindex="-1"></a><span class="dv">10</span> Greece         <span class="dv">10738868</span>   <span class="dv">1981</span></span></code></pre></div>
+<div class="baser">
+<details>
+<summary>
+Base R Solution
+</summary>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="data-manipulation-in-r.html#cb47-1" tabindex="-1"></a>eu_order <span class="ot">&lt;-</span> EU_subset[<span class="fu">order</span>(EU_subset<span class="sc">$</span>access,EU_subset<span class="sc">$</span>pop18),]</span>
+<span id="cb47-2"><a href="data-manipulation-in-r.html#cb47-2" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="data-manipulation-in-r.html#cb47-3" tabindex="-1"></a><span class="co"># or slightly shorter </span></span>
+<span id="cb47-4"><a href="data-manipulation-in-r.html#cb47-4" tabindex="-1"></a></span>
+<span id="cb47-5"><a href="data-manipulation-in-r.html#cb47-5" tabindex="-1"></a>eu_order <span class="ot">&lt;-</span> EU_subset[<span class="fu">order</span>(<span class="fu">with</span>(EU_subset, access,pop18)),]</span></code></pre></div>
+</details>
+</div>
+<hr />
+</div>
+<div id="grouping-data" class="section level2 unnumbered hasAnchor">
+<h2>Grouping Data<a href="data-manipulation-in-r.html#grouping-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Looking at the last example, a question that might spring up is in which accession wave the joining countries brought the largest population increase on average to the EU. We can calculate summary statistics for a particular group by, well, grouping them. The first step is to group data into rows with the same value:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="data-manipulation-in-r.html#cb48-1" tabindex="-1"></a>eu_access <span class="ot">&lt;-</span> <span class="fu">group_by</span>(EU_subset, access)</span></code></pre></div>
+<p>By the way: whenever you have grouped anything, and finished analysing data in this grouped version it is essential that you ungroup the data afterwards, so that you don’t unintentionally keep using the groups:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="data-manipulation-in-r.html#cb49-1" tabindex="-1"></a><span class="fu">ungroup</span>(EU_subset)</span>
+<span id="cb49-2"><a href="data-manipulation-in-r.html#cb49-2" tabindex="-1"></a><span class="co"># A tibble: 28 × 3</span></span>
+<span id="cb49-3"><a href="data-manipulation-in-r.html#cb49-3" tabindex="-1"></a>   country     pop18 access</span>
+<span id="cb49-4"><a href="data-manipulation-in-r.html#cb49-4" tabindex="-1"></a>   <span class="sc">&lt;</span>fct<span class="sc">&gt;</span>       <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>  <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
+<span id="cb49-5"><a href="data-manipulation-in-r.html#cb49-5" tabindex="-1"></a> <span class="dv">1</span> Belgium  <span class="dv">11413058</span>   <span class="dv">1951</span></span>
+<span id="cb49-6"><a href="data-manipulation-in-r.html#cb49-6" tabindex="-1"></a> <span class="dv">2</span> Bulgaria  <span class="dv">7050034</span>   <span class="dv">2007</span></span>
+<span id="cb49-7"><a href="data-manipulation-in-r.html#cb49-7" tabindex="-1"></a> <span class="dv">3</span> Czechia  <span class="dv">10610055</span>   <span class="dv">2004</span></span>
+<span id="cb49-8"><a href="data-manipulation-in-r.html#cb49-8" tabindex="-1"></a> <span class="dv">4</span> Denmark   <span class="dv">5781190</span>   <span class="dv">1973</span></span>
+<span id="cb49-9"><a href="data-manipulation-in-r.html#cb49-9" tabindex="-1"></a> <span class="dv">5</span> Germany  <span class="dv">82850000</span>   <span class="dv">1951</span></span>
+<span id="cb49-10"><a href="data-manipulation-in-r.html#cb49-10" tabindex="-1"></a> <span class="dv">6</span> Estonia   <span class="dv">1319133</span>   <span class="dv">2004</span></span>
+<span id="cb49-11"><a href="data-manipulation-in-r.html#cb49-11" tabindex="-1"></a> <span class="dv">7</span> Ireland   <span class="dv">4838259</span>   <span class="dv">1973</span></span>
+<span id="cb49-12"><a href="data-manipulation-in-r.html#cb49-12" tabindex="-1"></a> <span class="dv">8</span> Greece   <span class="dv">10738868</span>   <span class="dv">1981</span></span>
+<span id="cb49-13"><a href="data-manipulation-in-r.html#cb49-13" tabindex="-1"></a> <span class="dv">9</span> Spain    <span class="dv">46659302</span>   <span class="dv">1986</span></span>
+<span id="cb49-14"><a href="data-manipulation-in-r.html#cb49-14" tabindex="-1"></a><span class="dv">10</span> France   <span class="dv">67221943</span>   <span class="dv">1951</span></span>
+<span id="cb49-15"><a href="data-manipulation-in-r.html#cb49-15" tabindex="-1"></a><span class="co"># ℹ 18 more rows</span></span></code></pre></div>
+<p>But let’s calculate the average population size per accession wave in an elegant command which combines multiple steps by using pipes:</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="data-manipulation-in-r.html#cb50-1" tabindex="-1"></a>eu_popaccess <span class="ot">&lt;-</span> EU_subset <span class="sc">%&gt;%</span> </span>
+<span id="cb50-2"><a href="data-manipulation-in-r.html#cb50-2" tabindex="-1"></a>  <span class="fu">group_by</span>(access) <span class="sc">%&gt;%</span> </span>
+<span id="cb50-3"><a href="data-manipulation-in-r.html#cb50-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg =</span> <span class="fu">mean</span>(pop18))</span>
+<span id="cb50-4"><a href="data-manipulation-in-r.html#cb50-4" tabindex="-1"></a></span>
+<span id="cb50-5"><a href="data-manipulation-in-r.html#cb50-5" tabindex="-1"></a>eu_popaccess</span>
+<span id="cb50-6"><a href="data-manipulation-in-r.html#cb50-6" tabindex="-1"></a><span class="co"># A tibble: 8 × 2</span></span>
+<span id="cb50-7"><a href="data-manipulation-in-r.html#cb50-7" tabindex="-1"></a>  access       avg</span>
+<span id="cb50-8"><a href="data-manipulation-in-r.html#cb50-8" tabindex="-1"></a>   <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span>     <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
+<span id="cb50-9"><a href="data-manipulation-in-r.html#cb50-9" tabindex="-1"></a><span class="dv">1</span>   <span class="dv">1951</span> <span class="fl">39958677.</span></span>
+<span id="cb50-10"><a href="data-manipulation-in-r.html#cb50-10" tabindex="-1"></a><span class="dv">2</span>   <span class="dv">1973</span> <span class="dv">25619152</span> </span>
+<span id="cb50-11"><a href="data-manipulation-in-r.html#cb50-11" tabindex="-1"></a><span class="dv">3</span>   <span class="dv">1981</span> <span class="dv">10738868</span> </span>
+<span id="cb50-12"><a href="data-manipulation-in-r.html#cb50-12" tabindex="-1"></a><span class="dv">4</span>   <span class="dv">1986</span> <span class="fl">28475164.</span></span>
+<span id="cb50-13"><a href="data-manipulation-in-r.html#cb50-13" tabindex="-1"></a><span class="dv">5</span>   <span class="dv">1995</span>  <span class="fl">8151880.</span></span>
+<span id="cb50-14"><a href="data-manipulation-in-r.html#cb50-14" tabindex="-1"></a><span class="dv">6</span>   <span class="dv">2004</span>  <span class="fl">7327746.</span></span>
+<span id="cb50-15"><a href="data-manipulation-in-r.html#cb50-15" tabindex="-1"></a><span class="dv">7</span>   <span class="dv">2007</span> <span class="fl">13286828.</span></span>
+<span id="cb50-16"><a href="data-manipulation-in-r.html#cb50-16" tabindex="-1"></a><span class="dv">8</span>   <span class="dv">2013</span>  <span class="dv">4105493</span> </span></code></pre></div>
+<div class="baser">
+<details>
+<summary>
+Base R Solution
+</summary>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="data-manipulation-in-r.html#cb51-1" tabindex="-1"></a>eu_popaccess1 <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(pop18 <span class="sc">~</span> access, </span>
+<span id="cb51-2"><a href="data-manipulation-in-r.html#cb51-2" tabindex="-1"></a>                           <span class="at">data =</span> EU_subset, </span>
+<span id="cb51-3"><a href="data-manipulation-in-r.html#cb51-3" tabindex="-1"></a>                           <span class="at">FUN =</span> mean )</span></code></pre></div>
+</details>
+</div>
+<p>You now see a new variable called <code>avg</code> which contains the average population increase for each wave. In which wave did the joining countries have the largest population on average?</p>
+<hr />
+</div>
+<div id="combining-ordering-and-grouping-data" class="section level2 unnumbered hasAnchor">
+<h2>Combining Ordering and Grouping Data<a href="data-manipulation-in-r.html#combining-ordering-and-grouping-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The question was easy to answer here, as we only have a few accession waves. It starts to get unwieldy though, the more groups we have, but we can let R do the job by combining first grouping, and then ordering. So we take the grouped data frame <code>eu_popaccess</code> and order it by descending <code>avg</code>:</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="data-manipulation-in-r.html#cb52-1" tabindex="-1"></a>eu_popaccess_order <span class="ot">&lt;-</span> <span class="fu">arrange</span>(eu_popaccess, <span class="fu">desc</span>(avg))</span>
+<span id="cb52-2"><a href="data-manipulation-in-r.html#cb52-2" tabindex="-1"></a></span>
+<span id="cb52-3"><a href="data-manipulation-in-r.html#cb52-3" tabindex="-1"></a>eu_popaccess_order</span>
+<span id="cb52-4"><a href="data-manipulation-in-r.html#cb52-4" tabindex="-1"></a><span class="co"># A tibble: 8 × 2</span></span>
+<span id="cb52-5"><a href="data-manipulation-in-r.html#cb52-5" tabindex="-1"></a>  access       avg</span>
+<span id="cb52-6"><a href="data-manipulation-in-r.html#cb52-6" tabindex="-1"></a>   <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span>     <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
+<span id="cb52-7"><a href="data-manipulation-in-r.html#cb52-7" tabindex="-1"></a><span class="dv">1</span>   <span class="dv">1951</span> <span class="fl">39958677.</span></span>
+<span id="cb52-8"><a href="data-manipulation-in-r.html#cb52-8" tabindex="-1"></a><span class="dv">2</span>   <span class="dv">1986</span> <span class="fl">28475164.</span></span>
+<span id="cb52-9"><a href="data-manipulation-in-r.html#cb52-9" tabindex="-1"></a><span class="dv">3</span>   <span class="dv">1973</span> <span class="dv">25619152</span> </span>
+<span id="cb52-10"><a href="data-manipulation-in-r.html#cb52-10" tabindex="-1"></a><span class="dv">4</span>   <span class="dv">2007</span> <span class="fl">13286828.</span></span>
+<span id="cb52-11"><a href="data-manipulation-in-r.html#cb52-11" tabindex="-1"></a><span class="dv">5</span>   <span class="dv">1981</span> <span class="dv">10738868</span> </span>
+<span id="cb52-12"><a href="data-manipulation-in-r.html#cb52-12" tabindex="-1"></a><span class="dv">6</span>   <span class="dv">1995</span>  <span class="fl">8151880.</span></span>
+<span id="cb52-13"><a href="data-manipulation-in-r.html#cb52-13" tabindex="-1"></a><span class="dv">7</span>   <span class="dv">2004</span>  <span class="fl">7327746.</span></span>
+<span id="cb52-14"><a href="data-manipulation-in-r.html#cb52-14" tabindex="-1"></a><span class="dv">8</span>   <span class="dv">2013</span>  <span class="dv">4105493</span> </span></code></pre></div>
+<div class="baser">
+<details>
+<summary>
+Base R Solution
+</summary>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="data-manipulation-in-r.html#cb53-1" tabindex="-1"></a>eu_popaccess_order <span class="ot">&lt;-</span> eu_popaccess[<span class="fu">order</span>(<span class="fu">desc</span>(eu_popaccess<span class="sc">$</span>avg)),]</span></code></pre></div>
+</details>
+</div>
+<hr />
+</div>
+<div id="descriptive-statistics" class="section level2 unnumbered hasAnchor">
+<h2>Descriptive Statistics<a href="data-manipulation-in-r.html#descriptive-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We have covered quite a large number of descriptive statistics, so far. These are:</p>
+<ul>
+<li>Mean</li>
+<li>Median<br />
+</li>
+<li>Mode</li>
+<li>Standard Deviation</li>
+<li>Variance</li>
+<li>Quartiles and Percentiles</li>
+<li>Range</li>
+<li>Interquartile Range</li>
+</ul>
+<p>They are a lot of effort to calculate by hand, especially for larger data sets, but R can do these with a few intuitive commands. First up is the mean.</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="data-manipulation-in-r.html#cb54-1" tabindex="-1"></a><span class="fu">mean</span>(EU<span class="sc">$</span>pop18)</span>
+<span id="cb54-2"><a href="data-manipulation-in-r.html#cb54-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">18311106</span></span></code></pre></div>
+<p>Then the median:</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="data-manipulation-in-r.html#cb55-1" tabindex="-1"></a><span class="fu">median</span>(EU<span class="sc">$</span>pop18)</span>
+<span id="cb55-2"><a href="data-manipulation-in-r.html#cb55-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">9300319</span></span></code></pre></div>
+<p>You can get information on the quartiles (remember that the median is the second quartile), the mean, as well as the minimum and maximum through one, simple command:</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="data-manipulation-in-r.html#cb56-1" tabindex="-1"></a><span class="fu">summary</span>(EU<span class="sc">$</span>pop18)</span>
+<span id="cb56-2"><a href="data-manipulation-in-r.html#cb56-2" tabindex="-1"></a>    Min.  <span class="dv">1</span>st Qu.   Median     Mean  <span class="dv">3</span>rd Qu.     Max. </span>
+<span id="cb56-3"><a href="data-manipulation-in-r.html#cb56-3" tabindex="-1"></a>  <span class="dv">475701</span>  <span class="dv">3781345</span>  <span class="dv">9300319</span> <span class="dv">18311106</span> <span class="dv">17766718</span> <span class="dv">82850000</span> </span></code></pre></div>
+<p>Let’s now move to measures of variability. First up is the range; you can either calculate this with two commands by finding out the minimum and maximum separately, or just ask R to give you both values straight away:</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="data-manipulation-in-r.html#cb57-1" tabindex="-1"></a><span class="fu">min</span>(EU<span class="sc">$</span>pop18)</span>
+<span id="cb57-2"><a href="data-manipulation-in-r.html#cb57-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">475701</span></span>
+<span id="cb57-3"><a href="data-manipulation-in-r.html#cb57-3" tabindex="-1"></a></span>
+<span id="cb57-4"><a href="data-manipulation-in-r.html#cb57-4" tabindex="-1"></a><span class="fu">max</span>(EU<span class="sc">$</span>pop18)</span>
+<span id="cb57-5"><a href="data-manipulation-in-r.html#cb57-5" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">82850000</span></span>
+<span id="cb57-6"><a href="data-manipulation-in-r.html#cb57-6" tabindex="-1"></a></span>
+<span id="cb57-7"><a href="data-manipulation-in-r.html#cb57-7" tabindex="-1"></a><span class="fu">range</span>(EU<span class="sc">$</span>pop18)</span>
+<span id="cb57-8"><a href="data-manipulation-in-r.html#cb57-8" tabindex="-1"></a>[<span class="dv">1</span>]   <span class="dv">475701</span> <span class="dv">82850000</span></span></code></pre></div>
+<p>The stadard deviation is rather long-winded to calculate by hand, but the R command is short and sweet:</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="data-manipulation-in-r.html#cb58-1" tabindex="-1"></a><span class="fu">sd</span>(EU<span class="sc">$</span>pop18)</span>
+<span id="cb58-2"><a href="data-manipulation-in-r.html#cb58-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">23787945</span></span></code></pre></div>
+<p>As you know, the variance is the squared standard deviation, but you can calculate it with its own command in R, too:</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="data-manipulation-in-r.html#cb59-1" tabindex="-1"></a><span class="fu">var</span>(EU<span class="sc">$</span>pop18)</span>
+<span id="cb59-2"><a href="data-manipulation-in-r.html#cb59-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">5.658663e+14</span></span></code></pre></div>
+<div class="video">
+<p><strong>Descriptive Statistics</strong></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/krE-9pVemTY?si=c6WUBnsap6Md8Zjd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+</div>
+<p>Now that you have all the relevant tools at hand, complete the following tasks:</p>
+<ol style="list-style-type: decimal">
+<li>Generate descriptive statistics for 3 of our variables.</li>
+<li>Recode the variable ‘GDP_2015’ into a ordered factor called ‘gdp_level’ with three levels called “low”, “medium”, and “high” with cut-off points of your own choosing.</li>
+<li>Produce a tabulation for ‘gdp_level’.</li>
+</ol>
+<hr />
+</div>
+<div id="graphs" class="section level2 unnumbered hasAnchor">
+<h2>Graphs<a href="data-manipulation-in-r.html#graphs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R is probably <em>the</em> most powerful statistics programme for creating graphs. As this is an introductory level module, and we only have so much time available in the seminars, I will only be able to introduce you to the most commonly used ones; in the first instance histograms and boxplots. I will then introduce you to the package <code>ggplot2</code> which is simply the best invention since sliced bread, as it gives you pretty much endless optionality in customising graphs to show exactly what you want.</p>
+<p>Whenever you produce a graph and you use it in an essay, your dissertation, or article, it is crucial that the graph is able to communicate its message <em>independently</em> from the text. So, a reader should be able to understand the graph and be able to appreciate fully its message without having to read the text. In a similar fashion, the text should always be written in such a way that a reader is able to understand it <em>without having to look at the graph</em>. This is a principle which equally applies to tables (more on this on PO12Q). If you do not follow this principle in the assessments on my modules, you will be marked down.</p>
+<p>Chapter 4 in “The Visual Display of Quantitative Information” by <span class="citation">Tufte (2001)</span> is on the reading list as an essential item, but there are some more principles he sets out at the start of the book (p. 13) which are worthwhile repeating here:</p>
+<blockquote>
+<p>Excellence in statistical graphics consists of complex ideas communicated with clarity, precision, and efficiency. Graphical displays should</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>show the data</li>
+<li>induce the viewer to think about the substance rather than about methodology, graphic design, the technology of graphic production, or something else</li>
+<li>avoid distorting what the data have to say</li>
+<li>present many numbers in a small space</li>
+<li>make large data sets coherent</li>
+<li>encourage the eye to compare different pieces of data</li>
+<li>reveal the data at several levels of detail, from a broad overview to the fine structure</li>
+<li>serve a reasonably clear purpose: description, exploration, tabulation, or decoration</li>
+<li>be closely integrated with the statistical and verbal descriptions of a data set.</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>Graphics reveal data. Indeed graphics can be more precise and revealing than conventional statistical computations.</p>
+</blockquote>
+<hr />
+</div>
+<div id="basic-graphs" class="section level2 unnumbered hasAnchor">
+<h2>Basic Graphs<a href="data-manipulation-in-r.html#basic-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let’s start with a histogram of the variable <code>pop18</code>. The range of the <code>pop18</code> variable is about 82 million - this is rather unwieldy to imagine and also to put onto axes of graphs, as they would mostly consist of zeros. So let’s express the population of each countries in million instead:</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="data-manipulation-in-r.html#cb60-1" tabindex="-1"></a>EU<span class="sc">$</span>popmio <span class="ot">&lt;-</span> EU<span class="sc">$</span>pop18<span class="sc">/</span><span class="dv">1000000</span></span></code></pre></div>
+<p>We can now produce a histogram. Before doing this, it is sensible to think about the number of bars we want in the histogram. The smallest country has just shy of 500,000 inhabitants, whereas the largest has over 82 million. So, I would like the x-axis to run from zero to 100 (million) and divide this into 5 bars. Accordingly, we are introducing 4 breaks on the x-axis with the following command:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="data-manipulation-in-r.html#cb61-1" tabindex="-1"></a><span class="fu">hist</span>(EU<span class="sc">$</span>popmio, <span class="at">breaks=</span><span class="dv">4</span>)</span></code></pre></div>
+<p><img src="main_files/figure-html/unnamed-chunk-64-1.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>This is certainly a histogram, but it does not conform to the principle of graphs that they should be able to communicate their message independently, yet. Take the label of the x-axis, for example, what does <code>EU$popmio</code> mean? You and I know, but somebody who doesn’t know R language wouldn’t. We can tell R to adjust the axis label, as well as the main title of the histogram as follows:</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="data-manipulation-in-r.html#cb62-1" tabindex="-1"></a><span class="fu">hist</span>(EU<span class="sc">$</span>popmio, <span class="at">breaks=</span><span class="dv">4</span>,</span>
+<span id="cb62-2"><a href="data-manipulation-in-r.html#cb62-2" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Population in million&quot;</span>,</span>
+<span id="cb62-3"><a href="data-manipulation-in-r.html#cb62-3" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Histogram of EU Population (2018)&quot;</span>)</span></code></pre></div>
+<p><img src="main_files/figure-html/unnamed-chunk-65-1.png" width="50%" style="display: block; margin: auto;" /></p>
+<div class="video">
+<p><strong>Histograms</strong></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FQ9Suah3gZc?si=s0Ml-jV_Lyg2Fmah" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+</div>
+<p>This is fine now. Ugly, but fine. I will show you how to do a boxplot next, and then I will take you through the process of making all this look a bit more jazzy. The command for the boxplot is very intuitive. The default in R is to arrange the boxplot vertically. I prefer them horizontally, and you can set this in an equally intuitive option.</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="data-manipulation-in-r.html#cb63-1" tabindex="-1"></a><span class="fu">boxplot</span>(EU<span class="sc">$</span>popmio, <span class="at">horizontal =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p><img src="main_files/figure-html/unnamed-chunk-66-1.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>You will recognise the descriptives we calculated earlier with the <code>summary()</code> function:</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="data-manipulation-in-r.html#cb64-1" tabindex="-1"></a><span class="fu">summary</span>(EU<span class="sc">$</span>popmio)</span>
+<span id="cb64-2"><a href="data-manipulation-in-r.html#cb64-2" tabindex="-1"></a>   Min. <span class="dv">1</span>st Qu.  Median    Mean <span class="dv">3</span>rd Qu.    Max. </span>
+<span id="cb64-3"><a href="data-manipulation-in-r.html#cb64-3" tabindex="-1"></a> <span class="fl">0.4757</span>  <span class="fl">3.7814</span>  <span class="fl">9.3003</span> <span class="fl">18.3111</span> <span class="fl">17.7667</span> <span class="fl">82.8500</span> </span></code></pre></div>
+<div class="puzzle">
+<p>Explain the outliers on the right mathematically.</p>
+</div>
+<hr />
+</div>
+<div id="advanced-graphs" class="section level2 unnumbered hasAnchor">
+<h2>Advanced Graphs<a href="data-manipulation-in-r.html#advanced-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The graphs we have produced so far are functional, but let’s be honest, they wouldn’t win any beauty contests. There is, as mentioned earlier, an amazing package called <code>ggplot2</code> which changes this dramatically. You have already installed it as a part of the tidyverse. Otherwise, the function would be:</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="data-manipulation-in-r.html#cb65-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span></code></pre></div>
+<p>We can just load it:</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="data-manipulation-in-r.html#cb66-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<p>The “gg” in <code>ggplot2</code> stands for “grammar of graphs”. You will be familiar with the term “grammar”” from learning a language already. In this context, we use grammar to build sentences by choosing and arranging a variety different components, such as subjects, verbs and objects. If you know how to do this properly, you can express exactly what you want to say. The grammar of graphs adopts this logic and specifies a number of different components which allow you to create a graph which is able to communicate exactly what you wish to show.</p>
+<p><code>ggplot2</code> has eight basic grammatical arguments:</p>
+<table class="table" style="color: black; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:ggplot2">Table 2: </span>GGPLOT Components
+</caption>
+<tbody>
+<tr>
+<td style="text-align:left;min-width: 1.8in; ">
+Data Frame
+</td>
+<td style="text-align:left;">
+The data you wish to visualize.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.8in; ">
+Aesthetic Mappings
+</td>
+<td style="text-align:left;">
+Here you specify how the data are assigned to colour, size, etc. For now, this is the variable for which we want to create a graphical distribution.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.8in; ">
+Geom
+</td>
+<td style="text-align:left;">
+Short for “geometry”. Use a geom function to represent data points through geometric objects, such as points, lines, etc. Each function returns a layer.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.8in; ">
+Stat
+</td>
+<td style="text-align:left;">
+You can include statistical summaries through this, such as smoothing, or regression lines.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.8in; ">
+Position
+</td>
+<td style="text-align:left;">
+Position adjustments determine how to arrange geoms that would otherwise occupy the same space.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.8in; ">
+Facets
+</td>
+<td style="text-align:left;">
+Facets divide a plot into sub-plots based on the values of one or more discrete variables.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.8in; ">
+Scale
+</td>
+<td style="text-align:left;">
+Maps data values to the visual values of an aesthetic. For example female=pink, male=blue.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.8in; ">
+Coordinates
+</td>
+<td style="text-align:left;">
+How do the numbers get translated onto the plot? We are not going to look at this on this module.
+</td>
+</tr>
+</tbody>
+</table>
+<p>I like to think of using these arguments like dressing myself in the morning. The minimum that common decency requires me to wear if I wish to leave the house is some underwear, some trousers, and a top. Depending on how I feel and what the weather is like, I can add more layers, like socks, a jumper, or a scarf. It is exactly the same with <code>ggplot2</code>. As a minimum to produce a plot you need a data frame, the aesthetic mapping and a geom. Once you have produced this minimalistic graph, you can modify it, by adding more components / arguments. As you can imagine the possibilities are almost endless, and we only have time to deal with the minimum here. This is not a problem, however, as most of the other grammatical arguments (Stats, Position, Facets and Scales) generally have sensible defaults.</p>
+<p>So how does this work in practice? Let us reproduce the histogram of the <code>age</code> variable. We start by calling <code>ggplot2</code> and advise the function which data frame we wish to use (<code>EU</code>). In a second step, we add a geometry – in our case <code>geom_histogram</code>. Within the geometry, we need to specify for which variable we wish to create a distribution, or in the language of <code>ggplot2</code> which variable we wish to map to the geom as our Aesthetic. To produce 5 bars again, we specify a bandwith of 20 million (this refers to <code>popmio</code>).</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="data-manipulation-in-r.html#cb67-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>EU) <span class="sc">+</span></span>
+<span id="cb67-2"><a href="data-manipulation-in-r.html#cb67-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping=</span><span class="fu">aes</span>(popmio), <span class="at">binwidth =</span> <span class="dv">20</span>)</span></code></pre></div>
+<p><img src="main_files/figure-html/unnamed-chunk-70-1.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>Annoyingly, <code>ggplot</code> places the axis ticks in the middle of each bar which is WRONG for histograms. They need to align with the boundaries of the bars. We do this by telling R the boundary of the plot:</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="data-manipulation-in-r.html#cb68-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>EU) <span class="sc">+</span></span>
+<span id="cb68-2"><a href="data-manipulation-in-r.html#cb68-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping=</span><span class="fu">aes</span>(popmio), <span class="at">binwidth =</span> <span class="dv">20</span>, </span>
+<span id="cb68-3"><a href="data-manipulation-in-r.html#cb68-3" tabindex="-1"></a>                 <span class="at">boundary =</span> <span class="dv">0</span>)</span></code></pre></div>
+<p><img src="main_files/figure-html/unnamed-chunk-71-1.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>This has shifted the ticks to the left, but now R has decided to label the x-axis in steps of 25, whereas our bars have a bandwidth of 20. Once again, we have the variable name on the x-axis, instead of a label which anybody could understand. I also prefer “Frequency” on the y-axis, instead of “Count”. To address both of these concerns, we simply add a layer for each. First up are the axis ticks. Our variable is continuous, so we choose the <code>scale_x_continuous</code> option, and tell R to break the axis up into a sequence which starts with zero, ends at 100 and has steps of 20 in between. In the <code>labs</code> argument we adjust the labelling as intended:</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="data-manipulation-in-r.html#cb69-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>EU) <span class="sc">+</span></span>
+<span id="cb69-2"><a href="data-manipulation-in-r.html#cb69-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping=</span><span class="fu">aes</span>(popmio), <span class="at">binwidth =</span> <span class="dv">20</span>, </span>
+<span id="cb69-3"><a href="data-manipulation-in-r.html#cb69-3" tabindex="-1"></a>                 <span class="at">boundary =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb69-4"><a href="data-manipulation-in-r.html#cb69-4" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">20</span>)) <span class="sc">+</span></span>
+<span id="cb69-5"><a href="data-manipulation-in-r.html#cb69-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Population (in million)&quot;</span>, <span class="at">y=</span><span class="st">&quot;Frequency&quot;</span>) <span class="sc">+</span></span>
+<span id="cb69-6"><a href="data-manipulation-in-r.html#cb69-6" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
+<p><img src="main_files/figure-html/unnamed-chunk-73-1.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>I have also removed the background in line with the principles set out by <span class="citation">Tufte (2001, p. 96)</span> by adding <code>theme_classic()</code>. This is it. A graph which can communicate its message independently, and which looks aesthetically pleasing.</p>
+<p>In the present case we have the population, so displaying the frequency on the y-axis is sort of sensible, but usually we would be dealing with a sample. Here the count is not very telling and we would be using percentages, instead. Let’s do it!</p>
+<hr />
+</div>
+<div id="even-more-advanced-graphs" class="section level2 unnumbered hasAnchor">
+<h2>Even More Advanced Graphs<a href="data-manipulation-in-r.html#even-more-advanced-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Unfortunately, there is no easy, default way to do this in R, but necessitates a calculation within the <code>ggplot</code> command. Once more we call <code>ggplot</code> and use the <code>EU</code> data set, and select the geom <code>geom_histogram</code>. Again we specify the binwidth as 20 with a boundary of zero, and put <code>popmio</code> on the x-axis. Now comes the point where we need to do something new, because <code>y</code> is not equivalent to the frequency any more, but should be percentage. To achieve this we advise R to put the density there (which is the relative frequency from the the lecture in week 5), and multiply this density by 100 to get percentage. Nothing has changed on the scaling of the x-axis from the previous plot, so we can copy and paste the <code>scale_x_continuous</code> section, as well as the labelling of the x-axis. In this last step, we now also need to adjust the label of the y-axis, because this has now percentage on it, and not frequency. The result is this:</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="data-manipulation-in-r.html#cb70-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EU) <span class="sc">+</span> </span>
+<span id="cb70-2"><a href="data-manipulation-in-r.html#cb70-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">20</span>, <span class="at">boundary =</span> <span class="dv">0</span>,</span>
+<span id="cb70-3"><a href="data-manipulation-in-r.html#cb70-3" tabindex="-1"></a>                 <span class="fu">aes</span>(<span class="at">x=</span> popmio, </span>
+<span id="cb70-4"><a href="data-manipulation-in-r.html#cb70-4" tabindex="-1"></a>                     <span class="at">y =</span> (..count..)<span class="sc">/</span><span class="fu">sum</span>(..count..)<span class="sc">*</span><span class="dv">100</span>)) <span class="sc">+</span></span>
+<span id="cb70-5"><a href="data-manipulation-in-r.html#cb70-5" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">20</span>)) <span class="sc">+</span></span>
+<span id="cb70-6"><a href="data-manipulation-in-r.html#cb70-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Population (in million)&quot;</span>, <span class="at">y=</span><span class="st">&quot;percent&quot;</span>)  <span class="sc">+</span></span>
+<span id="cb70-7"><a href="data-manipulation-in-r.html#cb70-7" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
+<p><img src="main_files/figure-html/unnamed-chunk-75-1.png" width="50%" style="display: block; margin: auto;" /></p>
+<div class="video">
+<p><strong>Jazzy Graphs with GGPLOT</strong></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z4KAuOO_iew?si=oMrS0gYs1JnV5dPS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+</div>
+<hr />
+</div>
+<div id="organising-code-in-the-rscript" class="section level2 unnumbered hasAnchor">
+<h2>Organising Code in the RScript<a href="data-manipulation-in-r.html#organising-code-in-the-rscript" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now is probably a good time to make you aware of how I have been organising code which runs over several lines. I could also have written the code of the last graph as</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="data-manipulation-in-r.html#cb71-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EU) <span class="sc">+</span> </span>
+<span id="cb71-2"><a href="data-manipulation-in-r.html#cb71-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">20</span>, <span class="at">boundary =</span> <span class="dv">0</span>, <span class="fu">aes</span>(<span class="at">x=</span> popmio, <span class="at">y =</span> (..count..)<span class="sc">/</span><span class="fu">sum</span>(..count..)<span class="sc">*</span><span class="dv">100</span>)) <span class="sc">+</span> <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">20</span>)) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Population&quot;</span>, <span class="at">y=</span><span class="st">&quot;percent&quot;</span>) <span class="sc">+</span> <span class="fu">theme_classic</span>()</span></code></pre></div>
+<p>but this would have made it rather difficult to disentangle and to spot the structure of the graph straight away. So it is also a good idea to structure the code in a logical way which allows a reader to understand it as easily as possible. R is very smart in the way it indents the next line after pressing “enter” in an RScript automatically to the appropriate position. You see for example that in</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="data-manipulation-in-r.html#cb72-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EU) <span class="sc">+</span> </span>
+<span id="cb72-2"><a href="data-manipulation-in-r.html#cb72-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">20</span>, <span class="at">boundary =</span> <span class="dv">0</span>,</span>
+<span id="cb72-3"><a href="data-manipulation-in-r.html#cb72-3" tabindex="-1"></a>                 <span class="fu">aes</span>(<span class="at">x=</span> popmio, </span>
+<span id="cb72-4"><a href="data-manipulation-in-r.html#cb72-4" tabindex="-1"></a>                     <span class="at">y =</span> (..count..)<span class="sc">/</span><span class="fu">sum</span>(..count..)<span class="sc">*</span><span class="dv">100</span>)) <span class="sc">+</span></span>
+<span id="cb72-5"><a href="data-manipulation-in-r.html#cb72-5" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">20</span>)) <span class="sc">+</span></span>
+<span id="cb72-6"><a href="data-manipulation-in-r.html#cb72-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Population (in million)&quot;</span>, <span class="at">y=</span><span class="st">&quot;percent&quot;</span>) <span class="sc">+</span></span>
+<span id="cb72-7"><a href="data-manipulation-in-r.html#cb72-7" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
+<p>the <code>aes</code> which belongs to the <code>geom_histogram</code> layer is indented just so it starts flush with the first argument (<code>binwidth</code>) within this layer.</p>
+<hr />
+</div>
+<div id="exercises-1" class="section level2 unnumbered hasAnchor">
+<h2>Exercises<a href="data-manipulation-in-r.html#exercises-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Using these commands, and moving beyond with the help of today’s reading, complete the following tasks:</p>
+<ol style="list-style-type: decimal">
+<li>Produce two base-R graphs of different types (e.g. histogram, bar chart, box-and-whisker plot) for separate variables in the EU data set.</li>
+<li>Produce two <code>ggplot</code> graphs of different types (e.g. histogram, bar chart, box-and-whisker plot) for separate variables in the EU data set. Google to find more geoms.</li>
+</ol>
+<hr />
+</div>
+<div id="captions-for-tables-and-figures-in-word" class="section level2 unnumbered hasAnchor">
+<h2>Captions for Tables and Figures in Word<a href="data-manipulation-in-r.html#captions-for-tables-and-figures-in-word" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In essays, your dissertation and in articles, you will have to refer to tables and figures in the text. Now, you can do this by writing “the figure below”. But this is not very elegant. Also, what happens if you change the layout and all of a sudden “the figure below” becomes “the figure above”. This not only causes additional work because you have to edit the text and check all references to tables and figures once you are done (which is tedious beyond description), but there is also the risk that you miss one or a few in the process.</p>
+<p>MS Word has a nifty function that allows you to insert captions for figures and tables, and then to insert cross-references into the text which get updated automatically before you send the document to the printer. Here is how to do it:</p>
+<p>Say, you have a figure inserted into Word. You now click on it, then hover over the bottom right-hand square, and right-click with your mouse. From the resulting context menu you select “Insert Caption”.</p>
+<p><img src="files/Week%202/insert_caption.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>This results in the following window:</p>
+<p><img src="files/Week%202/caption.png" width="40%" style="display: block; margin: auto;" /></p>
+<p>Select whether the item you want to describe is a figure, or a table. Then make sure you place the caption “below” the item (this is default). Then type your caption into the box at the top, such as “Figure 1: Skewness of Distributions”. Make sure the caption is <strong>telling</strong>. The reader needs to know from the caption what the figure or table is about. When you click OK, the document looks like this:</p>
+<p><img src="files/Week%202/document.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Now you start writing the text and come to the point where you refer to the figure in question. Here, all you have to do is to select “Insert” and “Cross-Reference”” </p>
+<p><img src="files/Week%202/hyperlink.png" width="30%" style="display: block; margin: auto;" /></p>
+<p>and select the following options in the pop-up window:</p>
+<p><img src="files/Week%202/selection.png" width="30%" style="display: block; margin: auto;" /></p>
+<div style="page-break-after: always;"></div>
+<p>Your text will then look like this:</p>
+<p><img src="files/Week%202/text.png" width="90%" style="display: block; margin: auto;" /></p>
+<p>You don’t have to worry now about the sequence of numbering any more. If you insert another figure above this one, and insert a cross-reference in the text again, the sequence is automatically updated and our former “Figure 1” becomes “Figure 2”. Tables and figures have separate sequences of numbering.</p>
+<p>One last word on the display of data in tables: <strong><em>DO NOT</em></strong> screenshot tables from R and insert them into your presentations. They look ugly and unprofessional. Make the effort and create a proper table, either in Word or Excel and populate it manually with the data from R. The insertion of captions and cross-references is the same as described above.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="4">
+<li id="fn4"><p><a href="https://cran.r-project.org/web/packages/" class="uri">https://cran.r-project.org/web/packages/</a><a href="data-manipulation-in-r.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>There is a command called <code>order()</code>, but it is not part of the <code>tidyverse</code>, and as this package is steadily on the rise in coding, I am only showing you this here.<a href="data-manipulation-in-r.html#fnref5" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="flashcards.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercises-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  },
+  "toc_depth": 2,
+  "keep_tex": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
