@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Exercises | PO91Q: Seminar Companion</title>
-  <meta name="description" content="Exercises | PO91Q: Seminar Companion" />
+  <title>Homework for Week 4 | PO91Q: Seminar Companion</title>
+  <meta name="description" content="Homework for Week 4 | PO91Q: Seminar Companion" />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Exercises | PO91Q: Seminar Companion" />
+  <meta property="og:title" content="Homework for Week 4 | PO91Q: Seminar Companion" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Exercises | PO91Q: Seminar Companion" />
+  <meta name="twitter:title" content="Homework for Week 4 | PO91Q: Seminar Companion" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="data-manipulation-in-r.html"/>
-<link rel="next" href="homework-for-week-3.html"/>
+<link rel="prev" href="exercises-3.html"/>
+<link rel="next" href="glossary-2.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -269,76 +269,23 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="exercises-2" class="section level1 unnumbered hasAnchor">
-<h1>Exercises<a href="exercises-2.html#exercises-2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="exploring-the-ess-core-exercises" class="section level2 unnumbered hasAnchor">
-<h2>Exploring the ESS – Core Exercises<a href="exercises-2.html#exploring-the-ess-core-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ol style="list-style-type: decimal">
-<li>Open the ESS9 dataset in R and attach it.</li>
-<li>Identify the variable about “Left-right placement”.
-<ol style="list-style-type: lower-alpha">
-<li>Check its formatting in the questionnaire: what do 77, 88 and 99 mean?</li>
-<li>What is the level of this variable?</li>
-<li>Summarise it with functions <code>class</code>, <code>str</code>, and <code>head</code></li>
-<li>What do these functions return?</li>
-</ol></li>
-<li>Apply the same steps to the variable about the “European unification:”should go further or already gone too far”.
-<ol style="list-style-type: lower-alpha">
-<li>Them display the first 20 values of the two variables above</li>
-<li>Check the structure of the ‘table’ function and tabulate the two variables</li>
-<li>Can you see a major difference between them regarding non positive answers (ie outside proposed scale)?</li>
-</ol></li>
-<li>Consider the function <code>rm(list=ls())</code>
-<ol style="list-style-type: lower-alpha">
-<li>What function <code>rm</code> stand for?</li>
-<li>How useful can this function be for future exercises?</li>
-</ol></li>
-<li>Univariate Statistics and Recoding
-<ol style="list-style-type: decimal">
-<li>Calculate the two means, using only valid values (check the <code>mean</code> function beforehand)</li>
-<li>In Left-right, regroup values, using three different methods:
-<ol style="list-style-type: lower-alpha">
-<li>recode</li>
-<li>convert to factor format using <code>as.factor</code></li>
-<li>assign value labels using <code>levels</code>
+<div id="homework-for-week-4" class="section level1 unnumbered hasAnchor">
+<h1>Homework for Week 4<a href="homework-for-week-4.html#homework-for-week-4" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <ul>
-<li>0-1 into “far left”</li>
-<li>2-3 into “left”,</li>
-<li>4-6 into “centre”,</li>
-<li>7-8 into “right”</li>
-<li>9-10 into “far right”</li>
-</ul></li>
-</ol></li>
-</ol></li>
-</ol>
-</div>
-<div id="exploring-the-ess-going-further" class="section level2 unnumbered hasAnchor">
-<h2>Exploring the ESS – Going Further<a href="exercises-2.html#exploring-the-ess-going-further" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ol style="list-style-type: decimal">
-<li>Using the new, transformed variables:
-<ol style="list-style-type: lower-alpha">
-<li>Calculate means in the UK only. You may use the <code>[variable == "value"]</code> subscript</li>
-<li>How does this mean compare with the average in Europe? and with France?</li>
-<li>Present the frequencies and means of these three samples in one unique table</li>
-<li>Install and load the <code>questionr</code> package. Use its function ‘freq’ to calculate the same as above, but with percentages.</li>
-<li>Compare deviations from the mean in the UK and Germany using the function <code>abs</code> (absolute value, which means any value with all negative signs deleted)</li>
-<li>Compare mean, median, mode, variance and standard deviation in the UK and Germany</li>
-</ol></li>
-<li>Try 3 or more kinds or graphs with these two variables separately, using the most appropriate of original or transformed values. Assess and compare the relevance of each graph</li>
-<li>Tabulate the two variables in original format against each other using table(X,Y). Interpret the output.</li>
-<li>Repeat this with the transformed format: Interpret the output.</li>
-<li>Try the same using <code>questionr::cprop</code></li>
-<li>Graph the two variables against each other using ‘plot’ (make sure you choose the right versions of the variables). What can you conclude from this graph?</li>
-</ol>
-</div>
+<li>Finish working through this worksheet.</li>
+<li>Add a note underneath each code chunk in your RScript (by starting the line with <code>#</code>), translating the code into plain English.</li>
+<li>Read the required literature for week 4.</li>
+<li>Work through <a href="https://drfloreiche.github.io/PO91Q/flashcards.html">this week’s flashcards</a> to familiarise yourself with the relevant R functions.</li>
+<li>Find an example for each NEW function and apply it in R to ensure it works.</li>
+</ul>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="data-manipulation-in-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="homework-for-week-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="exercises-3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="glossary-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
