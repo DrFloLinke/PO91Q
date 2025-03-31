@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Glossary | PO91Q: Seminar Companion</title>
-  <meta name="description" content="Glossary | PO91Q: Seminar Companion" />
+  <title>Case Study15 | PO91Q: Seminar Companion</title>
+  <meta name="description" content="Case Study15 | PO91Q: Seminar Companion" />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Glossary | PO91Q: Seminar Companion" />
+  <meta property="og:title" content="Case Study15 | PO91Q: Seminar Companion" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Glossary | PO91Q: Seminar Companion" />
+  <meta name="twitter:title" content="Case Study15 | PO91Q: Seminar Companion" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="homework-for-week-4.html"/>
-<link rel="next" href="flashcards-2.html"/>
+<link rel="prev" href="bivariate-regression.html"/>
+<link rel="next" href="homework-for-week-9.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -393,73 +393,382 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="glossary-2" class="section level1 unnumbered hasAnchor">
-<h1>Glossary<a href="glossary-2.html#glossary-2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="case-study-1" class="section level1 unnumbered hasAnchor">
+<h1>Case Study<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a><a href="case-study-1.html#case-study-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="load-packages-and-data" class="section level2 unnumbered hasAnchor">
+<h2>Load Packages and Data<a href="case-study-1.html#load-packages-and-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Before starting, we need to load libraries and install packages if not already installed. In these exercises we will be using the following packages:</p>
+<ol style="list-style-type: decimal">
+<li><code>haven</code></li>
+<li><code>ggplot2</code></li>
+<li><code>modelsummary</code></li>
+</ol>
+<p>We will be using the <a href="files/Week%208/london.csv">london.csv</a> data set from the lecture, but with a different independent variable this time. These will be of particular interest:</p>
 <table style="width:100%; color: black; margin-left: auto; margin-right: auto;" class="table">
 <caption>
-<span id="tab:glossary3">Table 4: </span>Glossary Week 3
+<span id="tab:casecode">Table 12: </span><code>london</code> Codebook
 </caption>
 <thead>
 <tr>
 <th style="text-align:left;">
-Term
+variable
 </th>
 <th style="text-align:left;">
-Description
+label
+</th>
+<th style="text-align:left;">
+year
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left;min-width: 1.25in; ">
-conflation
+const
 </td>
 <td style="text-align:left;">
-A variable does not belong to the attribute in question, but to a different one <span class="citation">(Munck &amp; Verkuilen, 2002, pp. 13–14)</span>
+Parliamentary constituency
+</td>
+<td style="text-align:left;">
+n/a
 </td>
 </tr>
 <tr>
 <td style="text-align:left;min-width: 1.25in; ">
-dependent variable
+gcse
 </td>
 <td style="text-align:left;">
-Is dependent through some statistical or stochastic process on the value of an independent variable
+An average score based on a pupil’s best eight grades in a group of GCSEs. The maximum a pupil can achieve is 90 points.
+</td>
+<td style="text-align:left;">
+2019
 </td>
 </tr>
 <tr>
 <td style="text-align:left;min-width: 1.25in; ">
-democracy
+eth_min
 </td>
 <td style="text-align:left;">
-A system in which the population chooses and holds accountable elected representatives through fair, free, and contested, multi-party elections. The human rights, civil rights, and civil liberties of individuals are protected by law
+Percent of population composed by ethnic minorities
+</td>
+<td style="text-align:left;">
+2011
 </td>
 </tr>
 <tr>
 <td style="text-align:left;min-width: 1.25in; ">
-independent variable
+idaci
 </td>
 <td style="text-align:left;">
-Influences or helps us predict the level of a dependent variable. It is often treated as fixed, or “given” in statistical analysis, and is sometimes also called “explanatory variable”
+The Income Deprivation Affecting Children Index rank - how it compares to other constituencies
+</td>
+<td style="text-align:left;">
+2015/16
 </td>
 </tr>
 <tr>
 <td style="text-align:left;min-width: 1.25in; ">
-redundancy
+income
 </td>
 <td style="text-align:left;">
-Two or more variables measure the same sub-attribute <span class="citation">(Munck &amp; Verkuilen, 2002, p. 13)</span>
+Mean income by constituency
+</td>
+<td style="text-align:left;">
+2017/18
 </td>
 </tr>
 </tbody>
 </table>
+<p>Data are taken from <span class="citation">House of Commons Library (n.d.)</span>, <span class="citation">GOV.UK (2013)</span>, and <span class="citation">London Data Store (2010)</span>. Set your working directory and load the data.</p>
+</div>
+<div id="inspect-your-data" class="section level2 unnumbered hasAnchor">
+<h2>Inspect your data<a href="case-study-1.html#inspect-your-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Here you can use several basic functions. The dataset does not contain too many variables, so you can start by using <code>names()</code>, <code>str()</code>, etc.</p>
+</div>
+<div id="preliminary-analysis" class="section level2 unnumbered hasAnchor">
+<h2>Preliminary Analysis<a href="case-study-1.html#preliminary-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let’s say we want to look at the relationship between income deprivation affecting children and GCSE scores. The two variables are, respectively, <code>idaci</code> and <code>gcse</code>.</p>
+<p>Now, formulate the working (alternative) and the null hypothesis. Write them down.</p>
+<p><strong>H<span class="math inline">\(\pmb{_0}\)</span>:</strong></p>
+<p><strong>H<span class="math inline">\(\pmb{_1}\)</span>:</strong></p>
+<p>Which is your dependent variable?</p>
+<p>Run a frequency table on the <code>idaci</code> variable. Does this distribution make sense? Why/why not?</p>
+<p>Do the same for the other variable. And guess what is the level of measurement.</p>
+</div>
+<div id="visualisation-1" class="section level2 unnumbered hasAnchor">
+<h2>Visualisation<a href="case-study-1.html#visualisation-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let’s start with the visualisation of the relationship between the two variables. What is the best way to visualise the relationship considering the level of measurement of our variables?</p>
+<p><strong>Hint:</strong> Probably a scatterplot, right? So, use a scatterplot to visualise the relationship and add the regression line.</p>
+<p>You can use <code>ggplot</code>, but also the base R <code>plot()</code> function.</p>
+<p>Improve the graph by:</p>
+<ol style="list-style-type: decimal">
+<li>Adding a regression line.</li>
+<li>Adding up a relevant title, also possibly a subtitle.</li>
+<li>Adding axes labels and making them readable.</li>
+</ol>
+<p><img src="main_files/figure-html/unnamed-chunk-104-1.png" width="75%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="visualisation-2.0" class="section level2 unnumbered hasAnchor">
+<h2>Visualisation 2.0<a href="case-study-1.html#visualisation-2.0" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now, draw a vertical and horizontal line corresponding to the mean of your variables using <code>geom_hline</code> and <code>geom_vline</code>. You can thus check if the regression line passes through the mean of X and Y. (see: <a href="https://www.rdocumentation.org/packages/ggplot2/versions/0.9.1/topics/geom_hline" class="uri">https://www.rdocumentation.org/packages/ggplot2/versions/0.9.1/topics/geom_hline</a>).</p>
+<p>You can improve the scatterplot using a series of arguments (e.g., alpha) in the <code>geom_point()</code> function in ggplot. Try to improve the Aesthetics of the scatterplot playing with alpha, for instance. (see: https:
+//www.rdocumentation.org/packages/ggplot2/versions/3.4.0/topics/geom_point).</p>
+</div>
+<div id="saving-the-scatterplot" class="section level2 unnumbered hasAnchor">
+<h2>Saving the Scatterplot<a href="case-study-1.html#saving-the-scatterplot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can save a graph as .png, .JPG (even .pdf) that you can then import in a word document. Although there are many way to use your R output, saving a graph might be sometimes useful.</p>
+<p>Use the function <code>ggsave()</code> to save your scatterplot. Again, there are tons of examples online, google it.</p>
+<p><strong>Hint:</strong> You first need to store the graph in an object.</p>
+<p><strong>Hint 2:</strong> The file will end up in your working directory.</p>
+</div>
+<div id="regression-analysis-yes-finally" class="section level2 unnumbered hasAnchor">
+<h2>Regression Analysis (yes, finally)<a href="case-study-1.html#regression-analysis-yes-finally" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now we can finally run a linear regression with <code>gcse</code> as the outcome variable and <code>idaci</code> as the predictor using the <code>lm()</code> function. Store the results in an object called <code>model</code> and visualise the regression output using <code>summary()</code>.</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="case-study-1.html#cb84-1" tabindex="-1"></a><span class="co"># Store the results in an object called model #</span></span>
+<span id="cb84-2"><a href="case-study-1.html#cb84-2" tabindex="-1"></a>model<span class="ot">&lt;-</span><span class="fu">lm</span>(gcse <span class="sc">~</span> idaci, london)</span>
+<span id="cb84-3"><a href="case-study-1.html#cb84-3" tabindex="-1"></a><span class="co"># Visualise the regression output using summary() #</span></span>
+<span id="cb84-4"><a href="case-study-1.html#cb84-4" tabindex="-1"></a><span class="fu">summary</span>(model)</span>
+<span id="cb84-5"><a href="case-study-1.html#cb84-5" tabindex="-1"></a></span>
+<span id="cb84-6"><a href="case-study-1.html#cb84-6" tabindex="-1"></a>Call<span class="sc">:</span></span>
+<span id="cb84-7"><a href="case-study-1.html#cb84-7" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> gcse <span class="sc">~</span> idaci, <span class="at">data =</span> london)</span>
+<span id="cb84-8"><a href="case-study-1.html#cb84-8" tabindex="-1"></a></span>
+<span id="cb84-9"><a href="case-study-1.html#cb84-9" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
+<span id="cb84-10"><a href="case-study-1.html#cb84-10" tabindex="-1"></a>    Min      <span class="dv">1</span>Q  Median      <span class="dv">3</span>Q     Max </span>
+<span id="cb84-11"><a href="case-study-1.html#cb84-11" tabindex="-1"></a><span class="sc">-</span><span class="fl">6.4921</span> <span class="sc">-</span><span class="fl">2.5321</span> <span class="sc">-</span><span class="fl">0.1722</span>  <span class="fl">2.7077</span>  <span class="fl">7.7815</span> </span>
+<span id="cb84-12"><a href="case-study-1.html#cb84-12" tabindex="-1"></a></span>
+<span id="cb84-13"><a href="case-study-1.html#cb84-13" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
+<span id="cb84-14"><a href="case-study-1.html#cb84-14" tabindex="-1"></a>             Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
+<span id="cb84-15"><a href="case-study-1.html#cb84-15" tabindex="-1"></a>(Intercept) <span class="fl">45.852958</span>   <span class="fl">0.657251</span>  <span class="fl">69.765</span>  <span class="sc">&lt;</span> <span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb84-16"><a href="case-study-1.html#cb84-16" tabindex="-1"></a>idaci        <span class="fl">0.019765</span>   <span class="fl">0.002894</span>   <span class="fl">6.831</span>  <span class="fl">2.4e-09</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb84-17"><a href="case-study-1.html#cb84-17" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb84-18"><a href="case-study-1.html#cb84-18" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
+<span id="cb84-19"><a href="case-study-1.html#cb84-19" tabindex="-1"></a></span>
+<span id="cb84-20"><a href="case-study-1.html#cb84-20" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="fl">3.317</span> on <span class="dv">71</span> degrees of freedom</span>
+<span id="cb84-21"><a href="case-study-1.html#cb84-21" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3965</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.388</span> </span>
+<span id="cb84-22"><a href="case-study-1.html#cb84-22" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">46.66</span> on <span class="dv">1</span> and <span class="dv">71</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="fl">2.398e-09</span></span></code></pre></div>
+<p>You can also extract specific blocks of the output table. One way of doing it is to use the brackets [] after the <code>summary()</code> function. For example <code>summary()[8]</code>. Try to extract the block of Coefficients from the table, like this:</p>
+<pre><code>$coefficients
+              Estimate Std. Error   t value     Pr(&gt;|t|)
+(Intercept) 45.8529580 0.65725150 69.764707 3.767825e-67
+idaci        0.0197651 0.00289364  6.830532 2.397995e-09</code></pre>
+</div>
+<div id="interpretation" class="section level2 unnumbered hasAnchor">
+<h2>Interpretation<a href="case-study-1.html#interpretation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Interpret the results, starting with model evaluation.</p>
+<ol style="list-style-type: decimal">
+<li>Is the p-value of the F-statistics statistically significant? We will be discussing this in our following
+lectures.</li>
+<li>How much variation in the outcome variable does the model explain? What does this tell us about the model?</li>
+<li>What’s the value of the slope? What does it mean?</li>
+<li>What’s the value of the intercept? How do we interpret it? Is it statistically significant? What does it mean in practice?</li>
+<li>Interpret the results (in plain language) referring to the hypothesis you formulated above.</li>
+</ol>
+</div>
+<div id="exporting-the-results" class="section level2 unnumbered hasAnchor">
+<h2>Exporting the Results<a href="case-study-1.html#exporting-the-results" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As for the graphs, you can also export and save the results of the regression model in a Word table. To do that you can use the ‘modelsummary’ package. Try to export the table.</p>
+<p>Just like writing a shopping list, we start by creating a list of models for which we want <code>modelsummary</code> to produce a table. You can merely list the names of the objects in which the models are stored, or you can give them specific names which will appear as column titles in the table. This addition is by no means a must, but sometimes you might wish to give models a particular name, for example if you have used different methods of estimation, different components of a theory, etc. In the table we are creating here, I wish to distinguish between bivariate and multivariate models. By default, <code>modelsummary</code> just numbers models in ascending order.</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="case-study-1.html#cb86-1" tabindex="-1"></a>models <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb86-2"><a href="case-study-1.html#cb86-2" tabindex="-1"></a>  <span class="st">&quot;Bivariate&quot;</span>    <span class="ot">=</span> model</span>
+<span id="cb86-3"><a href="case-study-1.html#cb86-3" tabindex="-1"></a>)</span></code></pre></div>
+<p>This simple step is already sufficient to produce – an admittedly somewhat crude – results table. All we have to do is to load the <code>modelsummary</code> package and to use the previously defined list of models as the argument of the <code>modelsummary()</code> function:</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="case-study-1.html#cb87-1" tabindex="-1"></a><span class="fu">library</span>(modelsummary)</span>
+<span id="cb87-2"><a href="case-study-1.html#cb87-2" tabindex="-1"></a><span class="fu">modelsummary</span>(models)</span></code></pre></div>
+<div class="bulb">
+<p>Execute these code chunks as we go through this Section, so you can see the alterations we make to the table in real-time.</p>
+</div>
+<p>This table is a vast improvement on the raw R output you would receive when calling <code>summary(model1)</code>. But it is far from finished. One characteristic which is conspicuously absent is an assessment of statistical significance. In model summaries of this kind this information is usually provided in the form of asterisks or other symbols next to the respective coefficient. We can add these simply by adding the option <code>stars=TRUE</code> to the code.</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="case-study-1.html#cb88-1" tabindex="-1"></a><span class="fu">modelsummary</span>(models,</span>
+<span id="cb88-2"><a href="case-study-1.html#cb88-2" tabindex="-1"></a>             <span class="at">stars =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>Next up is the modification of the stub. The stub is the leftmost column in which you name the indicators for which coefficients will be presented.In the stub, “[a]bbreviate nothing. And never ever ever use computer variable names to stand for concepts. These are personal code words that convey no meaning to readers.” <span class="citation">(Stimson, n.d., p. 10)</span> Following this advice, let us add proper labels to the independent variables.</p>
+<p>To let <code>modelsummary</code> know how to replace each variable name, we create a so-called coefficient map. This is really just a character vector which follows a “before-after” logic in each of its rows. For example <code>'age'='Age'</code> replaces the variable name <code>age</code> with the label <code>Age</code>. We need to do this for all the variables we used in our models. I am storing this in a vecor called <code>cm</code> which stands for coefficient map.</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="case-study-1.html#cb89-1" tabindex="-1"></a>cm <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;idaci&#39;</span>    <span class="ot">=</span> <span class="st">&#39;Income Deprivation Affecting Children Index&#39;</span>,</span>
+<span id="cb89-2"><a href="case-study-1.html#cb89-2" tabindex="-1"></a>        <span class="st">&#39;(Intercept)&#39;</span> <span class="ot">=</span> <span class="st">&#39;Intercept&#39;</span>)</span></code></pre></div>
+<p>The next step is easy, as we only need to feed this coefficient map into the <code>modelsummary</code> code with the option <code>coef_map=cm</code>:</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="case-study-1.html#cb90-1" tabindex="-1"></a><span class="fu">modelsummary</span>(models,</span>
+<span id="cb90-2"><a href="case-study-1.html#cb90-2" tabindex="-1"></a>             <span class="at">stars =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb90-3"><a href="case-study-1.html#cb90-3" tabindex="-1"></a>             <span class="at">coef_map =</span> cm)</span></code></pre></div>
+<p>This is a personal thing, but I also like to show the label of the dependent variable in results tables. They just feel incomplete to me without this information. There is no default to achieve this in <code>modelsummary</code> and so we need to use a little trick.</p>
+<p>What I want to add in the first row, but only in the second columm, the text . This requires us to alter the style of the table slightly. <code>modelsummary</code> uses another package called <code>tinytable</code> to style the output. We load the package with <code>library(tinytable)</code> and instruct R to place the text where we want it.</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="case-study-1.html#cb91-1" tabindex="-1"></a><span class="fu">library</span>(tinytable)</span>
+<span id="cb91-2"><a href="case-study-1.html#cb91-2" tabindex="-1"></a><span class="fu">modelsummary</span>(models,</span>
+<span id="cb91-3"><a href="case-study-1.html#cb91-3" tabindex="-1"></a>             <span class="at">stars =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb91-4"><a href="case-study-1.html#cb91-4" tabindex="-1"></a>             <span class="at">coef_map =</span> cm)<span class="sc">|&gt;</span></span>
+<span id="cb91-5"><a href="case-study-1.html#cb91-5" tabindex="-1"></a>  <span class="fu">group_tt</span>(<span class="at">j =</span> <span class="fu">list</span>(<span class="st">&quot;Dependent Variable: GCSE Score&quot;</span> <span class="ot">=</span> <span class="dv">2</span>))</span></code></pre></div>
+<p>Lastly, let us tackle the model fit statistics. By default, <code>modelsummary</code> prints a whole festival of these into the bottom section of the table, but I want to concentrate only on R<span class="math inline">\(^2\)</span>.</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="case-study-1.html#cb92-1" tabindex="-1"></a><span class="fu">modelsummary</span>(models,</span>
+<span id="cb92-2"><a href="case-study-1.html#cb92-2" tabindex="-1"></a>             <span class="at">stars =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb92-3"><a href="case-study-1.html#cb92-3" tabindex="-1"></a>             <span class="at">coef_map =</span> cm,</span>
+<span id="cb92-4"><a href="case-study-1.html#cb92-4" tabindex="-1"></a>             <span class="at">gof_omit =</span> <span class="st">&#39;DF|Deviance|Log.Lik|F|AIC|BIC|RMSE&#39;</span>)<span class="sc">|&gt;</span></span>
+<span id="cb92-5"><a href="case-study-1.html#cb92-5" tabindex="-1"></a>  <span class="fu">group_tt</span>(<span class="at">j =</span> <span class="fu">list</span>(<span class="st">&quot;Dependent Variable: GCSE Score&quot;</span> <span class="ot">=</span> <span class="dv">2</span>))</span></code></pre></div>
+<p>This should produce this table:</p>
+<!-- preamble start -->
+
+    <script>
+
+      function styleCell_uqojug9rinmy5ih4324a(i, j, css_id) {
+          var table = document.getElementById("tinytable_uqojug9rinmy5ih4324a");
+          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_uqojug9rinmy5ih4324a');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_uqojug9rinmy5ih4324a(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_uqojug9rinmy5ih4324a");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: 2, j: 1 }, { i: 3, j: 1 }, { i: 4, j: 1 }, { i: 6, j: 1 }, { i: 7, j: 1 },  ], css_id: 'tinytable_css_z27mpah6ubp1eivub3np',}, 
+          { positions: [ { i: 5, j: 0 },  ], css_id: 'tinytable_css_xce8ql9b88e3p8usijy8',}, 
+          { positions: [ { i: 1, j: 1 },  ], css_id: 'tinytable_css_vu1eqzu0ara6yd5hjcqt',}, 
+          { positions: [ { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 },  ], css_id: 'tinytable_css_vog99f8hskxj2fz5vrxc',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_n2x1l40lbalm922ls3zh',}, 
+          { positions: [ { i: 8, j: 0 },  ], css_id: 'tinytable_css_l07z8vdwt98vgc16gt73',}, 
+          { positions: [ { i: 8, j: 1 },  ], css_id: 'tinytable_css_c53n75ebl4a5p8uf37l2',}, 
+          { positions: [ { i: 1, j: 0 },  ], css_id: 'tinytable_css_a7v3ljb69assh87by2dj',}, 
+          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_6dlj2dor6mh1bu5wjb2z',}, 
+          { positions: [ { i: 5, j: 1 },  ], css_id: 'tinytable_css_3lbtok5bnv9ckj9ye8hw',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_uqojug9rinmy5ih4324a(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_z27mpah6ubp1eivub3np, .table th.tinytable_css_z27mpah6ubp1eivub3np { text-align: center; }
+      .table td.tinytable_css_xce8ql9b88e3p8usijy8, .table th.tinytable_css_xce8ql9b88e3p8usijy8 { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_vu1eqzu0ara6yd5hjcqt, .table th.tinytable_css_vu1eqzu0ara6yd5hjcqt { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_vog99f8hskxj2fz5vrxc, .table th.tinytable_css_vog99f8hskxj2fz5vrxc { text-align: left; }
+      .table td.tinytable_css_n2x1l40lbalm922ls3zh, .table th.tinytable_css_n2x1l40lbalm922ls3zh { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_l07z8vdwt98vgc16gt73, .table th.tinytable_css_l07z8vdwt98vgc16gt73 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_c53n75ebl4a5p8uf37l2, .table th.tinytable_css_c53n75ebl4a5p8uf37l2 { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_a7v3ljb69assh87by2dj, .table th.tinytable_css_a7v3ljb69assh87by2dj { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_6dlj2dor6mh1bu5wjb2z, .table th.tinytable_css_6dlj2dor6mh1bu5wjb2z { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_3lbtok5bnv9ckj9ye8hw, .table th.tinytable_css_3lbtok5bnv9ckj9ye8hw { text-align: center; border-bottom: solid black 0.05em; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_uqojug9rinmy5ih4324a" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
+        <thead>
+<tr>
+<th scope="col" align="center" colspan=1> </th>
+<th scope="col" align="center" colspan=1>Dependent Variable:<br>GCSE Score</th>
+</tr>
+        <caption><span id="tab:reg91">Table 13: </span> Regression Models</caption>
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col">Bivariate</th>
+              </tr>
+        </thead>
+        <tfoot><tr><td colspan='2'>+ p < 0.1, * p < 0.05, ** p < 0.01, *** p < 0.001</td></tr></tfoot>
+        <tbody>
+                <tr>
+                  <td>Income Deprivation Affecting Children Index</td>
+                  <td>0.020***</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>(0.003)</td>
+                </tr>
+                <tr>
+                  <td>Intercept</td>
+                  <td>45.853***</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>(0.657)</td>
+                </tr>
+                <tr>
+                  <td>Num.Obs.</td>
+                  <td>73</td>
+                </tr>
+                <tr>
+                  <td>R2</td>
+                  <td>0.397</td>
+                </tr>
+                <tr>
+                  <td>R2 Adj.</td>
+                  <td>0.388</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+<p>You can export your tables for use in MS Word, or Apple Pages. But you will not be able to export the full table, only up to the point at which you are specifying the options for <code>tinytable</code> with <code>|&gt;</code>. This is probably as good a reason as any to start working with Markdown or LaTeXBut if you are happy with this caveat, the following code will render the table in an MS Word document (<code>output="table.docx"</code>) that is placed in your working directory.</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="case-study-1.html#cb93-1" tabindex="-1"></a><span class="fu">modelsummary</span>(models,</span>
+<span id="cb93-2"><a href="case-study-1.html#cb93-2" tabindex="-1"></a>             <span class="at">stars =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb93-3"><a href="case-study-1.html#cb93-3" tabindex="-1"></a>             <span class="at">coef_map =</span> cm,</span>
+<span id="cb93-4"><a href="case-study-1.html#cb93-4" tabindex="-1"></a>             <span class="at">gof_omit =</span> <span class="st">&#39;AIC|BIC|Log.Lik|F|RMSE&#39;</span>,</span>
+<span id="cb93-5"><a href="case-study-1.html#cb93-5" tabindex="-1"></a>             <span class="at">add_rows =</span> rows,</span>
+<span id="cb93-6"><a href="case-study-1.html#cb93-6" tabindex="-1"></a>             <span class="at">notes =</span> <span class="fu">list</span>(<span class="st">&#39;This is a long and rather pointless </span></span>
+<span id="cb93-7"><a href="case-study-1.html#cb93-7" tabindex="-1"></a><span class="st">                          note to demonstrate formatting.&#39;</span>),</span>
+<span id="cb93-8"><a href="case-study-1.html#cb93-8" tabindex="-1"></a>             <span class="at">output =</span> <span class="st">&quot;table.docx&quot;</span>)</span></code></pre></div>
+</div>
+<div id="comparing-models" class="section level2 unnumbered hasAnchor">
+<h2>Comparing Models<a href="case-study-1.html#comparing-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can now run another regression model with . Compare your original model with the new one. How do you know which independent variable is doing a better job in explaining your dependent variable?</p>
+</div>
+<div id="causality-1" class="section level2 unnumbered hasAnchor">
+<h2>Causality<a href="case-study-1.html#causality-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Consider the causality framework of Week 5. To what extent has this case study established causality? What is missing from the framework?</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="15">
+<li id="fn15"><p>The structure of this study was originally designed by Oleksiy Bondarenko. I have slightly altered it in subsequent years.<a href="case-study-1.html#fnref15" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="homework-for-week-4.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="flashcards-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="bivariate-regression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="homework-for-week-9.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -21,5 +21,15 @@ tab:glossary5
 tab:glossary7
 tab:londoncode
 tab:regdata
+tab:regdata5
+tab:casecode
+tab:reg91
 tab:glossary8
+tab:wdicode9
+tab:reg1
+tab:reg2
+tab:reg3
+tab:reg4
+tab:glossary9
 tab:glossaryfull
+going-further-1

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Glossary | PO91Q: Seminar Companion</title>
-  <meta name="description" content="Glossary | PO91Q: Seminar Companion" />
+  <title>Methods, Methods, Methods | PO91Q: Seminar Companion</title>
+  <meta name="description" content="Methods, Methods, Methods | PO91Q: Seminar Companion" />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Glossary | PO91Q: Seminar Companion" />
+  <meta property="og:title" content="Methods, Methods, Methods | PO91Q: Seminar Companion" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Glossary | PO91Q: Seminar Companion" />
+  <meta name="twitter:title" content="Methods, Methods, Methods | PO91Q: Seminar Companion" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="homework-for-week-4.html"/>
-<link rel="next" href="flashcards-2.html"/>
+<link rel="prev" href="flashcards-6.html"/>
+<link rel="next" href="multiple-regression.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -393,73 +393,144 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="glossary-2" class="section level1 unnumbered hasAnchor">
-<h1>Glossary<a href="glossary-2.html#glossary-2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<table style="width:100%; color: black; margin-left: auto; margin-right: auto;" class="table">
-<caption>
-<span id="tab:glossary3">Table 4: </span>Glossary Week 3
-</caption>
-<thead>
-<tr>
-<th style="text-align:left;">
-Term
-</th>
-<th style="text-align:left;">
-Description
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;min-width: 1.25in; ">
-conflation
-</td>
-<td style="text-align:left;">
-A variable does not belong to the attribute in question, but to a different one <span class="citation">(Munck &amp; Verkuilen, 2002, pp. 13–14)</span>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;min-width: 1.25in; ">
-dependent variable
-</td>
-<td style="text-align:left;">
-Is dependent through some statistical or stochastic process on the value of an independent variable
-</td>
-</tr>
-<tr>
-<td style="text-align:left;min-width: 1.25in; ">
-democracy
-</td>
-<td style="text-align:left;">
-A system in which the population chooses and holds accountable elected representatives through fair, free, and contested, multi-party elections. The human rights, civil rights, and civil liberties of individuals are protected by law
-</td>
-</tr>
-<tr>
-<td style="text-align:left;min-width: 1.25in; ">
-independent variable
-</td>
-<td style="text-align:left;">
-Influences or helps us predict the level of a dependent variable. It is often treated as fixed, or “given” in statistical analysis, and is sometimes also called “explanatory variable”
-</td>
-</tr>
-<tr>
-<td style="text-align:left;min-width: 1.25in; ">
-redundancy
-</td>
-<td style="text-align:left;">
-Two or more variables measure the same sub-attribute <span class="citation">(Munck &amp; Verkuilen, 2002, p. 13)</span>
-</td>
-</tr>
-</tbody>
-</table>
+<div id="methods-methods-methods-1" class="section level1 unnumbered hasAnchor">
+<h1>Methods, Methods, Methods<a href="methods-methods-methods-1.html#methods-methods-methods-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This week we are extending our bivariate regression model to approximate the real world in which nothing is mono-causal. We call this multiple regression.</p>
+<p>Just as last week we will be working with the American National Election Studies (ANES), and to be more precise with the pilot survey conducted before the 2020 presidential election. If you haven’t already done so, you will have to register with ANES in order to download the data set. To do so, please follow <a href="https://electionstudies.org/data-center/2020-exploratory-testing-survey/">this link</a>.</p>
+<div id="data-prep-4" class="section level2 unnumbered hasAnchor">
+<h2>Data Prep<a href="methods-methods-methods-1.html#data-prep-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Place the ANES data in a folder which you will be using as a working directory for this session. Open the “Code for Data Preparation” below, and copy this into an RScript. Remember to adjust the working directory with the <code>setwd()</code> command at the beginning. Then run the RScript and you will be ready to proceed to the video.</p>
+<div class="bluebox">
+<details>
+<summary>
+Code for Data Preparation
+</summary>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="methods-methods-methods-1.html#cb94-1" tabindex="-1"></a><span class="do">######################################</span></span>
+<span id="cb94-2"><a href="methods-methods-methods-1.html#cb94-2" tabindex="-1"></a><span class="co"># MMM - Week 8 - Data Preparation</span></span>
+<span id="cb94-3"><a href="methods-methods-methods-1.html#cb94-3" tabindex="-1"></a><span class="do">######################################</span></span>
+<span id="cb94-4"><a href="methods-methods-methods-1.html#cb94-4" tabindex="-1"></a></span>
+<span id="cb94-5"><a href="methods-methods-methods-1.html#cb94-5" tabindex="-1"></a></span>
+<span id="cb94-6"><a href="methods-methods-methods-1.html#cb94-6" tabindex="-1"></a><span class="co"># Set WD</span></span>
+<span id="cb94-7"><a href="methods-methods-methods-1.html#cb94-7" tabindex="-1"></a><span class="fu">setwd</span>()</span>
+<span id="cb94-8"><a href="methods-methods-methods-1.html#cb94-8" tabindex="-1"></a></span>
+<span id="cb94-9"><a href="methods-methods-methods-1.html#cb94-9" tabindex="-1"></a><span class="co"># Load packages</span></span>
+<span id="cb94-10"><a href="methods-methods-methods-1.html#cb94-10" tabindex="-1"></a></span>
+<span id="cb94-11"><a href="methods-methods-methods-1.html#cb94-11" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb94-12"><a href="methods-methods-methods-1.html#cb94-12" tabindex="-1"></a></span>
+<span id="cb94-13"><a href="methods-methods-methods-1.html#cb94-13" tabindex="-1"></a><span class="co"># Load data set</span></span>
+<span id="cb94-14"><a href="methods-methods-methods-1.html#cb94-14" tabindex="-1"></a></span>
+<span id="cb94-15"><a href="methods-methods-methods-1.html#cb94-15" tabindex="-1"></a>anes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;anes.csv&quot;</span>)</span>
+<span id="cb94-16"><a href="methods-methods-methods-1.html#cb94-16" tabindex="-1"></a></span>
+<span id="cb94-17"><a href="methods-methods-methods-1.html#cb94-17" tabindex="-1"></a><span class="co"># Get rid of missing values for variables used in analysis today</span></span>
+<span id="cb94-18"><a href="methods-methods-methods-1.html#cb94-18" tabindex="-1"></a></span>
+<span id="cb94-19"><a href="methods-methods-methods-1.html#cb94-19" tabindex="-1"></a><span class="do">## 999 is equivalent to NA, so needs to be recoded</span></span>
+<span id="cb94-20"><a href="methods-methods-methods-1.html#cb94-20" tabindex="-1"></a>anes<span class="sc">$</span>fttrump1 <span class="ot">&lt;-</span> <span class="fu">with</span>(anes, <span class="fu">replace</span>(fttrump1, fttrump1 <span class="sc">==</span> <span class="dv">999</span>, <span class="cn">NA</span>)) </span>
+<span id="cb94-21"><a href="methods-methods-methods-1.html#cb94-21" tabindex="-1"></a>anes<span class="sc">$</span>income <span class="ot">&lt;-</span> <span class="fu">with</span>(anes, <span class="fu">replace</span>(income, income <span class="sc">==</span> <span class="dv">99</span>, <span class="cn">NA</span>)) </span>
+<span id="cb94-22"><a href="methods-methods-methods-1.html#cb94-22" tabindex="-1"></a></span>
+<span id="cb94-23"><a href="methods-methods-methods-1.html#cb94-23" tabindex="-1"></a>anes <span class="ot">&lt;-</span> <span class="fu">filter</span>(anes, </span>
+<span id="cb94-24"><a href="methods-methods-methods-1.html#cb94-24" tabindex="-1"></a>               <span class="sc">!</span><span class="fu">is.na</span>(fttrump1),</span>
+<span id="cb94-25"><a href="methods-methods-methods-1.html#cb94-25" tabindex="-1"></a>               <span class="sc">!</span><span class="fu">is.na</span>(age),</span>
+<span id="cb94-26"><a href="methods-methods-methods-1.html#cb94-26" tabindex="-1"></a>               <span class="sc">!</span><span class="fu">is.na</span>(income))</span>
+<span id="cb94-27"><a href="methods-methods-methods-1.html#cb94-27" tabindex="-1"></a></span>
+<span id="cb94-28"><a href="methods-methods-methods-1.html#cb94-28" tabindex="-1"></a><span class="co"># Turn income variable into a numerical variable with mid-points of each level</span></span>
+<span id="cb94-29"><a href="methods-methods-methods-1.html#cb94-29" tabindex="-1"></a></span>
+<span id="cb94-30"><a href="methods-methods-methods-1.html#cb94-30" tabindex="-1"></a>anes<span class="sc">$</span>income <span class="ot">&lt;-</span> <span class="fu">factor</span>(anes<span class="sc">$</span>income)</span>
+<span id="cb94-31"><a href="methods-methods-methods-1.html#cb94-31" tabindex="-1"></a><span class="fu">table</span>(anes<span class="sc">$</span>income)</span>
+<span id="cb94-32"><a href="methods-methods-methods-1.html#cb94-32" tabindex="-1"></a>anes <span class="ot">&lt;-</span> anes <span class="sc">%&gt;%</span></span>
+<span id="cb94-33"><a href="methods-methods-methods-1.html#cb94-33" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">income_fac =</span> <span class="fu">recode</span>(income,</span>
+<span id="cb94-34"><a href="methods-methods-methods-1.html#cb94-34" tabindex="-1"></a>                             <span class="st">&#39;1&#39;</span><span class="ot">=</span> <span class="st">&quot;2500&quot;</span>,</span>
+<span id="cb94-35"><a href="methods-methods-methods-1.html#cb94-35" tabindex="-1"></a>                             <span class="st">&#39;2&#39;</span><span class="ot">=</span> <span class="st">&quot;7499.5&quot;</span>,</span>
+<span id="cb94-36"><a href="methods-methods-methods-1.html#cb94-36" tabindex="-1"></a>                             <span class="st">&#39;3&#39;</span><span class="ot">=</span> <span class="st">&quot;12499.5&quot;</span>,</span>
+<span id="cb94-37"><a href="methods-methods-methods-1.html#cb94-37" tabindex="-1"></a>                             <span class="st">&#39;4&#39;</span><span class="ot">=</span> <span class="st">&quot;17499.5&quot;</span>,                       </span>
+<span id="cb94-38"><a href="methods-methods-methods-1.html#cb94-38" tabindex="-1"></a>                             <span class="st">&#39;5&#39;</span><span class="ot">=</span> <span class="st">&quot;22499.5&quot;</span>,</span>
+<span id="cb94-39"><a href="methods-methods-methods-1.html#cb94-39" tabindex="-1"></a>                             <span class="st">&#39;6&#39;</span><span class="ot">=</span> <span class="st">&quot;27499.5&quot;</span>,</span>
+<span id="cb94-40"><a href="methods-methods-methods-1.html#cb94-40" tabindex="-1"></a>                             <span class="st">&#39;7&#39;</span><span class="ot">=</span> <span class="st">&quot;32499.5&quot;</span>,</span>
+<span id="cb94-41"><a href="methods-methods-methods-1.html#cb94-41" tabindex="-1"></a>                             <span class="st">&#39;8&#39;</span><span class="ot">=</span> <span class="st">&quot;37499.5&quot;</span>,</span>
+<span id="cb94-42"><a href="methods-methods-methods-1.html#cb94-42" tabindex="-1"></a>                             <span class="st">&#39;9&#39;</span><span class="ot">=</span> <span class="st">&quot;42499.5&quot;</span>,</span>
+<span id="cb94-43"><a href="methods-methods-methods-1.html#cb94-43" tabindex="-1"></a>                             <span class="st">&#39;10&#39;</span><span class="ot">=</span> <span class="st">&quot;47499.5&quot;</span>,</span>
+<span id="cb94-44"><a href="methods-methods-methods-1.html#cb94-44" tabindex="-1"></a>                             <span class="st">&#39;11&#39;</span><span class="ot">=</span> <span class="st">&quot;52499.5&quot;</span>,</span>
+<span id="cb94-45"><a href="methods-methods-methods-1.html#cb94-45" tabindex="-1"></a>                             <span class="st">&#39;12&#39;</span><span class="ot">=</span> <span class="st">&quot;57499.5&quot;</span>,</span>
+<span id="cb94-46"><a href="methods-methods-methods-1.html#cb94-46" tabindex="-1"></a>                             <span class="st">&#39;13&#39;</span><span class="ot">=</span> <span class="st">&quot;62499.5&quot;</span>,</span>
+<span id="cb94-47"><a href="methods-methods-methods-1.html#cb94-47" tabindex="-1"></a>                             <span class="st">&#39;14&#39;</span><span class="ot">=</span> <span class="st">&quot;67499.5&quot;</span>,</span>
+<span id="cb94-48"><a href="methods-methods-methods-1.html#cb94-48" tabindex="-1"></a>                             <span class="st">&#39;15&#39;</span><span class="ot">=</span> <span class="st">&quot;72499.5&quot;</span>,</span>
+<span id="cb94-49"><a href="methods-methods-methods-1.html#cb94-49" tabindex="-1"></a>                             <span class="st">&#39;16&#39;</span><span class="ot">=</span> <span class="st">&quot;77499.5&quot;</span>,</span>
+<span id="cb94-50"><a href="methods-methods-methods-1.html#cb94-50" tabindex="-1"></a>                             <span class="st">&#39;17&#39;</span><span class="ot">=</span> <span class="st">&quot;82499.5&quot;</span>,</span>
+<span id="cb94-51"><a href="methods-methods-methods-1.html#cb94-51" tabindex="-1"></a>                             <span class="st">&#39;18&#39;</span><span class="ot">=</span> <span class="st">&quot;87499.5&quot;</span>,</span>
+<span id="cb94-52"><a href="methods-methods-methods-1.html#cb94-52" tabindex="-1"></a>                             <span class="st">&#39;19&#39;</span><span class="ot">=</span> <span class="st">&quot;92499.5&quot;</span>,</span>
+<span id="cb94-53"><a href="methods-methods-methods-1.html#cb94-53" tabindex="-1"></a>                             <span class="st">&#39;20&#39;</span><span class="ot">=</span> <span class="st">&quot;97499.5&quot;</span>,</span>
+<span id="cb94-54"><a href="methods-methods-methods-1.html#cb94-54" tabindex="-1"></a>                             <span class="st">&#39;21&#39;</span><span class="ot">=</span> <span class="st">&quot;112499.5&quot;</span>,</span>
+<span id="cb94-55"><a href="methods-methods-methods-1.html#cb94-55" tabindex="-1"></a>                             <span class="st">&#39;22&#39;</span><span class="ot">=</span> <span class="st">&quot;137499.5&quot;</span>,</span>
+<span id="cb94-56"><a href="methods-methods-methods-1.html#cb94-56" tabindex="-1"></a>                             <span class="st">&#39;23&#39;</span><span class="ot">=</span> <span class="st">&quot;162499.5&quot;</span>,</span>
+<span id="cb94-57"><a href="methods-methods-methods-1.html#cb94-57" tabindex="-1"></a>                             <span class="st">&#39;24&#39;</span><span class="ot">=</span> <span class="st">&quot;187499.5&quot;</span>,</span>
+<span id="cb94-58"><a href="methods-methods-methods-1.html#cb94-58" tabindex="-1"></a>                             <span class="st">&#39;25&#39;</span><span class="ot">=</span> <span class="st">&quot;224999.5&quot;</span>,</span>
+<span id="cb94-59"><a href="methods-methods-methods-1.html#cb94-59" tabindex="-1"></a>                             <span class="st">&#39;26&#39;</span><span class="ot">=</span> <span class="st">&quot;500000&quot;</span>))</span>
+<span id="cb94-60"><a href="methods-methods-methods-1.html#cb94-60" tabindex="-1"></a></span>
+<span id="cb94-61"><a href="methods-methods-methods-1.html#cb94-61" tabindex="-1"></a>anes<span class="sc">$</span>inc <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(anes<span class="sc">$</span>income_fac))</span>
+<span id="cb94-62"><a href="methods-methods-methods-1.html#cb94-62" tabindex="-1"></a></span>
+<span id="cb94-63"><a href="methods-methods-methods-1.html#cb94-63" tabindex="-1"></a><span class="co"># save data set for use in video</span></span>
+<span id="cb94-64"><a href="methods-methods-methods-1.html#cb94-64" tabindex="-1"></a></span>
+<span id="cb94-65"><a href="methods-methods-methods-1.html#cb94-65" tabindex="-1"></a><span class="fu">write.csv</span>(anes, <span class="st">&quot;anes_week8.csv&quot;</span>)</span></code></pre></div>
+</details>
+</div>
+<hr />
+</div>
+<div id="video-and-rscript-4" class="section level2 unnumbered hasAnchor">
+<h2>Video and RScript<a href="methods-methods-methods-1.html#video-and-rscript-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can find the video introducing you to this week’s method by way of a worked example below. You can also access the code I am typing up in the video in the “Code for Data Analysis” section. I would encourage you to type it yourself, though, as then code tends to better sink into the depths of your brain 😉</p>
+<div class="bluebox">
+<details>
+<summary>
+Code for Data Analysis
+</summary>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="methods-methods-methods-1.html#cb95-1" tabindex="-1"></a><span class="do">######################################</span></span>
+<span id="cb95-2"><a href="methods-methods-methods-1.html#cb95-2" tabindex="-1"></a><span class="co"># MMM - Week 8 - Multiple Regression</span></span>
+<span id="cb95-3"><a href="methods-methods-methods-1.html#cb95-3" tabindex="-1"></a><span class="do">######################################</span></span>
+<span id="cb95-4"><a href="methods-methods-methods-1.html#cb95-4" tabindex="-1"></a></span>
+<span id="cb95-5"><a href="methods-methods-methods-1.html#cb95-5" tabindex="-1"></a><span class="co"># Set WD</span></span>
+<span id="cb95-6"><a href="methods-methods-methods-1.html#cb95-6" tabindex="-1"></a><span class="fu">setwd</span>()</span>
+<span id="cb95-7"><a href="methods-methods-methods-1.html#cb95-7" tabindex="-1"></a></span>
+<span id="cb95-8"><a href="methods-methods-methods-1.html#cb95-8" tabindex="-1"></a><span class="co"># Load packages</span></span>
+<span id="cb95-9"><a href="methods-methods-methods-1.html#cb95-9" tabindex="-1"></a></span>
+<span id="cb95-10"><a href="methods-methods-methods-1.html#cb95-10" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb95-11"><a href="methods-methods-methods-1.html#cb95-11" tabindex="-1"></a></span>
+<span id="cb95-12"><a href="methods-methods-methods-1.html#cb95-12" tabindex="-1"></a><span class="co"># Load data set</span></span>
+<span id="cb95-13"><a href="methods-methods-methods-1.html#cb95-13" tabindex="-1"></a></span>
+<span id="cb95-14"><a href="methods-methods-methods-1.html#cb95-14" tabindex="-1"></a>anes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;anes_week9.csv&quot;</span>)</span>
+<span id="cb95-15"><a href="methods-methods-methods-1.html#cb95-15" tabindex="-1"></a></span>
+<span id="cb95-16"><a href="methods-methods-methods-1.html#cb95-16" tabindex="-1"></a></span>
+<span id="cb95-17"><a href="methods-methods-methods-1.html#cb95-17" tabindex="-1"></a><span class="co"># Bivariate Regression</span></span>
+<span id="cb95-18"><a href="methods-methods-methods-1.html#cb95-18" tabindex="-1"></a><span class="do">############################</span></span>
+<span id="cb95-19"><a href="methods-methods-methods-1.html#cb95-19" tabindex="-1"></a></span>
+<span id="cb95-20"><a href="methods-methods-methods-1.html#cb95-20" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(fttrump1 <span class="sc">~</span> inc, <span class="at">data =</span> anes)</span>
+<span id="cb95-21"><a href="methods-methods-methods-1.html#cb95-21" tabindex="-1"></a></span>
+<span id="cb95-22"><a href="methods-methods-methods-1.html#cb95-22" tabindex="-1"></a><span class="fu">summary</span>(model1)</span>
+<span id="cb95-23"><a href="methods-methods-methods-1.html#cb95-23" tabindex="-1"></a></span>
+<span id="cb95-24"><a href="methods-methods-methods-1.html#cb95-24" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(fttrump1 <span class="sc">~</span> age, <span class="at">data =</span> anes)</span>
+<span id="cb95-25"><a href="methods-methods-methods-1.html#cb95-25" tabindex="-1"></a></span>
+<span id="cb95-26"><a href="methods-methods-methods-1.html#cb95-26" tabindex="-1"></a><span class="fu">summary</span>(model2)</span>
+<span id="cb95-27"><a href="methods-methods-methods-1.html#cb95-27" tabindex="-1"></a></span>
+<span id="cb95-28"><a href="methods-methods-methods-1.html#cb95-28" tabindex="-1"></a><span class="co"># Multiple Regression</span></span>
+<span id="cb95-29"><a href="methods-methods-methods-1.html#cb95-29" tabindex="-1"></a><span class="do">############################</span></span>
+<span id="cb95-30"><a href="methods-methods-methods-1.html#cb95-30" tabindex="-1"></a></span>
+<span id="cb95-31"><a href="methods-methods-methods-1.html#cb95-31" tabindex="-1"></a>model3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(fttrump1 <span class="sc">~</span> inc <span class="sc">+</span> age, <span class="at">data =</span> anes)</span>
+<span id="cb95-32"><a href="methods-methods-methods-1.html#cb95-32" tabindex="-1"></a></span>
+<span id="cb95-33"><a href="methods-methods-methods-1.html#cb95-33" tabindex="-1"></a><span class="fu">summary</span>(model3)</span></code></pre></div>
+</details>
+</div>
+<div class="video">
+<p><strong>Multiple Regression in R</strong></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DEBHeMw9GOg?si=gRt3jpa__Ojyo7zm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="homework-for-week-4.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="flashcards-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="flashcards-6.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="multiple-regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

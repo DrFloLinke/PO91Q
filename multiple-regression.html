@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Multiple Regression | PO91Q: Seminar Companion</title>
+  <meta name="description" content="Multiple Regression | PO91Q: Seminar Companion" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Multiple Regression | PO91Q: Seminar Companion" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Multiple Regression | PO91Q: Seminar Companion" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="methods-methods-methods-1.html"/>
+<link rel="next" href="homework-for-week-10.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="companion-features.html"><a href="companion-features.html"><i class="fa fa-check"></i>Companion Features</a></li>
+<li class="chapter" data-level="" data-path="accessibility.html"><a href="accessibility.html"><i class="fa fa-check"></i>Accessibility</a></li>
+<li class="part"><span><b>Week 1</b></span></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i>Introduction to R</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#installation"><i class="fa fa-check"></i>Installation</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#r---getting-started"><i class="fa fa-check"></i>R - Getting Started</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#rscript"><i class="fa fa-check"></i>RScript</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#rscript-structure"><i class="fa fa-check"></i>RScript Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#first-steps-in-r"><i class="fa fa-check"></i>First Steps in R</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#the-working-directory"><i class="fa fa-check"></i>The Working Directory</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#r-packages"><i class="fa fa-check"></i>R Packages</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#saving"><i class="fa fa-check"></i>Saving</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercises.html"><a href="exercises.html"><i class="fa fa-check"></i>Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercises.html"><a href="exercises.html#core-exercises"><i class="fa fa-check"></i>Core Exercises</a></li>
+<li class="chapter" data-level="" data-path="exercises.html"><a href="exercises.html#going-further"><i class="fa fa-check"></i>Going Further</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="homework-for-week-2.html"><a href="homework-for-week-2.html"><i class="fa fa-check"></i>Homework for Week 2</a></li>
+<li class="chapter" data-level="" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="flashcards.html"><a href="flashcards.html"><i class="fa fa-check"></i>Flashcards</a></li>
+<li class="part"><span><b>Week 2</b></span></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html"><i class="fa fa-check"></i>Data Manipulation in R</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#self-reflection-questions-group-work"><i class="fa fa-check"></i>Self-Reflection Questions – Group Work</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#opening-your-data-set"><i class="fa fa-check"></i>Opening your Data Set</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#viewing-the-data"><i class="fa fa-check"></i>Viewing the Data</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#variable-types-in-r"><i class="fa fa-check"></i>Variable Types in R</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#nominal-variables"><i class="fa fa-check"></i>Nominal Variables</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#ordinal-variables"><i class="fa fa-check"></i>Ordinal Variables</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#binary-dummy"><i class="fa fa-check"></i>Binary Dummy</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#sub-setting-data"><i class="fa fa-check"></i>Sub-Setting Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#by-variable"><i class="fa fa-check"></i>By Variable</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#by-observation"><i class="fa fa-check"></i>By Observation</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#keep-if-a-variable-has-a-certain-value"><i class="fa fa-check"></i>Keep if a variable has a certain value</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#ordering-data"><i class="fa fa-check"></i>Ordering Data</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#grouping-data"><i class="fa fa-check"></i>Grouping Data</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#combining-ordering-and-grouping-data"><i class="fa fa-check"></i>Combining Ordering and Grouping Data</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#descriptive-statistics"><i class="fa fa-check"></i>Descriptive Statistics</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#graphs"><i class="fa fa-check"></i>Graphs</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#basic-graphs"><i class="fa fa-check"></i>Basic Graphs</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#advanced-graphs"><i class="fa fa-check"></i>Advanced Graphs</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#even-more-advanced-graphs"><i class="fa fa-check"></i>Even More Advanced Graphs</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#organising-code-in-the-rscript"><i class="fa fa-check"></i>Organising Code in the RScript</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#captions-for-tables-and-figures-in-word"><i class="fa fa-check"></i>Captions for Tables and Figures in Word</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercises-2.html"><a href="exercises-2.html"><i class="fa fa-check"></i>Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercises-2.html"><a href="exercises-2.html#exploring-the-ess-core-exercises"><i class="fa fa-check"></i>Exploring the ESS – Core Exercises</a></li>
+<li class="chapter" data-level="" data-path="exercises-2.html"><a href="exercises-2.html#exploring-the-ess-going-further"><i class="fa fa-check"></i>Exploring the ESS – Going Further</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="homework-for-week-3.html"><a href="homework-for-week-3.html"><i class="fa fa-check"></i>Homework for Week 3</a></li>
+<li class="chapter" data-level="" data-path="glossary-1.html"><a href="glossary-1.html"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="flashcards-1.html"><a href="flashcards-1.html"><i class="fa fa-check"></i>Flashcards</a></li>
+<li class="part"><span><b>Week 3</b></span></li>
+<li class="chapter" data-level="" data-path="foundations-of-statistical-inference.html"><a href="foundations-of-statistical-inference.html"><i class="fa fa-check"></i>Foundations of Statistical Inference</a>
+<ul>
+<li class="chapter" data-level="" data-path="foundations-of-statistical-inference.html"><a href="foundations-of-statistical-inference.html#self-assessment-questions"><i class="fa fa-check"></i>Self-Assessment Questions</a></li>
+<li class="chapter" data-level="" data-path="foundations-of-statistical-inference.html"><a href="foundations-of-statistical-inference.html#how-to-read-a-z-table"><i class="fa fa-check"></i>How to read a z-table</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercises-3.html"><a href="exercises-3.html"><i class="fa fa-check"></i>Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercises-3.html"><a href="exercises-3.html#conceptual-exercises"><i class="fa fa-check"></i>Conceptual Exercises</a></li>
+<li class="chapter" data-level="" data-path="exercises-3.html"><a href="exercises-3.html#r-exercises---core"><i class="fa fa-check"></i>R Exercises - Core</a></li>
+<li class="chapter" data-level="" data-path="exercises-3.html"><a href="exercises-3.html#r-exercises---going-further"><i class="fa fa-check"></i>R Exercises - Going Further</a></li>
+<li class="chapter" data-level="" data-path="exercises-3.html"><a href="exercises-3.html#solutions"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="homework-for-week-4.html"><a href="homework-for-week-4.html"><i class="fa fa-check"></i>Homework for Week 4</a></li>
+<li class="chapter" data-level="" data-path="glossary-2.html"><a href="glossary-2.html"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="flashcards-2.html"><a href="flashcards-2.html"><i class="fa fa-check"></i>Flashcards</a></li>
+<li class="part"><span><b>Week 4</b></span></li>
+<li class="chapter" data-level="" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i>Confidence Intervals</a>
+<ul>
+<li class="chapter" data-level="" data-path="confidence-intervals.html"><a href="confidence-intervals.html#self-assessment-questions-1"><i class="fa fa-check"></i>Self-Assessment Questions</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals.html"><a href="confidence-intervals.html#calculating-confidence-intervals"><i class="fa fa-check"></i>Calculating Confidence Intervals</a>
+<ul>
+<li class="chapter" data-level="" data-path="confidence-intervals.html"><a href="confidence-intervals.html#we-know-sigma"><i class="fa fa-check"></i>1. We know <span class="math inline">\(\sigma\)</span></a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals.html"><a href="confidence-intervals.html#we-dont-know-sigma"><i class="fa fa-check"></i>2. We don’t know <span class="math inline">\(\sigma\)</span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercises-4.html"><a href="exercises-4.html"><i class="fa fa-check"></i>Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercises-4.html"><a href="exercises-4.html#conceptual-exercises-1"><i class="fa fa-check"></i>Conceptual Exercises</a></li>
+<li class="chapter" data-level="" data-path="exercises-4.html"><a href="exercises-4.html#r-exercises---core-1"><i class="fa fa-check"></i>R Exercises - Core</a></li>
+<li class="chapter" data-level="" data-path="exercises-4.html"><a href="exercises-4.html#r-exercises---going-further-1"><i class="fa fa-check"></i>R Exercises - Going Further</a></li>
+<li class="chapter" data-level="" data-path="exercises-4.html"><a href="exercises-4.html#solutions-1"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="homework-for-week-5.html"><a href="homework-for-week-5.html"><i class="fa fa-check"></i>Homework for Week 5</a></li>
+<li class="chapter" data-level="" data-path="glossary-3.html"><a href="glossary-3.html"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="flashcards-3.html"><a href="flashcards-3.html"><i class="fa fa-check"></i>Flashcards</a></li>
+<li class="part"><span><b>Week 5</b></span></li>
+<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html"><i class="fa fa-check"></i>Causality and Consolidation</a>
+<ul>
+<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#self-assessment-questions-2"><i class="fa fa-check"></i>Self-Assessment Questions</a></li>
+<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#case-study"><i class="fa fa-check"></i>Case Study</a></li>
+<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#codebook"><i class="fa fa-check"></i>Codebook</a></li>
+<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#data-exploration"><i class="fa fa-check"></i>Data Exploration</a></li>
+<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#descriptive-statistics-1"><i class="fa fa-check"></i>Descriptive Statistics</a></li>
+<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#visualisation"><i class="fa fa-check"></i>Visualisation</a></li>
+<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#hypothesis"><i class="fa fa-check"></i>Hypothesis</a></li>
+<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#sampling"><i class="fa fa-check"></i>Sampling</a></li>
+<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#inferential-statistics"><i class="fa fa-check"></i>Inferential Statistics</a></li>
+<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#causality"><i class="fa fa-check"></i>Causality</a></li>
+<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#solutions-2"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="homework-for-week-7.html"><a href="homework-for-week-7.html"><i class="fa fa-check"></i>Homework for Week 7</a></li>
+<li class="chapter" data-level="" data-path="glossary-4.html"><a href="glossary-4.html"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="flashcards-4.html"><a href="flashcards-4.html"><i class="fa fa-check"></i>Flashcards</a></li>
+<li class="part"><span><b>Week 6</b></span></li>
+<li class="chapter" data-level="" data-path="reading-week.html"><a href="reading-week.html"><i class="fa fa-check"></i>Reading Week</a></li>
+<li class="part"><span><b>Week 7</b></span></li>
+<li class="chapter" data-level="" data-path="methods-methods-methods.html"><a href="methods-methods-methods.html"><i class="fa fa-check"></i>Methods, Methods, Methods</a>
+<ul>
+<li class="chapter" data-level="" data-path="methods-methods-methods.html"><a href="methods-methods-methods.html#data-prep"><i class="fa fa-check"></i>Data Prep</a></li>
+<li class="chapter" data-level="" data-path="methods-methods-methods.html"><a href="methods-methods-methods.html#video-and-rscript"><i class="fa fa-check"></i>Video and RScript</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bivariate-methods.html"><a href="bivariate-methods.html"><i class="fa fa-check"></i>Bivariate Methods</a>
+<ul>
+<li class="chapter" data-level="" data-path="bivariate-methods.html"><a href="bivariate-methods.html#self-assessment-questions-3"><i class="fa fa-check"></i>Self-Assessment Questions</a></li>
+<li class="chapter" data-level="" data-path="bivariate-methods.html"><a href="bivariate-methods.html#calculations-by-hand"><i class="fa fa-check"></i>Calculations by Hand</a></li>
+<li class="chapter" data-level="" data-path="bivariate-methods.html"><a href="bivariate-methods.html#applied-exercises-in-r-core"><i class="fa fa-check"></i>Applied Exercises in R (Core)</a></li>
+<li class="chapter" data-level="" data-path="bivariate-methods.html"><a href="bivariate-methods.html#applied-exercises-in-r-going-further"><i class="fa fa-check"></i>Applied Exercises in R (Going Further)</a>
+<ul>
+<li class="chapter" data-level="" data-path="bivariate-methods.html"><a href="bivariate-methods.html#section-1"><i class="fa fa-check"></i>Section 1</a></li>
+<li class="chapter" data-level="" data-path="bivariate-methods.html"><a href="bivariate-methods.html#section-2"><i class="fa fa-check"></i>Section 2</a></li>
+<li class="chapter" data-level="" data-path="bivariate-methods.html"><a href="bivariate-methods.html#section-3"><i class="fa fa-check"></i>Section 3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bivariate-methods.html"><a href="bivariate-methods.html#solutions-3"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="homework-for-week-8.html"><a href="homework-for-week-8.html"><i class="fa fa-check"></i>Homework for Week 8</a></li>
+<li class="chapter" data-level="" data-path="glossary-5.html"><a href="glossary-5.html"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="flashcards-5.html"><a href="flashcards-5.html"><i class="fa fa-check"></i>Flashcards</a></li>
+<li class="part"><span><b>Week 8</b></span></li>
+<li class="chapter" data-level="" data-path="mmm-bivariate-regression.html"><a href="mmm-bivariate-regression.html"><i class="fa fa-check"></i>MMM – Bivariate Regression</a>
+<ul>
+<li class="chapter" data-level="" data-path="mmm-bivariate-regression.html"><a href="mmm-bivariate-regression.html#data-prep-1"><i class="fa fa-check"></i>Data Prep</a></li>
+<li class="chapter" data-level="" data-path="mmm-bivariate-regression.html"><a href="mmm-bivariate-regression.html#video-and-rscript-1"><i class="fa fa-check"></i>Video and RScript</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="mmm-model-fit.html"><a href="mmm-model-fit.html"><i class="fa fa-check"></i>MMM – Model Fit</a>
+<ul>
+<li class="chapter" data-level="" data-path="mmm-model-fit.html"><a href="mmm-model-fit.html#data-prep-2"><i class="fa fa-check"></i>Data Prep</a></li>
+<li class="chapter" data-level="" data-path="mmm-model-fit.html"><a href="mmm-model-fit.html#video-and-rscript-2"><i class="fa fa-check"></i>Video and RScript</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="mmm-significance-testing.html"><a href="mmm-significance-testing.html"><i class="fa fa-check"></i>MMM – Significance Testing</a>
+<ul>
+<li class="chapter" data-level="" data-path="mmm-significance-testing.html"><a href="mmm-significance-testing.html#data-prep-3"><i class="fa fa-check"></i>Data Prep</a></li>
+<li class="chapter" data-level="" data-path="mmm-significance-testing.html"><a href="mmm-significance-testing.html#video-and-rscript-3"><i class="fa fa-check"></i>Video and RScript</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html"><i class="fa fa-check"></i>Bivariate Regression</a>
+<ul>
+<li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#self-assessment-questions-4"><i class="fa fa-check"></i>Self-Assessment Questions</a></li>
+<li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#exercises-core"><i class="fa fa-check"></i>Exercises – Core</a></li>
+<li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#going-further-in-r"><i class="fa fa-check"></i>Going Further in R</a></li>
+<li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#going-further---conceptual"><i class="fa fa-check"></i>Going Further - Conceptual</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html"><i class="fa fa-check"></i>Case Study</a>
+<ul>
+<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html#load-packages-and-data"><i class="fa fa-check"></i>Load Packages and Data</a></li>
+<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html#inspect-your-data"><i class="fa fa-check"></i>Inspect your data</a></li>
+<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html#preliminary-analysis"><i class="fa fa-check"></i>Preliminary Analysis</a></li>
+<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html#visualisation-1"><i class="fa fa-check"></i>Visualisation</a></li>
+<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html#visualisation-2.0"><i class="fa fa-check"></i>Visualisation 2.0</a></li>
+<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html#saving-the-scatterplot"><i class="fa fa-check"></i>Saving the Scatterplot</a></li>
+<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html#regression-analysis-yes-finally"><i class="fa fa-check"></i>Regression Analysis (yes, finally)</a></li>
+<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html#interpretation"><i class="fa fa-check"></i>Interpretation</a></li>
+<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html#exporting-the-results"><i class="fa fa-check"></i>Exporting the Results</a></li>
+<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html#comparing-models"><i class="fa fa-check"></i>Comparing Models</a></li>
+<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html#causality-1"><i class="fa fa-check"></i>Causality</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="homework-for-week-9.html"><a href="homework-for-week-9.html"><i class="fa fa-check"></i>Homework for Week 9</a>
+<ul>
+<li class="chapter" data-level="" data-path="homework-for-week-9.html"><a href="homework-for-week-9.html#solutions-4"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="glossary-6.html"><a href="glossary-6.html"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="flashcards-6.html"><a href="flashcards-6.html"><i class="fa fa-check"></i>Flashcards</a></li>
+<li class="part"><span><b>Week 9</b></span></li>
+<li class="chapter" data-level="" data-path="methods-methods-methods-1.html"><a href="methods-methods-methods-1.html"><i class="fa fa-check"></i>Methods, Methods, Methods</a>
+<ul>
+<li class="chapter" data-level="" data-path="methods-methods-methods-1.html"><a href="methods-methods-methods-1.html#data-prep-4"><i class="fa fa-check"></i>Data Prep</a></li>
+<li class="chapter" data-level="" data-path="methods-methods-methods-1.html"><a href="methods-methods-methods-1.html#video-and-rscript-4"><i class="fa fa-check"></i>Video and RScript</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i>Multiple Regression</a>
+<ul>
+<li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html#group-work-self-reflection"><i class="fa fa-check"></i>Group Work – Self-Reflection</a></li>
+<li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html#multiple-regression-in-r-guided-example"><i class="fa fa-check"></i>Multiple Regression in R – Guided Example</a></li>
+<li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html#multiple-regression-in-r-independent-analysis"><i class="fa fa-check"></i>Multiple Regression in R – Independent Analysis</a></li>
+<li class="chapter" data-level="0.1" data-path="multiple-regression.html"><a href="multiple-regression.html#going-further-1"><i class="fa fa-check"></i><b>0.1</b> Going Further</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="homework-for-week-10.html"><a href="homework-for-week-10.html"><i class="fa fa-check"></i>Homework for Week 10</a>
+<ul>
+<li class="chapter" data-level="" data-path="homework-for-week-10.html"><a href="homework-for-week-10.html#solutions-5"><i class="fa fa-check"></i>Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="glossary-7.html"><a href="glossary-7.html"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="flashcards-7.html"><a href="flashcards-7.html"><i class="fa fa-check"></i>Flashcards</a></li>
+<li class="part"><span><b>Downloads</b></span></li>
+<li class="chapter" data-level="" data-path="downloads.html"><a href="downloads.html"><i class="fa fa-check"></i>Downloads</a>
+<ul>
+<li class="chapter" data-level="" data-path="downloads.html"><a href="downloads.html#documents"><i class="fa fa-check"></i>Documents</a></li>
+<li class="chapter" data-level="" data-path="downloads.html"><a href="downloads.html#data-sets-in-alphabetical-order"><i class="fa fa-check"></i>Data Sets – in alphabetical order</a></li>
+<li class="chapter" data-level="" data-path="downloads.html"><a href="downloads.html#r-scripts"><i class="fa fa-check"></i>R Scripts</a></li>
+</ul></li>
+<li class="part"><span><b>Glossary</b></span></li>
+<li class="chapter" data-level="" data-path="glossary-8.html"><a href="glossary-8.html"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="part"><span><b>List of References</b></span></li>
+<li class="chapter" data-level="" data-path="list-of-references.html"><a href="list-of-references.html"><i class="fa fa-check"></i>List of References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">PO91Q: Seminar Companion</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="multiple-regression" class="section level1 unnumbered hasAnchor">
+<h1>Multiple Regression<a href="multiple-regression.html#multiple-regression" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="group-work-self-reflection" class="section level2 unnumbered hasAnchor">
+<h2>Group Work – Self-Reflection<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a><a href="multiple-regression.html#group-work-self-reflection" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Compare bivariate regression and multiple regression.</li>
+<li>Give an example of the relationship in which you could apply multiple linear regression.</li>
+<li>How do you interpret partial slope coefficients?</li>
+<li>How do you interpret adjusted R-Squared in regression analysis?</li>
+<li>Consider the causality framework of Week 5. To what extent is multiple regression helpful to establish causality?</li>
+<li><ol start="5" style="list-style-type: decimal">
+<li>Prepare to interpret the following regression output substantively (what do the coefficients mean, how good is the model fit, etc.) <code>income</code> represents the median household income in a London ward (in £), and <code>turnout</code> represents the turnout at the 2012 mayoral election (in %).</li>
+</ol></li>
+</ol>
+<pre><code>
+Call:
+lm(formula = turnout ~ income, data = london)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-24.3099  -2.3808   0.5004   3.2679  11.2834 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 1.955e+01  9.861e-01   19.83   &lt;2e-16 ***
+income      3.720e-04  2.467e-05   15.08   &lt;2e-16 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 4.594 on 623 degrees of freedom
+Multiple R-squared:  0.2673,    Adjusted R-squared:  0.2661 
+F-statistic: 227.3 on 1 and 623 DF,  p-value: &lt; 2.2e-16</code></pre>
+<div class="stop">
+<p>Please stop here and don’t go beyond this point until we have compared notes on your answers.</p>
+</div>
+<hr />
+</div>
+<div id="multiple-regression-in-r-guided-example" class="section level2 unnumbered hasAnchor">
+<h2>Multiple Regression in R – Guided Example<a href="multiple-regression.html#multiple-regression-in-r-guided-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Download the <a href="files/Week%209/WDI_PO91Q.csv">WDI_PO91Q.csv</a> data set. Data are taken from <span class="citation">World Bank (2024)</span>, <span class="citation">Boix et al. (2018)</span>, and <span class="citation">Marshall &amp; Gurr (2020)</span>.</li>
+<li>Put it into an appropriate working directory for this seminar and create a dedicated RScript and save it into the same working directory.</li>
+</ul>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="multiple-regression.html#cb97-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/Warwick/Modules/PO91Q/Seminars/Week 8&quot;</span>)</span></code></pre></div>
+<ul>
+<li>Import the data set into R:</li>
+</ul>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="multiple-regression.html#cb98-1" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;WDI_PO91Q.csv&quot;</span>)</span></code></pre></div>
+<ul>
+<li>Once again, here is the overview of the variables available and their respective label in Table <a href="multiple-regression.html#tab:wdicode9">15</a>:</li>
+</ul>
+<table style="width:100%; color: black; margin-left: auto; margin-right: auto;" class="table">
+<caption>
+<span id="tab:wdicode9">Table 15: </span>WDI Codebook
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+variable
+</th>
+<th style="text-align:left;">
+label
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+Country Name
+</td>
+<td style="text-align:left;">
+Country Name
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+Country Code
+</td>
+<td style="text-align:left;">
+Country Code
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+year
+</td>
+<td style="text-align:left;">
+year
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+democracy
+</td>
+<td style="text-align:left;">
+0 = Autocracy, 1 = Dictatorship (Boix et al., 2018)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+gdppc
+</td>
+<td style="text-align:left;">
+GDP per capita (constant 2010 US$)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+gdpgrowth
+</td>
+<td style="text-align:left;">
+Absolute growth of per capita GDP to previous year (constant 2010 US Dollars)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+enrl_gross
+</td>
+<td style="text-align:left;">
+School enrollment, primary (% gross)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+enrl_net
+</td>
+<td style="text-align:left;">
+School enrollment, primary (% net)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+agri
+</td>
+<td style="text-align:left;">
+Employment in agriculture (% of total employment) (modeled ILO estimate)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+slums
+</td>
+<td style="text-align:left;">
+Population living in slums (% of urban population)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+telephone
+</td>
+<td style="text-align:left;">
+Fixed telephone subscriptions (per 100 people)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+internet
+</td>
+<td style="text-align:left;">
+Individuals using the Internet (% of population)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+tax
+</td>
+<td style="text-align:left;">
+Tax revenue (% of GDP)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+electricity
+</td>
+<td style="text-align:left;">
+Access to electricity (% of population)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+mobile
+</td>
+<td style="text-align:left;">
+Mobile cellular subscriptions (per 100 people)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+service
+</td>
+<td style="text-align:left;">
+Services, value added (% of GDP)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+oil
+</td>
+<td style="text-align:left;">
+Oil rents (% of GDP)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+natural
+</td>
+<td style="text-align:left;">
+Total natural resources rents (% of GDP)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+literacy
+</td>
+<td style="text-align:left;">
+Literacy rate, adult total (% of people ages 15 and above)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+prim_compl
+</td>
+<td style="text-align:left;">
+Primary completion rate, total (% of relevant age group)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+infant
+</td>
+<td style="text-align:left;">
+Mortality rate, infant (per 1,000 live births)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+hosp
+</td>
+<td style="text-align:left;">
+Hospital beds (per 1,000 people)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+tub
+</td>
+<td style="text-align:left;">
+Incidence of tuberculosis (per 100,000 people)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+health_ex
+</td>
+<td style="text-align:left;">
+Current health expenditure (% of GDP)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+ineq
+</td>
+<td style="text-align:left;">
+Income share held by lowest 10%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+unemploy
+</td>
+<td style="text-align:left;">
+Unemployment, total (% of total labor force) (modeled ILO estimate)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+lifeexp
+</td>
+<td style="text-align:left;">
+Life expectancy at birth, total (years)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+urban
+</td>
+<td style="text-align:left;">
+Urban population (% of total population)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.25in; ">
+polity5
+</td>
+<td style="text-align:left;">
+Combined Polity V score
+</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Let’s take the example from Week 7 back up. First re-run the regression I used back then.</li>
+</ul>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="multiple-regression.html#cb99-1" tabindex="-1"></a>wdi_life <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> lifeexp, <span class="at">data =</span> wdi)</span>
+<span id="cb99-2"><a href="multiple-regression.html#cb99-2" tabindex="-1"></a><span class="fu">summary</span>(wdi_life)</span>
+<span id="cb99-3"><a href="multiple-regression.html#cb99-3" tabindex="-1"></a></span>
+<span id="cb99-4"><a href="multiple-regression.html#cb99-4" tabindex="-1"></a>Call<span class="sc">:</span></span>
+<span id="cb99-5"><a href="multiple-regression.html#cb99-5" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> gdppc <span class="sc">~</span> lifeexp, <span class="at">data =</span> wdi)</span>
+<span id="cb99-6"><a href="multiple-regression.html#cb99-6" tabindex="-1"></a></span>
+<span id="cb99-7"><a href="multiple-regression.html#cb99-7" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
+<span id="cb99-8"><a href="multiple-regression.html#cb99-8" tabindex="-1"></a>   Min     <span class="dv">1</span>Q Median     <span class="dv">3</span>Q    Max </span>
+<span id="cb99-9"><a href="multiple-regression.html#cb99-9" tabindex="-1"></a><span class="sc">-</span><span class="dv">18457</span>  <span class="sc">-</span><span class="dv">9877</span>  <span class="sc">-</span><span class="dv">4187</span>   <span class="dv">4963</span>  <span class="dv">78242</span> </span>
+<span id="cb99-10"><a href="multiple-regression.html#cb99-10" tabindex="-1"></a></span>
+<span id="cb99-11"><a href="multiple-regression.html#cb99-11" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
+<span id="cb99-12"><a href="multiple-regression.html#cb99-12" tabindex="-1"></a>            Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
+<span id="cb99-13"><a href="multiple-regression.html#cb99-13" tabindex="-1"></a>(Intercept) <span class="sc">-</span><span class="fl">94306.8</span>    <span class="fl">10406.7</span>  <span class="sc">-</span><span class="fl">9.062</span> <span class="fl">3.33e-16</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb99-14"><a href="multiple-regression.html#cb99-14" tabindex="-1"></a>lifeexp       <span class="fl">1503.2</span>      <span class="fl">144.4</span>  <span class="fl">10.412</span>  <span class="sc">&lt;</span> <span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb99-15"><a href="multiple-regression.html#cb99-15" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb99-16"><a href="multiple-regression.html#cb99-16" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
+<span id="cb99-17"><a href="multiple-regression.html#cb99-17" tabindex="-1"></a></span>
+<span id="cb99-18"><a href="multiple-regression.html#cb99-18" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="dv">14690</span> on <span class="dv">167</span> degrees of freedom</span>
+<span id="cb99-19"><a href="multiple-regression.html#cb99-19" tabindex="-1"></a>  (<span class="dv">26</span> observations deleted due to missingness)</span>
+<span id="cb99-20"><a href="multiple-regression.html#cb99-20" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3936</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>   <span class="fl">0.39</span> </span>
+<span id="cb99-21"><a href="multiple-regression.html#cb99-21" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">108.4</span> on <span class="dv">1</span> and <span class="dv">167</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="er">&lt;</span> <span class="fl">2.2e-16</span></span></code></pre></div>
+<ul>
+<li>Interpret the coefficients.</li>
+</ul>
+<div class="bulb">
+<p><strong>Interpreting a coefficient</strong></p>
+<p>The order in which to interpret a coefficient is as follows:</p>
+<ol style="list-style-type: decimal">
+<li>Is it significant? If not, all you can say is that there is no influence. You have falsified the alternative hypothesis.</li>
+<li>If it is significant, you can interpret its size and direction according to the statistical model (for example, slope coefficient vs. partial slope coefficient).</li>
+<li>What does the coefficient mean for the hypothesis? Look at the direction. Is the direction as predicted by the hypothesis? Then you have evidence to support the hypothesis. If the direction is inverse, then you have falsified the hypothesis, even though you have a significant coefficient.</li>
+</ol>
+</div>
+<ul>
+<li>Now we use a different regressor, say “Urban population (% of total)”.</li>
+<li>Specify the null and the alternative hypotheses.</li>
+</ul>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="multiple-regression.html#cb100-1" tabindex="-1"></a>wdi_urban <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> urban, <span class="at">data =</span> wdi)</span>
+<span id="cb100-2"><a href="multiple-regression.html#cb100-2" tabindex="-1"></a><span class="fu">summary</span>(wdi_urban)</span>
+<span id="cb100-3"><a href="multiple-regression.html#cb100-3" tabindex="-1"></a></span>
+<span id="cb100-4"><a href="multiple-regression.html#cb100-4" tabindex="-1"></a>Call<span class="sc">:</span></span>
+<span id="cb100-5"><a href="multiple-regression.html#cb100-5" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> gdppc <span class="sc">~</span> urban, <span class="at">data =</span> wdi)</span>
+<span id="cb100-6"><a href="multiple-regression.html#cb100-6" tabindex="-1"></a></span>
+<span id="cb100-7"><a href="multiple-regression.html#cb100-7" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
+<span id="cb100-8"><a href="multiple-regression.html#cb100-8" tabindex="-1"></a>   Min     <span class="dv">1</span>Q Median     <span class="dv">3</span>Q    Max </span>
+<span id="cb100-9"><a href="multiple-regression.html#cb100-9" tabindex="-1"></a><span class="sc">-</span><span class="dv">28588</span> <span class="sc">-</span><span class="dv">10681</span>  <span class="sc">-</span><span class="dv">3110</span>   <span class="dv">6863</span> <span class="dv">152303</span> </span>
+<span id="cb100-10"><a href="multiple-regression.html#cb100-10" tabindex="-1"></a></span>
+<span id="cb100-11"><a href="multiple-regression.html#cb100-11" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
+<span id="cb100-12"><a href="multiple-regression.html#cb100-12" tabindex="-1"></a>             Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
+<span id="cb100-13"><a href="multiple-regression.html#cb100-13" tabindex="-1"></a>(Intercept) <span class="sc">-</span><span class="fl">16983.43</span>    <span class="fl">3872.34</span>  <span class="sc">-</span><span class="fl">4.386</span> <span class="fl">1.98e-05</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb100-14"><a href="multiple-regression.html#cb100-14" tabindex="-1"></a>urban          <span class="fl">542.03</span>      <span class="fl">61.74</span>   <span class="fl">8.779</span> <span class="fl">1.42e-15</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb100-15"><a href="multiple-regression.html#cb100-15" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb100-16"><a href="multiple-regression.html#cb100-16" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
+<span id="cb100-17"><a href="multiple-regression.html#cb100-17" tabindex="-1"></a></span>
+<span id="cb100-18"><a href="multiple-regression.html#cb100-18" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="dv">19120</span> on <span class="dv">176</span> degrees of freedom</span>
+<span id="cb100-19"><a href="multiple-regression.html#cb100-19" tabindex="-1"></a>  (<span class="dv">17</span> observations deleted due to missingness)</span>
+<span id="cb100-20"><a href="multiple-regression.html#cb100-20" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3045</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3006</span> </span>
+<span id="cb100-21"><a href="multiple-regression.html#cb100-21" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">77.07</span> on <span class="dv">1</span> and <span class="dv">176</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="fl">1.417e-15</span></span></code></pre></div>
+<ul>
+<li>Interpret the coefficients.</li>
+<li>What does this mean for the hypotheses?</li>
+<li>If we want to assess the influence of both independent variables together, we type:</li>
+</ul>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="multiple-regression.html#cb101-1" tabindex="-1"></a>wdi_joint <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> lifeexp <span class="sc">+</span> urban, <span class="at">data =</span> wdi)</span>
+<span id="cb101-2"><a href="multiple-regression.html#cb101-2" tabindex="-1"></a><span class="fu">summary</span>(wdi_joint)</span>
+<span id="cb101-3"><a href="multiple-regression.html#cb101-3" tabindex="-1"></a></span>
+<span id="cb101-4"><a href="multiple-regression.html#cb101-4" tabindex="-1"></a>Call<span class="sc">:</span></span>
+<span id="cb101-5"><a href="multiple-regression.html#cb101-5" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> gdppc <span class="sc">~</span> lifeexp <span class="sc">+</span> urban, <span class="at">data =</span> wdi)</span>
+<span id="cb101-6"><a href="multiple-regression.html#cb101-6" tabindex="-1"></a></span>
+<span id="cb101-7"><a href="multiple-regression.html#cb101-7" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
+<span id="cb101-8"><a href="multiple-regression.html#cb101-8" tabindex="-1"></a>   Min     <span class="dv">1</span>Q Median     <span class="dv">3</span>Q    Max </span>
+<span id="cb101-9"><a href="multiple-regression.html#cb101-9" tabindex="-1"></a><span class="sc">-</span><span class="dv">22570</span>  <span class="sc">-</span><span class="dv">8825</span>  <span class="sc">-</span><span class="dv">2143</span>   <span class="dv">5594</span>  <span class="dv">74445</span> </span>
+<span id="cb101-10"><a href="multiple-regression.html#cb101-10" tabindex="-1"></a></span>
+<span id="cb101-11"><a href="multiple-regression.html#cb101-11" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
+<span id="cb101-12"><a href="multiple-regression.html#cb101-12" tabindex="-1"></a>             Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
+<span id="cb101-13"><a href="multiple-regression.html#cb101-13" tabindex="-1"></a>(Intercept) <span class="sc">-</span><span class="fl">74786.14</span>   <span class="fl">10690.13</span>  <span class="sc">-</span><span class="fl">6.996</span> <span class="fl">6.17e-11</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb101-14"><a href="multiple-regression.html#cb101-14" tabindex="-1"></a>lifeexp       <span class="fl">1012.17</span>     <span class="fl">172.70</span>   <span class="fl">5.861</span> <span class="fl">2.41e-08</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb101-15"><a href="multiple-regression.html#cb101-15" tabindex="-1"></a>urban          <span class="fl">273.74</span>      <span class="fl">59.13</span>   <span class="fl">4.629</span> <span class="fl">7.37e-06</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb101-16"><a href="multiple-regression.html#cb101-16" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb101-17"><a href="multiple-regression.html#cb101-17" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
+<span id="cb101-18"><a href="multiple-regression.html#cb101-18" tabindex="-1"></a></span>
+<span id="cb101-19"><a href="multiple-regression.html#cb101-19" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="dv">13860</span> on <span class="dv">166</span> degrees of freedom</span>
+<span id="cb101-20"><a href="multiple-regression.html#cb101-20" tabindex="-1"></a>  (<span class="dv">26</span> observations deleted due to missingness)</span>
+<span id="cb101-21"><a href="multiple-regression.html#cb101-21" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.463</span>, Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.4565</span> </span>
+<span id="cb101-22"><a href="multiple-regression.html#cb101-22" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">71.55</span> on <span class="dv">2</span> and <span class="dv">166</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="er">&lt;</span> <span class="fl">2.2e-16</span></span></code></pre></div>
+<ul>
+<li>Interpret the coefficients.</li>
+</ul>
+<div class="bulb">
+<p>Bear in mind for your interpretation that these are partial slope coefficients!</p>
+</div>
+<ul>
+<li>Because I am nice, I am producing an overview<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a> of all three regressions in Table <a href="multiple-regression.html#tab:reg1">16</a>:</li>
+</ul>
+ 
+ 
+<center>
+<!-- preamble start -->
+
+    <script>
+
+      function styleCell_w9j6zweoni5h8yyfnise(i, j, css_id) {
+          var table = document.getElementById("tinytable_w9j6zweoni5h8yyfnise");
+          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_w9j6zweoni5h8yyfnise');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_w9j6zweoni5h8yyfnise(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_w9j6zweoni5h8yyfnise");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: 0, j: 2 }, { i: 0, j: 3 },  ], css_id: 'tinytable_css_xi209ttquk7ighknippe',}, 
+          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_v9p67rlvusrx76886n3p',}, 
+          { positions: [ { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 },  ], css_id: 'tinytable_css_u9icsg2w2hd79tf58x71',}, 
+          { positions: [ { i: 1, j: 1 }, { i: 1, j: 3 }, { i: 1, j: 2 },  ], css_id: 'tinytable_css_tt6nw06zmp3qdvn2rbta',}, 
+          { positions: [ { i: 7, j: 0 },  ], css_id: 'tinytable_css_pyzjbz0gfup195rl0rr5',}, 
+          { positions: [ { i: 10, j: 2 }, { i: 10, j: 1 }, { i: 10, j: 3 },  ], css_id: 'tinytable_css_e754dxk9kisafq9y187h',}, 
+          { positions: [ { i: 7, j: 3 }, { i: 7, j: 2 }, { i: 7, j: 1 },  ], css_id: 'tinytable_css_dr3h4o231xysf5lh4crh',}, 
+          { positions: [ { i: 1, j: 0 },  ], css_id: 'tinytable_css_aizgxrc1agcehe0g7a4n',}, 
+          { positions: [ { i: 10, j: 0 },  ], css_id: 'tinytable_css_874edlx3kjdg6tfon5ju',}, 
+          { positions: [ { i: 2, j: 1 }, { i: 4, j: 1 }, { i: 6, j: 1 }, { i: 3, j: 1 }, { i: 8, j: 1 }, { i: 5, j: 1 }, { i: 3, j: 2 }, { i: 9, j: 2 }, { i: 3, j: 3 }, { i: 2, j: 2 }, { i: 9, j: 3 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 9, j: 1 }, { i: 8, j: 2 }, { i: 2, j: 3 }, { i: 4, j: 3 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 8, j: 3 },  ], css_id: 'tinytable_css_4v5j4z8mrxdmcroyjzm8',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_2ocoxv454jbd7vy7b7xi',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_w9j6zweoni5h8yyfnise(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_xi209ttquk7ighknippe, .table th.tinytable_css_xi209ttquk7ighknippe { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_v9p67rlvusrx76886n3p, .table th.tinytable_css_v9p67rlvusrx76886n3p { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_u9icsg2w2hd79tf58x71, .table th.tinytable_css_u9icsg2w2hd79tf58x71 { text-align: left; }
+      .table td.tinytable_css_tt6nw06zmp3qdvn2rbta, .table th.tinytable_css_tt6nw06zmp3qdvn2rbta { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_pyzjbz0gfup195rl0rr5, .table th.tinytable_css_pyzjbz0gfup195rl0rr5 { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_e754dxk9kisafq9y187h, .table th.tinytable_css_e754dxk9kisafq9y187h { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_dr3h4o231xysf5lh4crh, .table th.tinytable_css_dr3h4o231xysf5lh4crh { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_aizgxrc1agcehe0g7a4n, .table th.tinytable_css_aizgxrc1agcehe0g7a4n { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_874edlx3kjdg6tfon5ju, .table th.tinytable_css_874edlx3kjdg6tfon5ju { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_4v5j4z8mrxdmcroyjzm8, .table th.tinytable_css_4v5j4z8mrxdmcroyjzm8 { text-align: center; }
+      .table td.tinytable_css_2ocoxv454jbd7vy7b7xi, .table th.tinytable_css_2ocoxv454jbd7vy7b7xi { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_w9j6zweoni5h8yyfnise" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
+        <thead>
+<tr>
+<th scope="col" align="center" colspan=1> </th>
+<th scope="col" align="center" colspan=3>Dependent Variable:<br>per capita GDP</th>
+</tr>
+        <caption><span id="tab:reg1">Table 16: </span> Regression Models 1.</caption>
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col">Bivariate<br>(1)</th>
+                <th scope="col">Bivariate<br>(2)</th>
+                <th scope="col">Multiple<br>(3)</th>
+              </tr>
+        </thead>
+        <tfoot><tr><td colspan='4'>+ p < 0.1, * p < 0.05, ** p < 0.01, *** p < 0.001</td></tr></tfoot>
+        <tbody>
+                <tr>
+                  <td>Life Expectancy (years)</td>
+                  <td>1503.211***</td>
+                  <td></td>
+                  <td>1012.168***</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>(144.371)</td>
+                  <td></td>
+                  <td>(172.696)</td>
+                </tr>
+                <tr>
+                  <td>Urbanisation</td>
+                  <td></td>
+                  <td>542.033***</td>
+                  <td>273.735***</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>(61.743)</td>
+                  <td>(59.134)</td>
+                </tr>
+                <tr>
+                  <td>Constant</td>
+                  <td>-94306.813***</td>
+                  <td>-16983.431***</td>
+                  <td>-74786.145***</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>(10406.727)</td>
+                  <td>(3872.336)</td>
+                  <td>(10690.128)</td>
+                </tr>
+                <tr>
+                  <td>Num.Obs.</td>
+                  <td>169</td>
+                  <td>178</td>
+                  <td>169</td>
+                </tr>
+                <tr>
+                  <td>R2</td>
+                  <td>0.394</td>
+                  <td>0.305</td>
+                  <td>0.463</td>
+                </tr>
+                <tr>
+                  <td>R2 Adj.</td>
+                  <td>0.390</td>
+                  <td>0.301</td>
+                  <td>0.456</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</center>
+<p> 
+ </p>
+<div class="puzzle">
+<p>Drawing on what you have learned about the <code>stargazer</code> package in the additional exercises last week, replicate this table.</p>
+</div>
+<ul>
+<li>How have the slope coefficients changed? Why?</li>
+<li>Which model explains the level of GDP best? Why?</li>
+<li>Specify the SRF for Model 3, paying special attention to notation.</li>
+<li>Now assume, we want to know whether education has a bearing on the level of GDP. We call:</li>
+</ul>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="multiple-regression.html#cb102-1" tabindex="-1"></a>wdi_lit <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> literacy, <span class="at">data =</span> wdi)</span></code></pre></div>
+<p>and also add it to the joint model:</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="multiple-regression.html#cb103-1" tabindex="-1"></a>wdi_joint1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> lifeexp <span class="sc">+</span> urban <span class="sc">+</span> literacy, <span class="at">data =</span> wdi)</span></code></pre></div>
+<p>This should lead to these results:</p>
+ 
+ 
+<center>
+<!-- preamble start -->
+
+    <script>
+
+      function styleCell_9rmjscrw6zf5uot6rl2d(i, j, css_id) {
+          var table = document.getElementById("tinytable_9rmjscrw6zf5uot6rl2d");
+          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_9rmjscrw6zf5uot6rl2d');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_9rmjscrw6zf5uot6rl2d(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_9rmjscrw6zf5uot6rl2d");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 },  ], css_id: 'tinytable_css_ympg1jkl9cutrxi0jdzg',}, 
+          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_uqeqrz0czy3ig72f0azf',}, 
+          { positions: [ { i: 9, j: 1 }, { i: 9, j: 4 }, { i: 9, j: 5 }, { i: 9, j: 2 }, { i: 9, j: 3 },  ], css_id: 'tinytable_css_twwbjmw6kd39f0kooiqh',}, 
+          { positions: [ { i: 12, j: 0 },  ], css_id: 'tinytable_css_tp4rouft5htnms7ggbz5',}, 
+          { positions: [ { i: 2, j: 1 }, { i: 3, j: 1 }, { i: 4, j: 1 }, { i: 5, j: 1 }, { i: 6, j: 1 }, { i: 7, j: 1 }, { i: 8, j: 1 }, { i: 4, j: 2 }, { i: 10, j: 1 }, { i: 11, j: 1 }, { i: 3, j: 2 }, { i: 8, j: 2 }, { i: 5, j: 2 }, { i: 2, j: 2 }, { i: 7, j: 2 }, { i: 3, j: 3 }, { i: 4, j: 3 }, { i: 6, j: 2 }, { i: 11, j: 2 }, { i: 7, j: 3 }, { i: 8, j: 3 }, { i: 10, j: 2 }, { i: 2, j: 3 }, { i: 11, j: 3 }, { i: 3, j: 4 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 2, j: 4 }, { i: 7, j: 4 }, { i: 4, j: 4 }, { i: 10, j: 3 }, { i: 6, j: 4 }, { i: 11, j: 4 }, { i: 8, j: 4 }, { i: 5, j: 4 }, { i: 10, j: 4 }, { i: 2, j: 5 }, { i: 3, j: 5 }, { i: 4, j: 5 }, { i: 5, j: 5 }, { i: 6, j: 5 }, { i: 7, j: 5 }, { i: 8, j: 5 }, { i: 10, j: 5 }, { i: 11, j: 5 },  ], css_id: 'tinytable_css_jt0f3iujnjjngu85rclk',}, 
+          { positions: [ { i: 12, j: 1 }, { i: 12, j: 2 }, { i: 12, j: 3 }, { i: 12, j: 4 }, { i: 12, j: 5 },  ], css_id: 'tinytable_css_jg3awbvpmnqskiizs9i2',}, 
+          { positions: [ { i: 0, j: 5 }, { i: 0, j: 2 }, { i: 0, j: 3 }, { i: 0, j: 4 },  ], css_id: 'tinytable_css_ididkncqd09tqs4vn3op',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_d8o8z75pkq14pumnmlic',}, 
+          { positions: [ { i: 9, j: 0 },  ], css_id: 'tinytable_css_777k7jhncpfgyh0v0scq',}, 
+          { positions: [ { i: 1, j: 0 },  ], css_id: 'tinytable_css_0ts07vmyqwdszgcw5h8g',}, 
+          { positions: [ { i: 1, j: 1 }, { i: 1, j: 2 }, { i: 1, j: 3 }, { i: 1, j: 4 }, { i: 1, j: 5 },  ], css_id: 'tinytable_css_0se8gux6p3pyp3bmje2r',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_9rmjscrw6zf5uot6rl2d(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_ympg1jkl9cutrxi0jdzg, .table th.tinytable_css_ympg1jkl9cutrxi0jdzg { text-align: left; }
+      .table td.tinytable_css_uqeqrz0czy3ig72f0azf, .table th.tinytable_css_uqeqrz0czy3ig72f0azf { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_twwbjmw6kd39f0kooiqh, .table th.tinytable_css_twwbjmw6kd39f0kooiqh { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_tp4rouft5htnms7ggbz5, .table th.tinytable_css_tp4rouft5htnms7ggbz5 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_jt0f3iujnjjngu85rclk, .table th.tinytable_css_jt0f3iujnjjngu85rclk { text-align: center; }
+      .table td.tinytable_css_jg3awbvpmnqskiizs9i2, .table th.tinytable_css_jg3awbvpmnqskiizs9i2 { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_ididkncqd09tqs4vn3op, .table th.tinytable_css_ididkncqd09tqs4vn3op { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_d8o8z75pkq14pumnmlic, .table th.tinytable_css_d8o8z75pkq14pumnmlic { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_777k7jhncpfgyh0v0scq, .table th.tinytable_css_777k7jhncpfgyh0v0scq { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_0ts07vmyqwdszgcw5h8g, .table th.tinytable_css_0ts07vmyqwdszgcw5h8g { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_0se8gux6p3pyp3bmje2r, .table th.tinytable_css_0se8gux6p3pyp3bmje2r { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_9rmjscrw6zf5uot6rl2d" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
+        <thead>
+<tr>
+<th scope="col" align="center" colspan=1> </th>
+<th scope="col" align="center" colspan=5>Dependent Variable:<br>per capita GDP</th>
+</tr>
+        <caption><span id="tab:reg2">Table 17: </span> Regression Models 2.</caption>
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col">(1)</th>
+                <th scope="col">(2)</th>
+                <th scope="col">(3)</th>
+                <th scope="col">(4)</th>
+                <th scope="col">(5)</th>
+              </tr>
+        </thead>
+        <tfoot><tr><td colspan='6'>+ p < 0.1, * p < 0.05, ** p < 0.01, *** p < 0.001</td></tr></tfoot>
+        <tbody>
+                <tr>
+                  <td>Life Expectancy (years)</td>
+                  <td>1503.211***</td>
+                  <td></td>
+                  <td>1012.168***</td>
+                  <td></td>
+                  <td>973.985*</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>(144.371)</td>
+                  <td></td>
+                  <td>(172.696)</td>
+                  <td></td>
+                  <td>(411.375)</td>
+                </tr>
+                <tr>
+                  <td>Urbanisation</td>
+                  <td></td>
+                  <td>542.033***</td>
+                  <td>273.735***</td>
+                  <td></td>
+                  <td>227.126*</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>(61.743)</td>
+                  <td>(59.134)</td>
+                  <td></td>
+                  <td>(83.427)</td>
+                </tr>
+                <tr>
+                  <td>Literacy</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>258.407*</td>
+                  <td>-221.731</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>(97.381)</td>
+                  <td>(142.455)</td>
+                </tr>
+                <tr>
+                  <td>Constant</td>
+                  <td>-94306.813***</td>
+                  <td>-16983.431***</td>
+                  <td>-74786.145***</td>
+                  <td>-12967.003</td>
+                  <td>-55246.837**</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>(10406.727)</td>
+                  <td>(3872.336)</td>
+                  <td>(10690.128)</td>
+                  <td>(8529.810)</td>
+                  <td>(19311.126)</td>
+                </tr>
+                <tr>
+                  <td>Num.Obs.</td>
+                  <td>169</td>
+                  <td>178</td>
+                  <td>169</td>
+                  <td>40</td>
+                  <td>39</td>
+                </tr>
+                <tr>
+                  <td>R2</td>
+                  <td>0.394</td>
+                  <td>0.305</td>
+                  <td>0.463</td>
+                  <td>0.156</td>
+                  <td>0.497</td>
+                </tr>
+                <tr>
+                  <td>R2 Adj.</td>
+                  <td>0.390</td>
+                  <td>0.301</td>
+                  <td>0.456</td>
+                  <td>0.134</td>
+                  <td>0.454</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</center>
+<p> 
+ </p>
+<ul>
+<li>In Model 5 the coefficient for <code>literacy</code> has turned insignificant. Reproduce the results in Table 4 to find out which variable takes away the significance.</li>
+</ul>
+ 
+ 
+<center>
+<!-- preamble start -->
+
+    <script>
+
+      function styleCell_8m4wgfegt793794vc8ub(i, j, css_id) {
+          var table = document.getElementById("tinytable_8m4wgfegt793794vc8ub");
+          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_8m4wgfegt793794vc8ub');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_8m4wgfegt793794vc8ub(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_8m4wgfegt793794vc8ub");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: 9, j: 0 },  ], css_id: 'tinytable_css_zp3fuzb4fs59744gllrz',}, 
+          { positions: [ { i: 12, j: 3 }, { i: 12, j: 1 }, { i: 12, j: 2 },  ], css_id: 'tinytable_css_uwxbwy7ohgxyfq1i53u1',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_p3r4451lj9cc4qz3sw7j',}, 
+          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_ncaz4xl40cncbts1ojwe',}, 
+          { positions: [ { i: 3, j: 1 }, { i: 4, j: 1 }, { i: 2, j: 1 }, { i: 7, j: 1 }, { i: 8, j: 1 }, { i: 5, j: 1 }, { i: 6, j: 1 }, { i: 11, j: 1 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 10, j: 1 }, { i: 2, j: 2 }, { i: 7, j: 2 }, { i: 8, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 11, j: 2 }, { i: 3, j: 3 }, { i: 4, j: 3 }, { i: 10, j: 2 }, { i: 2, j: 3 }, { i: 7, j: 3 }, { i: 8, j: 3 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 11, j: 3 }, { i: 10, j: 3 },  ], css_id: 'tinytable_css_mbey07irxne9v470ac8k',}, 
+          { positions: [ { i: 12, j: 0 },  ], css_id: 'tinytable_css_jqgf9cyh5jnuf1h6xaua',}, 
+          { positions: [ { i: 9, j: 2 }, { i: 9, j: 3 }, { i: 9, j: 1 },  ], css_id: 'tinytable_css_cx3q5wxkibrl7cpohpg8',}, 
+          { positions: [ { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 },  ], css_id: 'tinytable_css_ad2o75r45up1ou6b9l94',}, 
+          { positions: [ { i: 1, j: 0 },  ], css_id: 'tinytable_css_2bxpdjay01il88e9o7ki',}, 
+          { positions: [ { i: 0, j: 3 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_1rxg1c9ue1nzkpg8okdj',}, 
+          { positions: [ { i: 1, j: 1 }, { i: 1, j: 2 }, { i: 1, j: 3 },  ], css_id: 'tinytable_css_0x2wilm0h9i8dfghm9tk',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_8m4wgfegt793794vc8ub(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_zp3fuzb4fs59744gllrz, .table th.tinytable_css_zp3fuzb4fs59744gllrz { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_uwxbwy7ohgxyfq1i53u1, .table th.tinytable_css_uwxbwy7ohgxyfq1i53u1 { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_p3r4451lj9cc4qz3sw7j, .table th.tinytable_css_p3r4451lj9cc4qz3sw7j { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_ncaz4xl40cncbts1ojwe, .table th.tinytable_css_ncaz4xl40cncbts1ojwe { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_mbey07irxne9v470ac8k, .table th.tinytable_css_mbey07irxne9v470ac8k { text-align: center; }
+      .table td.tinytable_css_jqgf9cyh5jnuf1h6xaua, .table th.tinytable_css_jqgf9cyh5jnuf1h6xaua { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_cx3q5wxkibrl7cpohpg8, .table th.tinytable_css_cx3q5wxkibrl7cpohpg8 { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_ad2o75r45up1ou6b9l94, .table th.tinytable_css_ad2o75r45up1ou6b9l94 { text-align: left; }
+      .table td.tinytable_css_2bxpdjay01il88e9o7ki, .table th.tinytable_css_2bxpdjay01il88e9o7ki { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_1rxg1c9ue1nzkpg8okdj, .table th.tinytable_css_1rxg1c9ue1nzkpg8okdj { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_0x2wilm0h9i8dfghm9tk, .table th.tinytable_css_0x2wilm0h9i8dfghm9tk { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_8m4wgfegt793794vc8ub" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
+        <thead>
+<tr>
+<th scope="col" align="center" colspan=1> </th>
+<th scope="col" align="center" colspan=3>Dependent Variable:<br>per capita GDP</th>
+</tr>
+        <caption><span id="tab:reg3">Table 18: </span> Regression Models 3.</caption>
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col">(1)</th>
+                <th scope="col">(2)</th>
+                <th scope="col">(3)</th>
+              </tr>
+        </thead>
+        <tfoot><tr><td colspan='4'>+ p < 0.1, * p < 0.05, ** p < 0.01, *** p < 0.001</td></tr></tfoot>
+        <tbody>
+                <tr>
+                  <td>Life Expectancy (years)</td>
+                  <td></td>
+                  <td>1483.785***</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>(397.567)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Urbanisation</td>
+                  <td></td>
+                  <td></td>
+                  <td>315.375***</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>(77.633)</td>
+                </tr>
+                <tr>
+                  <td>Literacy</td>
+                  <td>258.407*</td>
+                  <td>-223.305</td>
+                  <td>28.390</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>(97.381)</td>
+                  <td>(154.620)</td>
+                  <td>(99.706)</td>
+                </tr>
+                <tr>
+                  <td>Constant</td>
+                  <td>-12967.003</td>
+                  <td>-77851.339***</td>
+                  <td>-12399.608+</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>(8529.810)</td>
+                  <td>(18924.058)</td>
+                  <td>(7189.937)</td>
+                </tr>
+                <tr>
+                  <td>Num.Obs.</td>
+                  <td>40</td>
+                  <td>39</td>
+                  <td>40</td>
+                </tr>
+                <tr>
+                  <td>R2</td>
+                  <td>0.156</td>
+                  <td>0.390</td>
+                  <td>0.417</td>
+                </tr>
+                <tr>
+                  <td>R2 Adj.</td>
+                  <td>0.134</td>
+                  <td>0.357</td>
+                  <td>0.385</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</center>
+<p> 
+ </p>
+<ul>
+<li><p>What can we conclude from this investigation?</p></li>
+<li><p>Does the variable <code>infant</code> have the same effect? What do you conclude from this?</p></li>
+<li><p>Which measurement explains GDP better, <code>life</code> or <code>infant</code>?</p></li>
+</ul>
+ 
+ 
+<center>
+<!-- preamble start -->
+
+    <script>
+
+      function styleCell_9dqzot09hc8x85t1z1mc(i, j, css_id) {
+          var table = document.getElementById("tinytable_9dqzot09hc8x85t1z1mc");
+          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_9dqzot09hc8x85t1z1mc');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_9dqzot09hc8x85t1z1mc(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_9dqzot09hc8x85t1z1mc");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: 1, j: 0 },  ], css_id: 'tinytable_css_xss40jg92o3qw6diihpj',}, 
+          { positions: [ { i: 7, j: 2 }, { i: 7, j: 1 },  ], css_id: 'tinytable_css_t3h698zzyw5kh61y5z0k',}, 
+          { positions: [ { i: 10, j: 0 },  ], css_id: 'tinytable_css_luy37155x4x8euzk7u54',}, 
+          { positions: [ { i: 10, j: 1 }, { i: 10, j: 2 },  ], css_id: 'tinytable_css_l34q29dl8t9jt5p927r9',}, 
+          { positions: [ { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 },  ], css_id: 'tinytable_css_jn41u61h2u9ozbjnbumg',}, 
+          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_9ffmhq164lopw08zpicb',}, 
+          { positions: [ { i: 0, j: 2 },  ], css_id: 'tinytable_css_84tpu0f9hdh1feajrp5o',}, 
+          { positions: [ { i: 2, j: 1 }, { i: 4, j: 1 }, { i: 5, j: 1 }, { i: 6, j: 1 }, { i: 3, j: 1 }, { i: 8, j: 1 }, { i: 9, j: 1 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 2, j: 2 }, { i: 8, j: 2 }, { i: 9, j: 2 }, { i: 6, j: 2 },  ], css_id: 'tinytable_css_7b4q96lwrofx3y9x2fqn',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_2iz7ipbg495a1kx03ppq',}, 
+          { positions: [ { i: 7, j: 0 },  ], css_id: 'tinytable_css_1e16z77er7ykgmeesr6l',}, 
+          { positions: [ { i: 1, j: 1 }, { i: 1, j: 2 },  ], css_id: 'tinytable_css_18yzecaumkwt37ay8bwi',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_9dqzot09hc8x85t1z1mc(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_xss40jg92o3qw6diihpj, .table th.tinytable_css_xss40jg92o3qw6diihpj { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_t3h698zzyw5kh61y5z0k, .table th.tinytable_css_t3h698zzyw5kh61y5z0k { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_luy37155x4x8euzk7u54, .table th.tinytable_css_luy37155x4x8euzk7u54 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_l34q29dl8t9jt5p927r9, .table th.tinytable_css_l34q29dl8t9jt5p927r9 { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_jn41u61h2u9ozbjnbumg, .table th.tinytable_css_jn41u61h2u9ozbjnbumg { text-align: left; }
+      .table td.tinytable_css_9ffmhq164lopw08zpicb, .table th.tinytable_css_9ffmhq164lopw08zpicb { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_84tpu0f9hdh1feajrp5o, .table th.tinytable_css_84tpu0f9hdh1feajrp5o { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_7b4q96lwrofx3y9x2fqn, .table th.tinytable_css_7b4q96lwrofx3y9x2fqn { text-align: center; }
+      .table td.tinytable_css_2iz7ipbg495a1kx03ppq, .table th.tinytable_css_2iz7ipbg495a1kx03ppq { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_1e16z77er7ykgmeesr6l, .table th.tinytable_css_1e16z77er7ykgmeesr6l { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_18yzecaumkwt37ay8bwi, .table th.tinytable_css_18yzecaumkwt37ay8bwi { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_9dqzot09hc8x85t1z1mc" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
+        <thead>
+<tr>
+<th scope="col" align="center" colspan=1> </th>
+<th scope="col" align="center" colspan=2>Dependent Variable:<br>per capita GDP</th>
+</tr>
+        <caption><span id="tab:reg4">Table 19: </span> Regression Models 4.</caption>
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col">life</th>
+                <th scope="col">infant</th>
+              </tr>
+        </thead>
+        <tfoot><tr><td colspan='3'>+ p < 0.1, * p < 0.05, ** p < 0.01, *** p < 0.001</td></tr></tfoot>
+        <tbody>
+                <tr>
+                  <td>Life Expectancy (years)</td>
+                  <td>1503.211***</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>(144.371)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Infant Mortality (per 1,000 live births)</td>
+                  <td></td>
+                  <td>-524.111***</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>(73.885)</td>
+                </tr>
+                <tr>
+                  <td>Constant</td>
+                  <td>-94306.813***</td>
+                  <td>26467.135***</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>(10406.727)</td>
+                  <td>(2257.385)</td>
+                </tr>
+                <tr>
+                  <td>Num.Obs.</td>
+                  <td>169</td>
+                  <td>178</td>
+                </tr>
+                <tr>
+                  <td>R2</td>
+                  <td>0.394</td>
+                  <td>0.222</td>
+                </tr>
+                <tr>
+                  <td>R2 Adj.</td>
+                  <td>0.390</td>
+                  <td>0.218</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</center>
+<p> 
+ </p>
+<hr />
+</div>
+<div id="multiple-regression-in-r-independent-analysis" class="section level2 unnumbered hasAnchor">
+<h2>Multiple Regression in R – Independent Analysis<a href="multiple-regression.html#multiple-regression-in-r-independent-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="stop">
+<p>Before you start with these, please pause and let Flo know that you are done. We will compare notes on your answers up to this point, to make sure that you are on the right track for the independent exercises.</p>
+</div>
+<ol style="list-style-type: decimal">
+<li>Use the <code>wdi</code> data frame. Set <code>polity5</code> as the dependent variable, and choose three sensible variables which you believe could influence democracy. Note that the Polity V Score codes regimes from -10 (indicating perfect autocracy) to +10 (indicating perfect democracy).</li>
+<li>State the null- and alternative hypotheses for each of the independent variables chosen.</li>
+<li>Plot two of the bivariate models in a scatter plot (black points) with fitted regression line (in red). Use base R, or <code>ggplot</code>. Does the direction of influence agree with your hypotheses?</li>
+<li>Run all possible regression models, using a bottom-up strategy. Construct a <code>stargazer</code> table to present the results.</li>
+<li>Specify the Sample Regression Function (SRF) for a bivariate model (Model A), a multivariate model with two independent variables (Model B), and for the model using all three independent variables (Model C).</li>
+<li>Interpret the intercept and one of the slope coefficients in Models A, B, and C.</li>
+<li>Interpret the model fit measure for Models A, B, and C.</li>
+<li>Which model explains democracy best? Why?.</li>
+<li>What do we conclude with respect to the hypotheses stated in Exercise 2 from this analysis?</li>
+<li>Collate a PowerPoint (Keynote) presentation with one slide for each of the preceding nine points. We will discuss this in Week 9.</li>
+</ol>
+</div>
+<div id="going-further-1" class="section level2 hasAnchor" number="0.1">
+<h2><span class="header-section-number">0.1</span> Going Further<a href="multiple-regression.html#going-further-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Plot the scatter plots for all models up to two independent variables. Add a line of best fit, or hyperplane of best fit as appropriate. Use the <code>rockchalk</code> package, and function <code>plotPlane()</code> for the 3D plots.</li>
+</ol>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="16">
+<li id="fn16"><p>All exercises are a reproduction from <span class="citation">Reiche (forthcoming)</span>.<a href="multiple-regression.html#fnref16" class="footnote-back">↩︎</a></p></li>
+<li id="fn17"><p>The following regression tables have been produced with the package <code>modelsummary</code> <span class="citation">(Arel-Bundock, 2022)</span>.<a href="multiple-regression.html#fnref17" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="methods-methods-methods-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="homework-for-week-10.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  },
+  "toc_depth": 2,
+  "keep_tex": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
