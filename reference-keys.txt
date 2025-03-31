@@ -18,4 +18,5 @@ fig:disalc
 fig:causality
 fig:causalityfw
 tab:glossary5
+tab:glossary7
 tab:glossaryfull

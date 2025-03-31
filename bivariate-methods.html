@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Homework for Week 2 | PO91Q: Seminar Companion</title>
-  <meta name="description" content="Homework for Week 2 | PO91Q: Seminar Companion" />
+  <title>Bivariate Methods | PO91Q: Seminar Companion</title>
+  <meta name="description" content="Bivariate Methods | PO91Q: Seminar Companion" />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Homework for Week 2 | PO91Q: Seminar Companion" />
+  <meta property="og:title" content="Bivariate Methods | PO91Q: Seminar Companion" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Homework for Week 2 | PO91Q: Seminar Companion" />
+  <meta name="twitter:title" content="Bivariate Methods | PO91Q: Seminar Companion" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="exercises.html"/>
-<link rel="next" href="glossary.html"/>
+<link rel="prev" href="methods-methods-methods.html"/>
+<link rel="next" href="homework-for-week-8.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -329,23 +329,128 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="homework-for-week-2" class="section level1 unnumbered hasAnchor">
-<h1>Homework for Week 2<a href="homework-for-week-2.html#homework-for-week-2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="bivariate-methods" class="section level1 unnumbered hasAnchor">
+<h1>Bivariate Methods<a href="bivariate-methods.html#bivariate-methods" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="self-assessment-questions-3" class="section level2 unnumbered hasAnchor">
+<h2>Self-Assessment Questions<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a><a href="bivariate-methods.html#self-assessment-questions-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Why do we need a test of statistical significance?</li>
+<li>Given an example of a one-sided, and of a two-sided test of significance.</li>
+<li>Can we use continuous variables for cross-tabulations?</li>
+<li>Why is there no dependent and independent variable in correlation analysis?</li>
+<li>Consider the causality framework of Week 5. To what extent are (a) correlation and (b) cross-tabulations able to establish causality?</li>
+</ol>
+<div class="stop">
+<p>Please stop here and don’t go beyond this point until we have compared notes on your answers.</p>
+</div>
+<hr />
+</div>
+<div id="calculations-by-hand" class="section level2 unnumbered hasAnchor">
+<h2>Calculations by Hand<a href="bivariate-methods.html#calculations-by-hand" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>I have given you an example of a cross-tabulation in the lecture. Consider the following Table:</p>
+<p><img src="main_files/figure-html/unnamed-chunk-96-1.png" width="396" /></p>
+<p>Calculate the Expected Values and fill in the following table:</p>
+<p><img src="main_files/figure-html/unnamed-chunk-97-3.png" width="396" /></p>
 <ul>
-<li>Finish working through this worksheet.</li>
-<li>Add a note underneath each code chunk in your RScript (by starting the line with <code>#</code>), translating the code into plain English. This will help you learn the vocabulary and grammar of R quicker. If you are unsure what individual functions mean, you can find a .csv file with a full list for each week underneath the flashcards (see below, but <a href="files/excelfiles/PO91Q_Week%201_All.csv">here is an example</a>).</li>
-<li>Read the required literature for week 2. Work <em>thoroughly</em> through chapters 7 and 8 of the Fogarty book to make sure you are familiar with all the relevant commands to produce descriptive statistics and graphs with R.</li>
-<li>Work through <a href="https://drfloreiche.github.io/PO91Q/flashcards.html">this week’s flashcards</a> to familiarise yourself with the relevant R functions.</li>
-<li>Find an example for each NEW function and apply it in R to ensure it works</li>
+<li>Calculate the <span class="math inline">\(\chi^{2}\)</span>-value</li>
+<li>How many degrees of freedom does this table have? Why?</li>
+<li>Using the <a href="files/Downloads/Statistical%20Tables.pdf"><span class="math inline">\(\chi^2\)</span> Table</a>, what is the p-value?</li>
+<li>Are mode of transport and year of study independent in the population?</li>
 </ul>
+</div>
+<div id="applied-exercises-in-r-core" class="section level2 unnumbered hasAnchor">
+<h2>Applied Exercises in R (Core)<a href="bivariate-methods.html#applied-exercises-in-r-core" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Open the European Social Survey data, wave 9. Name it conveniently and attach it</li>
+<li>Univariate Analysis (revising weeks 1-2)
+<ol style="list-style-type: lower-alpha">
+<li>Identify and explore briefly variables about respondents’ happiness, subjective health, age and household’s income (we are going to look at their relationships later)</li>
+<li>What do the values of the income variable mean?</li>
+<li>What is the mode of ‘age’?</li>
+<li>Try to write a function which automatically determines the mode of a variable (more advanced, don’t worry if this beats you. We will discuss this in the seminar.)</li>
+<li>Check the purpose of function round (?round) and, if relevant, apply it appropriately to your results from now onward</li>
+<li>Calculate means, variances and standard deviations when relevant</li>
+<li>Find a suitable plotting function for all four variables</li>
+</ol></li>
+<li>Crosstabulations
+<ol style="list-style-type: lower-alpha">
+<li>We suspect there is a relationship between health and happiness. State the null and alternative hypothesis. Take care to correctly specify the dependent and independent variable.</li>
+<li>Cross-tabulate health and happiness, using the table function (search with ‘?’ if needed)</li>
+<li>Apply the ‘addmargins’ function to the previous formula</li>
+<li>Can you read the results? Can you interpret them?</li>
+<li>Display a bivariate plot with the same (search with ‘?’ if needed). What kind of plot do you get? Does this help reading and interpreting?</li>
+<li>Convert the table into percentages. You can use function ‘cprop’ or ‘lprop’ from package ‘questionr’ (you can install the new package through the menu “Tools” in RStudio). Interpret the result. Improve the table as much as you can.</li>
+<li>Conduct a Chi2 test of significance and interpret the result.</li>
+<li>Reorder the levels of Health using the ‘factor’ function with levels argument. Then display the cross-tabulation again.</li>
+<li>Is the relationship still statistically significant?</li>
+</ol></li>
+<li>Correlation
+<ol style="list-style-type: lower-alpha">
+<li>Calculate the Pearson correlation between health and happiness (you need to work only with the cases that have positive values for both variables, search the help file for this)</li>
+<li>Does the result confirm your previous conclusion?</li>
+<li>Is the correlation coefficient statistically significant? What does this mean?</li>
+</ol></li>
+<li>Further Application
+<ol style="list-style-type: lower-alpha">
+<li>Form the null und alternative hypotheses for the relationship between
+<ol style="list-style-type: lower-roman">
+<li>happiness and household income</li>
+<li>happiness and age</li>
+</ol></li>
+<li>Repeat the crosstabulation and correlation exercises for these two pairs of variables to test your hypotheses.</li>
+</ol></li>
+</ol>
+</div>
+<div id="applied-exercises-in-r-going-further" class="section level2 unnumbered hasAnchor">
+<h2>Applied Exercises in R (Going Further)<a href="bivariate-methods.html#applied-exercises-in-r-going-further" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There is a lot to choose from this week, take your pick. There is no need to do all of these. Aim for two sections.</p>
+<div id="section-1" class="section level3 unnumbered hasAnchor">
+<h3>Section 1<a href="bivariate-methods.html#section-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Use the ‘prop.table’ function to look at happiness against health in a comparison between genders.Compare genders as precisely as possible.</li>
+<li>Does health drive happiness more for men or women?</li>
+<li>Identify the two countries with lowest and highest happiness</li>
+<li>Compare happiness distributions between these two countries</li>
+<li>What benefit do distributions have compared to just looking at means?</li>
+</ol>
+</div>
+<div id="section-2" class="section level3 unnumbered hasAnchor">
+<h3>Section 2<a href="bivariate-methods.html#section-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>For this section use Wave 7 (2014). Name it conveniently and attach it.</li>
+<li>Calculate the Body Mass Index variable with BMI=weight/height.</li>
+<li>Compare mean and standard deviation of BMI between the UK and Spain</li>
+<li>Apply ‘t.test’ function to test the difference between the two means (note this is now a <strong>two-sample</strong> t-test)</li>
+<li>Have the inhabitants of one country a significantly better BMI? Do you know why?</li>
+</ol>
+</div>
+<div id="section-3" class="section level3 unnumbered hasAnchor">
+<h3>Section 3<a href="bivariate-methods.html#section-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>For this section use Wave 7 (2014). Name it conveniently and attach it.</li>
+<li>Plot the age at which respondents completed full-time education against the same for their fathers (note that these variables are only valid for the UK sample).</li>
+<li>There might be outlying values – can you see them?</li>
+<li>Plot the same, excluding outlying values</li>
+<li>Is there a significant link between fathers and children regarding this variable?</li>
+<li>Is there a significant link between mothers and children?</li>
+<li>Are these links, if any, stronger for sons or for daughters? Can you interpret?</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="12">
+<li id="fn12"><p>Some of the content of this worksheet is taken from <span class="citation">Reiche (forthcoming)</span>.<a href="bivariate-methods.html#fnref12" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="exercises.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="glossary.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="methods-methods-methods.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="homework-for-week-8.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
