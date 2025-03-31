@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Companion Features | PO91Q: Seminar Companion</title>
-  <meta name="description" content="Companion Features | PO91Q: Seminar Companion" />
+  <title>Descriptive Statistics | PO91Q: Seminar Companion</title>
+  <meta name="description" content="Descriptive Statistics | PO91Q: Seminar Companion" />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Companion Features | PO91Q: Seminar Companion" />
+  <meta property="og:title" content="Descriptive Statistics | PO91Q: Seminar Companion" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Companion Features | PO91Q: Seminar Companion" />
+  <meta name="twitter:title" content="Descriptive Statistics | PO91Q: Seminar Companion" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="accessibility.html"/>
+<link rel="prev" href="flashcards-2.html"/>
+<link rel="next" href="exercises-4.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -289,35 +289,103 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="companion-features" class="section level1 unnumbered hasAnchor">
-<h1>Companion Features<a href="companion-features.html#companion-features" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>You will find embedded in the text four different types of boxes which serve different purposes:</p>
+<div id="descriptive-statistics-1" class="section level1 unnumbered hasAnchor">
+<h1>Descriptive Statistics<a href="descriptive-statistics-1.html#descriptive-statistics-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="self-assessment-questions-1" class="section level2 unnumbered hasAnchor">
+<h2>Self-Assessment Questions<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a><a href="descriptive-statistics-1.html#self-assessment-questions-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In your own words:</p>
+<ol style="list-style-type: decimal">
+<li>What does a significance test do?</li>
+<li>Give an example of a significance test.</li>
+<li>Give an example of a hypothesis that is not testable.</li>
+<li>Explain the difference between a significance test and a confidence interval.</li>
+<li>Explain the relationship between the size of the p-value and the Type I and II Errors.</li>
+</ol>
 <div class="stop">
-<p>This box appears whenever I want you to stop at a particular point in the worksheet and to flag up to me that you are done.</p>
+<p>Please stop here and don’t go beyond this point until we have compared notes on your answers.</p>
 </div>
-<div class="warning">
-<p>This appears when you need to be careful with your coding in R to avoid problems.</p>
+<hr />
 </div>
-<div class="bulb">
-<p>Some explanations that will hopefully make your work with this webpage or learning the material itself easier.</p>
-</div>
-<div class="video">
-<p>We will start working with R in week 5, and I have recorded some videos to ease you into working with the program.</p>
-</div>
-<div class="puzzle">
-<p>A brief question which tests your understanding of the previous material.</p>
-</div>
+<div id="calculating-confidence-intervals" class="section level2 unnumbered hasAnchor">
+<h2>Calculating Confidence Intervals<a href="descriptive-statistics-1.html#calculating-confidence-intervals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Just as a reminder, what is a confidence interval?</p>
 <div class="def">
-<p>A definition we encountered in the lecture.</p>
+<p><strong>Confidence Interval</strong></p>
+<p>A confidence Interval for a parameter is an interval of numbers within which the parameter is believed to fall. The probability that this method produces an interval that contains the parameter is called the confidence level. This is a number chosen to be close to 1, such as 0.95 or 0.99. <span class="citation">(Agresti, 2018, p. 110)</span></p>
 </div>
+<p>There are two scenarios under which we are calculating confidence intervals: (1) we know <span class="math inline">\(\sigma\)</span> (the standard deviation of the population distribution), and (2) we don’t know <span class="math inline">\(\sigma\)</span>. Let me take you through these two scenarios in turn:</p>
+<div id="we-know-sigma" class="section level3 unnumbered hasAnchor">
+<h3>1. We know <span class="math inline">\(\sigma\)</span><a href="descriptive-statistics-1.html#we-know-sigma" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If we know the population distribution, then we can use z. Assume we have sample data on the age of students in the university with n=81, and <span class="math inline">\(\bar{y}=26\)</span>. The standard deviation of the population (<span class="math inline">\(\sigma\)</span>) is 9. We now want an interval within which we find with 99% certainty the true average age of students (we did this example with 95% in the lecture).</p>
+<p>We start with calculating the standard error:</p>
+<p><span class="math display">\[\begin{equation*}
+    \sigma_{\bar{y}} = \frac{\sigma}{\sqrt{n}}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+    \sigma_{\bar{y}} = \frac{9}{\sqrt{81}} = 1
+\end{equation*}\]</span></p>
+<p>What is important to bear in mind for the construction of confidence intervals, is that we do not just need the right-tail probability, because the area we are trying to cover under the distribution is symmetrical around the mean. This is visualised in Figure <a href="descriptive-statistics-1.html#fig:95">9</a> where the area is defined between <span class="math inline">\(\pm\)</span> 1.96 standard deviations around the mean.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:95"></span>
+<img src="main_files/figure-html/95-1.png" alt="\label{fig:95}95 Percent Confidence Interval around the Mean" width="45%" />
+<p class="caption">
+Figure 9: 95 Percent Confidence Interval around the Mean
+</p>
+</div>
+<p>As the grey area needs to be 95%, the white areas to the left and right need to be equal to 5% jointly. So each of them is 2.5%. When we look into our Table with right-tail probabilities, we therefore need to look for the z-score that corresponds to 0.025 (or 2.5%). When you look in the Normal Table (see <a href="files/Downloads/Statistical%20Tables.pdf">Statistical Tables</a>), then you will find this at z=1.96.</p>
+<p>Now, the question arises, how many standard deviations we need for a 99% confidence interval. The area to the left and right needs to be jointly 1%, or 0.05% each side. We consult the Normal Table again, and try to find the z-score for 0.005. The exact value is not available, only either 0.0051, or 0.0049. 0.0051 would lead to a confidence interval of 98.98%, so not quite large enough. We therefore need to go for 0.0049, and the corresponding z-score of z=2.58.</p>
+<p><span class="math display">\[\begin{equation*}
+\bar{y} \pm 2.58 \times \sigma_{\bar{Y}}
+\end{equation*}\]</span></p>
+<p>Popping the values in we receive</p>
+<p><span class="math display">\[\begin{equation*}
+26 \pm 2.58 \times 1
+\end{equation*}\]</span></p>
+<p>As a result, we can say that with 99% certainty the true average age of students at Warwick lies between 23.42 and 28.58. Note that this confidence interval is wider than the 95% one where the boundaries were defined as 24.04 and 27.96. As we went for higher certainty here, the confidence interval became wider. If we want our interval to contain the true average in 99 out of 100 samples, we need to cast our net wider than if we were content with 95.</p>
+</div>
+<div id="we-dont-know-sigma" class="section level3 unnumbered hasAnchor">
+<h3>2. We don’t know <span class="math inline">\(\sigma\)</span><a href="descriptive-statistics-1.html#we-dont-know-sigma" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If we don’t know the population distribution and its standard deviation, we need to use the t-distribution. As you know from the lecture, the t-distribution is a shape shifter. Its width depends on the degrees of freedom: the more degrees of freedom we have, the more narrow, or the closer to the normal distribution it comes. With df=30 the shapes of the t-distribution and the normal distribution are almost identical. You can see this in the following Figure, comparing the yellow t-distribution for <span class="math inline">\(df=30\)</span> and the black (normal) distribution.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-86"></span>
+<img src="main_files/figure-html/unnamed-chunk-86-1.png" alt="\label{fig:tdistribution}Comparison of t-Distributions" width="55%" />
+<p class="caption">
+Figure 10: Comparison of t-Distributions
+</p>
+</div>
+<p>In reversed logic, this also means that the t-distribution is rather wide for small sample sizes (and small df). Consequently, a confidence interval of a given level (e.g. 99%) would be much wider for a small sample size than under the normal distribution (or t-distributions with higher sample sizes). Let me illustrate this using the same sample average as for the normal distribution example above, <span class="math inline">\(\bar{y}=26\)</span>. We have a sample standard deviation (<span class="math inline">\(s\)</span>) of 2. Our sample size is very small, we only have <span class="math inline">\(n=4\)</span>. Again, we want an interval within which we find with 99% certainty the true average age of students.</p>
+<p>We start by estimating the standard error:</p>
+<p><span class="math display">\[\begin{equation*}
+    se=\frac{s}{\sqrt{n}}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+se=\frac{2}{\sqrt{4}}=1
+\end{equation*}\]</span></p>
+<p>This time we have to search in the t-Table, taking into account the degrees of freedom. As <span class="math inline">\(n=4\)</span>, this means that <span class="math inline">\(df=3\)</span>. Conveniently, the Table lists at the top the desired confidence interval. For <span class="math inline">\(df=3\)</span> and a 99% confidence interval, the corresponding t-value is 5.841. Once again, we calculate:</p>
+<p><span class="math display">\[\begin{equation*}
+\bar{y} \pm 5.841 \times se
+\end{equation*}\]</span></p>
+<p>and</p>
+<p><span class="math display">\[\begin{equation*}
+26 \pm 5.841 \times 1
+\end{equation*}\]</span></p>
+<p>The resulting boundaries are 20.159 as the lower boundary, and 31.841 as the upper boundary. This is far wider than the 99% confidence interval we had for the normal distribution, where the lower and upper boundaries were 23.42 and 28.58, respectively. This is a reflection of the fact that we only had a very small sample (<span class="math inline">\(n=4\)</span>) to base our inference on and therefore have a lot of uncertainty in our inference.</p>
+<p>To conclude, it is fair to say that the procedure is essentially the same as with the normal procedure, only that have to go the extra step of taking into account the degrees of freedom.</p>
+<p>You are now ready to do some exercises.</p>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="8">
+<li id="fn8"><p>Some of the content of this worksheet is taken from <span class="citation">Reiche (forthcoming)</span>.<a href="descriptive-statistics-1.html#fnref8" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="accessibility.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="flashcards-2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercises-4.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

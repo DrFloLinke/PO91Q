@@ -10,4 +10,7 @@ fig:area84
 fig:normalmean
 fig:first
 tab:glossary3
+fig:95
+fig:unnamed-chunk-86
+tab:glossary4
 tab:glossaryfull
