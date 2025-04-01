@@ -11,7 +11,7 @@ fig:normalmean
 fig:first
 tab:glossary3
 fig:95
-fig:unnamed-chunk-86
+fig:unnamed-chunk-92
 tab:glossary4
 tab:simdcode
 fig:disalc
