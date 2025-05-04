@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Case Study15 | PO91Q: Seminar Companion</title>
   <meta name="description" content="Case Study15 | PO91Q: Seminar Companion" />
-  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Case Study15 | PO91Q: Seminar Companion" />
   <meta property="og:type" content="book" />
@@ -587,7 +587,7 @@ lectures.</li>
 </div>
 <div id="exporting-the-results" class="section level2 unnumbered hasAnchor">
 <h2>Exporting the Results<a href="case-study-1.html#exporting-the-results" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>As for the graphs, you can also export and save the results of the regression model in a Word table. To do that you can use the ‘modelsummary’ package. Try to export the table.</p>
+<p>As for the graphs, you can also export and save the results of the regression model in a Word table. To do that you can use the ‘modelsummary’ package.</p>
 <p>Just like writing a shopping list, we start by creating a list of models for which we want <code>modelsummary</code> to produce a table. You can merely list the names of the objects in which the models are stored, or you can give them specific names which will appear as column titles in the table. This addition is by no means a must, but sometimes you might wish to give models a particular name, for example if you have used different methods of estimation, different components of a theory, etc. In the table we are creating here, I wish to distinguish between bivariate and multivariate models. By default, <code>modelsummary</code> just numbers models in ascending order.</p>
 <div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="case-study-1.html#cb86-1" tabindex="-1"></a>models <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
 <span id="cb86-2"><a href="case-study-1.html#cb86-2" tabindex="-1"></a>  <span class="st">&quot;Bivariate&quot;</span>    <span class="ot">=</span> model</span>
@@ -677,16 +677,16 @@ lectures.</li>
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
+          { positions: [ { i: 8, j: 1 },  ], css_id: 'tinytable_css_c53n75ebl4a5p8uf37l2',}, 
+          { positions: [ { i: 5, j: 1 },  ], css_id: 'tinytable_css_3lbtok5bnv9ckj9ye8hw',}, 
           { positions: [ { i: 2, j: 1 }, { i: 3, j: 1 }, { i: 4, j: 1 }, { i: 6, j: 1 }, { i: 7, j: 1 },  ], css_id: 'tinytable_css_z27mpah6ubp1eivub3np',}, 
-          { positions: [ { i: 5, j: 0 },  ], css_id: 'tinytable_css_xce8ql9b88e3p8usijy8',}, 
+          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_6dlj2dor6mh1bu5wjb2z',}, 
           { positions: [ { i: 1, j: 1 },  ], css_id: 'tinytable_css_vu1eqzu0ara6yd5hjcqt',}, 
+          { positions: [ { i: 8, j: 0 },  ], css_id: 'tinytable_css_l07z8vdwt98vgc16gt73',}, 
+          { positions: [ { i: 5, j: 0 },  ], css_id: 'tinytable_css_xce8ql9b88e3p8usijy8',}, 
           { positions: [ { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 },  ], css_id: 'tinytable_css_vog99f8hskxj2fz5vrxc',}, 
           { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_n2x1l40lbalm922ls3zh',}, 
-          { positions: [ { i: 8, j: 0 },  ], css_id: 'tinytable_css_l07z8vdwt98vgc16gt73',}, 
-          { positions: [ { i: 8, j: 1 },  ], css_id: 'tinytable_css_c53n75ebl4a5p8uf37l2',}, 
           { positions: [ { i: 1, j: 0 },  ], css_id: 'tinytable_css_a7v3ljb69assh87by2dj',}, 
-          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_6dlj2dor6mh1bu5wjb2z',}, 
-          { positions: [ { i: 5, j: 1 },  ], css_id: 'tinytable_css_3lbtok5bnv9ckj9ye8hw',}, 
           ];
 
           // Loop over the arrays to style the cells
@@ -700,16 +700,16 @@ lectures.</li>
 
     <style>
       /* tinytable css entries after */
+      .table td.tinytable_css_c53n75ebl4a5p8uf37l2, .table th.tinytable_css_c53n75ebl4a5p8uf37l2 { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_3lbtok5bnv9ckj9ye8hw, .table th.tinytable_css_3lbtok5bnv9ckj9ye8hw { text-align: center; border-bottom: solid black 0.05em; }
       .table td.tinytable_css_z27mpah6ubp1eivub3np, .table th.tinytable_css_z27mpah6ubp1eivub3np { text-align: center; }
-      .table td.tinytable_css_xce8ql9b88e3p8usijy8, .table th.tinytable_css_xce8ql9b88e3p8usijy8 { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_6dlj2dor6mh1bu5wjb2z, .table th.tinytable_css_6dlj2dor6mh1bu5wjb2z { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
       .table td.tinytable_css_vu1eqzu0ara6yd5hjcqt, .table th.tinytable_css_vu1eqzu0ara6yd5hjcqt { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_l07z8vdwt98vgc16gt73, .table th.tinytable_css_l07z8vdwt98vgc16gt73 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_xce8ql9b88e3p8usijy8, .table th.tinytable_css_xce8ql9b88e3p8usijy8 { text-align: left; border-bottom: solid black 0.05em; }
       .table td.tinytable_css_vog99f8hskxj2fz5vrxc, .table th.tinytable_css_vog99f8hskxj2fz5vrxc { text-align: left; }
       .table td.tinytable_css_n2x1l40lbalm922ls3zh, .table th.tinytable_css_n2x1l40lbalm922ls3zh { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
-      .table td.tinytable_css_l07z8vdwt98vgc16gt73, .table th.tinytable_css_l07z8vdwt98vgc16gt73 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_c53n75ebl4a5p8uf37l2, .table th.tinytable_css_c53n75ebl4a5p8uf37l2 { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
       .table td.tinytable_css_a7v3ljb69assh87by2dj, .table th.tinytable_css_a7v3ljb69assh87by2dj { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_6dlj2dor6mh1bu5wjb2z, .table th.tinytable_css_6dlj2dor6mh1bu5wjb2z { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_3lbtok5bnv9ckj9ye8hw, .table th.tinytable_css_3lbtok5bnv9ckj9ye8hw { text-align: center; border-bottom: solid black 0.05em; }
     </style>
     <div class="container">
       <table class="table table-borderless" id="tinytable_uqojug9rinmy5ih4324a" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
