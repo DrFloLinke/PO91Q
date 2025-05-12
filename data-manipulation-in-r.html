@@ -265,7 +265,8 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html"><i class="fa fa-check"></i>Causality and Consolidation</a>
 <ul>
 <li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#self-assessment-questions-2"><i class="fa fa-check"></i>Self-Assessment Questions</a></li>
-<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#case-study"><i class="fa fa-check"></i>Case Study</a></li>
+<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#case-study"><i class="fa fa-check"></i>Case Study</a>
+<ul>
 <li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#codebook"><i class="fa fa-check"></i>Codebook</a></li>
 <li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#data-exploration"><i class="fa fa-check"></i>Data Exploration</a></li>
 <li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#descriptive-statistics-1"><i class="fa fa-check"></i>Descriptive Statistics</a></li>
@@ -274,6 +275,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#sampling"><i class="fa fa-check"></i>Sampling</a></li>
 <li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#inferential-statistics"><i class="fa fa-check"></i>Inferential Statistics</a></li>
 <li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#causality"><i class="fa fa-check"></i>Causality</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#solutions-2"><i class="fa fa-check"></i>Solutions</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="homework-for-week-7.html"><a href="homework-for-week-7.html"><i class="fa fa-check"></i>Homework for Week 7</a></li>
@@ -616,8 +618,7 @@ Base R Solution
 <summary>
 Base R Solution
 </summary>
-<p>Using <span style="color:black"><code>ifelse</code></span>, this is very similar, only the pipe disappears:
-</p>
+<p>Using <span style="color:black"><code>ifelse</code></span>, this is very similar, only the pipe disappears:</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="data-manipulation-in-r.html#cb29-1" tabindex="-1"></a>EU<span class="sc">$</span>founding <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">ifelse</span>(EU<span class="sc">$</span>access_fac<span class="sc">==</span><span class="st">&quot;1951&quot;</span>, <span class="st">&quot;Yes&quot;</span>, <span class="st">&quot;No&quot;</span>), </span>
 <span id="cb29-2"><a href="data-manipulation-in-r.html#cb29-2" tabindex="-1"></a>                              <span class="at">levels =</span><span class="fu">c</span>(<span class="st">&quot;Yes&quot;</span>, <span class="st">&quot;No&quot;</span>))</span></code></pre></div>
 </details>

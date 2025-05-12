@@ -265,7 +265,8 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html"><i class="fa fa-check"></i>Causality and Consolidation</a>
 <ul>
 <li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#self-assessment-questions-2"><i class="fa fa-check"></i>Self-Assessment Questions</a></li>
-<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#case-study"><i class="fa fa-check"></i>Case Study</a></li>
+<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#case-study"><i class="fa fa-check"></i>Case Study</a>
+<ul>
 <li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#codebook"><i class="fa fa-check"></i>Codebook</a></li>
 <li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#data-exploration"><i class="fa fa-check"></i>Data Exploration</a></li>
 <li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#descriptive-statistics-1"><i class="fa fa-check"></i>Descriptive Statistics</a></li>
@@ -274,6 +275,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#sampling"><i class="fa fa-check"></i>Sampling</a></li>
 <li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#inferential-statistics"><i class="fa fa-check"></i>Inferential Statistics</a></li>
 <li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#causality"><i class="fa fa-check"></i>Causality</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#solutions-2"><i class="fa fa-check"></i>Solutions</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="homework-for-week-7.html"><a href="homework-for-week-7.html"><i class="fa fa-check"></i>Homework for Week 7</a></li>
@@ -442,9 +444,8 @@ SIMD is the Scottish Government’s standard approach to identify areas of multi
 <li>2020: containing data collected between 2014 and 2018</li>
 </ul>
 <p>Rather than presenting you with the data pertaining to individual data zones (n=6,976), I have chosen to aggregate these data zones to the corresponding councils, reducing the number of observations to 32.</p>
-</div>
-<div id="codebook" class="section level2 unnumbered hasAnchor">
-<h2>Codebook<a href="causality-and-consolidation.html#codebook" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="codebook" class="section level3 unnumbered hasAnchor">
+<h3>Codebook<a href="causality-and-consolidation.html#codebook" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <table style="width:100%; color: black; margin-left: auto; margin-right: auto;" class="table">
 <caption>
 <span id="tab:simdcode">Table 6: </span>SIMD Codebook
@@ -495,8 +496,8 @@ Standardised mortality ratio (2014-2018)
 </tbody>
 </table>
 </div>
-<div id="data-exploration" class="section level2 unnumbered hasAnchor">
-<h2>Data Exploration<a href="causality-and-consolidation.html#data-exploration" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="data-exploration" class="section level3 unnumbered hasAnchor">
+<h3>Data Exploration<a href="causality-and-consolidation.html#data-exploration" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Before starting, we need to load libraries and install packages if not already installed. In these exercises we will be using the <code>tidyverse</code> package.</p>
 <ol style="list-style-type: decimal">
 <li>Set your working directory, place the data set in it, and load it into R.</li>
@@ -504,14 +505,14 @@ Standardised mortality ratio (2014-2018)
 <li>Load the <code>tidyverse</code> package.</li>
 </ol>
 </div>
-<div id="descriptive-statistics-1" class="section level2 unnumbered hasAnchor">
-<h2>Descriptive Statistics<a href="causality-and-consolidation.html#descriptive-statistics-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="descriptive-statistics-1" class="section level3 unnumbered hasAnchor">
+<h3>Descriptive Statistics<a href="causality-and-consolidation.html#descriptive-statistics-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li>Produce descriptive statistics for all three numerical variables.</li>
 </ol>
 </div>
-<div id="visualisation" class="section level2 unnumbered hasAnchor">
-<h2>Visualisation<a href="causality-and-consolidation.html#visualisation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="visualisation" class="section level3 unnumbered hasAnchor">
+<h3>Visualisation<a href="causality-and-consolidation.html#visualisation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let’s visualise the distribution of the variable <code>alc16</code>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:disalc"></span>
 <img src="files/Week%205/distribution.png" alt="\label{fig:disalc}Distribution of Alcohol-Related Hospital Admissions (2011-2014)" width="50%" />
@@ -526,8 +527,8 @@ Figure 11: Distribution of Alcohol-Related Hospital Admissions (2011-2014)
 <li>What would happen to the shape of the distribution if the median was smaller than the mean?</li>
 </ol>
 </div>
-<div id="hypothesis" class="section level2 unnumbered hasAnchor">
-<h2>Hypothesis<a href="causality-and-consolidation.html#hypothesis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="hypothesis" class="section level3 unnumbered hasAnchor">
+<h3>Hypothesis<a href="causality-and-consolidation.html#hypothesis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We are interested in how alcohol-related admissions to hospital have affected mortality rates in Scotland. The following scatter plot uses the variables <code>alc16</code> and <code>mortality20</code>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:causality"></span>
 <img src="files/Week%205/scatter.png" alt="\label{fig:causality}Alcohol-Related Hospital Admissions and Mortality" width="50%" />
@@ -543,8 +544,8 @@ Figure 12: Alcohol-Related Hospital Admissions and Mortality
 <br />
    <strong>H<span class="math inline">\(\pmb{_\text{A}}\)</span>:</strong></div>
 </div>
-<div id="sampling" class="section level2 unnumbered hasAnchor">
-<h2>Sampling<a href="causality-and-consolidation.html#sampling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sampling" class="section level3 unnumbered hasAnchor">
+<h3>Sampling<a href="causality-and-consolidation.html#sampling" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The data frame which we have been using so far represents the population. Let us now draw a random sample of 15 councils as follows:</p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="causality-and-consolidation.html#cb75-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">6</span>)</span>
 <span id="cb75-2"><a href="causality-and-consolidation.html#cb75-2" tabindex="-1"></a>sample <span class="ot">&lt;-</span> <span class="fu">sample_n</span>(simd, <span class="dv">15</span>)</span></code></pre></div>
@@ -552,8 +553,8 @@ Figure 12: Alcohol-Related Hospital Admissions and Mortality
 <li>Explain the purpose of the <code>set.seed</code> function.</li>
 </ol>
 </div>
-<div id="inferential-statistics" class="section level2 unnumbered hasAnchor">
-<h2>Inferential Statistics<a href="causality-and-consolidation.html#inferential-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="inferential-statistics" class="section level3 unnumbered hasAnchor">
+<h3>Inferential Statistics<a href="causality-and-consolidation.html#inferential-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let us now see if the mortality ratio has changed between the two waves of 2016 and 2020. This is the worked example from the lecture, but I am repeating it here deliberately, so that you can carry out the example yourself.</p>
 <ol style="list-style-type: decimal">
 <li>As a first step, create a new variable measuring the difference between <code>mortality20</code> and <code>mortality16</code>. Make sure that increases are positive and decreases negative.</li>
@@ -566,8 +567,8 @@ Figure 12: Alcohol-Related Hospital Admissions and Mortality
 <li>Drawing on the results from Exercises 5 and 7, reason about the p-value you would obtain if you tested the hypothesis that mortality rates have increased between the waves of 2016 and 2020.</li>
 </ol>
 </div>
-<div id="causality" class="section level2 unnumbered hasAnchor">
-<h2>Causality<a href="causality-and-consolidation.html#causality" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="causality" class="section level3 unnumbered hasAnchor">
+<h3>Causality<a href="causality-and-consolidation.html#causality" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li>Identify the elements of symmetry and asymmetry in the setup of this case study.</li>
 <li>Consider again Figure <a href="causality-and-consolidation.html#fig:causalityfw">13</a> from the lecture. Which aspects of establishing causality has the case study addressed? What is missing?</li>
@@ -579,6 +580,7 @@ Figure 13: Causality Framework
 </p>
 </div>
 <hr />
+</div>
 </div>
 <div id="solutions-2" class="section level2 unnumbered hasAnchor">
 <h2>Solutions<a href="causality-and-consolidation.html#solutions-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
