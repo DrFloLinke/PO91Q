@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Data Manipulation in R | PO91Q: Seminar Companion</title>
-  <meta name="description" content="Data Manipulation in R | PO91Q: Seminar Companion" />
+  <title>Data Manipulation in R | main.knit</title>
+  <meta name="description" content="PO91Q: Seminar Companion " />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Data Manipulation in R | PO91Q: Seminar Companion" />
+  <meta property="og:title" content="Data Manipulation in R | main.knit" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Data Manipulation in R | PO91Q: Seminar Companion" />
+  <meta name="twitter:title" content="Data Manipulation in R | main.knit" />
   
   
   
@@ -359,7 +359,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html#group-work-self-reflection"><i class="fa fa-check"></i>Group Work – Self-Reflection</a></li>
 <li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html#multiple-regression-in-r-guided-example"><i class="fa fa-check"></i>Multiple Regression in R – Guided Example</a></li>
 <li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html#multiple-regression-in-r-independent-analysis"><i class="fa fa-check"></i>Multiple Regression in R – Independent Analysis</a></li>
-<li class="chapter" data-level="0.1" data-path="multiple-regression.html"><a href="multiple-regression.html#going-further-1"><i class="fa fa-check"></i><b>0.1</b> Going Further</a></li>
+<li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html#going-further-1"><i class="fa fa-check"></i>Going Further</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="homework-for-week-10.html"><a href="homework-for-week-10.html"><i class="fa fa-check"></i>Homework for Week 10</a>
 <ul>
@@ -408,7 +408,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">PO91Q: Seminar Companion</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><div class="line-block">PO91Q: Seminar Companion <img align="right" src="images/Crest.png" width="75"></div></a>
           </h1>
         </div>
 
@@ -563,8 +563,7 @@ Here, we first create a new, empty variable called <code>wave</code> in the <cod
 <span id="cb25-7"><a href="data-manipulation-in-r.html#cb25-7" tabindex="-1"></a>                           <span class="st">&quot;Eastern&quot;</span>, </span>
 <span id="cb25-8"><a href="data-manipulation-in-r.html#cb25-8" tabindex="-1"></a>                           <span class="st">&quot;Balkans&quot;</span>))) </span></code></pre></div>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="data-manipulation-in-r.html#cb26-1" tabindex="-1"></a><span class="fu">levels</span>(EU<span class="sc">$</span>wave)</span>
-<span id="cb26-2"><a href="data-manipulation-in-r.html#cb26-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">&quot;Founding&quot;</span>      <span class="st">&quot;First&quot;</span>         <span class="st">&quot;Mediterranean&quot;</span> <span class="st">&quot;Cold War&quot;</span>      <span class="st">&quot;Eastern&quot;</span>      </span>
-<span id="cb26-3"><a href="data-manipulation-in-r.html#cb26-3" tabindex="-1"></a>[<span class="dv">6</span>] <span class="st">&quot;Balkans&quot;</span>      </span></code></pre></div>
+<span id="cb26-2"><a href="data-manipulation-in-r.html#cb26-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">&quot;Founding&quot;</span>      <span class="st">&quot;First&quot;</span>         <span class="st">&quot;Mediterranean&quot;</span> <span class="st">&quot;Cold War&quot;</span>      <span class="st">&quot;Eastern&quot;</span>       <span class="st">&quot;Balkans&quot;</span>      </span></code></pre></div>
 <div class="baser">
 <details>
 <summary>
@@ -1128,7 +1127,7 @@ How do the numbers get translated onto the plot? We are not going to look at thi
 </tbody>
 </table>
 <p>I like to think of using these arguments like dressing myself in the morning. The minimum that common decency requires me to wear if I wish to leave the house is some underwear, some trousers, and a top. Depending on how I feel and what the weather is like, I can add more layers, like socks, a jumper, or a scarf. It is exactly the same with <code>ggplot2</code>. As a minimum to produce a plot you need a data frame, the aesthetic mapping and a geom. Once you have produced this minimalistic graph, you can modify it, by adding more components / arguments. As you can imagine the possibilities are almost endless, and we only have time to deal with the minimum here. This is not a problem, however, as most of the other grammatical arguments (Stats, Position, Facets and Scales) generally have sensible defaults.</p>
-<p>So how does this work in practice? Let us reproduce the histogram of the <code>age</code> variable. We start by calling <code>ggplot2</code> and advise the function which data frame we wish to use (<code>EU</code>). In a second step, we add a geometry – in our case <code>geom_histogram</code>. Within the geometry, we need to specify for which variable we wish to create a distribution, or in the language of <code>ggplot2</code> which variable we wish to map to the geom as our Aesthetic. To produce 5 bars again, we specify a bandwith of 20 million (this refers to <code>popmio</code>).</p>
+<p>So how does this work in practice? Let us reproduce the histogram of the <code>age</code> variable. We start by calling <code>ggplot2</code> and advise the function which data frame we wish to use (<code>EU</code>). In a second step, we add a geometry – in our case <code>geom_histogram</code>. Within the geometry, we need to specify for which variable we wish to create a distribution, or in the language of <code>ggplot2</code> which variable we wish to map to the geom as our Aesthetic. To produce 5 bars again, we specify a bandwidth of 20 million (this refers to <code>popmio</code>).</p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="data-manipulation-in-r.html#cb67-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>EU) <span class="sc">+</span></span>
 <span id="cb67-2"><a href="data-manipulation-in-r.html#cb67-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping=</span><span class="fu">aes</span>(popmio), <span class="at">binwidth =</span> <span class="dv">20</span>)</span></code></pre></div>
 <p><img src="main_files/figure-html/unnamed-chunk-70-1.png" width="50%" style="display: block; margin: auto;" /></p>
@@ -1144,7 +1143,16 @@ How do the numbers get translated onto the plot? We are not going to look at thi
 <span id="cb69-4"><a href="data-manipulation-in-r.html#cb69-4" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">20</span>)) <span class="sc">+</span></span>
 <span id="cb69-5"><a href="data-manipulation-in-r.html#cb69-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Population (in million)&quot;</span>, <span class="at">y=</span><span class="st">&quot;Frequency&quot;</span>) <span class="sc">+</span></span>
 <span id="cb69-6"><a href="data-manipulation-in-r.html#cb69-6" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
-<p><img src="main_files/figure-html/unnamed-chunk-73-1.png" width="50%" style="display: block; margin: auto;" /></p>
+<div class="baser">
+<details>
+<summary>
+Base R Solution
+</summary>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="data-manipulation-in-r.html#cb70-1" tabindex="-1"></a><span class="fu">hist</span>(EU<span class="sc">$</span>popmio, <span class="at">breaks =</span> <span class="dv">4</span>,</span>
+<span id="cb70-2"><a href="data-manipulation-in-r.html#cb70-2" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Population (in million)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Frequency&quot;</span>)</span></code></pre></div>
+</details>
+</div>
+<p><img src="main_files/figure-html/unnamed-chunk-74-1.png" width="50%" style="display: block; margin: auto;" /></p>
 <p>I have also removed the background in line with the principles set out by <span class="citation">Tufte (2001, p. 96)</span> by adding <code>theme_classic()</code>. This is it. A graph which can communicate its message independently, and which looks aesthetically pleasing.</p>
 <p>In the present case we have the population, so displaying the frequency on the y-axis is sort of sensible, but usually we would be dealing with a sample. Here the count is not very telling and we would be using percentages, instead. Let’s do it!</p>
 <hr />
@@ -1152,14 +1160,35 @@ How do the numbers get translated onto the plot? We are not going to look at thi
 <div id="even-more-advanced-graphs" class="section level2 unnumbered hasAnchor">
 <h2>Even More Advanced Graphs<a href="data-manipulation-in-r.html#even-more-advanced-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Unfortunately, there is no easy, default way to do this in R, but necessitates a calculation within the <code>ggplot</code> command. Once more we call <code>ggplot</code> and use the <code>EU</code> data set, and select the geom <code>geom_histogram</code>. Again we specify the binwidth as 20 with a boundary of zero, and put <code>popmio</code> on the x-axis. Now comes the point where we need to do something new, because <code>y</code> is not equivalent to the frequency any more, but should be percentage. To achieve this we advise R to put the density there (which is the relative frequency from the the lecture in week 5), and multiply this density by 100 to get percentage. Nothing has changed on the scaling of the x-axis from the previous plot, so we can copy and paste the <code>scale_x_continuous</code> section, as well as the labelling of the x-axis. In this last step, we now also need to adjust the label of the y-axis, because this has now percentage on it, and not frequency. The result is this:</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="data-manipulation-in-r.html#cb70-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EU) <span class="sc">+</span> </span>
-<span id="cb70-2"><a href="data-manipulation-in-r.html#cb70-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">20</span>, <span class="at">boundary =</span> <span class="dv">0</span>,</span>
-<span id="cb70-3"><a href="data-manipulation-in-r.html#cb70-3" tabindex="-1"></a>                 <span class="fu">aes</span>(<span class="at">x=</span> popmio, </span>
-<span id="cb70-4"><a href="data-manipulation-in-r.html#cb70-4" tabindex="-1"></a>                     <span class="at">y =</span> (..count..)<span class="sc">/</span><span class="fu">sum</span>(..count..)<span class="sc">*</span><span class="dv">100</span>)) <span class="sc">+</span></span>
-<span id="cb70-5"><a href="data-manipulation-in-r.html#cb70-5" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">20</span>)) <span class="sc">+</span></span>
-<span id="cb70-6"><a href="data-manipulation-in-r.html#cb70-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Population (in million)&quot;</span>, <span class="at">y=</span><span class="st">&quot;percent&quot;</span>)  <span class="sc">+</span></span>
-<span id="cb70-7"><a href="data-manipulation-in-r.html#cb70-7" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
-<p><img src="main_files/figure-html/unnamed-chunk-75-1.png" width="50%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="data-manipulation-in-r.html#cb71-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EU) <span class="sc">+</span> </span>
+<span id="cb71-2"><a href="data-manipulation-in-r.html#cb71-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">20</span>, <span class="at">boundary =</span> <span class="dv">0</span>,</span>
+<span id="cb71-3"><a href="data-manipulation-in-r.html#cb71-3" tabindex="-1"></a>                 <span class="fu">aes</span>(<span class="at">x=</span> popmio, </span>
+<span id="cb71-4"><a href="data-manipulation-in-r.html#cb71-4" tabindex="-1"></a>                     <span class="at">y =</span> (..count..)<span class="sc">/</span><span class="fu">sum</span>(..count..)<span class="sc">*</span><span class="dv">100</span>)) <span class="sc">+</span></span>
+<span id="cb71-5"><a href="data-manipulation-in-r.html#cb71-5" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">20</span>)) <span class="sc">+</span></span>
+<span id="cb71-6"><a href="data-manipulation-in-r.html#cb71-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Population (in million)&quot;</span>, <span class="at">y=</span><span class="st">&quot;percent&quot;</span>)  <span class="sc">+</span></span>
+<span id="cb71-7"><a href="data-manipulation-in-r.html#cb71-7" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
+<div class="baser">
+<details>
+<summary>
+Base R Solution
+</summary>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="data-manipulation-in-r.html#cb72-1" tabindex="-1"></a><span class="co"># Create histogram data without plotting</span></span>
+<span id="cb72-2"><a href="data-manipulation-in-r.html#cb72-2" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="fu">hist</span>(EU<span class="sc">$</span>popmio, </span>
+<span id="cb72-3"><a href="data-manipulation-in-r.html#cb72-3" tabindex="-1"></a>         <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">20</span>), </span>
+<span id="cb72-4"><a href="data-manipulation-in-r.html#cb72-4" tabindex="-1"></a>         <span class="at">plot =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb72-5"><a href="data-manipulation-in-r.html#cb72-5" tabindex="-1"></a></span>
+<span id="cb72-6"><a href="data-manipulation-in-r.html#cb72-6" tabindex="-1"></a><span class="co"># Normalize counts to percentages</span></span>
+<span id="cb72-7"><a href="data-manipulation-in-r.html#cb72-7" tabindex="-1"></a>h<span class="sc">$</span>counts <span class="ot">&lt;-</span> h<span class="sc">$</span>counts <span class="sc">/</span> <span class="fu">sum</span>(h<span class="sc">$</span>counts) <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb72-8"><a href="data-manipulation-in-r.html#cb72-8" tabindex="-1"></a></span>
+<span id="cb72-9"><a href="data-manipulation-in-r.html#cb72-9" tabindex="-1"></a><span class="co"># Plot histogram</span></span>
+<span id="cb72-10"><a href="data-manipulation-in-r.html#cb72-10" tabindex="-1"></a><span class="fu">plot</span>(h, </span>
+<span id="cb72-11"><a href="data-manipulation-in-r.html#cb72-11" tabindex="-1"></a>    <span class="at">freq =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb72-12"><a href="data-manipulation-in-r.html#cb72-12" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">&quot;Population (in million)&quot;</span>, </span>
+<span id="cb72-13"><a href="data-manipulation-in-r.html#cb72-13" tabindex="-1"></a>    <span class="at">ylab =</span> <span class="st">&quot;percent&quot;</span>, </span>
+<span id="cb72-14"><a href="data-manipulation-in-r.html#cb72-14" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+</details>
+</div>
+<p><img src="main_files/figure-html/unnamed-chunk-77-1.png" width="50%" style="display: block; margin: auto;" /></p>
 <div class="video">
 <p><strong>Jazzy Graphs with GGPLOT</strong></p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Z4KAuOO_iew?si=oMrS0gYs1JnV5dPS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -1170,16 +1199,16 @@ How do the numbers get translated onto the plot? We are not going to look at thi
 <div id="organising-code-in-the-rscript" class="section level2 unnumbered hasAnchor">
 <h2>Organising Code in the RScript<a href="data-manipulation-in-r.html#organising-code-in-the-rscript" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Now is probably a good time to make you aware of how I have been organising code which runs over several lines. I could also have written the code of the last graph as</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="data-manipulation-in-r.html#cb71-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EU) <span class="sc">+</span> </span>
-<span id="cb71-2"><a href="data-manipulation-in-r.html#cb71-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">20</span>, <span class="at">boundary =</span> <span class="dv">0</span>, <span class="fu">aes</span>(<span class="at">x=</span> popmio, <span class="at">y =</span> (..count..)<span class="sc">/</span><span class="fu">sum</span>(..count..)<span class="sc">*</span><span class="dv">100</span>)) <span class="sc">+</span> <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">20</span>)) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Population&quot;</span>, <span class="at">y=</span><span class="st">&quot;percent&quot;</span>) <span class="sc">+</span> <span class="fu">theme_classic</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="data-manipulation-in-r.html#cb73-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EU) <span class="sc">+</span> </span>
+<span id="cb73-2"><a href="data-manipulation-in-r.html#cb73-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">20</span>, <span class="at">boundary =</span> <span class="dv">0</span>, <span class="fu">aes</span>(<span class="at">x=</span> popmio, <span class="at">y =</span> (..count..)<span class="sc">/</span><span class="fu">sum</span>(..count..)<span class="sc">*</span><span class="dv">100</span>)) <span class="sc">+</span> <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">20</span>)) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Population&quot;</span>, <span class="at">y=</span><span class="st">&quot;percent&quot;</span>) <span class="sc">+</span> <span class="fu">theme_classic</span>()</span></code></pre></div>
 <p>but this would have made it rather difficult to disentangle and to spot the structure of the graph straight away. So it is also a good idea to structure the code in a logical way which allows a reader to understand it as easily as possible. R is very smart in the way it indents the next line after pressing “enter” in an RScript automatically to the appropriate position. You see for example that in</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="data-manipulation-in-r.html#cb72-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EU) <span class="sc">+</span> </span>
-<span id="cb72-2"><a href="data-manipulation-in-r.html#cb72-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">20</span>, <span class="at">boundary =</span> <span class="dv">0</span>,</span>
-<span id="cb72-3"><a href="data-manipulation-in-r.html#cb72-3" tabindex="-1"></a>                 <span class="fu">aes</span>(<span class="at">x=</span> popmio, </span>
-<span id="cb72-4"><a href="data-manipulation-in-r.html#cb72-4" tabindex="-1"></a>                     <span class="at">y =</span> (..count..)<span class="sc">/</span><span class="fu">sum</span>(..count..)<span class="sc">*</span><span class="dv">100</span>)) <span class="sc">+</span></span>
-<span id="cb72-5"><a href="data-manipulation-in-r.html#cb72-5" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">20</span>)) <span class="sc">+</span></span>
-<span id="cb72-6"><a href="data-manipulation-in-r.html#cb72-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Population (in million)&quot;</span>, <span class="at">y=</span><span class="st">&quot;percent&quot;</span>) <span class="sc">+</span></span>
-<span id="cb72-7"><a href="data-manipulation-in-r.html#cb72-7" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="data-manipulation-in-r.html#cb74-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EU) <span class="sc">+</span> </span>
+<span id="cb74-2"><a href="data-manipulation-in-r.html#cb74-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">20</span>, <span class="at">boundary =</span> <span class="dv">0</span>,</span>
+<span id="cb74-3"><a href="data-manipulation-in-r.html#cb74-3" tabindex="-1"></a>                 <span class="fu">aes</span>(<span class="at">x=</span> popmio, </span>
+<span id="cb74-4"><a href="data-manipulation-in-r.html#cb74-4" tabindex="-1"></a>                     <span class="at">y =</span> (..count..)<span class="sc">/</span><span class="fu">sum</span>(..count..)<span class="sc">*</span><span class="dv">100</span>)) <span class="sc">+</span></span>
+<span id="cb74-5"><a href="data-manipulation-in-r.html#cb74-5" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">20</span>)) <span class="sc">+</span></span>
+<span id="cb74-6"><a href="data-manipulation-in-r.html#cb74-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Population (in million)&quot;</span>, <span class="at">y=</span><span class="st">&quot;percent&quot;</span>) <span class="sc">+</span></span>
+<span id="cb74-7"><a href="data-manipulation-in-r.html#cb74-7" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
 <p>the <code>aes</code> which belongs to the <code>geom_histogram</code> layer is indented just so it starts flush with the first argument (<code>binwidth</code>) within this layer.</p>
 <hr />
 </div>

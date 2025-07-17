@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Multiple Regression | PO91Q: Seminar Companion</title>
-  <meta name="description" content="Multiple Regression | PO91Q: Seminar Companion" />
+  <title>Multiple Regression | main.knit</title>
+  <meta name="description" content="PO91Q: Seminar Companion " />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Multiple Regression | PO91Q: Seminar Companion" />
+  <meta property="og:title" content="Multiple Regression | main.knit" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Multiple Regression | PO91Q: Seminar Companion" />
+  <meta name="twitter:title" content="Multiple Regression | main.knit" />
   
   
   
@@ -359,7 +359,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html#group-work-self-reflection"><i class="fa fa-check"></i>Group Work – Self-Reflection</a></li>
 <li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html#multiple-regression-in-r-guided-example"><i class="fa fa-check"></i>Multiple Regression in R – Guided Example</a></li>
 <li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html#multiple-regression-in-r-independent-analysis"><i class="fa fa-check"></i>Multiple Regression in R – Independent Analysis</a></li>
-<li class="chapter" data-level="0.1" data-path="multiple-regression.html"><a href="multiple-regression.html#going-further-1"><i class="fa fa-check"></i><b>0.1</b> Going Further</a></li>
+<li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html#going-further-1"><i class="fa fa-check"></i>Going Further</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="homework-for-week-10.html"><a href="homework-for-week-10.html"><i class="fa fa-check"></i>Homework for Week 10</a>
 <ul>
@@ -408,7 +408,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">PO91Q: Seminar Companion</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><div class="line-block">PO91Q: Seminar Companion <img align="right" src="images/Crest.png" width="75"></div></a>
           </h1>
         </div>
 
@@ -459,11 +459,11 @@ F-statistic: 227.3 on 1 and 623 DF,  p-value: &lt; 2.2e-16</code></pre>
 <li>Download the <a href="files/Week%209/WDI_PO91Q.csv">WDI_PO91Q.csv</a> data set. Data are taken from <span class="citation">World Bank (2024)</span>, <span class="citation">Miller et al. (2022)</span>, and <span class="citation">Marshall &amp; Gurr (2020)</span>.</li>
 <li>Put it into an appropriate working directory for this seminar and create a dedicated RScript and save it into the same working directory.</li>
 </ul>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="multiple-regression.html#cb97-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/Warwick/Modules/PO91Q/Seminars/Week 8&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="multiple-regression.html#cb99-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/Warwick/Modules/PO91Q/Seminars/Week 8&quot;</span>)</span></code></pre></div>
 <ul>
 <li>Import the data set into R:</li>
 </ul>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="multiple-regression.html#cb98-1" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;WDI_PO91Q.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="multiple-regression.html#cb100-1" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;WDI_PO91Q.csv&quot;</span>)</span></code></pre></div>
 <ul>
 <li>Once again, here is the overview of the variables available and their respective label in Table <a href="multiple-regression.html#tab:wdicode9">15</a>:</li>
 </ul>
@@ -719,27 +719,27 @@ Combined Polity V score
 <ul>
 <li>Let’s take the example from Week 7 back up. First re-run the regression I used back then.</li>
 </ul>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="multiple-regression.html#cb99-1" tabindex="-1"></a>wdi_life <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> lifeexp, <span class="at">data =</span> wdi)</span>
-<span id="cb99-2"><a href="multiple-regression.html#cb99-2" tabindex="-1"></a><span class="fu">summary</span>(wdi_life)</span>
-<span id="cb99-3"><a href="multiple-regression.html#cb99-3" tabindex="-1"></a></span>
-<span id="cb99-4"><a href="multiple-regression.html#cb99-4" tabindex="-1"></a>Call<span class="sc">:</span></span>
-<span id="cb99-5"><a href="multiple-regression.html#cb99-5" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> gdppc <span class="sc">~</span> lifeexp, <span class="at">data =</span> wdi)</span>
-<span id="cb99-6"><a href="multiple-regression.html#cb99-6" tabindex="-1"></a></span>
-<span id="cb99-7"><a href="multiple-regression.html#cb99-7" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
-<span id="cb99-8"><a href="multiple-regression.html#cb99-8" tabindex="-1"></a>   Min     <span class="dv">1</span>Q Median     <span class="dv">3</span>Q    Max </span>
-<span id="cb99-9"><a href="multiple-regression.html#cb99-9" tabindex="-1"></a><span class="sc">-</span><span class="dv">18457</span>  <span class="sc">-</span><span class="dv">9877</span>  <span class="sc">-</span><span class="dv">4187</span>   <span class="dv">4963</span>  <span class="dv">78242</span> </span>
-<span id="cb99-10"><a href="multiple-regression.html#cb99-10" tabindex="-1"></a></span>
-<span id="cb99-11"><a href="multiple-regression.html#cb99-11" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
-<span id="cb99-12"><a href="multiple-regression.html#cb99-12" tabindex="-1"></a>            Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
-<span id="cb99-13"><a href="multiple-regression.html#cb99-13" tabindex="-1"></a>(Intercept) <span class="sc">-</span><span class="fl">94306.8</span>    <span class="fl">10406.7</span>  <span class="sc">-</span><span class="fl">9.062</span> <span class="fl">3.33e-16</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb99-14"><a href="multiple-regression.html#cb99-14" tabindex="-1"></a>lifeexp       <span class="fl">1503.2</span>      <span class="fl">144.4</span>  <span class="fl">10.412</span>  <span class="sc">&lt;</span> <span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb99-15"><a href="multiple-regression.html#cb99-15" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb99-16"><a href="multiple-regression.html#cb99-16" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
-<span id="cb99-17"><a href="multiple-regression.html#cb99-17" tabindex="-1"></a></span>
-<span id="cb99-18"><a href="multiple-regression.html#cb99-18" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="dv">14690</span> on <span class="dv">167</span> degrees of freedom</span>
-<span id="cb99-19"><a href="multiple-regression.html#cb99-19" tabindex="-1"></a>  (<span class="dv">26</span> observations deleted due to missingness)</span>
-<span id="cb99-20"><a href="multiple-regression.html#cb99-20" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3936</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>   <span class="fl">0.39</span> </span>
-<span id="cb99-21"><a href="multiple-regression.html#cb99-21" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">108.4</span> on <span class="dv">1</span> and <span class="dv">167</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="er">&lt;</span> <span class="fl">2.2e-16</span></span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="multiple-regression.html#cb101-1" tabindex="-1"></a>wdi_life <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> lifeexp, <span class="at">data =</span> wdi)</span>
+<span id="cb101-2"><a href="multiple-regression.html#cb101-2" tabindex="-1"></a><span class="fu">summary</span>(wdi_life)</span>
+<span id="cb101-3"><a href="multiple-regression.html#cb101-3" tabindex="-1"></a></span>
+<span id="cb101-4"><a href="multiple-regression.html#cb101-4" tabindex="-1"></a>Call<span class="sc">:</span></span>
+<span id="cb101-5"><a href="multiple-regression.html#cb101-5" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> gdppc <span class="sc">~</span> lifeexp, <span class="at">data =</span> wdi)</span>
+<span id="cb101-6"><a href="multiple-regression.html#cb101-6" tabindex="-1"></a></span>
+<span id="cb101-7"><a href="multiple-regression.html#cb101-7" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
+<span id="cb101-8"><a href="multiple-regression.html#cb101-8" tabindex="-1"></a>   Min     <span class="dv">1</span>Q Median     <span class="dv">3</span>Q    Max </span>
+<span id="cb101-9"><a href="multiple-regression.html#cb101-9" tabindex="-1"></a><span class="sc">-</span><span class="dv">18457</span>  <span class="sc">-</span><span class="dv">9877</span>  <span class="sc">-</span><span class="dv">4187</span>   <span class="dv">4963</span>  <span class="dv">78242</span> </span>
+<span id="cb101-10"><a href="multiple-regression.html#cb101-10" tabindex="-1"></a></span>
+<span id="cb101-11"><a href="multiple-regression.html#cb101-11" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
+<span id="cb101-12"><a href="multiple-regression.html#cb101-12" tabindex="-1"></a>            Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
+<span id="cb101-13"><a href="multiple-regression.html#cb101-13" tabindex="-1"></a>(Intercept) <span class="sc">-</span><span class="fl">94306.8</span>    <span class="fl">10406.7</span>  <span class="sc">-</span><span class="fl">9.062</span> <span class="fl">3.33e-16</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb101-14"><a href="multiple-regression.html#cb101-14" tabindex="-1"></a>lifeexp       <span class="fl">1503.2</span>      <span class="fl">144.4</span>  <span class="fl">10.412</span>  <span class="sc">&lt;</span> <span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb101-15"><a href="multiple-regression.html#cb101-15" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb101-16"><a href="multiple-regression.html#cb101-16" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
+<span id="cb101-17"><a href="multiple-regression.html#cb101-17" tabindex="-1"></a></span>
+<span id="cb101-18"><a href="multiple-regression.html#cb101-18" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="dv">14690</span> on <span class="dv">167</span> degrees of freedom</span>
+<span id="cb101-19"><a href="multiple-regression.html#cb101-19" tabindex="-1"></a>  (<span class="dv">26</span> observations deleted due to missingness)</span>
+<span id="cb101-20"><a href="multiple-regression.html#cb101-20" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3936</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>   <span class="fl">0.39</span> </span>
+<span id="cb101-21"><a href="multiple-regression.html#cb101-21" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">108.4</span> on <span class="dv">1</span> and <span class="dv">167</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="er">&lt;</span> <span class="fl">2.2e-16</span></span></code></pre></div>
 <ul>
 <li>Interpret the coefficients.</li>
 </ul>
@@ -756,54 +756,54 @@ Combined Polity V score
 <li>Now we use a different regressor, say “Urban population (% of total)”.</li>
 <li>Specify the null and the alternative hypotheses.</li>
 </ul>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="multiple-regression.html#cb100-1" tabindex="-1"></a>wdi_urban <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> urban, <span class="at">data =</span> wdi)</span>
-<span id="cb100-2"><a href="multiple-regression.html#cb100-2" tabindex="-1"></a><span class="fu">summary</span>(wdi_urban)</span>
-<span id="cb100-3"><a href="multiple-regression.html#cb100-3" tabindex="-1"></a></span>
-<span id="cb100-4"><a href="multiple-regression.html#cb100-4" tabindex="-1"></a>Call<span class="sc">:</span></span>
-<span id="cb100-5"><a href="multiple-regression.html#cb100-5" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> gdppc <span class="sc">~</span> urban, <span class="at">data =</span> wdi)</span>
-<span id="cb100-6"><a href="multiple-regression.html#cb100-6" tabindex="-1"></a></span>
-<span id="cb100-7"><a href="multiple-regression.html#cb100-7" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
-<span id="cb100-8"><a href="multiple-regression.html#cb100-8" tabindex="-1"></a>   Min     <span class="dv">1</span>Q Median     <span class="dv">3</span>Q    Max </span>
-<span id="cb100-9"><a href="multiple-regression.html#cb100-9" tabindex="-1"></a><span class="sc">-</span><span class="dv">28588</span> <span class="sc">-</span><span class="dv">10681</span>  <span class="sc">-</span><span class="dv">3110</span>   <span class="dv">6863</span> <span class="dv">152303</span> </span>
-<span id="cb100-10"><a href="multiple-regression.html#cb100-10" tabindex="-1"></a></span>
-<span id="cb100-11"><a href="multiple-regression.html#cb100-11" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
-<span id="cb100-12"><a href="multiple-regression.html#cb100-12" tabindex="-1"></a>             Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
-<span id="cb100-13"><a href="multiple-regression.html#cb100-13" tabindex="-1"></a>(Intercept) <span class="sc">-</span><span class="fl">16983.43</span>    <span class="fl">3872.34</span>  <span class="sc">-</span><span class="fl">4.386</span> <span class="fl">1.98e-05</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb100-14"><a href="multiple-regression.html#cb100-14" tabindex="-1"></a>urban          <span class="fl">542.03</span>      <span class="fl">61.74</span>   <span class="fl">8.779</span> <span class="fl">1.42e-15</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb100-15"><a href="multiple-regression.html#cb100-15" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb100-16"><a href="multiple-regression.html#cb100-16" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
-<span id="cb100-17"><a href="multiple-regression.html#cb100-17" tabindex="-1"></a></span>
-<span id="cb100-18"><a href="multiple-regression.html#cb100-18" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="dv">19120</span> on <span class="dv">176</span> degrees of freedom</span>
-<span id="cb100-19"><a href="multiple-regression.html#cb100-19" tabindex="-1"></a>  (<span class="dv">17</span> observations deleted due to missingness)</span>
-<span id="cb100-20"><a href="multiple-regression.html#cb100-20" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3045</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3006</span> </span>
-<span id="cb100-21"><a href="multiple-regression.html#cb100-21" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">77.07</span> on <span class="dv">1</span> and <span class="dv">176</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="fl">1.417e-15</span></span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="multiple-regression.html#cb102-1" tabindex="-1"></a>wdi_urban <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> urban, <span class="at">data =</span> wdi)</span>
+<span id="cb102-2"><a href="multiple-regression.html#cb102-2" tabindex="-1"></a><span class="fu">summary</span>(wdi_urban)</span>
+<span id="cb102-3"><a href="multiple-regression.html#cb102-3" tabindex="-1"></a></span>
+<span id="cb102-4"><a href="multiple-regression.html#cb102-4" tabindex="-1"></a>Call<span class="sc">:</span></span>
+<span id="cb102-5"><a href="multiple-regression.html#cb102-5" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> gdppc <span class="sc">~</span> urban, <span class="at">data =</span> wdi)</span>
+<span id="cb102-6"><a href="multiple-regression.html#cb102-6" tabindex="-1"></a></span>
+<span id="cb102-7"><a href="multiple-regression.html#cb102-7" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
+<span id="cb102-8"><a href="multiple-regression.html#cb102-8" tabindex="-1"></a>   Min     <span class="dv">1</span>Q Median     <span class="dv">3</span>Q    Max </span>
+<span id="cb102-9"><a href="multiple-regression.html#cb102-9" tabindex="-1"></a><span class="sc">-</span><span class="dv">28588</span> <span class="sc">-</span><span class="dv">10681</span>  <span class="sc">-</span><span class="dv">3110</span>   <span class="dv">6863</span> <span class="dv">152303</span> </span>
+<span id="cb102-10"><a href="multiple-regression.html#cb102-10" tabindex="-1"></a></span>
+<span id="cb102-11"><a href="multiple-regression.html#cb102-11" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
+<span id="cb102-12"><a href="multiple-regression.html#cb102-12" tabindex="-1"></a>             Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
+<span id="cb102-13"><a href="multiple-regression.html#cb102-13" tabindex="-1"></a>(Intercept) <span class="sc">-</span><span class="fl">16983.43</span>    <span class="fl">3872.34</span>  <span class="sc">-</span><span class="fl">4.386</span> <span class="fl">1.98e-05</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb102-14"><a href="multiple-regression.html#cb102-14" tabindex="-1"></a>urban          <span class="fl">542.03</span>      <span class="fl">61.74</span>   <span class="fl">8.779</span> <span class="fl">1.42e-15</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb102-15"><a href="multiple-regression.html#cb102-15" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb102-16"><a href="multiple-regression.html#cb102-16" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
+<span id="cb102-17"><a href="multiple-regression.html#cb102-17" tabindex="-1"></a></span>
+<span id="cb102-18"><a href="multiple-regression.html#cb102-18" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="dv">19120</span> on <span class="dv">176</span> degrees of freedom</span>
+<span id="cb102-19"><a href="multiple-regression.html#cb102-19" tabindex="-1"></a>  (<span class="dv">17</span> observations deleted due to missingness)</span>
+<span id="cb102-20"><a href="multiple-regression.html#cb102-20" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3045</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3006</span> </span>
+<span id="cb102-21"><a href="multiple-regression.html#cb102-21" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">77.07</span> on <span class="dv">1</span> and <span class="dv">176</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="fl">1.417e-15</span></span></code></pre></div>
 <ul>
 <li>Interpret the coefficients.</li>
 <li>What does this mean for the hypotheses?</li>
 <li>If we want to assess the influence of both independent variables together, we type:</li>
 </ul>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="multiple-regression.html#cb101-1" tabindex="-1"></a>wdi_joint <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> lifeexp <span class="sc">+</span> urban, <span class="at">data =</span> wdi)</span>
-<span id="cb101-2"><a href="multiple-regression.html#cb101-2" tabindex="-1"></a><span class="fu">summary</span>(wdi_joint)</span>
-<span id="cb101-3"><a href="multiple-regression.html#cb101-3" tabindex="-1"></a></span>
-<span id="cb101-4"><a href="multiple-regression.html#cb101-4" tabindex="-1"></a>Call<span class="sc">:</span></span>
-<span id="cb101-5"><a href="multiple-regression.html#cb101-5" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> gdppc <span class="sc">~</span> lifeexp <span class="sc">+</span> urban, <span class="at">data =</span> wdi)</span>
-<span id="cb101-6"><a href="multiple-regression.html#cb101-6" tabindex="-1"></a></span>
-<span id="cb101-7"><a href="multiple-regression.html#cb101-7" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
-<span id="cb101-8"><a href="multiple-regression.html#cb101-8" tabindex="-1"></a>   Min     <span class="dv">1</span>Q Median     <span class="dv">3</span>Q    Max </span>
-<span id="cb101-9"><a href="multiple-regression.html#cb101-9" tabindex="-1"></a><span class="sc">-</span><span class="dv">22570</span>  <span class="sc">-</span><span class="dv">8825</span>  <span class="sc">-</span><span class="dv">2143</span>   <span class="dv">5594</span>  <span class="dv">74445</span> </span>
-<span id="cb101-10"><a href="multiple-regression.html#cb101-10" tabindex="-1"></a></span>
-<span id="cb101-11"><a href="multiple-regression.html#cb101-11" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
-<span id="cb101-12"><a href="multiple-regression.html#cb101-12" tabindex="-1"></a>             Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
-<span id="cb101-13"><a href="multiple-regression.html#cb101-13" tabindex="-1"></a>(Intercept) <span class="sc">-</span><span class="fl">74786.14</span>   <span class="fl">10690.13</span>  <span class="sc">-</span><span class="fl">6.996</span> <span class="fl">6.17e-11</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb101-14"><a href="multiple-regression.html#cb101-14" tabindex="-1"></a>lifeexp       <span class="fl">1012.17</span>     <span class="fl">172.70</span>   <span class="fl">5.861</span> <span class="fl">2.41e-08</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb101-15"><a href="multiple-regression.html#cb101-15" tabindex="-1"></a>urban          <span class="fl">273.74</span>      <span class="fl">59.13</span>   <span class="fl">4.629</span> <span class="fl">7.37e-06</span> <span class="sc">**</span><span class="er">*</span></span>
-<span id="cb101-16"><a href="multiple-regression.html#cb101-16" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb101-17"><a href="multiple-regression.html#cb101-17" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
-<span id="cb101-18"><a href="multiple-regression.html#cb101-18" tabindex="-1"></a></span>
-<span id="cb101-19"><a href="multiple-regression.html#cb101-19" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="dv">13860</span> on <span class="dv">166</span> degrees of freedom</span>
-<span id="cb101-20"><a href="multiple-regression.html#cb101-20" tabindex="-1"></a>  (<span class="dv">26</span> observations deleted due to missingness)</span>
-<span id="cb101-21"><a href="multiple-regression.html#cb101-21" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.463</span>, Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.4565</span> </span>
-<span id="cb101-22"><a href="multiple-regression.html#cb101-22" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">71.55</span> on <span class="dv">2</span> and <span class="dv">166</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="er">&lt;</span> <span class="fl">2.2e-16</span></span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="multiple-regression.html#cb103-1" tabindex="-1"></a>wdi_joint <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> lifeexp <span class="sc">+</span> urban, <span class="at">data =</span> wdi)</span>
+<span id="cb103-2"><a href="multiple-regression.html#cb103-2" tabindex="-1"></a><span class="fu">summary</span>(wdi_joint)</span>
+<span id="cb103-3"><a href="multiple-regression.html#cb103-3" tabindex="-1"></a></span>
+<span id="cb103-4"><a href="multiple-regression.html#cb103-4" tabindex="-1"></a>Call<span class="sc">:</span></span>
+<span id="cb103-5"><a href="multiple-regression.html#cb103-5" tabindex="-1"></a><span class="fu">lm</span>(<span class="at">formula =</span> gdppc <span class="sc">~</span> lifeexp <span class="sc">+</span> urban, <span class="at">data =</span> wdi)</span>
+<span id="cb103-6"><a href="multiple-regression.html#cb103-6" tabindex="-1"></a></span>
+<span id="cb103-7"><a href="multiple-regression.html#cb103-7" tabindex="-1"></a>Residuals<span class="sc">:</span></span>
+<span id="cb103-8"><a href="multiple-regression.html#cb103-8" tabindex="-1"></a>   Min     <span class="dv">1</span>Q Median     <span class="dv">3</span>Q    Max </span>
+<span id="cb103-9"><a href="multiple-regression.html#cb103-9" tabindex="-1"></a><span class="sc">-</span><span class="dv">22570</span>  <span class="sc">-</span><span class="dv">8825</span>  <span class="sc">-</span><span class="dv">2143</span>   <span class="dv">5594</span>  <span class="dv">74445</span> </span>
+<span id="cb103-10"><a href="multiple-regression.html#cb103-10" tabindex="-1"></a></span>
+<span id="cb103-11"><a href="multiple-regression.html#cb103-11" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
+<span id="cb103-12"><a href="multiple-regression.html#cb103-12" tabindex="-1"></a>             Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)    </span>
+<span id="cb103-13"><a href="multiple-regression.html#cb103-13" tabindex="-1"></a>(Intercept) <span class="sc">-</span><span class="fl">74786.14</span>   <span class="fl">10690.13</span>  <span class="sc">-</span><span class="fl">6.996</span> <span class="fl">6.17e-11</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb103-14"><a href="multiple-regression.html#cb103-14" tabindex="-1"></a>lifeexp       <span class="fl">1012.17</span>     <span class="fl">172.70</span>   <span class="fl">5.861</span> <span class="fl">2.41e-08</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb103-15"><a href="multiple-regression.html#cb103-15" tabindex="-1"></a>urban          <span class="fl">273.74</span>      <span class="fl">59.13</span>   <span class="fl">4.629</span> <span class="fl">7.37e-06</span> <span class="sc">**</span><span class="er">*</span></span>
+<span id="cb103-16"><a href="multiple-regression.html#cb103-16" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb103-17"><a href="multiple-regression.html#cb103-17" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
+<span id="cb103-18"><a href="multiple-regression.html#cb103-18" tabindex="-1"></a></span>
+<span id="cb103-19"><a href="multiple-regression.html#cb103-19" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="dv">13860</span> on <span class="dv">166</span> degrees of freedom</span>
+<span id="cb103-20"><a href="multiple-regression.html#cb103-20" tabindex="-1"></a>  (<span class="dv">26</span> observations deleted due to missingness)</span>
+<span id="cb103-21"><a href="multiple-regression.html#cb103-21" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.463</span>, Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.4565</span> </span>
+<span id="cb103-22"><a href="multiple-regression.html#cb103-22" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">71.55</span> on <span class="dv">2</span> and <span class="dv">166</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="er">&lt;</span> <span class="fl">2.2e-16</span></span></code></pre></div>
 <ul>
 <li>Interpret the coefficients.</li>
 </ul>
@@ -993,9 +993,9 @@ Combined Polity V score
 <li>Specify the SRF for Model 3, paying special attention to notation.</li>
 <li>Now assume, we want to know whether education has a bearing on the level of GDP. We call:</li>
 </ul>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="multiple-regression.html#cb102-1" tabindex="-1"></a>wdi_lit <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> literacy, <span class="at">data =</span> wdi)</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="multiple-regression.html#cb104-1" tabindex="-1"></a>wdi_lit <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> literacy, <span class="at">data =</span> wdi)</span></code></pre></div>
 <p>and also add it to the joint model:</p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="multiple-regression.html#cb103-1" tabindex="-1"></a>wdi_joint1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> lifeexp <span class="sc">+</span> urban <span class="sc">+</span> literacy, <span class="at">data =</span> wdi)</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="multiple-regression.html#cb105-1" tabindex="-1"></a>wdi_joint1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(gdppc <span class="sc">~</span> lifeexp <span class="sc">+</span> urban <span class="sc">+</span> literacy, <span class="at">data =</span> wdi)</span></code></pre></div>
 <p>This should lead to these results:</p>
  
  
@@ -1576,8 +1576,8 @@ Combined Polity V score
 <li>Collate a PowerPoint (Keynote) presentation with one slide for each of the preceding nine points. We will discuss this in Week 9.</li>
 </ol>
 </div>
-<div id="going-further-1" class="section level2 hasAnchor" number="0.1">
-<h2><span class="header-section-number">0.1</span> Going Further<a href="multiple-regression.html#going-further-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="going-further-1" class="section level2 unnumbered hasAnchor">
+<h2>Going Further<a href="multiple-regression.html#going-further-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>Plot the scatter plots for all models up to two independent variables. Add a line of best fit, or hyperplane of best fit as appropriate. Use the <code>rockchalk</code> package, and function <code>plotPlane()</code> for the 3D plots.</li>
 </ol>

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>MMM – Bivariate Regression | PO91Q: Seminar Companion</title>
-  <meta name="description" content="MMM – Bivariate Regression | PO91Q: Seminar Companion" />
+  <title>MMM – Bivariate Regression | main.knit</title>
+  <meta name="description" content="PO91Q: Seminar Companion " />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="MMM – Bivariate Regression | PO91Q: Seminar Companion" />
+  <meta property="og:title" content="MMM – Bivariate Regression | main.knit" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="MMM – Bivariate Regression | PO91Q: Seminar Companion" />
+  <meta name="twitter:title" content="MMM – Bivariate Regression | main.knit" />
   
   
   
@@ -359,7 +359,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html#group-work-self-reflection"><i class="fa fa-check"></i>Group Work – Self-Reflection</a></li>
 <li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html#multiple-regression-in-r-guided-example"><i class="fa fa-check"></i>Multiple Regression in R – Guided Example</a></li>
 <li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html#multiple-regression-in-r-independent-analysis"><i class="fa fa-check"></i>Multiple Regression in R – Independent Analysis</a></li>
-<li class="chapter" data-level="0.1" data-path="multiple-regression.html"><a href="multiple-regression.html#going-further-1"><i class="fa fa-check"></i><b>0.1</b> Going Further</a></li>
+<li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html#going-further-1"><i class="fa fa-check"></i>Going Further</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="homework-for-week-10.html"><a href="homework-for-week-10.html"><i class="fa fa-check"></i>Homework for Week 10</a>
 <ul>
@@ -408,7 +408,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">PO91Q: Seminar Companion</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><div class="line-block">PO91Q: Seminar Companion <img align="right" src="images/Crest.png" width="75"></div></a>
           </h1>
         </div>
 
@@ -428,71 +428,71 @@ div.csl-indent {
 <summary>
 Code for Data Preparation
 </summary>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="mmm-bivariate-regression.html#cb78-1" tabindex="-1"></a><span class="do">######################################</span></span>
-<span id="cb78-2"><a href="mmm-bivariate-regression.html#cb78-2" tabindex="-1"></a><span class="co"># MMM - Week 4 - Data Preparation</span></span>
-<span id="cb78-3"><a href="mmm-bivariate-regression.html#cb78-3" tabindex="-1"></a><span class="do">######################################</span></span>
-<span id="cb78-4"><a href="mmm-bivariate-regression.html#cb78-4" tabindex="-1"></a></span>
-<span id="cb78-5"><a href="mmm-bivariate-regression.html#cb78-5" tabindex="-1"></a></span>
-<span id="cb78-6"><a href="mmm-bivariate-regression.html#cb78-6" tabindex="-1"></a><span class="co"># Set WD</span></span>
-<span id="cb78-7"><a href="mmm-bivariate-regression.html#cb78-7" tabindex="-1"></a><span class="fu">setwd</span>()</span>
-<span id="cb78-8"><a href="mmm-bivariate-regression.html#cb78-8" tabindex="-1"></a></span>
-<span id="cb78-9"><a href="mmm-bivariate-regression.html#cb78-9" tabindex="-1"></a><span class="co"># Load packages</span></span>
-<span id="cb78-10"><a href="mmm-bivariate-regression.html#cb78-10" tabindex="-1"></a></span>
-<span id="cb78-11"><a href="mmm-bivariate-regression.html#cb78-11" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb78-12"><a href="mmm-bivariate-regression.html#cb78-12" tabindex="-1"></a></span>
-<span id="cb78-13"><a href="mmm-bivariate-regression.html#cb78-13" tabindex="-1"></a><span class="co"># Load data set</span></span>
-<span id="cb78-14"><a href="mmm-bivariate-regression.html#cb78-14" tabindex="-1"></a></span>
-<span id="cb78-15"><a href="mmm-bivariate-regression.html#cb78-15" tabindex="-1"></a>anes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;anes.csv&quot;</span>)</span>
-<span id="cb78-16"><a href="mmm-bivariate-regression.html#cb78-16" tabindex="-1"></a></span>
-<span id="cb78-17"><a href="mmm-bivariate-regression.html#cb78-17" tabindex="-1"></a><span class="co"># Get rid of missing values for variables used in analysis today</span></span>
-<span id="cb78-18"><a href="mmm-bivariate-regression.html#cb78-18" tabindex="-1"></a></span>
-<span id="cb78-19"><a href="mmm-bivariate-regression.html#cb78-19" tabindex="-1"></a><span class="do">## 999 is equivalent to NA, so needs to be recoded</span></span>
-<span id="cb78-20"><a href="mmm-bivariate-regression.html#cb78-20" tabindex="-1"></a>anes<span class="sc">$</span>fttrump1 <span class="ot">&lt;-</span> <span class="fu">with</span>(anes, <span class="fu">replace</span>(fttrump1, fttrump1 <span class="sc">==</span> <span class="dv">999</span>, <span class="cn">NA</span>)) </span>
-<span id="cb78-21"><a href="mmm-bivariate-regression.html#cb78-21" tabindex="-1"></a>anes<span class="sc">$</span>income <span class="ot">&lt;-</span> <span class="fu">with</span>(anes, <span class="fu">replace</span>(income, income <span class="sc">==</span> <span class="dv">99</span>, <span class="cn">NA</span>)) </span>
-<span id="cb78-22"><a href="mmm-bivariate-regression.html#cb78-22" tabindex="-1"></a></span>
-<span id="cb78-23"><a href="mmm-bivariate-regression.html#cb78-23" tabindex="-1"></a>anes <span class="ot">&lt;-</span> <span class="fu">filter</span>(anes, </span>
-<span id="cb78-24"><a href="mmm-bivariate-regression.html#cb78-24" tabindex="-1"></a>               <span class="sc">!</span><span class="fu">is.na</span>(fttrump1),</span>
-<span id="cb78-25"><a href="mmm-bivariate-regression.html#cb78-25" tabindex="-1"></a>               <span class="sc">!</span><span class="fu">is.na</span>(age),</span>
-<span id="cb78-26"><a href="mmm-bivariate-regression.html#cb78-26" tabindex="-1"></a>               <span class="sc">!</span><span class="fu">is.na</span>(income))</span>
-<span id="cb78-27"><a href="mmm-bivariate-regression.html#cb78-27" tabindex="-1"></a></span>
-<span id="cb78-28"><a href="mmm-bivariate-regression.html#cb78-28" tabindex="-1"></a><span class="co"># Turn income variable into a numerical variable with mid-points of each level</span></span>
-<span id="cb78-29"><a href="mmm-bivariate-regression.html#cb78-29" tabindex="-1"></a></span>
-<span id="cb78-30"><a href="mmm-bivariate-regression.html#cb78-30" tabindex="-1"></a>anes<span class="sc">$</span>income <span class="ot">&lt;-</span> <span class="fu">factor</span>(anes<span class="sc">$</span>income)</span>
-<span id="cb78-31"><a href="mmm-bivariate-regression.html#cb78-31" tabindex="-1"></a><span class="fu">table</span>(anes<span class="sc">$</span>income)</span>
-<span id="cb78-32"><a href="mmm-bivariate-regression.html#cb78-32" tabindex="-1"></a>anes <span class="ot">&lt;-</span> anes <span class="sc">%&gt;%</span></span>
-<span id="cb78-33"><a href="mmm-bivariate-regression.html#cb78-33" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">income_fac =</span> <span class="fu">recode</span>(income,</span>
-<span id="cb78-34"><a href="mmm-bivariate-regression.html#cb78-34" tabindex="-1"></a>                             <span class="st">&#39;1&#39;</span><span class="ot">=</span> <span class="st">&quot;2500&quot;</span>,</span>
-<span id="cb78-35"><a href="mmm-bivariate-regression.html#cb78-35" tabindex="-1"></a>                             <span class="st">&#39;2&#39;</span><span class="ot">=</span> <span class="st">&quot;7499.5&quot;</span>,</span>
-<span id="cb78-36"><a href="mmm-bivariate-regression.html#cb78-36" tabindex="-1"></a>                             <span class="st">&#39;3&#39;</span><span class="ot">=</span> <span class="st">&quot;12499.5&quot;</span>,</span>
-<span id="cb78-37"><a href="mmm-bivariate-regression.html#cb78-37" tabindex="-1"></a>                             <span class="st">&#39;4&#39;</span><span class="ot">=</span> <span class="st">&quot;17499.5&quot;</span>,                       </span>
-<span id="cb78-38"><a href="mmm-bivariate-regression.html#cb78-38" tabindex="-1"></a>                             <span class="st">&#39;5&#39;</span><span class="ot">=</span> <span class="st">&quot;22499.5&quot;</span>,</span>
-<span id="cb78-39"><a href="mmm-bivariate-regression.html#cb78-39" tabindex="-1"></a>                             <span class="st">&#39;6&#39;</span><span class="ot">=</span> <span class="st">&quot;27499.5&quot;</span>,</span>
-<span id="cb78-40"><a href="mmm-bivariate-regression.html#cb78-40" tabindex="-1"></a>                             <span class="st">&#39;7&#39;</span><span class="ot">=</span> <span class="st">&quot;32499.5&quot;</span>,</span>
-<span id="cb78-41"><a href="mmm-bivariate-regression.html#cb78-41" tabindex="-1"></a>                             <span class="st">&#39;8&#39;</span><span class="ot">=</span> <span class="st">&quot;37499.5&quot;</span>,</span>
-<span id="cb78-42"><a href="mmm-bivariate-regression.html#cb78-42" tabindex="-1"></a>                             <span class="st">&#39;9&#39;</span><span class="ot">=</span> <span class="st">&quot;42499.5&quot;</span>,</span>
-<span id="cb78-43"><a href="mmm-bivariate-regression.html#cb78-43" tabindex="-1"></a>                             <span class="st">&#39;10&#39;</span><span class="ot">=</span> <span class="st">&quot;47499.5&quot;</span>,</span>
-<span id="cb78-44"><a href="mmm-bivariate-regression.html#cb78-44" tabindex="-1"></a>                             <span class="st">&#39;11&#39;</span><span class="ot">=</span> <span class="st">&quot;52499.5&quot;</span>,</span>
-<span id="cb78-45"><a href="mmm-bivariate-regression.html#cb78-45" tabindex="-1"></a>                             <span class="st">&#39;12&#39;</span><span class="ot">=</span> <span class="st">&quot;57499.5&quot;</span>,</span>
-<span id="cb78-46"><a href="mmm-bivariate-regression.html#cb78-46" tabindex="-1"></a>                             <span class="st">&#39;13&#39;</span><span class="ot">=</span> <span class="st">&quot;62499.5&quot;</span>,</span>
-<span id="cb78-47"><a href="mmm-bivariate-regression.html#cb78-47" tabindex="-1"></a>                             <span class="st">&#39;14&#39;</span><span class="ot">=</span> <span class="st">&quot;67499.5&quot;</span>,</span>
-<span id="cb78-48"><a href="mmm-bivariate-regression.html#cb78-48" tabindex="-1"></a>                             <span class="st">&#39;15&#39;</span><span class="ot">=</span> <span class="st">&quot;72499.5&quot;</span>,</span>
-<span id="cb78-49"><a href="mmm-bivariate-regression.html#cb78-49" tabindex="-1"></a>                             <span class="st">&#39;16&#39;</span><span class="ot">=</span> <span class="st">&quot;77499.5&quot;</span>,</span>
-<span id="cb78-50"><a href="mmm-bivariate-regression.html#cb78-50" tabindex="-1"></a>                             <span class="st">&#39;17&#39;</span><span class="ot">=</span> <span class="st">&quot;82499.5&quot;</span>,</span>
-<span id="cb78-51"><a href="mmm-bivariate-regression.html#cb78-51" tabindex="-1"></a>                             <span class="st">&#39;18&#39;</span><span class="ot">=</span> <span class="st">&quot;87499.5&quot;</span>,</span>
-<span id="cb78-52"><a href="mmm-bivariate-regression.html#cb78-52" tabindex="-1"></a>                             <span class="st">&#39;19&#39;</span><span class="ot">=</span> <span class="st">&quot;92499.5&quot;</span>,</span>
-<span id="cb78-53"><a href="mmm-bivariate-regression.html#cb78-53" tabindex="-1"></a>                             <span class="st">&#39;20&#39;</span><span class="ot">=</span> <span class="st">&quot;97499.5&quot;</span>,</span>
-<span id="cb78-54"><a href="mmm-bivariate-regression.html#cb78-54" tabindex="-1"></a>                             <span class="st">&#39;21&#39;</span><span class="ot">=</span> <span class="st">&quot;112499.5&quot;</span>,</span>
-<span id="cb78-55"><a href="mmm-bivariate-regression.html#cb78-55" tabindex="-1"></a>                             <span class="st">&#39;22&#39;</span><span class="ot">=</span> <span class="st">&quot;137499.5&quot;</span>,</span>
-<span id="cb78-56"><a href="mmm-bivariate-regression.html#cb78-56" tabindex="-1"></a>                             <span class="st">&#39;23&#39;</span><span class="ot">=</span> <span class="st">&quot;162499.5&quot;</span>,</span>
-<span id="cb78-57"><a href="mmm-bivariate-regression.html#cb78-57" tabindex="-1"></a>                             <span class="st">&#39;24&#39;</span><span class="ot">=</span> <span class="st">&quot;187499.5&quot;</span>,</span>
-<span id="cb78-58"><a href="mmm-bivariate-regression.html#cb78-58" tabindex="-1"></a>                             <span class="st">&#39;25&#39;</span><span class="ot">=</span> <span class="st">&quot;224999.5&quot;</span>,</span>
-<span id="cb78-59"><a href="mmm-bivariate-regression.html#cb78-59" tabindex="-1"></a>                             <span class="st">&#39;26&#39;</span><span class="ot">=</span> <span class="st">&quot;500000&quot;</span>))</span>
-<span id="cb78-60"><a href="mmm-bivariate-regression.html#cb78-60" tabindex="-1"></a></span>
-<span id="cb78-61"><a href="mmm-bivariate-regression.html#cb78-61" tabindex="-1"></a>anes<span class="sc">$</span>inc <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(anes<span class="sc">$</span>income_fac))</span>
-<span id="cb78-62"><a href="mmm-bivariate-regression.html#cb78-62" tabindex="-1"></a></span>
-<span id="cb78-63"><a href="mmm-bivariate-regression.html#cb78-63" tabindex="-1"></a><span class="co"># save data set for use in video</span></span>
-<span id="cb78-64"><a href="mmm-bivariate-regression.html#cb78-64" tabindex="-1"></a></span>
-<span id="cb78-65"><a href="mmm-bivariate-regression.html#cb78-65" tabindex="-1"></a><span class="fu">write.csv</span>(anes, <span class="st">&quot;anes_week4.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="mmm-bivariate-regression.html#cb80-1" tabindex="-1"></a><span class="do">######################################</span></span>
+<span id="cb80-2"><a href="mmm-bivariate-regression.html#cb80-2" tabindex="-1"></a><span class="co"># MMM - Week 4 - Data Preparation</span></span>
+<span id="cb80-3"><a href="mmm-bivariate-regression.html#cb80-3" tabindex="-1"></a><span class="do">######################################</span></span>
+<span id="cb80-4"><a href="mmm-bivariate-regression.html#cb80-4" tabindex="-1"></a></span>
+<span id="cb80-5"><a href="mmm-bivariate-regression.html#cb80-5" tabindex="-1"></a></span>
+<span id="cb80-6"><a href="mmm-bivariate-regression.html#cb80-6" tabindex="-1"></a><span class="co"># Set WD</span></span>
+<span id="cb80-7"><a href="mmm-bivariate-regression.html#cb80-7" tabindex="-1"></a><span class="fu">setwd</span>()</span>
+<span id="cb80-8"><a href="mmm-bivariate-regression.html#cb80-8" tabindex="-1"></a></span>
+<span id="cb80-9"><a href="mmm-bivariate-regression.html#cb80-9" tabindex="-1"></a><span class="co"># Load packages</span></span>
+<span id="cb80-10"><a href="mmm-bivariate-regression.html#cb80-10" tabindex="-1"></a></span>
+<span id="cb80-11"><a href="mmm-bivariate-regression.html#cb80-11" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb80-12"><a href="mmm-bivariate-regression.html#cb80-12" tabindex="-1"></a></span>
+<span id="cb80-13"><a href="mmm-bivariate-regression.html#cb80-13" tabindex="-1"></a><span class="co"># Load data set</span></span>
+<span id="cb80-14"><a href="mmm-bivariate-regression.html#cb80-14" tabindex="-1"></a></span>
+<span id="cb80-15"><a href="mmm-bivariate-regression.html#cb80-15" tabindex="-1"></a>anes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;anes.csv&quot;</span>)</span>
+<span id="cb80-16"><a href="mmm-bivariate-regression.html#cb80-16" tabindex="-1"></a></span>
+<span id="cb80-17"><a href="mmm-bivariate-regression.html#cb80-17" tabindex="-1"></a><span class="co"># Get rid of missing values for variables used in analysis today</span></span>
+<span id="cb80-18"><a href="mmm-bivariate-regression.html#cb80-18" tabindex="-1"></a></span>
+<span id="cb80-19"><a href="mmm-bivariate-regression.html#cb80-19" tabindex="-1"></a><span class="do">## 999 is equivalent to NA, so needs to be recoded</span></span>
+<span id="cb80-20"><a href="mmm-bivariate-regression.html#cb80-20" tabindex="-1"></a>anes<span class="sc">$</span>fttrump1 <span class="ot">&lt;-</span> <span class="fu">with</span>(anes, <span class="fu">replace</span>(fttrump1, fttrump1 <span class="sc">==</span> <span class="dv">999</span>, <span class="cn">NA</span>)) </span>
+<span id="cb80-21"><a href="mmm-bivariate-regression.html#cb80-21" tabindex="-1"></a>anes<span class="sc">$</span>income <span class="ot">&lt;-</span> <span class="fu">with</span>(anes, <span class="fu">replace</span>(income, income <span class="sc">==</span> <span class="dv">99</span>, <span class="cn">NA</span>)) </span>
+<span id="cb80-22"><a href="mmm-bivariate-regression.html#cb80-22" tabindex="-1"></a></span>
+<span id="cb80-23"><a href="mmm-bivariate-regression.html#cb80-23" tabindex="-1"></a>anes <span class="ot">&lt;-</span> <span class="fu">filter</span>(anes, </span>
+<span id="cb80-24"><a href="mmm-bivariate-regression.html#cb80-24" tabindex="-1"></a>               <span class="sc">!</span><span class="fu">is.na</span>(fttrump1),</span>
+<span id="cb80-25"><a href="mmm-bivariate-regression.html#cb80-25" tabindex="-1"></a>               <span class="sc">!</span><span class="fu">is.na</span>(age),</span>
+<span id="cb80-26"><a href="mmm-bivariate-regression.html#cb80-26" tabindex="-1"></a>               <span class="sc">!</span><span class="fu">is.na</span>(income))</span>
+<span id="cb80-27"><a href="mmm-bivariate-regression.html#cb80-27" tabindex="-1"></a></span>
+<span id="cb80-28"><a href="mmm-bivariate-regression.html#cb80-28" tabindex="-1"></a><span class="co"># Turn income variable into a numerical variable with mid-points of each level</span></span>
+<span id="cb80-29"><a href="mmm-bivariate-regression.html#cb80-29" tabindex="-1"></a></span>
+<span id="cb80-30"><a href="mmm-bivariate-regression.html#cb80-30" tabindex="-1"></a>anes<span class="sc">$</span>income <span class="ot">&lt;-</span> <span class="fu">factor</span>(anes<span class="sc">$</span>income)</span>
+<span id="cb80-31"><a href="mmm-bivariate-regression.html#cb80-31" tabindex="-1"></a><span class="fu">table</span>(anes<span class="sc">$</span>income)</span>
+<span id="cb80-32"><a href="mmm-bivariate-regression.html#cb80-32" tabindex="-1"></a>anes <span class="ot">&lt;-</span> anes <span class="sc">%&gt;%</span></span>
+<span id="cb80-33"><a href="mmm-bivariate-regression.html#cb80-33" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">income_fac =</span> <span class="fu">recode</span>(income,</span>
+<span id="cb80-34"><a href="mmm-bivariate-regression.html#cb80-34" tabindex="-1"></a>                             <span class="st">&#39;1&#39;</span><span class="ot">=</span> <span class="st">&quot;2500&quot;</span>,</span>
+<span id="cb80-35"><a href="mmm-bivariate-regression.html#cb80-35" tabindex="-1"></a>                             <span class="st">&#39;2&#39;</span><span class="ot">=</span> <span class="st">&quot;7499.5&quot;</span>,</span>
+<span id="cb80-36"><a href="mmm-bivariate-regression.html#cb80-36" tabindex="-1"></a>                             <span class="st">&#39;3&#39;</span><span class="ot">=</span> <span class="st">&quot;12499.5&quot;</span>,</span>
+<span id="cb80-37"><a href="mmm-bivariate-regression.html#cb80-37" tabindex="-1"></a>                             <span class="st">&#39;4&#39;</span><span class="ot">=</span> <span class="st">&quot;17499.5&quot;</span>,                       </span>
+<span id="cb80-38"><a href="mmm-bivariate-regression.html#cb80-38" tabindex="-1"></a>                             <span class="st">&#39;5&#39;</span><span class="ot">=</span> <span class="st">&quot;22499.5&quot;</span>,</span>
+<span id="cb80-39"><a href="mmm-bivariate-regression.html#cb80-39" tabindex="-1"></a>                             <span class="st">&#39;6&#39;</span><span class="ot">=</span> <span class="st">&quot;27499.5&quot;</span>,</span>
+<span id="cb80-40"><a href="mmm-bivariate-regression.html#cb80-40" tabindex="-1"></a>                             <span class="st">&#39;7&#39;</span><span class="ot">=</span> <span class="st">&quot;32499.5&quot;</span>,</span>
+<span id="cb80-41"><a href="mmm-bivariate-regression.html#cb80-41" tabindex="-1"></a>                             <span class="st">&#39;8&#39;</span><span class="ot">=</span> <span class="st">&quot;37499.5&quot;</span>,</span>
+<span id="cb80-42"><a href="mmm-bivariate-regression.html#cb80-42" tabindex="-1"></a>                             <span class="st">&#39;9&#39;</span><span class="ot">=</span> <span class="st">&quot;42499.5&quot;</span>,</span>
+<span id="cb80-43"><a href="mmm-bivariate-regression.html#cb80-43" tabindex="-1"></a>                             <span class="st">&#39;10&#39;</span><span class="ot">=</span> <span class="st">&quot;47499.5&quot;</span>,</span>
+<span id="cb80-44"><a href="mmm-bivariate-regression.html#cb80-44" tabindex="-1"></a>                             <span class="st">&#39;11&#39;</span><span class="ot">=</span> <span class="st">&quot;52499.5&quot;</span>,</span>
+<span id="cb80-45"><a href="mmm-bivariate-regression.html#cb80-45" tabindex="-1"></a>                             <span class="st">&#39;12&#39;</span><span class="ot">=</span> <span class="st">&quot;57499.5&quot;</span>,</span>
+<span id="cb80-46"><a href="mmm-bivariate-regression.html#cb80-46" tabindex="-1"></a>                             <span class="st">&#39;13&#39;</span><span class="ot">=</span> <span class="st">&quot;62499.5&quot;</span>,</span>
+<span id="cb80-47"><a href="mmm-bivariate-regression.html#cb80-47" tabindex="-1"></a>                             <span class="st">&#39;14&#39;</span><span class="ot">=</span> <span class="st">&quot;67499.5&quot;</span>,</span>
+<span id="cb80-48"><a href="mmm-bivariate-regression.html#cb80-48" tabindex="-1"></a>                             <span class="st">&#39;15&#39;</span><span class="ot">=</span> <span class="st">&quot;72499.5&quot;</span>,</span>
+<span id="cb80-49"><a href="mmm-bivariate-regression.html#cb80-49" tabindex="-1"></a>                             <span class="st">&#39;16&#39;</span><span class="ot">=</span> <span class="st">&quot;77499.5&quot;</span>,</span>
+<span id="cb80-50"><a href="mmm-bivariate-regression.html#cb80-50" tabindex="-1"></a>                             <span class="st">&#39;17&#39;</span><span class="ot">=</span> <span class="st">&quot;82499.5&quot;</span>,</span>
+<span id="cb80-51"><a href="mmm-bivariate-regression.html#cb80-51" tabindex="-1"></a>                             <span class="st">&#39;18&#39;</span><span class="ot">=</span> <span class="st">&quot;87499.5&quot;</span>,</span>
+<span id="cb80-52"><a href="mmm-bivariate-regression.html#cb80-52" tabindex="-1"></a>                             <span class="st">&#39;19&#39;</span><span class="ot">=</span> <span class="st">&quot;92499.5&quot;</span>,</span>
+<span id="cb80-53"><a href="mmm-bivariate-regression.html#cb80-53" tabindex="-1"></a>                             <span class="st">&#39;20&#39;</span><span class="ot">=</span> <span class="st">&quot;97499.5&quot;</span>,</span>
+<span id="cb80-54"><a href="mmm-bivariate-regression.html#cb80-54" tabindex="-1"></a>                             <span class="st">&#39;21&#39;</span><span class="ot">=</span> <span class="st">&quot;112499.5&quot;</span>,</span>
+<span id="cb80-55"><a href="mmm-bivariate-regression.html#cb80-55" tabindex="-1"></a>                             <span class="st">&#39;22&#39;</span><span class="ot">=</span> <span class="st">&quot;137499.5&quot;</span>,</span>
+<span id="cb80-56"><a href="mmm-bivariate-regression.html#cb80-56" tabindex="-1"></a>                             <span class="st">&#39;23&#39;</span><span class="ot">=</span> <span class="st">&quot;162499.5&quot;</span>,</span>
+<span id="cb80-57"><a href="mmm-bivariate-regression.html#cb80-57" tabindex="-1"></a>                             <span class="st">&#39;24&#39;</span><span class="ot">=</span> <span class="st">&quot;187499.5&quot;</span>,</span>
+<span id="cb80-58"><a href="mmm-bivariate-regression.html#cb80-58" tabindex="-1"></a>                             <span class="st">&#39;25&#39;</span><span class="ot">=</span> <span class="st">&quot;224999.5&quot;</span>,</span>
+<span id="cb80-59"><a href="mmm-bivariate-regression.html#cb80-59" tabindex="-1"></a>                             <span class="st">&#39;26&#39;</span><span class="ot">=</span> <span class="st">&quot;500000&quot;</span>))</span>
+<span id="cb80-60"><a href="mmm-bivariate-regression.html#cb80-60" tabindex="-1"></a></span>
+<span id="cb80-61"><a href="mmm-bivariate-regression.html#cb80-61" tabindex="-1"></a>anes<span class="sc">$</span>inc <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(anes<span class="sc">$</span>income_fac))</span>
+<span id="cb80-62"><a href="mmm-bivariate-regression.html#cb80-62" tabindex="-1"></a></span>
+<span id="cb80-63"><a href="mmm-bivariate-regression.html#cb80-63" tabindex="-1"></a><span class="co"># save data set for use in video</span></span>
+<span id="cb80-64"><a href="mmm-bivariate-regression.html#cb80-64" tabindex="-1"></a></span>
+<span id="cb80-65"><a href="mmm-bivariate-regression.html#cb80-65" tabindex="-1"></a><span class="fu">write.csv</span>(anes, <span class="st">&quot;anes_week4.csv&quot;</span>)</span></code></pre></div>
 </details>
 </div>
 <hr />
@@ -505,35 +505,35 @@ Code for Data Preparation
 <summary>
 Code for Data Analysis
 </summary>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="mmm-bivariate-regression.html#cb79-1" tabindex="-1"></a><span class="do">######################################</span></span>
-<span id="cb79-2"><a href="mmm-bivariate-regression.html#cb79-2" tabindex="-1"></a><span class="co"># MMM - Week 4 - Bivariate Regression</span></span>
-<span id="cb79-3"><a href="mmm-bivariate-regression.html#cb79-3" tabindex="-1"></a><span class="do">######################################</span></span>
-<span id="cb79-4"><a href="mmm-bivariate-regression.html#cb79-4" tabindex="-1"></a></span>
-<span id="cb79-5"><a href="mmm-bivariate-regression.html#cb79-5" tabindex="-1"></a><span class="co"># Set WD</span></span>
-<span id="cb79-6"><a href="mmm-bivariate-regression.html#cb79-6" tabindex="-1"></a><span class="fu">setwd</span>()</span>
-<span id="cb79-7"><a href="mmm-bivariate-regression.html#cb79-7" tabindex="-1"></a></span>
-<span id="cb79-8"><a href="mmm-bivariate-regression.html#cb79-8" tabindex="-1"></a><span class="co"># Load packages</span></span>
-<span id="cb79-9"><a href="mmm-bivariate-regression.html#cb79-9" tabindex="-1"></a></span>
-<span id="cb79-10"><a href="mmm-bivariate-regression.html#cb79-10" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb79-11"><a href="mmm-bivariate-regression.html#cb79-11" tabindex="-1"></a></span>
-<span id="cb79-12"><a href="mmm-bivariate-regression.html#cb79-12" tabindex="-1"></a><span class="co"># Load data set</span></span>
-<span id="cb79-13"><a href="mmm-bivariate-regression.html#cb79-13" tabindex="-1"></a></span>
-<span id="cb79-14"><a href="mmm-bivariate-regression.html#cb79-14" tabindex="-1"></a>anes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;anes_week4.csv&quot;</span>)</span>
-<span id="cb79-15"><a href="mmm-bivariate-regression.html#cb79-15" tabindex="-1"></a></span>
-<span id="cb79-16"><a href="mmm-bivariate-regression.html#cb79-16" tabindex="-1"></a><span class="co"># Visualisation</span></span>
-<span id="cb79-17"><a href="mmm-bivariate-regression.html#cb79-17" tabindex="-1"></a><span class="do">############################</span></span>
-<span id="cb79-18"><a href="mmm-bivariate-regression.html#cb79-18" tabindex="-1"></a></span>
-<span id="cb79-19"><a href="mmm-bivariate-regression.html#cb79-19" tabindex="-1"></a><span class="fu">ggplot</span>(anes, <span class="fu">aes</span>(<span class="at">x =</span> inc, <span class="at">y =</span> fttrump1)) <span class="sc">+</span></span>
-<span id="cb79-20"><a href="mmm-bivariate-regression.html#cb79-20" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb79-21"><a href="mmm-bivariate-regression.html#cb79-21" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm)</span>
-<span id="cb79-22"><a href="mmm-bivariate-regression.html#cb79-22" tabindex="-1"></a></span>
-<span id="cb79-23"><a href="mmm-bivariate-regression.html#cb79-23" tabindex="-1"></a></span>
-<span id="cb79-24"><a href="mmm-bivariate-regression.html#cb79-24" tabindex="-1"></a><span class="co"># Regression</span></span>
-<span id="cb79-25"><a href="mmm-bivariate-regression.html#cb79-25" tabindex="-1"></a><span class="do">############################</span></span>
-<span id="cb79-26"><a href="mmm-bivariate-regression.html#cb79-26" tabindex="-1"></a></span>
-<span id="cb79-27"><a href="mmm-bivariate-regression.html#cb79-27" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(fttrump1 <span class="sc">~</span> inc, <span class="at">data =</span> anes)</span>
-<span id="cb79-28"><a href="mmm-bivariate-regression.html#cb79-28" tabindex="-1"></a></span>
-<span id="cb79-29"><a href="mmm-bivariate-regression.html#cb79-29" tabindex="-1"></a>model1</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="mmm-bivariate-regression.html#cb81-1" tabindex="-1"></a><span class="do">######################################</span></span>
+<span id="cb81-2"><a href="mmm-bivariate-regression.html#cb81-2" tabindex="-1"></a><span class="co"># MMM - Week 4 - Bivariate Regression</span></span>
+<span id="cb81-3"><a href="mmm-bivariate-regression.html#cb81-3" tabindex="-1"></a><span class="do">######################################</span></span>
+<span id="cb81-4"><a href="mmm-bivariate-regression.html#cb81-4" tabindex="-1"></a></span>
+<span id="cb81-5"><a href="mmm-bivariate-regression.html#cb81-5" tabindex="-1"></a><span class="co"># Set WD</span></span>
+<span id="cb81-6"><a href="mmm-bivariate-regression.html#cb81-6" tabindex="-1"></a><span class="fu">setwd</span>()</span>
+<span id="cb81-7"><a href="mmm-bivariate-regression.html#cb81-7" tabindex="-1"></a></span>
+<span id="cb81-8"><a href="mmm-bivariate-regression.html#cb81-8" tabindex="-1"></a><span class="co"># Load packages</span></span>
+<span id="cb81-9"><a href="mmm-bivariate-regression.html#cb81-9" tabindex="-1"></a></span>
+<span id="cb81-10"><a href="mmm-bivariate-regression.html#cb81-10" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb81-11"><a href="mmm-bivariate-regression.html#cb81-11" tabindex="-1"></a></span>
+<span id="cb81-12"><a href="mmm-bivariate-regression.html#cb81-12" tabindex="-1"></a><span class="co"># Load data set</span></span>
+<span id="cb81-13"><a href="mmm-bivariate-regression.html#cb81-13" tabindex="-1"></a></span>
+<span id="cb81-14"><a href="mmm-bivariate-regression.html#cb81-14" tabindex="-1"></a>anes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;anes_week4.csv&quot;</span>)</span>
+<span id="cb81-15"><a href="mmm-bivariate-regression.html#cb81-15" tabindex="-1"></a></span>
+<span id="cb81-16"><a href="mmm-bivariate-regression.html#cb81-16" tabindex="-1"></a><span class="co"># Visualisation</span></span>
+<span id="cb81-17"><a href="mmm-bivariate-regression.html#cb81-17" tabindex="-1"></a><span class="do">############################</span></span>
+<span id="cb81-18"><a href="mmm-bivariate-regression.html#cb81-18" tabindex="-1"></a></span>
+<span id="cb81-19"><a href="mmm-bivariate-regression.html#cb81-19" tabindex="-1"></a><span class="fu">ggplot</span>(anes, <span class="fu">aes</span>(<span class="at">x =</span> inc, <span class="at">y =</span> fttrump1)) <span class="sc">+</span></span>
+<span id="cb81-20"><a href="mmm-bivariate-regression.html#cb81-20" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb81-21"><a href="mmm-bivariate-regression.html#cb81-21" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm)</span>
+<span id="cb81-22"><a href="mmm-bivariate-regression.html#cb81-22" tabindex="-1"></a></span>
+<span id="cb81-23"><a href="mmm-bivariate-regression.html#cb81-23" tabindex="-1"></a></span>
+<span id="cb81-24"><a href="mmm-bivariate-regression.html#cb81-24" tabindex="-1"></a><span class="co"># Regression</span></span>
+<span id="cb81-25"><a href="mmm-bivariate-regression.html#cb81-25" tabindex="-1"></a><span class="do">############################</span></span>
+<span id="cb81-26"><a href="mmm-bivariate-regression.html#cb81-26" tabindex="-1"></a></span>
+<span id="cb81-27"><a href="mmm-bivariate-regression.html#cb81-27" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(fttrump1 <span class="sc">~</span> inc, <span class="at">data =</span> anes)</span>
+<span id="cb81-28"><a href="mmm-bivariate-regression.html#cb81-28" tabindex="-1"></a></span>
+<span id="cb81-29"><a href="mmm-bivariate-regression.html#cb81-29" tabindex="-1"></a>model1</span></code></pre></div>
 </details>
 </div>
 <div class="video">

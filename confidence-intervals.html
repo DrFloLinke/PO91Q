@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Confidence Intervals | PO91Q: Seminar Companion</title>
-  <meta name="description" content="Confidence Intervals | PO91Q: Seminar Companion" />
+  <title>Confidence Intervals | main.knit</title>
+  <meta name="description" content="PO91Q: Seminar Companion " />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Confidence Intervals | PO91Q: Seminar Companion" />
+  <meta property="og:title" content="Confidence Intervals | main.knit" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Confidence Intervals | PO91Q: Seminar Companion" />
+  <meta name="twitter:title" content="Confidence Intervals | main.knit" />
   
   
   
@@ -359,7 +359,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html#group-work-self-reflection"><i class="fa fa-check"></i>Group Work – Self-Reflection</a></li>
 <li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html#multiple-regression-in-r-guided-example"><i class="fa fa-check"></i>Multiple Regression in R – Guided Example</a></li>
 <li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html#multiple-regression-in-r-independent-analysis"><i class="fa fa-check"></i>Multiple Regression in R – Independent Analysis</a></li>
-<li class="chapter" data-level="0.1" data-path="multiple-regression.html"><a href="multiple-regression.html#going-further-1"><i class="fa fa-check"></i><b>0.1</b> Going Further</a></li>
+<li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html#going-further-1"><i class="fa fa-check"></i>Going Further</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="homework-for-week-10.html"><a href="homework-for-week-10.html"><i class="fa fa-check"></i>Homework for Week 10</a>
 <ul>
@@ -408,7 +408,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">PO91Q: Seminar Companion</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><div class="line-block">PO91Q: Seminar Companion <img align="right" src="images/Crest.png" width="75"></div></a>
           </h1>
         </div>
 
@@ -438,7 +438,7 @@ div.csl-indent {
 <p>Just as a reminder, what is a confidence interval?</p>
 <div class="def">
 <p><strong>Confidence Interval</strong></p>
-<p>A confidence Interval for a parameter is an interval of numbers within which the parameter is believed to fall. The probability that this method produces an interval that contains the parameter is called the confidence level. This is a number chosen to be close to 1, such as 0.95 or 0.99. <span class="citation">(Agresti, 2018, p. 110)</span></p>
+<p>A confidence interval is an estimated range, based on a sample, that is likely to contain the true population parameter (such as the mean). If the sampling process were repeated many times, approximately <span class="math inline">\((1 - \alpha) \times 100\%\)</span> of the resulting intervals would contain the true parameter. The value of <span class="math inline">\(\alpha\)</span> determines the confidence level – for example, <span class="math inline">\(\alpha = 0.05\)</span> corresponds to a 95% confidence level, while <span class="math inline">\(\alpha = 0.01\)</span> corresponds to 99%. <span class="citation">(Reiche, forthcoming)</span></p>
 </div>
 <p>There are two scenarios under which we are calculating confidence intervals: (1) we know <span class="math inline">\(\sigma\)</span> (the standard deviation of the population distribution), and (2) we don’t know <span class="math inline">\(\sigma\)</span>. Let me take you through these two scenarios in turn:</p>
 <div id="we-know-sigma" class="section level3 unnumbered hasAnchor">
@@ -472,8 +472,8 @@ Figure 9: 95 Percent Confidence Interval around the Mean
 <div id="we-dont-know-sigma" class="section level3 unnumbered hasAnchor">
 <h3>2. We don’t know <span class="math inline">\(\sigma\)</span><a href="confidence-intervals.html#we-dont-know-sigma" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If we don’t know the population distribution and its standard deviation, we need to use the t-distribution. As you know from the lecture, the t-distribution is a shape shifter. Its width depends on the degrees of freedom: the more degrees of freedom we have, the more narrow, or the closer to the normal distribution it comes. With df=30 the shapes of the t-distribution and the normal distribution are almost identical. You can see this in the following Figure, comparing the yellow t-distribution for <span class="math inline">\(df=30\)</span> and the black (normal) distribution.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-86"></span>
-<img src="main_files/figure-html/unnamed-chunk-86-1.png" alt="\label{fig:tdistribution}Comparison of t-Distributions" width="55%" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-88"></span>
+<img src="main_files/figure-html/unnamed-chunk-88-1.png" alt="\label{fig:tdistribution}Comparison of t-Distributions" width="55%" />
 <p class="caption">
 Figure 10: Comparison of t-Distributions
 </p>
