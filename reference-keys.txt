@@ -19,9 +19,9 @@ fig:causality
 fig:causalityfw
 tab:glossary5
 tab:glossary7
-tab:londoncode
 tab:regdata
 tab:regdata5
+tab:londoncode
 tab:casecode
 tab:reg91
 tab:glossary8

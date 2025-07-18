@@ -324,9 +324,12 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html"><i class="fa fa-check"></i>Bivariate Regression</a>
 <ul>
 <li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#self-assessment-questions-4"><i class="fa fa-check"></i>Self-Assessment Questions</a></li>
-<li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#exercises-core"><i class="fa fa-check"></i>Exercises – Core</a></li>
+<li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#exercises-core"><i class="fa fa-check"></i>Exercises – Core</a>
+<ul>
+<li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#conceptual"><i class="fa fa-check"></i>Conceptual</a></li>
+<li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#applied"><i class="fa fa-check"></i>Applied</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#going-further-in-r"><i class="fa fa-check"></i>Going Further in R</a></li>
-<li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#going-further---conceptual"><i class="fa fa-check"></i>Going Further - Conceptual</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html"><i class="fa fa-check"></i>Case Study</a>
 <ul>
@@ -434,10 +437,422 @@ div.csl-indent {
 </div>
 <div id="exercises-core" class="section level2 unnumbered hasAnchor">
 <h2>Exercises – Core<a href="bivariate-regression.html#exercises-core" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>For the exercises you will be using the data set <a href="files/Week%208/london_exercises.csv">london_exercises</a>. We will analyse patterns of crime in London<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>. The dataset contains several variables for each of the London wards, describing, amongst other things, demographics of their population and the number of crimes committed in each of them in 2015. A full codebook is provided in the following Table:</p>
+<div id="conceptual" class="section level3 unnumbered hasAnchor">
+<h3>Conceptual<a href="bivariate-regression.html#conceptual" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Recall that:</p>
+<p><span class="math display">\[\begin{equation}\label{eq:beta1est}
+\hat{\beta_{0}} =  \bar{Y} - \hat{\beta_{1}}\bar{X}
+\end{equation}\]</span></p>
+<p> 
+ </p>
+<p><span class="math display">\[\begin{equation}
+\hat{\beta_{1}} = \dfrac{\Sigma_{i=1}^{N} (X_{i}-\bar{X})(Y_{i}-\bar{Y})}{\Sigma_{i=1}^{N} (X_{i} - \bar{X})^{2}}
+\end{equation}\]</span></p>
+<p>Now consider the following data set:</p>
+<table style="width:100%; color: black; width: auto !important; margin-left: auto; margin-right: auto;" class="table">
+<caption>
+<span id="tab:regdata">Table 9: </span>Regression Data Set
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+i
+</th>
+<th style="text-align:center;">
+age (x)
+</th>
+<th style="text-align:center;">
+income (y)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+1
+</td>
+<td style="text-align:center;width: 1.25in; ">
+22
+</td>
+<td style="text-align:center;width: 1.25in; ">
+700
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+2
+</td>
+<td style="text-align:center;width: 1.25in; ">
+19
+</td>
+<td style="text-align:center;width: 1.25in; ">
+650
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+3
+</td>
+<td style="text-align:center;width: 1.25in; ">
+56
+</td>
+<td style="text-align:center;width: 1.25in; ">
+2300
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+4
+</td>
+<td style="text-align:center;width: 1.25in; ">
+45
+</td>
+<td style="text-align:center;width: 1.25in; ">
+1900
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+5
+</td>
+<td style="text-align:center;width: 1.25in; ">
+37
+</td>
+<td style="text-align:center;width: 1.25in; ">
+2000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+6
+</td>
+<td style="text-align:center;width: 1.25in; ">
+23
+</td>
+<td style="text-align:center;width: 1.25in; ">
+900
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+7
+</td>
+<td style="text-align:center;width: 1.25in; ">
+32
+</td>
+<td style="text-align:center;width: 1.25in; ">
+1000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+8
+</td>
+<td style="text-align:center;width: 1.25in; ">
+65
+</td>
+<td style="text-align:center;width: 1.25in; ">
+2500
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+9
+</td>
+<td style="text-align:center;width: 1.25in; ">
+43
+</td>
+<td style="text-align:center;width: 1.25in; ">
+1800
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+10
+</td>
+<td style="text-align:center;width: 1.25in; ">
+48
+</td>
+<td style="text-align:center;width: 1.25in; ">
+1200
+</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: decimal">
+<li>Assuming a regression model of the type <span class="math inline">\(Y_{i}=\beta_{0}+ \beta_{1}X_{i}+\epsilon_{i}\)</span>, calculate the estimators for <span class="math inline">\(\beta_{0}\)</span> and <span class="math inline">\(\beta_{1}\)</span> by hand (yes, you have read that correctly). Use the Table below as a guide to the required intermediary calculations.</li>
+<li>Specify the SRF and interpret the estimators of <span class="math inline">\(\beta_{0}\)</span> and <span class="math inline">\(\beta_{1}\)</span>.</li>
+<li>Calculate the coefficient of determination, <span class="math inline">\(r^{2}\)</span>, with <span class="math inline">\(\hat{Y_{i}}= \widehat{-53.1} + \widehat{39.7} X_{i}\)</span>.</li>
+</ol>
+<table style="width:100%; color: black; width: auto !important; margin-left: auto; margin-right: auto;" class="table">
+<caption>
+<span id="tab:regdata5">Table 10: </span>Regression Data Set
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+i
+</th>
+<th style="text-align:center;">
+age (x)
+</th>
+<th style="text-align:center;">
+income (y)
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(y-\bar{y}\)</span>
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(x-\bar{x}\)</span>
+</th>
+<th style="text-align:center;">
+<span class="math inline">\((x-\bar{x})^2\)</span>
+</th>
+<th style="text-align:center;">
+<span class="math inline">\((x-\bar{x})(y-\bar{y})\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+1
+</td>
+<td style="text-align:center;">
+22
+</td>
+<td style="text-align:center;">
+700
+</td>
+<td style="text-align:center;">
+-795
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+2
+</td>
+<td style="text-align:center;">
+19
+</td>
+<td style="text-align:center;">
+650
+</td>
+<td style="text-align:center;">
+-845
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+3
+</td>
+<td style="text-align:center;">
+56
+</td>
+<td style="text-align:center;">
+2300
+</td>
+<td style="text-align:center;">
+805
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+4
+</td>
+<td style="text-align:center;">
+45
+</td>
+<td style="text-align:center;">
+1900
+</td>
+<td style="text-align:center;">
+405
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+5
+</td>
+<td style="text-align:center;">
+37
+</td>
+<td style="text-align:center;">
+2000
+</td>
+<td style="text-align:center;">
+505
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+6
+</td>
+<td style="text-align:center;">
+23
+</td>
+<td style="text-align:center;">
+900
+</td>
+<td style="text-align:center;">
+-595
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+7
+</td>
+<td style="text-align:center;">
+32
+</td>
+<td style="text-align:center;">
+1000
+</td>
+<td style="text-align:center;">
+-495
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+8
+</td>
+<td style="text-align:center;">
+65
+</td>
+<td style="text-align:center;">
+2500
+</td>
+<td style="text-align:center;">
+1005
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+9
+</td>
+<td style="text-align:center;">
+43
+</td>
+<td style="text-align:center;">
+1800
+</td>
+<td style="text-align:center;">
+305
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 0.5in; ">
+10
+</td>
+<td style="text-align:center;">
+48
+</td>
+<td style="text-align:center;">
+1200
+</td>
+<td style="text-align:center;">
+-295
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="applied" class="section level3 unnumbered hasAnchor">
+<h3>Applied<a href="bivariate-regression.html#applied" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For the applied exercises you will be using the data set <a href="files/Week%208/london_exercises.csv">london_exercises</a>. We will analyse patterns of crime in London<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>. The dataset contains several variables for each of the London wards, describing, amongst other things, demographics of their population and the number of crimes committed in each of them in 2015. A full codebook is provided in the following Table:</p>
 <table style="width:100%; color: black; margin-left: auto; margin-right: auto;" class="table">
 <caption>
-<span id="tab:londoncode">Table 9: </span>Codebook for <code>london_exercises</code> Data Set
+<span id="tab:londoncode">Table 11: </span>Codebook for <code>london_exercises</code> Data Set
 </caption>
 <thead>
 <tr>
@@ -696,6 +1111,7 @@ Turnout at the 2012 mayoral election (%)
 </ol></li>
 </ol>
 </div>
+</div>
 <div id="going-further-in-r" class="section level2 unnumbered hasAnchor">
 <h2>Going Further in R<a href="bivariate-regression.html#going-further-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
@@ -712,350 +1128,6 @@ Turnout at the 2012 mayoral election (%)
 </ol></li>
 </ol></li>
 </ol>
-</div>
-<div id="going-further---conceptual" class="section level2 unnumbered hasAnchor">
-<h2>Going Further - Conceptual<a href="bivariate-regression.html#going-further---conceptual" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Recall that:</p>
-<p><span class="math display">\[\begin{equation}\label{eq:beta1est}
-\hat{\beta_{0}} =  \bar{Y} - \hat{\beta_{1}}\bar{X}
-\end{equation}\]</span></p>
-<p> 
- </p>
-<p><span class="math display">\[\begin{equation}
-\hat{\beta_{1}} = \dfrac{\Sigma_{i=1}^{N} (X_{i}-\bar{X})(Y_{i}-\bar{Y})}{\Sigma_{i=1}^{N} (X_{i} - \bar{X})^{2}}
-\end{equation}\]</span></p>
-<p>Now consider the following data set:</p>
-<table style="width:100%; color: black; width: auto !important; margin-left: auto; margin-right: auto;" class="table">
-<caption>
-<span id="tab:regdata">Table 10: </span>Regression Data Set
-</caption>
-<thead>
-<tr>
-<th style="text-align:center;">
-i
-</th>
-<th style="text-align:center;">
-age (x)
-</th>
-<th style="text-align:center;">
-income (y)
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center;width: 0.5in; ">
-1
-</td>
-<td style="text-align:center;width: 1.25in; ">
-22
-</td>
-<td style="text-align:center;width: 1.25in; ">
-700
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 0.5in; ">
-2
-</td>
-<td style="text-align:center;width: 1.25in; ">
-19
-</td>
-<td style="text-align:center;width: 1.25in; ">
-650
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 0.5in; ">
-3
-</td>
-<td style="text-align:center;width: 1.25in; ">
-56
-</td>
-<td style="text-align:center;width: 1.25in; ">
-2300
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 0.5in; ">
-4
-</td>
-<td style="text-align:center;width: 1.25in; ">
-45
-</td>
-<td style="text-align:center;width: 1.25in; ">
-1900
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 0.5in; ">
-5
-</td>
-<td style="text-align:center;width: 1.25in; ">
-37
-</td>
-<td style="text-align:center;width: 1.25in; ">
-2000
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 0.5in; ">
-6
-</td>
-<td style="text-align:center;width: 1.25in; ">
-23
-</td>
-<td style="text-align:center;width: 1.25in; ">
-900
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 0.5in; ">
-7
-</td>
-<td style="text-align:center;width: 1.25in; ">
-32
-</td>
-<td style="text-align:center;width: 1.25in; ">
-1000
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 0.5in; ">
-8
-</td>
-<td style="text-align:center;width: 1.25in; ">
-65
-</td>
-<td style="text-align:center;width: 1.25in; ">
-2500
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 0.5in; ">
-9
-</td>
-<td style="text-align:center;width: 1.25in; ">
-43
-</td>
-<td style="text-align:center;width: 1.25in; ">
-1800
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 0.5in; ">
-10
-</td>
-<td style="text-align:center;width: 1.25in; ">
-48
-</td>
-<td style="text-align:center;width: 1.25in; ">
-1200
-</td>
-</tr>
-</tbody>
-</table>
-<ol style="list-style-type: decimal">
-<li>Assuming a regression model of the type <span class="math inline">\(Y_{i}=\beta_{0}+ \beta_{1}X_{i}+\epsilon_{i}\)</span>, calculate the estimators for <span class="math inline">\(\beta_{0}\)</span> and <span class="math inline">\(\beta_{1}\)</span>. Use the above Table as a guide to the required intermediary calculations.</li>
-<li>Specify the SRF and interpret the estimators of <span class="math inline">\(\beta_{0}\)</span> and <span class="math inline">\(\beta_{1}\)</span>.</li>
-<li>Calculate the coefficient of determination, <span class="math inline">\(r^{2}\)</span>, with <span class="math inline">\(\hat{Y_{i}}= \widehat{-53.1} + \widehat{39.7} X_{i}\)</span>.</li>
-</ol>
-<table style="width:100%; color: black; width: auto !important; margin-left: auto; margin-right: auto;" class="table">
-<caption>
-<span id="tab:regdata5">Table 11: </span>Regression Data Set
-</caption>
-<thead>
-<tr>
-<th style="text-align:center;">
-i
-</th>
-<th style="text-align:center;">
-age (x)
-</th>
-<th style="text-align:center;">
-income (y)
-</th>
-<th style="text-align:center;">
-<span class="math inline">\(y-\bar{y}\)</span>
-</th>
-<th style="text-align:center;">
-<span class="math inline">\((y-\bar{y})^2\)</span>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center;width: 0.5in; ">
-1
-</td>
-<td style="text-align:center;">
-22
-</td>
-<td style="text-align:center;">
-700
-</td>
-<td style="text-align:center;">
-700
-</td>
-<td style="text-align:center;">
-490000
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 0.5in; ">
-2
-</td>
-<td style="text-align:center;">
-19
-</td>
-<td style="text-align:center;">
-650
-</td>
-<td style="text-align:center;">
-650
-</td>
-<td style="text-align:center;">
-422500
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 0.5in; ">
-3
-</td>
-<td style="text-align:center;">
-56
-</td>
-<td style="text-align:center;">
-2300
-</td>
-<td style="text-align:center;">
-2300
-</td>
-<td style="text-align:center;">
-5290000
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 0.5in; ">
-4
-</td>
-<td style="text-align:center;">
-45
-</td>
-<td style="text-align:center;">
-1900
-</td>
-<td style="text-align:center;">
-1900
-</td>
-<td style="text-align:center;">
-3610000
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 0.5in; ">
-5
-</td>
-<td style="text-align:center;">
-37
-</td>
-<td style="text-align:center;">
-2000
-</td>
-<td style="text-align:center;">
-2000
-</td>
-<td style="text-align:center;">
-4000000
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 0.5in; ">
-6
-</td>
-<td style="text-align:center;">
-23
-</td>
-<td style="text-align:center;">
-900
-</td>
-<td style="text-align:center;">
-900
-</td>
-<td style="text-align:center;">
-810000
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 0.5in; ">
-7
-</td>
-<td style="text-align:center;">
-32
-</td>
-<td style="text-align:center;">
-1000
-</td>
-<td style="text-align:center;">
-1000
-</td>
-<td style="text-align:center;">
-1000000
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 0.5in; ">
-8
-</td>
-<td style="text-align:center;">
-65
-</td>
-<td style="text-align:center;">
-2500
-</td>
-<td style="text-align:center;">
-2500
-</td>
-<td style="text-align:center;">
-6250000
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 0.5in; ">
-9
-</td>
-<td style="text-align:center;">
-43
-</td>
-<td style="text-align:center;">
-1800
-</td>
-<td style="text-align:center;">
-1800
-</td>
-<td style="text-align:center;">
-3240000
-</td>
-</tr>
-<tr>
-<td style="text-align:center;width: 0.5in; ">
-10
-</td>
-<td style="text-align:center;">
-48
-</td>
-<td style="text-align:center;">
-1200
-</td>
-<td style="text-align:center;">
-1200
-</td>
-<td style="text-align:center;">
-1440000
-</td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 <div class="footnotes">
