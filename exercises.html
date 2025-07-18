@@ -475,13 +475,6 @@ div.csl-indent {
 <li>how do interviewers reach respondents?</li>
 <li>what is the method for questionnaire administration?</li>
 </ul></li>
-<li><p>Use SPSS to open the dataset. SPSS is pre-installed on Warwick PCs. Otherwise, download and install it for free (after logging in): <a href="https://www2.warwick.ac.uk/services/its/servicessupport/software/list/spss" class="uri">https://www2.warwick.ac.uk/services/its/servicessupport/software/list/spss</a></p></li>
-<li><p>In the dataset open in SPSS, identify key statistical elements:</p>
-<ul>
-<li>Cases and their ID</li>
-<li>Variables and values</li>
-<li>Categorical, ordinal and numeric variables</li>
-</ul></li>
 <li><p>We can now pick up where we left on the worksheet. Make sure that you have created an appropriate folder structure and set your working directory. Also ensure you have loaded the foreign package.</p></li>
 </ol>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="exercises.html#cb11-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/Warwick/Modules/PO91Q/Seminars/Week 1/Worksheet&quot;</span>)</span>
@@ -512,14 +505,14 @@ div.csl-indent {
 <span id="cb11-26"><a href="exercises.html#cb11-26" tabindex="-1"></a>    <span class="co"># Can you imagine what the 6 functions above are for?</span></span>
 <span id="cb11-27"><a href="exercises.html#cb11-27" tabindex="-1"></a>    <span class="co"># Afterwards, check your answers using &#39;?function&#39;</span></span>
 <span id="cb11-28"><a href="exercises.html#cb11-28" tabindex="-1"></a>    <span class="co"># to get the help file for each function.</span></span></code></pre></div>
-<ol start="7" style="list-style-type: decimal">
+<ol start="5" style="list-style-type: decimal">
 <li>Execute: <code>table(cntry)</code>. What uses could you make of this variable in research?</li>
 </ol>
 </div>
 <div id="going-further" class="section level2 unnumbered hasAnchor">
 <h2>Going Further<a href="exercises.html#going-further" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ol start="8" style="list-style-type: decimal">
-<li><p>In ESS questionnaire, showcards and variable list, identify the questions about:</p>
+<ol start="6" style="list-style-type: decimal">
+<li><p>In the ESS questionnaire, showcards and variable list, identify the questions about:</p>
 <ul>
 <li>languages spoken by respondent R</li>
 <li>R’s educational background</li>
@@ -535,13 +528,12 @@ How suitable would this survey be to study these three topics?</p></li>
 <p>What do these return?</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="exercises.html#cb13-1" tabindex="-1"></a><span class="fu">table</span>(X)</span>
 <span id="cb13-2"><a href="exercises.html#cb13-2" tabindex="-1"></a><span class="fu">plot</span>(X)</span></code></pre></div>
-<ol start="10" style="list-style-type: decimal">
+<ol start="8" style="list-style-type: decimal">
 <li><p>Download the “British Social Attitudes” Survey 2016 from the UK Data service website. You will need to register, validate your registration through email, indicate that this is within an academic course and agree with conditions.</p>
 <ul>
 <li>Choose .tab and .sav format.</li>
-<li>Open the .tab dataset with Excel and record as .xlsx file</li>
-<li>Open the .sav dataset with SPSS</li>
-<li>Import from the SPSS file into R (same as above with ESS)</li>
+<li>Open the .tab dataset with Excel and save as .xlsx file. Import this into R with the <code>readxl</code> package.</li>
+<li>Import the SPSS file into R (same as above with ESS)</li>
 </ul>
 <p>Try to understand the differences between the 3 softwares, their respective advantages and disadvantages. How does the BSA compare with the ESS regarding the three topics listed above?</p></li>
 <li><p>Download the World Values Study 7 from Gesis: <a href="https://dbk.gesis.org/dbksearch/sdesc2.asp?no=4804" class="uri">https://dbk.gesis.org/dbksearch/sdesc2.asp?no=4804</a>. Select all relevant files. How does the EVS compare with the ESS and BSA regarding the 3 topics above?</p></li>
