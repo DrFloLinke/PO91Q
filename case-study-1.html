@@ -1,428 +1,152 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html lang="en">
 <head>
-
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Case Study15 | main.knit</title>
-  <meta name="description" content="PO91Q: Seminar Companion " />
-  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
-
-  <meta property="og:title" content="Case Study15 | main.knit" />
-  <meta property="og:type" content="book" />
-  
-  
-  
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Case Study15 | main.knit" />
-  
-  
-  
-
-
-
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  
-<link rel="prev" href="bivariate-regression.html"/>
-<link rel="next" href="homework-for-week-9.html"/>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
-
-
-
-
-
-
-
-<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
-<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
-<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
-
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Case Study15 |  PO91Q: Fundamentals in Quantitative Research Methods –   Seminar Companion</title>
+<meta name="generator" content="bookdown 0.43 with bs4_book()">
+<meta property="og:title" content="Case Study15 |  PO91Q: Fundamentals in Quantitative Research Methods –   Seminar Companion">
+<meta property="og:type" content="book">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Case Study15 |  PO91Q: Fundamentals in Quantitative Research Methods –   Seminar Companion">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><link href="libs/Lexend-0.4.10/font.css" rel="stylesheet">
+<script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
-
-<style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
-
-<link rel="stylesheet" href="style.css" type="text/css" />
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+          margin-bottom: 0em;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="Load Packages and Data Before starting, we need to load libraries and install packages if not already installed. In these exercises we will be using the following packages: haven ggplot2...">
+<meta property="og:description" content="Load Packages and Data Before starting, we need to load libraries and install packages if not already installed. In these exercises we will be using the following packages: haven ggplot2...">
+<meta name="twitter:description" content="Load Packages and Data Before starting, we need to load libraries and install packages if not already installed. In these exercises we will be using the following packages: haven ggplot2...">
 </head>
+<body data-spy="scroll" data-target="#toc">
 
-<body>
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
-
-
-  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
-
-    <div class="book-summary">
-      <nav role="navigation">
-
-<ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="" data-path="companion-features.html"><a href="companion-features.html"><i class="fa fa-check"></i>Companion Features</a></li>
-<li class="chapter" data-level="" data-path="accessibility.html"><a href="accessibility.html"><i class="fa fa-check"></i>Accessibility</a></li>
-<li class="part"><span><b>Week 1</b></span></li>
-<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i>Introduction to R</a>
-<ul>
-<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#installation"><i class="fa fa-check"></i>Installation</a></li>
-<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#r---getting-started"><i class="fa fa-check"></i>R - Getting Started</a></li>
-<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#rscript"><i class="fa fa-check"></i>RScript</a>
-<ul>
-<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#rscript-structure"><i class="fa fa-check"></i>RScript Structure</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#first-steps-in-r"><i class="fa fa-check"></i>First Steps in R</a></li>
-<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#the-working-directory"><i class="fa fa-check"></i>The Working Directory</a></li>
-<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#r-packages"><i class="fa fa-check"></i>R Packages</a></li>
-<li class="chapter" data-level="" data-path="introduction-to-r.html"><a href="introduction-to-r.html#saving"><i class="fa fa-check"></i>Saving</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="exercises.html"><a href="exercises.html"><i class="fa fa-check"></i>Exercises</a>
-<ul>
-<li class="chapter" data-level="" data-path="exercises.html"><a href="exercises.html#core-exercises"><i class="fa fa-check"></i>Core Exercises</a></li>
-<li class="chapter" data-level="" data-path="exercises.html"><a href="exercises.html#going-further"><i class="fa fa-check"></i>Going Further</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="homework-for-week-2.html"><a href="homework-for-week-2.html"><i class="fa fa-check"></i>Homework for Week 2</a></li>
-<li class="chapter" data-level="" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i>Glossary</a></li>
-<li class="chapter" data-level="" data-path="flashcards.html"><a href="flashcards.html"><i class="fa fa-check"></i>Flashcards</a></li>
-<li class="part"><span><b>Week 2</b></span></li>
-<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html"><i class="fa fa-check"></i>Data Manipulation in R</a>
-<ul>
-<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#self-reflection-questions-group-work"><i class="fa fa-check"></i>Self-Reflection Questions – Group Work</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#opening-your-data-set"><i class="fa fa-check"></i>Opening your Data Set</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#viewing-the-data"><i class="fa fa-check"></i>Viewing the Data</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#variable-types-in-r"><i class="fa fa-check"></i>Variable Types in R</a>
-<ul>
-<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#nominal-variables"><i class="fa fa-check"></i>Nominal Variables</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#ordinal-variables"><i class="fa fa-check"></i>Ordinal Variables</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#binary-dummy"><i class="fa fa-check"></i>Binary Dummy</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#sub-setting-data"><i class="fa fa-check"></i>Sub-Setting Data</a>
-<ul>
-<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#by-variable"><i class="fa fa-check"></i>By Variable</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#by-observation"><i class="fa fa-check"></i>By Observation</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#keep-if-a-variable-has-a-certain-value"><i class="fa fa-check"></i>Keep if a variable has a certain value</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#ordering-data"><i class="fa fa-check"></i>Ordering Data</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#grouping-data"><i class="fa fa-check"></i>Grouping Data</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#combining-ordering-and-grouping-data"><i class="fa fa-check"></i>Combining Ordering and Grouping Data</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#descriptive-statistics"><i class="fa fa-check"></i>Descriptive Statistics</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#graphs"><i class="fa fa-check"></i>Graphs</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#basic-graphs"><i class="fa fa-check"></i>Basic Graphs</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#advanced-graphs"><i class="fa fa-check"></i>Advanced Graphs</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#even-more-advanced-graphs"><i class="fa fa-check"></i>Even More Advanced Graphs</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#organising-code-in-the-rscript"><i class="fa fa-check"></i>Organising Code in the RScript</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#exercises-1"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-in-r.html"><a href="data-manipulation-in-r.html#captions-for-tables-and-figures-in-word"><i class="fa fa-check"></i>Captions for Tables and Figures in Word</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="exercises-2.html"><a href="exercises-2.html"><i class="fa fa-check"></i>Exercises</a>
-<ul>
-<li class="chapter" data-level="" data-path="exercises-2.html"><a href="exercises-2.html#exploring-the-ess-core-exercises"><i class="fa fa-check"></i>Exploring the ESS – Core Exercises</a></li>
-<li class="chapter" data-level="" data-path="exercises-2.html"><a href="exercises-2.html#exploring-the-ess-going-further"><i class="fa fa-check"></i>Exploring the ESS – Going Further</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="homework-for-week-3.html"><a href="homework-for-week-3.html"><i class="fa fa-check"></i>Homework for Week 3</a></li>
-<li class="chapter" data-level="" data-path="glossary-1.html"><a href="glossary-1.html"><i class="fa fa-check"></i>Glossary</a></li>
-<li class="chapter" data-level="" data-path="flashcards-1.html"><a href="flashcards-1.html"><i class="fa fa-check"></i>Flashcards</a></li>
-<li class="part"><span><b>Week 3</b></span></li>
-<li class="chapter" data-level="" data-path="foundations-of-statistical-inference.html"><a href="foundations-of-statistical-inference.html"><i class="fa fa-check"></i>Foundations of Statistical Inference</a>
-<ul>
-<li class="chapter" data-level="" data-path="foundations-of-statistical-inference.html"><a href="foundations-of-statistical-inference.html#self-assessment-questions"><i class="fa fa-check"></i>Self-Assessment Questions</a></li>
-<li class="chapter" data-level="" data-path="foundations-of-statistical-inference.html"><a href="foundations-of-statistical-inference.html#how-to-read-a-z-table"><i class="fa fa-check"></i>How to read a z-table</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="exercises-3.html"><a href="exercises-3.html"><i class="fa fa-check"></i>Exercises</a>
-<ul>
-<li class="chapter" data-level="" data-path="exercises-3.html"><a href="exercises-3.html#conceptual-exercises"><i class="fa fa-check"></i>Conceptual Exercises</a></li>
-<li class="chapter" data-level="" data-path="exercises-3.html"><a href="exercises-3.html#r-exercises---core"><i class="fa fa-check"></i>R Exercises - Core</a></li>
-<li class="chapter" data-level="" data-path="exercises-3.html"><a href="exercises-3.html#r-exercises---going-further"><i class="fa fa-check"></i>R Exercises - Going Further</a></li>
-<li class="chapter" data-level="" data-path="exercises-3.html"><a href="exercises-3.html#solutions"><i class="fa fa-check"></i>Solutions</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="homework-for-week-4.html"><a href="homework-for-week-4.html"><i class="fa fa-check"></i>Homework for Week 4</a></li>
-<li class="chapter" data-level="" data-path="glossary-2.html"><a href="glossary-2.html"><i class="fa fa-check"></i>Glossary</a></li>
-<li class="chapter" data-level="" data-path="flashcards-2.html"><a href="flashcards-2.html"><i class="fa fa-check"></i>Flashcards</a></li>
-<li class="part"><span><b>Week 4</b></span></li>
-<li class="chapter" data-level="" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i>Confidence Intervals</a>
-<ul>
-<li class="chapter" data-level="" data-path="confidence-intervals.html"><a href="confidence-intervals.html#self-assessment-questions-1"><i class="fa fa-check"></i>Self-Assessment Questions</a></li>
-<li class="chapter" data-level="" data-path="confidence-intervals.html"><a href="confidence-intervals.html#calculating-confidence-intervals"><i class="fa fa-check"></i>Calculating Confidence Intervals</a>
-<ul>
-<li class="chapter" data-level="" data-path="confidence-intervals.html"><a href="confidence-intervals.html#we-know-sigma"><i class="fa fa-check"></i>1. We know <span class="math inline">\(\sigma\)</span></a></li>
-<li class="chapter" data-level="" data-path="confidence-intervals.html"><a href="confidence-intervals.html#we-dont-know-sigma"><i class="fa fa-check"></i>2. We don’t know <span class="math inline">\(\sigma\)</span></a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="exercises-4.html"><a href="exercises-4.html"><i class="fa fa-check"></i>Exercises</a>
-<ul>
-<li class="chapter" data-level="" data-path="exercises-4.html"><a href="exercises-4.html#conceptual-exercises-1"><i class="fa fa-check"></i>Conceptual Exercises</a></li>
-<li class="chapter" data-level="" data-path="exercises-4.html"><a href="exercises-4.html#r-exercises---core-1"><i class="fa fa-check"></i>R Exercises - Core</a></li>
-<li class="chapter" data-level="" data-path="exercises-4.html"><a href="exercises-4.html#r-exercises---going-further-1"><i class="fa fa-check"></i>R Exercises - Going Further</a></li>
-<li class="chapter" data-level="" data-path="exercises-4.html"><a href="exercises-4.html#solutions-1"><i class="fa fa-check"></i>Solutions</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="homework-for-week-5.html"><a href="homework-for-week-5.html"><i class="fa fa-check"></i>Homework for Week 5</a></li>
-<li class="chapter" data-level="" data-path="glossary-3.html"><a href="glossary-3.html"><i class="fa fa-check"></i>Glossary</a></li>
-<li class="chapter" data-level="" data-path="flashcards-3.html"><a href="flashcards-3.html"><i class="fa fa-check"></i>Flashcards</a></li>
-<li class="part"><span><b>Week 5</b></span></li>
-<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html"><i class="fa fa-check"></i>Causality and Consolidation</a>
-<ul>
-<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#self-assessment-questions-2"><i class="fa fa-check"></i>Self-Assessment Questions</a></li>
-<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#case-study"><i class="fa fa-check"></i>Case Study</a>
-<ul>
-<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#codebook"><i class="fa fa-check"></i>Codebook</a></li>
-<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#data-exploration"><i class="fa fa-check"></i>Data Exploration</a></li>
-<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#descriptive-statistics-1"><i class="fa fa-check"></i>Descriptive Statistics</a></li>
-<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#visualisation"><i class="fa fa-check"></i>Visualisation</a></li>
-<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#hypothesis"><i class="fa fa-check"></i>Hypothesis</a></li>
-<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#sampling"><i class="fa fa-check"></i>Sampling</a></li>
-<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#inferential-statistics"><i class="fa fa-check"></i>Inferential Statistics</a></li>
-<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#causality"><i class="fa fa-check"></i>Causality</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="causality-and-consolidation.html"><a href="causality-and-consolidation.html#solutions-2"><i class="fa fa-check"></i>Solutions</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="homework-for-week-7.html"><a href="homework-for-week-7.html"><i class="fa fa-check"></i>Homework for Week 7</a></li>
-<li class="chapter" data-level="" data-path="glossary-4.html"><a href="glossary-4.html"><i class="fa fa-check"></i>Glossary</a></li>
-<li class="chapter" data-level="" data-path="flashcards-4.html"><a href="flashcards-4.html"><i class="fa fa-check"></i>Flashcards</a></li>
-<li class="part"><span><b>Week 6</b></span></li>
-<li class="chapter" data-level="" data-path="reading-week.html"><a href="reading-week.html"><i class="fa fa-check"></i>Reading Week</a></li>
-<li class="part"><span><b>Week 7</b></span></li>
-<li class="chapter" data-level="" data-path="methods-methods-methods.html"><a href="methods-methods-methods.html"><i class="fa fa-check"></i>Methods, Methods, Methods</a>
-<ul>
-<li class="chapter" data-level="" data-path="methods-methods-methods.html"><a href="methods-methods-methods.html#data-prep"><i class="fa fa-check"></i>Data Prep</a></li>
-<li class="chapter" data-level="" data-path="methods-methods-methods.html"><a href="methods-methods-methods.html#video-and-rscript"><i class="fa fa-check"></i>Video and RScript</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="bivariate-methods.html"><a href="bivariate-methods.html"><i class="fa fa-check"></i>Bivariate Methods</a>
-<ul>
-<li class="chapter" data-level="" data-path="bivariate-methods.html"><a href="bivariate-methods.html#self-assessment-questions-3"><i class="fa fa-check"></i>Self-Assessment Questions</a></li>
-<li class="chapter" data-level="" data-path="bivariate-methods.html"><a href="bivariate-methods.html#calculations-by-hand"><i class="fa fa-check"></i>Calculations by Hand</a></li>
-<li class="chapter" data-level="" data-path="bivariate-methods.html"><a href="bivariate-methods.html#applied-exercises-in-r-core"><i class="fa fa-check"></i>Applied Exercises in R (Core)</a></li>
-<li class="chapter" data-level="" data-path="bivariate-methods.html"><a href="bivariate-methods.html#applied-exercises-in-r-going-further"><i class="fa fa-check"></i>Applied Exercises in R (Going Further)</a>
-<ul>
-<li class="chapter" data-level="" data-path="bivariate-methods.html"><a href="bivariate-methods.html#section-1"><i class="fa fa-check"></i>Section 1</a></li>
-<li class="chapter" data-level="" data-path="bivariate-methods.html"><a href="bivariate-methods.html#section-2"><i class="fa fa-check"></i>Section 2</a></li>
-<li class="chapter" data-level="" data-path="bivariate-methods.html"><a href="bivariate-methods.html#section-3"><i class="fa fa-check"></i>Section 3</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="bivariate-methods.html"><a href="bivariate-methods.html#solutions-3"><i class="fa fa-check"></i>Solutions</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="homework-for-week-8.html"><a href="homework-for-week-8.html"><i class="fa fa-check"></i>Homework for Week 8</a></li>
-<li class="chapter" data-level="" data-path="glossary-5.html"><a href="glossary-5.html"><i class="fa fa-check"></i>Glossary</a></li>
-<li class="chapter" data-level="" data-path="flashcards-5.html"><a href="flashcards-5.html"><i class="fa fa-check"></i>Flashcards</a></li>
-<li class="part"><span><b>Week 8</b></span></li>
-<li class="chapter" data-level="" data-path="mmm-bivariate-regression.html"><a href="mmm-bivariate-regression.html"><i class="fa fa-check"></i>MMM – Bivariate Regression</a>
-<ul>
-<li class="chapter" data-level="" data-path="mmm-bivariate-regression.html"><a href="mmm-bivariate-regression.html#data-prep-1"><i class="fa fa-check"></i>Data Prep</a></li>
-<li class="chapter" data-level="" data-path="mmm-bivariate-regression.html"><a href="mmm-bivariate-regression.html#video-and-rscript-1"><i class="fa fa-check"></i>Video and RScript</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="mmm-model-fit.html"><a href="mmm-model-fit.html"><i class="fa fa-check"></i>MMM – Model Fit</a>
-<ul>
-<li class="chapter" data-level="" data-path="mmm-model-fit.html"><a href="mmm-model-fit.html#data-prep-2"><i class="fa fa-check"></i>Data Prep</a></li>
-<li class="chapter" data-level="" data-path="mmm-model-fit.html"><a href="mmm-model-fit.html#video-and-rscript-2"><i class="fa fa-check"></i>Video and RScript</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="mmm-significance-testing.html"><a href="mmm-significance-testing.html"><i class="fa fa-check"></i>MMM – Significance Testing</a>
-<ul>
-<li class="chapter" data-level="" data-path="mmm-significance-testing.html"><a href="mmm-significance-testing.html#data-prep-3"><i class="fa fa-check"></i>Data Prep</a></li>
-<li class="chapter" data-level="" data-path="mmm-significance-testing.html"><a href="mmm-significance-testing.html#video-and-rscript-3"><i class="fa fa-check"></i>Video and RScript</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html"><i class="fa fa-check"></i>Bivariate Regression</a>
-<ul>
-<li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#self-assessment-questions-4"><i class="fa fa-check"></i>Self-Assessment Questions</a></li>
-<li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#exercises-core"><i class="fa fa-check"></i>Exercises – Core</a>
-<ul>
-<li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#conceptual"><i class="fa fa-check"></i>Conceptual</a></li>
-<li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#applied"><i class="fa fa-check"></i>Applied</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="bivariate-regression.html"><a href="bivariate-regression.html#going-further-in-r"><i class="fa fa-check"></i>Going Further in R</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html"><i class="fa fa-check"></i>Case Study</a>
-<ul>
-<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html#load-packages-and-data"><i class="fa fa-check"></i>Load Packages and Data</a></li>
-<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html#inspect-your-data"><i class="fa fa-check"></i>Inspect your data</a></li>
-<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html#preliminary-analysis"><i class="fa fa-check"></i>Preliminary Analysis</a></li>
-<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html#visualisation-1"><i class="fa fa-check"></i>Visualisation</a></li>
-<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html#visualisation-2.0"><i class="fa fa-check"></i>Visualisation 2.0</a></li>
-<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html#saving-the-scatterplot"><i class="fa fa-check"></i>Saving the Scatterplot</a></li>
-<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html#regression-analysis-yes-finally"><i class="fa fa-check"></i>Regression Analysis (yes, finally)</a></li>
-<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html#interpretation"><i class="fa fa-check"></i>Interpretation</a></li>
-<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html#exporting-the-results"><i class="fa fa-check"></i>Exporting the Results</a></li>
-<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html#comparing-models"><i class="fa fa-check"></i>Comparing Models</a></li>
-<li class="chapter" data-level="" data-path="case-study-1.html"><a href="case-study-1.html#causality-1"><i class="fa fa-check"></i>Causality</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="homework-for-week-9.html"><a href="homework-for-week-9.html"><i class="fa fa-check"></i>Homework for Week 9</a>
-<ul>
-<li class="chapter" data-level="" data-path="homework-for-week-9.html"><a href="homework-for-week-9.html#solutions-4"><i class="fa fa-check"></i>Solutions</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="glossary-6.html"><a href="glossary-6.html"><i class="fa fa-check"></i>Glossary</a></li>
-<li class="chapter" data-level="" data-path="flashcards-6.html"><a href="flashcards-6.html"><i class="fa fa-check"></i>Flashcards</a></li>
-<li class="part"><span><b>Week 9</b></span></li>
-<li class="chapter" data-level="" data-path="methods-methods-methods-1.html"><a href="methods-methods-methods-1.html"><i class="fa fa-check"></i>Methods, Methods, Methods</a>
-<ul>
-<li class="chapter" data-level="" data-path="methods-methods-methods-1.html"><a href="methods-methods-methods-1.html#data-prep-4"><i class="fa fa-check"></i>Data Prep</a></li>
-<li class="chapter" data-level="" data-path="methods-methods-methods-1.html"><a href="methods-methods-methods-1.html#video-and-rscript-4"><i class="fa fa-check"></i>Video and RScript</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i>Multiple Regression</a>
-<ul>
-<li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html#group-work-self-reflection"><i class="fa fa-check"></i>Group Work – Self-Reflection</a></li>
-<li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html#multiple-regression-in-r-guided-example"><i class="fa fa-check"></i>Multiple Regression in R – Guided Example</a></li>
-<li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html#multiple-regression-in-r-independent-analysis"><i class="fa fa-check"></i>Multiple Regression in R – Independent Analysis</a></li>
-<li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html#going-further-1"><i class="fa fa-check"></i>Going Further</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="homework-for-week-10.html"><a href="homework-for-week-10.html"><i class="fa fa-check"></i>Homework for Week 10</a>
-<ul>
-<li class="chapter" data-level="" data-path="homework-for-week-10.html"><a href="homework-for-week-10.html#solutions-5"><i class="fa fa-check"></i>Solutions</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="glossary-7.html"><a href="glossary-7.html"><i class="fa fa-check"></i>Glossary</a></li>
-<li class="chapter" data-level="" data-path="flashcards-7.html"><a href="flashcards-7.html"><i class="fa fa-check"></i>Flashcards</a></li>
-<li class="part"><span><b>Week 10</b></span></li>
-<li class="chapter" data-level="" data-path="methods-methods-methods-2.html"><a href="methods-methods-methods-2.html"><i class="fa fa-check"></i>Methods, Methods, Methods</a>
-<ul>
-<li class="chapter" data-level="" data-path="methods-methods-methods-2.html"><a href="methods-methods-methods-2.html#data-prep-5"><i class="fa fa-check"></i>Data Prep</a></li>
-<li class="chapter" data-level="" data-path="methods-methods-methods-2.html"><a href="methods-methods-methods-2.html#video-and-rscript-5"><i class="fa fa-check"></i>Video and RScript</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="variable-transformations-and-exam-preparation.html"><a href="variable-transformations-and-exam-preparation.html"><i class="fa fa-check"></i>Variable Transformations and Exam Preparation</a>
-<ul>
-<li class="chapter" data-level="" data-path="variable-transformations-and-exam-preparation.html"><a href="variable-transformations-and-exam-preparation.html#self-assessment-questions-5"><i class="fa fa-check"></i>Self-Assessment Questions</a></li>
-<li class="chapter" data-level="" data-path="variable-transformations-and-exam-preparation.html"><a href="variable-transformations-and-exam-preparation.html#exam-preparation"><i class="fa fa-check"></i>Exam Preparation</a></li>
-<li class="chapter" data-level="" data-path="variable-transformations-and-exam-preparation.html"><a href="variable-transformations-and-exam-preparation.html#exercises-5"><i class="fa fa-check"></i>Exercises</a>
-<ul>
-<li class="chapter" data-level="" data-path="variable-transformations-and-exam-preparation.html"><a href="variable-transformations-and-exam-preparation.html#data-prep-6"><i class="fa fa-check"></i>Data Prep</a></li>
-<li class="chapter" data-level="" data-path="variable-transformations-and-exam-preparation.html"><a href="variable-transformations-and-exam-preparation.html#working-with-regression-analysis"><i class="fa fa-check"></i>Working with Regression Analysis</a></li>
-<li class="chapter" data-level="" data-path="variable-transformations-and-exam-preparation.html"><a href="variable-transformations-and-exam-preparation.html#transformation-of-variables"><i class="fa fa-check"></i>Transformation of Variables</a></li>
-<li class="chapter" data-level="" data-path="variable-transformations-and-exam-preparation.html"><a href="variable-transformations-and-exam-preparation.html#going-further-2"><i class="fa fa-check"></i>Going Further</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="homework.html"><a href="homework.html"><i class="fa fa-check"></i>Homework</a></li>
-<li class="chapter" data-level="" data-path="glossary-8.html"><a href="glossary-8.html"><i class="fa fa-check"></i>Glossary</a></li>
-<li class="chapter" data-level="" data-path="flashcards-8.html"><a href="flashcards-8.html"><i class="fa fa-check"></i>Flashcards</a></li>
-<li class="part"><span><b>Downloads</b></span></li>
-<li class="chapter" data-level="" data-path="downloads.html"><a href="downloads.html"><i class="fa fa-check"></i>Downloads</a>
-<ul>
-<li class="chapter" data-level="" data-path="downloads.html"><a href="downloads.html#documents"><i class="fa fa-check"></i>Documents</a></li>
-<li class="chapter" data-level="" data-path="downloads.html"><a href="downloads.html#data-sets-in-alphabetical-order"><i class="fa fa-check"></i>Data Sets – in alphabetical order</a></li>
-<li class="chapter" data-level="" data-path="downloads.html"><a href="downloads.html#r-scripts"><i class="fa fa-check"></i>R Scripts</a></li>
-</ul></li>
-<li class="part"><span><b>Glossary</b></span></li>
-<li class="chapter" data-level="" data-path="glossary-9.html"><a href="glossary-9.html"><i class="fa fa-check"></i>Glossary</a></li>
-<li class="part"><span><b>List of References</b></span></li>
-<li class="chapter" data-level="" data-path="list-of-references.html"><a href="list-of-references.html"><i class="fa fa-check"></i>List of References</a></li>
-</ul>
-
-      </nav>
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title=""><p><img src="images/Crest_white.png" width="75" style="display:block; margin:auto; margin-bottom:3em;"> PO91Q: Fundamentals in Quantitative Research Methods – <br> Seminar Companion</p></a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
 
-    <div class="book-body">
-      <div class="body-inner">
-        <div class="book-header" role="navigation">
-          <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><div class="line-block">PO91Q: Seminar Companion <img align="right" src="images/Crest_white.png" width="75"></div></a>
-          </h1>
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Preface</a></li>
+<li><a class="" href="companion-features.html">Companion Features</a></li>
+<li><a class="" href="accessibility.html">Accessibility</a></li>
+<li class="book-part">Week 1</li>
+<li><a class="" href="introduction-to-r.html">Introduction to R</a></li>
+<li><a class="" href="exercises.html">Exercises</a></li>
+<li><a class="" href="homework-for-week-2.html">Homework for Week 2</a></li>
+<li><a class="" href="glossary.html">Glossary</a></li>
+<li><a class="" href="flashcards.html">Flashcards</a></li>
+<li class="book-part">Week 2</li>
+<li><a class="" href="data-manipulation-in-r.html">Data Manipulation in R</a></li>
+<li><a class="" href="exercises-2.html">Exercises</a></li>
+<li><a class="" href="homework-for-week-3.html">Homework for Week 3</a></li>
+<li><a class="" href="glossary-1.html">Glossary</a></li>
+<li><a class="" href="flashcards-1.html">Flashcards</a></li>
+<li class="book-part">Week 3</li>
+<li><a class="" href="foundations-of-statistical-inference.html">Foundations of Statistical Inference</a></li>
+<li><a class="" href="exercises-3.html">Exercises7</a></li>
+<li><a class="" href="homework-for-week-4.html">Homework for Week 4</a></li>
+<li><a class="" href="glossary-2.html">Glossary</a></li>
+<li><a class="" href="flashcards-2.html">Flashcards</a></li>
+<li class="book-part">Week 4</li>
+<li><a class="" href="confidence-intervals.html">Confidence Intervals</a></li>
+<li><a class="" href="exercises-4.html">Exercises</a></li>
+<li><a class="" href="homework-for-week-5.html">Homework for Week 5</a></li>
+<li><a class="" href="glossary-3.html">Glossary</a></li>
+<li><a class="" href="flashcards-3.html">Flashcards</a></li>
+<li class="book-part">Week 5</li>
+<li><a class="" href="causality-and-consolidation.html">Causality and Consolidation</a></li>
+<li><a class="" href="homework-for-week-7.html">Homework for Week 7</a></li>
+<li><a class="" href="glossary-4.html">Glossary</a></li>
+<li><a class="" href="flashcards-4.html">Flashcards</a></li>
+<li class="book-part">Week 6</li>
+<li><a class="" href="reading-week.html">Reading Week</a></li>
+<li class="book-part">Week 7</li>
+<li><a class="" href="methods-methods-methods.html">Methods, Methods, Methods</a></li>
+<li><a class="" href="bivariate-methods.html">Bivariate Methods</a></li>
+<li><a class="" href="homework-for-week-8.html">Homework for Week 8</a></li>
+<li><a class="" href="glossary-5.html">Glossary</a></li>
+<li><a class="" href="flashcards-5.html">Flashcards</a></li>
+<li class="book-part">Week 8</li>
+<li><a class="" href="mmm-bivariate-regression.html">MMM – Bivariate Regression</a></li>
+<li><a class="" href="mmm-model-fit.html">MMM – Model Fit</a></li>
+<li><a class="" href="mmm-significance-testing.html">MMM – Significance Testing</a></li>
+<li><a class="" href="bivariate-regression.html">Bivariate Regression</a></li>
+<li><a class="active" href="case-study-1.html">Case Study15</a></li>
+<li><a class="" href="homework-for-week-9.html">Homework for Week 9</a></li>
+<li><a class="" href="glossary-6.html">Glossary</a></li>
+<li><a class="" href="flashcards-6.html">Flashcards</a></li>
+<li class="book-part">Week 9</li>
+<li><a class="" href="methods-methods-methods-1.html">Methods, Methods, Methods</a></li>
+<li><a class="" href="multiple-regression.html">Multiple Regression</a></li>
+<li><a class="" href="homework-for-week-10.html">Homework for Week 10</a></li>
+<li><a class="" href="glossary-7.html">Glossary</a></li>
+<li><a class="" href="flashcards-7.html">Flashcards</a></li>
+<li class="book-part">Week 10</li>
+<li><a class="" href="methods-methods-methods-2.html">Methods, Methods, Methods</a></li>
+<li><a class="" href="variable-transformations-and-exam-preparation.html">Variable Transformations and Exam Preparation</a></li>
+<li><a class="" href="homework.html">Homework</a></li>
+<li><a class="" href="glossary-8.html">Glossary</a></li>
+<li><a class="" href="flashcards-8.html">Flashcards</a></li>
+<li class="book-part">Downloads</li>
+<li><a class="" href="downloads.html">Downloads</a></li>
+<li class="book-part">Glossary</li>
+<li><a class="" href="glossary-9.html">Glossary</a></li>
+<li class="book-part">List of References</li>
+<li><a class="" href="list-of-references.html">List of References</a></li>
+</ul>
+
+        <div class="book-extra">
+          
         </div>
-
-        <div class="page-wrapper" tabindex="-1" role="main">
-          <div class="page-inner">
-
-            <section class="normal" id="section-">
-<div id="case-study-1" class="section level1 unnumbered hasAnchor">
-<h1>Case Study<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a><a href="case-study-1.html#case-study-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="load-packages-and-data" class="section level2 unnumbered hasAnchor">
-<h2>Load Packages and Data<a href="case-study-1.html#load-packages-and-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><script src="sidebar-link.js"></script><div id="case-study-1" class="section level1 unnumbered">
+<h1>Case Study<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;The structure of this study was originally designed by Oleksiy Bondarenko. I have slightly altered it in subsequent years.&lt;/p&gt;"><sup>15</sup></a><a class="anchor" aria-label="anchor" href="#case-study-1"><i class="fas fa-link"></i></a>
+</h1>
+<div id="load-packages-and-data" class="section level2 unnumbered">
+<h2>Load Packages and Data<a class="anchor" aria-label="anchor" href="#load-packages-and-data"><i class="fas fa-link"></i></a>
+</h2>
 <p>Before starting, we need to load libraries and install packages if not already installed. In these exercises we will be using the following packages:</p>
 <ol style="list-style-type: decimal">
 <li><code>haven</code></li>
@@ -430,12 +154,11 @@ div.csl-indent {
 <li><code>modelsummary</code></li>
 </ol>
 <p>We will be using the <a href="files/Week%208/london.csv">london.csv</a> data set from the lecture, but with a different independent variable this time. These will be of particular interest:</p>
-<table style="width:100%; color: black; margin-left: auto; margin-right: auto;" class="table">
+<div class="inline-table"><table style="width:100%; color: black; margin-left: auto; margin-right: auto;" class="table">
 <caption>
 <span id="tab:casecode">Table 12: </span><code>london</code> Codebook
 </caption>
-<thead>
-<tr>
+<thead><tr>
 <th style="text-align:left;">
 variable
 </th>
@@ -445,8 +168,7 @@ label
 <th style="text-align:left;">
 year
 </th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr>
 <td style="text-align:left;min-width: 1.25in; ">
@@ -504,15 +226,17 @@ Mean income by constituency
 </td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>Data are taken from <span class="citation">House of Commons Library (n.d.)</span>, <span class="citation">GOV.UK (2013)</span>, and <span class="citation">London Data Store (2010)</span>. Set your working directory and load the data.</p>
 </div>
-<div id="inspect-your-data" class="section level2 unnumbered hasAnchor">
-<h2>Inspect your data<a href="case-study-1.html#inspect-your-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Here you can use several basic functions. The dataset does not contain too many variables, so you can start by using <code>names()</code>, <code>str()</code>, etc.</p>
+<div id="inspect-your-data" class="section level2 unnumbered">
+<h2>Inspect your data<a class="anchor" aria-label="anchor" href="#inspect-your-data"><i class="fas fa-link"></i></a>
+</h2>
+<p>Here you can use several basic functions. The dataset does not contain too many variables, so you can start by using <code><a href="https://rdrr.io/r/base/names.html">names()</a></code>, <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code>, etc.</p>
 </div>
-<div id="preliminary-analysis" class="section level2 unnumbered hasAnchor">
-<h2>Preliminary Analysis<a href="case-study-1.html#preliminary-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="preliminary-analysis" class="section level2 unnumbered">
+<h2>Preliminary Analysis<a class="anchor" aria-label="anchor" href="#preliminary-analysis"><i class="fas fa-link"></i></a>
+</h2>
 <p>Let’s say we want to look at the relationship between income deprivation affecting children and GCSE scores. The two variables are, respectively, <code>idaci</code> and <code>gcse</code>.</p>
 <p>Now, formulate the working (alternative) and the null hypothesis. Write them down.</p>
 <p><strong>H<span class="math inline">\(\pmb{_0}\)</span>:</strong></p>
@@ -521,40 +245,44 @@ Mean income by constituency
 <p>Run a frequency table on the <code>idaci</code> variable. Does this distribution make sense? Why/why not?</p>
 <p>Do the same for the other variable. And guess what is the level of measurement.</p>
 </div>
-<div id="visualisation-1" class="section level2 unnumbered hasAnchor">
-<h2>Visualisation<a href="case-study-1.html#visualisation-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="visualisation-1" class="section level2 unnumbered">
+<h2>Visualisation<a class="anchor" aria-label="anchor" href="#visualisation-1"><i class="fas fa-link"></i></a>
+</h2>
 <p>Let’s start with the visualisation of the relationship between the two variables. What is the best way to visualise the relationship considering the level of measurement of our variables?</p>
 <p><strong>Hint:</strong> Probably a scatterplot, right? So, use a scatterplot to visualise the relationship and add the regression line.</p>
-<p>You can use <code>ggplot</code>, but also the base R <code>plot()</code> function.</p>
+<p>You can use <code>ggplot</code>, but also the base R <code><a href="https://rdrr.io/r/graphics/plot.default.html">plot()</a></code> function.</p>
 <p>Improve the graph by:</p>
 <ol style="list-style-type: decimal">
 <li>Adding a regression line.</li>
 <li>Adding up a relevant title, also possibly a subtitle.</li>
 <li>Adding axes labels and making them readable.</li>
 </ol>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-114"></span>
-<img src="images/Week%208/reg_case.png" alt="\label{fig:crime400}Impoact of Deprivation on GCSE Scores" width="65%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-114"></span>
+<img src="images/Week%208/reg_case.png" alt="\label{fig:crime400}Impoact of Deprivation on GCSE Scores" width="65%"><p class="caption">
 Figure 14: Impoact of Deprivation on GCSE Scores
 </p>
 </div>
 </div>
-<div id="visualisation-2.0" class="section level2 unnumbered hasAnchor">
-<h2>Visualisation 2.0<a href="case-study-1.html#visualisation-2.0" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="visualisation-2.0" class="section level2 unnumbered">
+<h2>Visualisation 2.0<a class="anchor" aria-label="anchor" href="#visualisation-2.0"><i class="fas fa-link"></i></a>
+</h2>
 <p>Now, draw a vertical and horizontal line corresponding to the mean of your variables using <code>geom_hline</code> and <code>geom_vline</code>. You can thus check if the regression line passes through the mean of X and Y. (see: <a href="https://www.rdocumentation.org/packages/ggplot2/versions/0.9.1/topics/geom_hline" class="uri">https://www.rdocumentation.org/packages/ggplot2/versions/0.9.1/topics/geom_hline</a>).</p>
-<p>You can improve the scatterplot using a series of arguments (e.g., alpha) in the <code>geom_point()</code> function in ggplot. Try to improve the Aesthetics of the scatterplot playing with alpha, for instance. (see: https:
+<p>You can improve the scatterplot using a series of arguments (e.g., alpha) in the <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code> function in ggplot. Try to improve the Aesthetics of the scatterplot playing with alpha, for instance. (see: https:
 //www.rdocumentation.org/packages/ggplot2/versions/3.4.0/topics/geom_point).</p>
 </div>
-<div id="saving-the-scatterplot" class="section level2 unnumbered hasAnchor">
-<h2>Saving the Scatterplot<a href="case-study-1.html#saving-the-scatterplot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="saving-the-scatterplot" class="section level2 unnumbered">
+<h2>Saving the Scatterplot<a class="anchor" aria-label="anchor" href="#saving-the-scatterplot"><i class="fas fa-link"></i></a>
+</h2>
 <p>You can save a graph as .png, .JPG (even .pdf) that you can then import in a word document. Although there are many way to use your R output, saving a graph might be sometimes useful.</p>
-<p>Use the function <code>ggsave()</code> to save your scatterplot. Again, there are tons of examples online, google it.</p>
+<p>Use the function <code><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave()</a></code> to save your scatterplot. Again, there are tons of examples online, google it.</p>
 <p><strong>Hint:</strong> You first need to store the graph in an object.</p>
 <p><strong>Hint 2:</strong> The file will end up in your working directory.</p>
 </div>
-<div id="regression-analysis-yes-finally" class="section level2 unnumbered hasAnchor">
-<h2>Regression Analysis (yes, finally)<a href="case-study-1.html#regression-analysis-yes-finally" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Now we can finally run a linear regression with <code>gcse</code> as the outcome variable and <code>idaci</code> as the predictor using the <code>lm()</code> function. Store the results in an object called <code>model</code> and visualise the regression output using <code>summary()</code>.</p>
+<div id="regression-analysis-yes-finally" class="section level2 unnumbered">
+<h2>Regression Analysis (yes, finally)<a class="anchor" aria-label="anchor" href="#regression-analysis-yes-finally"><i class="fas fa-link"></i></a>
+</h2>
+<p>Now we can finally run a linear regression with <code>gcse</code> as the outcome variable and <code>idaci</code> as the predictor using the <code><a href="https://rdrr.io/r/stats/lm.html">lm()</a></code> function. Store the results in an object called <code>model</code> and visualise the regression output using <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code>.</p>
 <div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="case-study-1.html#cb86-1" tabindex="-1"></a><span class="co"># Store the results in an object called model #</span></span>
 <span id="cb86-2"><a href="case-study-1.html#cb86-2" tabindex="-1"></a>model<span class="ot">&lt;-</span><span class="fu">lm</span>(gcse <span class="sc">~</span> idaci, london)</span>
 <span id="cb86-3"><a href="case-study-1.html#cb86-3" tabindex="-1"></a><span class="co"># Visualise the regression output using summary() #</span></span>
@@ -572,19 +300,20 @@ Figure 14: Impoact of Deprivation on GCSE Scores
 <span id="cb86-15"><a href="case-study-1.html#cb86-15" tabindex="-1"></a>(Intercept) <span class="fl">45.852958</span>   <span class="fl">0.657251</span>  <span class="fl">69.765</span>  <span class="sc">&lt;</span> <span class="fl">2e-16</span> <span class="sc">**</span><span class="er">*</span></span>
 <span id="cb86-16"><a href="case-study-1.html#cb86-16" tabindex="-1"></a>idaci        <span class="fl">0.019765</span>   <span class="fl">0.002894</span>   <span class="fl">6.831</span>  <span class="fl">2.4e-09</span> <span class="sc">**</span><span class="er">*</span></span>
 <span id="cb86-17"><a href="case-study-1.html#cb86-17" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb86-18"><a href="case-study-1.html#cb86-18" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">&#39;***&#39;</span> <span class="fl">0.001</span> <span class="st">&#39;**&#39;</span> <span class="fl">0.01</span> <span class="st">&#39;*&#39;</span> <span class="fl">0.05</span> <span class="st">&#39;.&#39;</span> <span class="fl">0.1</span> <span class="st">&#39; &#39;</span> <span class="dv">1</span></span>
+<span id="cb86-18"><a href="case-study-1.html#cb86-18" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> <span class="st">'***'</span> <span class="fl">0.001</span> <span class="st">'**'</span> <span class="fl">0.01</span> <span class="st">'*'</span> <span class="fl">0.05</span> <span class="st">'.'</span> <span class="fl">0.1</span> <span class="st">' '</span> <span class="dv">1</span></span>
 <span id="cb86-19"><a href="case-study-1.html#cb86-19" tabindex="-1"></a></span>
 <span id="cb86-20"><a href="case-study-1.html#cb86-20" tabindex="-1"></a>Residual standard error<span class="sc">:</span> <span class="fl">3.317</span> on <span class="dv">71</span> degrees of freedom</span>
 <span id="cb86-21"><a href="case-study-1.html#cb86-21" tabindex="-1"></a>Multiple R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.3965</span>,    Adjusted R<span class="sc">-</span>squared<span class="sc">:</span>  <span class="fl">0.388</span> </span>
 <span id="cb86-22"><a href="case-study-1.html#cb86-22" tabindex="-1"></a>F<span class="sc">-</span>statistic<span class="sc">:</span> <span class="fl">46.66</span> on <span class="dv">1</span> and <span class="dv">71</span> DF,  p<span class="sc">-</span>value<span class="sc">:</span> <span class="fl">2.398e-09</span></span></code></pre></div>
-<p>You can also extract specific blocks of the output table. One way of doing it is to use the brackets [] after the <code>summary()</code> function. For example <code>summary()[8]</code>. Try to extract the block of Coefficients from the table, like this:</p>
+<p>You can also extract specific blocks of the output table. One way of doing it is to use the brackets [] after the <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> function. For example <code>summary()[8]</code>. Try to extract the block of Coefficients from the table, like this:</p>
 <pre><code>$coefficients
               Estimate Std. Error   t value     Pr(&gt;|t|)
 (Intercept) 45.8529580 0.65725150 69.764707 3.767825e-67
 idaci        0.0197651 0.00289364  6.830532 2.397995e-09</code></pre>
 </div>
-<div id="interpretation" class="section level2 unnumbered hasAnchor">
-<h2>Interpretation<a href="case-study-1.html#interpretation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="interpretation" class="section level2 unnumbered">
+<h2>Interpretation<a class="anchor" aria-label="anchor" href="#interpretation"><i class="fas fa-link"></i></a>
+</h2>
 <p>Interpret the results, starting with model evaluation.</p>
 <ol style="list-style-type: decimal">
 <li>Is the p-value of the F-statistics statistically significant? We will be discussing this in our following
@@ -595,43 +324,51 @@ lectures.</li>
 <li>Interpret the results (in plain language) referring to the hypothesis you formulated above.</li>
 </ol>
 </div>
-<div id="exporting-the-results" class="section level2 unnumbered hasAnchor">
-<h2>Exporting the Results<a href="case-study-1.html#exporting-the-results" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="exporting-the-results" class="section level2 unnumbered">
+<h2>Exporting the Results<a class="anchor" aria-label="anchor" href="#exporting-the-results"><i class="fas fa-link"></i></a>
+</h2>
 <p>As for the graphs, you can also export and save the results of the regression model in a Word table. To do that you can use the ‘modelsummary’ package.</p>
 <p>Just like writing a shopping list, we start by creating a list of models for which we want <code>modelsummary</code> to produce a table. You can merely list the names of the objects in which the models are stored, or you can give them specific names which will appear as column titles in the table. This addition is by no means a must, but sometimes you might wish to give models a particular name, for example if you have used different methods of estimation, different components of a theory, etc. In the table we are creating here, I wish to distinguish between bivariate and multivariate models. By default, <code>modelsummary</code> just numbers models in ascending order.</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="case-study-1.html#cb88-1" tabindex="-1"></a>models <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb88-2"><a href="case-study-1.html#cb88-2" tabindex="-1"></a>  <span class="st">&quot;Bivariate&quot;</span>    <span class="ot">=</span> model</span>
-<span id="cb88-3"><a href="case-study-1.html#cb88-3" tabindex="-1"></a>)</span></code></pre></div>
-<p>This simple step is already sufficient to produce – an admittedly somewhat crude – results table. All we have to do is to load the <code>modelsummary</code> package and to use the previously defined list of models as the argument of the <code>modelsummary()</code> function:</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="case-study-1.html#cb89-1" tabindex="-1"></a><span class="fu">library</span>(modelsummary)</span>
-<span id="cb89-2"><a href="case-study-1.html#cb89-2" tabindex="-1"></a><span class="fu">modelsummary</span>(models)</span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">models</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>  <span class="st">"Bivariate"</span>    <span class="op">=</span> <span class="va">model</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<p>This simple step is already sufficient to produce – an admittedly somewhat crude – results table. All we have to do is to load the <code>modelsummary</code> package and to use the previously defined list of models as the argument of the <code><a href="https://modelsummary.com/man/modelsummary.html">modelsummary()</a></code> function:</p>
+<div class="sourceCode" id="cb89"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://modelsummary.com">modelsummary</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://modelsummary.com/man/modelsummary.html">modelsummary</a></span><span class="op">(</span><span class="va">models</span><span class="op">)</span></span></code></pre></div>
 <div class="bulb">
 <p>Execute these code chunks as we go through this Section, so you can see the alterations we make to the table in real-time.</p>
 </div>
 <p>This table is a vast improvement on the raw R output you would receive when calling <code>summary(model1)</code>. But it is far from finished. One characteristic which is conspicuously absent is an assessment of statistical significance. In model summaries of this kind this information is usually provided in the form of asterisks or other symbols next to the respective coefficient. We can add these simply by adding the option <code>stars=TRUE</code> to the code.</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="case-study-1.html#cb90-1" tabindex="-1"></a><span class="fu">modelsummary</span>(models,</span>
-<span id="cb90-2"><a href="case-study-1.html#cb90-2" tabindex="-1"></a>             <span class="at">stars =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://modelsummary.com/man/modelsummary.html">modelsummary</a></span><span class="op">(</span><span class="va">models</span>,</span>
+<span>             stars <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p>Next up is the modification of the stub. The stub is the leftmost column in which you name the indicators for which coefficients will be presented.In the stub, “[a]bbreviate nothing. And never ever ever use computer variable names to stand for concepts. These are personal code words that convey no meaning to readers.” <span class="citation">(Stimson, n.d., p. 10)</span> Following this advice, let us add proper labels to the independent variables.</p>
 <p>To let <code>modelsummary</code> know how to replace each variable name, we create a so-called coefficient map. This is really just a character vector which follows a “before-after” logic in each of its rows. For example <code>'age'='Age'</code> replaces the variable name <code>age</code> with the label <code>Age</code>. We need to do this for all the variables we used in our models. I am storing this in a vecor called <code>cm</code> which stands for coefficient map.</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="case-study-1.html#cb91-1" tabindex="-1"></a>cm <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;idaci&#39;</span>    <span class="ot">=</span> <span class="st">&#39;Income Deprivation Affecting Children Index&#39;</span>,</span>
-<span id="cb91-2"><a href="case-study-1.html#cb91-2" tabindex="-1"></a>        <span class="st">&#39;(Intercept)&#39;</span> <span class="ot">=</span> <span class="st">&#39;Intercept&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">cm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'idaci'</span>    <span class="op">=</span> <span class="st">'Income Deprivation Affecting Children Index'</span>,</span>
+<span>        <span class="st">'(Intercept)'</span> <span class="op">=</span> <span class="st">'Intercept'</span><span class="op">)</span></span></code></pre></div>
 <p>The next step is easy, as we only need to feed this coefficient map into the <code>modelsummary</code> code with the option <code>coef_map=cm</code>:</p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="case-study-1.html#cb92-1" tabindex="-1"></a><span class="fu">modelsummary</span>(models,</span>
-<span id="cb92-2"><a href="case-study-1.html#cb92-2" tabindex="-1"></a>             <span class="at">stars =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb92-3"><a href="case-study-1.html#cb92-3" tabindex="-1"></a>             <span class="at">coef_map =</span> cm)</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://modelsummary.com/man/modelsummary.html">modelsummary</a></span><span class="op">(</span><span class="va">models</span>,</span>
+<span>             stars <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>             coef_map <span class="op">=</span> <span class="va">cm</span><span class="op">)</span></span></code></pre></div>
 <p>This is a personal thing, but I also like to show the label of the dependent variable in results tables. They just feel incomplete to me without this information. There is no default to achieve this in <code>modelsummary</code> and so we need to use a little trick.</p>
-<p>What I want to add in the first row, but only in the second columm, the text . This requires us to alter the style of the table slightly. <code>modelsummary</code> uses another package called <code>tinytable</code> to style the output. We load the package with <code>library(tinytable)</code> and instruct R to place the text where we want it.</p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="case-study-1.html#cb93-1" tabindex="-1"></a><span class="fu">library</span>(tinytable)</span>
-<span id="cb93-2"><a href="case-study-1.html#cb93-2" tabindex="-1"></a><span class="fu">modelsummary</span>(models,</span>
-<span id="cb93-3"><a href="case-study-1.html#cb93-3" tabindex="-1"></a>             <span class="at">stars =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb93-4"><a href="case-study-1.html#cb93-4" tabindex="-1"></a>             <span class="at">coef_map =</span> cm)<span class="sc">|&gt;</span></span>
-<span id="cb93-5"><a href="case-study-1.html#cb93-5" tabindex="-1"></a>  <span class="fu">group_tt</span>(<span class="at">j =</span> <span class="fu">list</span>(<span class="st">&quot;Dependent Variable: GCSE Score&quot;</span> <span class="ot">=</span> <span class="dv">2</span>))</span></code></pre></div>
+<p>What I want to add in the first row, but only in the second columm, the text . This requires us to alter the style of the table slightly. <code>modelsummary</code> uses another package called <code>tinytable</code> to style the output. We load the package with <code><a href="https://vincentarelbundock.github.io/tinytable/">library(tinytable)</a></code> and instruct R to place the text where we want it.</p>
+<div class="sourceCode" id="cb93"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/tinytable/">tinytable</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://modelsummary.com/man/modelsummary.html">modelsummary</a></span><span class="op">(</span><span class="va">models</span>,</span>
+<span>             stars <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>             coef_map <span class="op">=</span> <span class="va">cm</span><span class="op">)</span><span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://vincentarelbundock.github.io/tinytable/man/group_tt.html">group_tt</a></span><span class="op">(</span>j <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"Dependent Variable: GCSE Score"</span> <span class="op">=</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>Lastly, let us tackle the model fit statistics. By default, <code>modelsummary</code> prints a whole festival of these into the bottom section of the table, but I want to concentrate only on R<span class="math inline">\(^2\)</span>.</p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="case-study-1.html#cb94-1" tabindex="-1"></a><span class="fu">modelsummary</span>(models,</span>
-<span id="cb94-2"><a href="case-study-1.html#cb94-2" tabindex="-1"></a>             <span class="at">stars =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb94-3"><a href="case-study-1.html#cb94-3" tabindex="-1"></a>             <span class="at">coef_map =</span> cm,</span>
-<span id="cb94-4"><a href="case-study-1.html#cb94-4" tabindex="-1"></a>             <span class="at">gof_omit =</span> <span class="st">&#39;DF|Deviance|Log.Lik|F|AIC|BIC|RMSE&#39;</span>)<span class="sc">|&gt;</span></span>
-<span id="cb94-5"><a href="case-study-1.html#cb94-5" tabindex="-1"></a>  <span class="fu">group_tt</span>(<span class="at">j =</span> <span class="fu">list</span>(<span class="st">&quot;Dependent Variable: GCSE Score&quot;</span> <span class="ot">=</span> <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://modelsummary.com/man/modelsummary.html">modelsummary</a></span><span class="op">(</span><span class="va">models</span>,</span>
+<span>             stars <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>             coef_map <span class="op">=</span> <span class="va">cm</span>,</span>
+<span>             gof_omit <span class="op">=</span> <span class="st">'DF|Deviance|Log.Lik|F|AIC|BIC|RMSE'</span><span class="op">)</span><span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://vincentarelbundock.github.io/tinytable/man/group_tt.html">group_tt</a></span><span class="op">(</span>j <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"Dependent Variable: GCSE Score"</span> <span class="op">=</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>This should produce this table:</p>
 <!-- preamble start -->
 
@@ -687,14 +424,12 @@ lectures.</li>
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 8, j: 1 },  ], css_id: 'tinytable_css_c53n75ebl4a5p8uf37l2',}, 
-          { positions: [ { i: 5, j: 1 },  ], css_id: 'tinytable_css_3lbtok5bnv9ckj9ye8hw',}, 
-          { positions: [ { i: 2, j: 1 }, { i: 3, j: 1 }, { i: 4, j: 1 }, { i: 6, j: 1 }, { i: 7, j: 1 },  ], css_id: 'tinytable_css_z27mpah6ubp1eivub3np',}, 
-          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_6dlj2dor6mh1bu5wjb2z',}, 
-          { positions: [ { i: 1, j: 1 },  ], css_id: 'tinytable_css_vu1eqzu0ara6yd5hjcqt',}, 
-          { positions: [ { i: 8, j: 0 },  ], css_id: 'tinytable_css_l07z8vdwt98vgc16gt73',}, 
+          { positions: [ { i: 5, j: 1 },  ], css_id: 'tinytable_css_z27mpah6ubp1eivub3np',}, 
+          { positions: [ { i: 2, j: 1 }, { i: 3, j: 1 }, { i: 4, j: 1 },  ], css_id: 'tinytable_css_6dlj2dor6mh1bu5wjb2z',}, 
+          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_vu1eqzu0ara6yd5hjcqt',}, 
+          { positions: [ { i: 1, j: 1 },  ], css_id: 'tinytable_css_l07z8vdwt98vgc16gt73',}, 
           { positions: [ { i: 5, j: 0 },  ], css_id: 'tinytable_css_xce8ql9b88e3p8usijy8',}, 
-          { positions: [ { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 },  ], css_id: 'tinytable_css_vog99f8hskxj2fz5vrxc',}, 
+          { positions: [ { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 },  ], css_id: 'tinytable_css_vog99f8hskxj2fz5vrxc',}, 
           { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_n2x1l40lbalm922ls3zh',}, 
           { positions: [ { i: 1, j: 0 },  ], css_id: 'tinytable_css_a7v3ljb69assh87by2dj',}, 
           ];
@@ -706,157 +441,120 @@ lectures.</li>
               });
           });
       });
-    </script>
-
-    <style>
+    </script><style>
       /* tinytable css entries after */
-      .table td.tinytable_css_c53n75ebl4a5p8uf37l2, .table th.tinytable_css_c53n75ebl4a5p8uf37l2 { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_3lbtok5bnv9ckj9ye8hw, .table th.tinytable_css_3lbtok5bnv9ckj9ye8hw { text-align: center; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_z27mpah6ubp1eivub3np, .table th.tinytable_css_z27mpah6ubp1eivub3np { text-align: center; }
-      .table td.tinytable_css_6dlj2dor6mh1bu5wjb2z, .table th.tinytable_css_6dlj2dor6mh1bu5wjb2z { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_vu1eqzu0ara6yd5hjcqt, .table th.tinytable_css_vu1eqzu0ara6yd5hjcqt { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_l07z8vdwt98vgc16gt73, .table th.tinytable_css_l07z8vdwt98vgc16gt73 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_xce8ql9b88e3p8usijy8, .table th.tinytable_css_xce8ql9b88e3p8usijy8 { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_z27mpah6ubp1eivub3np, .table th.tinytable_css_z27mpah6ubp1eivub3np { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_6dlj2dor6mh1bu5wjb2z, .table th.tinytable_css_6dlj2dor6mh1bu5wjb2z { text-align: center; }
+      .table td.tinytable_css_vu1eqzu0ara6yd5hjcqt, .table th.tinytable_css_vu1eqzu0ara6yd5hjcqt { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_l07z8vdwt98vgc16gt73, .table th.tinytable_css_l07z8vdwt98vgc16gt73 { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_xce8ql9b88e3p8usijy8, .table th.tinytable_css_xce8ql9b88e3p8usijy8 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
       .table td.tinytable_css_vog99f8hskxj2fz5vrxc, .table th.tinytable_css_vog99f8hskxj2fz5vrxc { text-align: left; }
       .table td.tinytable_css_n2x1l40lbalm922ls3zh, .table th.tinytable_css_n2x1l40lbalm922ls3zh { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
       .table td.tinytable_css_a7v3ljb69assh87by2dj, .table th.tinytable_css_a7v3ljb69assh87by2dj { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
     </style>
-    <div class="container">
-      <table class="table table-borderless" id="tinytable_uqojug9rinmy5ih4324a" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing='true'>
-        <thead>
+<div class="container">
+      <div class="inline-table"><table class="table table-borderless" id="tinytable_uqojug9rinmy5ih4324a" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+<thead>
 <tr>
-<th scope="col" align="center" colspan=1> </th>
-<th scope="col" align="center" colspan=1>Dependent Variable:<br>GCSE Score</th>
+<th scope="col" align="center" colspan="1"> </th>
+<th scope="col" align="center" colspan="1">Dependent Variable:<br>GCSE Score</th>
 </tr>
-        <caption><span id="tab:reg91">Table 13: </span> Regression Models</caption>
+<caption>
+<span id="tab:reg91">Table 13: </span> Regression Models</caption>
               <tr>
-                <th scope="col"> </th>
+<th scope="col"> </th>
                 <th scope="col">Bivariate</th>
               </tr>
-        </thead>
-        <tfoot><tr><td colspan='2'>+ p < 0.1, * p < 0.05, ** p < 0.01, *** p < 0.001</td></tr></tfoot>
-        <tbody>
-                <tr>
-                  <td>Income Deprivation Affecting Children Index</td>
+</thead>
+<tfoot><tr><td colspan="2">+ p &lt; 0.1, * p &lt; 0.1, ** p &lt; 0.05, *** p &lt; 0.01</td></tr></tfoot>
+<tbody>
+<tr>
+<td>Income Deprivation Affecting Children Index</td>
                   <td>0.020***</td>
                 </tr>
-                <tr>
-                  <td></td>
+<tr>
+<td></td>
                   <td>(0.003)</td>
                 </tr>
-                <tr>
-                  <td>Intercept</td>
+<tr>
+<td>Intercept</td>
                   <td>45.853***</td>
                 </tr>
-                <tr>
-                  <td></td>
+<tr>
+<td></td>
                   <td>(0.657)</td>
                 </tr>
-                <tr>
-                  <td>Num.Obs.</td>
-                  <td>73</td>
-                </tr>
-                <tr>
-                  <td>R2</td>
-                  <td>0.397</td>
-                </tr>
-                <tr>
-                  <td>R2 Adj.</td>
-                  <td>0.388</td>
-                </tr>
-        </tbody>
-      </table>
-    </div>
+</tbody>
+</table></div>
+</div>
 <!-- hack to avoid NA insertion in last line -->
 <p>You can export your tables for use in MS Word, or Apple Pages. But you will not be able to export the full table, only up to the point at which you are specifying the options for <code>tinytable</code> with <code>|&gt;</code>. This is probably as good a reason as any to start working with Markdown or LaTeXBut if you are happy with this caveat, the following code will render the table in an MS Word document (<code>output="table.docx"</code>) that is placed in your working directory.</p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="case-study-1.html#cb95-1" tabindex="-1"></a><span class="fu">modelsummary</span>(models,</span>
-<span id="cb95-2"><a href="case-study-1.html#cb95-2" tabindex="-1"></a>             <span class="at">stars =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb95-3"><a href="case-study-1.html#cb95-3" tabindex="-1"></a>             <span class="at">coef_map =</span> cm,</span>
-<span id="cb95-4"><a href="case-study-1.html#cb95-4" tabindex="-1"></a>             <span class="at">gof_omit =</span> <span class="st">&#39;AIC|BIC|Log.Lik|F|RMSE&#39;</span>,</span>
-<span id="cb95-5"><a href="case-study-1.html#cb95-5" tabindex="-1"></a>             <span class="at">add_rows =</span> rows,</span>
-<span id="cb95-6"><a href="case-study-1.html#cb95-6" tabindex="-1"></a>             <span class="at">notes =</span> <span class="fu">list</span>(<span class="st">&#39;This is a long and rather pointless </span></span>
-<span id="cb95-7"><a href="case-study-1.html#cb95-7" tabindex="-1"></a><span class="st">                          note to demonstrate formatting.&#39;</span>),</span>
-<span id="cb95-8"><a href="case-study-1.html#cb95-8" tabindex="-1"></a>             <span class="at">output =</span> <span class="st">&quot;table.docx&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://modelsummary.com/man/modelsummary.html">modelsummary</a></span><span class="op">(</span><span class="va">models</span>,</span>
+<span>             stars <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>             coef_map <span class="op">=</span> <span class="va">cm</span>,</span>
+<span>             gof_omit <span class="op">=</span> <span class="st">'AIC|BIC|Log.Lik|F|RMSE'</span>,</span>
+<span>             add_rows <span class="op">=</span> <span class="va">rows</span>,</span>
+<span>             notes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">'This is a long and rather pointless </span></span>
+<span><span class="st">                          note to demonstrate formatting.'</span><span class="op">)</span>,</span>
+<span>             output <span class="op">=</span> <span class="st">"table.docx"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="comparing-models" class="section level2 unnumbered hasAnchor">
-<h2>Comparing Models<a href="case-study-1.html#comparing-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="comparing-models" class="section level2 unnumbered">
+<h2>Comparing Models<a class="anchor" aria-label="anchor" href="#comparing-models"><i class="fas fa-link"></i></a>
+</h2>
 <p>You can now run another regression model with . Compare your original model with the new one. How do you know which independent variable is doing a better job in explaining your dependent variable?</p>
 </div>
-<div id="causality-1" class="section level2 unnumbered hasAnchor">
-<h2>Causality<a href="case-study-1.html#causality-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="causality-1" class="section level2 unnumbered">
+<h2>Causality<a class="anchor" aria-label="anchor" href="#causality-1"><i class="fas fa-link"></i></a>
+</h2>
 <p>Consider the causality framework of Week 5. To what extent has this case study established causality? What is missing from the framework?</p>
 </div>
 </div>
-<div class="footnotes">
-<hr />
-<ol start="15">
-<li id="fn15"><p>The structure of this study was originally designed by Oleksiy Bondarenko. I have slightly altered it in subsequent years.<a href="case-study-1.html#fnref15" class="footnote-back">↩︎</a></p></li>
-</ol>
+
+  <div class="chapter-nav">
+<div class="prev"><a href="bivariate-regression.html">Bivariate Regression</a></div>
+<div class="next"><a href="homework-for-week-9.html">Homework for Week 9</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#case-study-1">Case Study15</a></li>
+<li><a class="nav-link" href="#load-packages-and-data">Load Packages and Data</a></li>
+<li><a class="nav-link" href="#inspect-your-data">Inspect your data</a></li>
+<li><a class="nav-link" href="#preliminary-analysis">Preliminary Analysis</a></li>
+<li><a class="nav-link" href="#visualisation-1">Visualisation</a></li>
+<li><a class="nav-link" href="#visualisation-2.0">Visualisation 2.0</a></li>
+<li><a class="nav-link" href="#saving-the-scatterplot">Saving the Scatterplot</a></li>
+<li><a class="nav-link" href="#regression-analysis-yes-finally">Regression Analysis (yes, finally)</a></li>
+<li><a class="nav-link" href="#interpretation">Interpretation</a></li>
+<li><a class="nav-link" href="#exporting-the-results">Exporting the Results</a></li>
+<li><a class="nav-link" href="#comparing-models">Comparing Models</a></li>
+<li><a class="nav-link" href="#causality-1">Causality</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
 </div>
-            </section>
+    </nav>
+</div>
 
-          </div>
-        </div>
-      </div>
-<a href="bivariate-regression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="homework-for-week-9.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
-    </div>
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong><p><img src="images/Crest_white.png" width="75" style="display:block; margin:auto; margin-bottom:3em;"> PO91Q: Fundamentals in Quantitative Research Methods – <br> Seminar Companion</p></strong>" was written by </p>
+<p><strong>Dr Flo Reiche</strong> <br><strong>Department of Politics and International Studies</strong> <br><strong>University of Warwick</strong></p>. It was last built on 26 July, 2025.
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
-<script>
-gitbook.require(["gitbook"], function(gitbook) {
-gitbook.start({
-  "sharing": {
-    "github": false,
-    "facebook": true,
-    "twitter": true,
-    "linkedin": false,
-    "weibo": false,
-    "instapaper": false,
-    "vk": false,
-    "whatsapp": false,
-    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-  },
-  "fontsettings": {
-    "theme": "white",
-    "family": "sans",
-    "size": 2
-  },
-  "edit": {
-    "link": null,
-    "text": null
-  },
-  "history": {
-    "link": null,
-    "text": null
-  },
-  "view": {
-    "link": null,
-    "text": null
-  },
-  "download": null,
-  "search": {
-    "engine": "fuse",
-    "options": null
-  },
-  "toc": {
-    "collapse": "section"
-  },
-  "toc_depth": 2,
-  "keep_tex": true
-});
-});
-</script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
@@ -868,7 +566,22 @@ gitbook.start({
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
 </script>
 </body>
-
 </html>
