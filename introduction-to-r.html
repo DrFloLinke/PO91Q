@@ -239,22 +239,24 @@ Figure 3: Example of an RScript
 <div id="first-steps-in-r" class="section level2 unnumbered">
 <h2>First Steps in R<a class="anchor" aria-label="anchor" href="#first-steps-in-r"><i class="fas fa-link"></i></a>
 </h2>
-<p>But enough of the preliminary talk, let’s get started in R. In principle, you can think of R as a massive and powerful calculator. So I will use it as such to start of with. If you want to know what the sum of 5 and 3 is, you type:</p>
+<p>But enough of the preliminary talk, let’s get started in R. In principle, you can think of R as a massive and powerful calculator. So I will use it as such to start of with. If you want to know what the sum of 5 and 3 is, you type (in the RScript, not the Console):</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fl">5</span><span class="op">+</span><span class="fl">3</span></span></code></pre></div>
-<p>and execute the line as previously explained. In everything that is to follow, commands will be shown in boxes with the output underneath preceded by a number in square brackets. So, including result, the calculation would look like this:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="introduction-to-r.html#cb4-1" tabindex="-1"></a><span class="dv">5</span><span class="sc">+</span><span class="dv">3</span></span>
-<span id="cb4-2"><a href="introduction-to-r.html#cb4-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">8</span></span></code></pre></div>
+<p>and press “command” / “enter” (or “Ctrl” / “enter” if you are on Windows). In everything that is to follow, commands will be shown in their own individual boxes. These have a clipboard button on the right, so you can copy and paste the code into your own RScript. The output is presented in a separate box directly underneath. There is no clipboard button, as R will render this result in your own console when you run the code. So, including the result, the calculation would look like this:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">5</span><span class="op">+</span><span class="fl">3</span></span></code></pre></div>
+<pre><code>[1] 8</code></pre>
 <p>where the [1] indicates that the 8 is the first component of the result. In this case, we only have one component, so it’s superfluous really, but we will soon encounter situations in which results can have a number of different items.</p>
 <div class="bulb">
-<p>You can copy the code from this page by hovering over the code chunk and clicking the icon in the top-right hand corner. You can then paste it into your RScript.</p>
+<p>You can copy the code from this page by clicking the clipboard icon in the top-right hand corner. You can then paste it into your RScript.</p>
 </div>
 <p>A fundamental component of R is objects. You can define an object by way of a reversed arrow, and you can assign values, characters, or functions to them. If we want to assign the sum of 5 and 3 to an object called <code>result</code>, for example, we call<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;To “call” means to execute a command.&lt;/p&gt;"><sup>3</sup></a></p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fl">5</span><span class="op">+</span><span class="fl">3</span></span></code></pre></div>
 <p>If we now call the object, R will return its value, 8.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="introduction-to-r.html#cb6-1" tabindex="-1"></a>result</span>
-<span id="cb6-2"><a href="introduction-to-r.html#cb6-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">8</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">result</span></span></code></pre></div>
+<pre><code>[1] 8</code></pre>
 <div class="bulb">
 <p>Make a habit of adding a note underneath each code chunk in your RScript (preceded with a <span style="color:black"><code>#</code></span>) in which you translate the code into plain English. This is especially useful for the lengthy complex chunks.</p>
 </div>
@@ -277,7 +279,7 @@ Figure 4: Folder Structure
 <p>Please set up this structure now. If I find you using a random folder on your desktop named “working directory” in the coming weeks, I am going to implode! I mean it.</p>
 </div>
 <p>Now we need to tell R to use this folder. If you know the file structure of your computer you can simply use the <code><a href="https://rdrr.io/r/base/getwd.html">setwd()</a></code> command, and enter the path. Here is an example from my computer:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">setwd</a></span><span class="op">(</span><span class="st">"~/Warwick/Modules/PO91Q/Seminars/Week 1/R Week 1"</span><span class="op">)</span></span></code></pre></div>
 <p>If you don’t know the file structure of your computer, then you can click Session <span class="math inline">\(\rightarrow\)</span> Set Working Directory <span class="math inline">\(\rightarrow\)</span> Choose Directory.</p>
 <div class="video">
@@ -291,10 +293,10 @@ Figure 4: Folder Structure
 <h2>R Packages<a class="anchor" aria-label="anchor" href="#r-packages"><i class="fas fa-link"></i></a>
 </h2>
 <p>It would be difficult to overstate the importance of packages in R. The program has a number of “base” functions which enable the user to do many different basic things, but packages are extensions that allow you to do pretty much anything and everything with this software - this is one of the reasons why I love it so much. The first package we need to use will enable us to load an Excel sheet into R. It is called <code>readxl</code>. You can install any package with the command <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code> where the package name goes, wrapped in quotation marks, into the brackets:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"readxl"</span><span class="op">)</span></span></code></pre></div>
 <p>We can then load this package into our library with the <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> command.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span></span></code></pre></div>
 <div class="bulb">
 <p>Once you close R at the end of a session, the library will be reset. When you reopen R, you have to load the packages you require again. But you do not have to install them again.</p>
@@ -341,7 +343,7 @@ Figure 4: Folder Structure
 
   <div class="col-12 col-md-6 mt-3">
     <p>"<strong><p><img src="images/Crest_white.png" width="75" style="display:block; margin:auto; margin-bottom:3em;"> PO91Q: Fundamentals in Quantitative Research Methods – <br> Seminar Companion</p></strong>" was written by </p>
-<p><strong>Dr Flo Reiche</strong> <br><strong>Department of Politics and International Studies</strong> <br><strong>University of Warwick</strong></p>. It was last built on 26 July, 2025.
+<p><strong>Dr Flo Reiche</strong> <br><strong>Department of Politics and International Studies</strong> <br><strong>University of Warwick</strong></p>. It was last built on 27 July, 2025.
   </div>
 
   <div class="col-12 col-md-6 mt-3">
