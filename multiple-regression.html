@@ -197,6 +197,8 @@ F-statistic: 227.3 on 1 and 623 DF,  p-value: &lt; 2.2e-16</code></pre>
 <ul>
 <li>Once again, here is the overview of the variables available and their respective label in Table <a href="multiple-regression.html#tab:wdicode9">15</a>:</li>
 </ul>
+<p> </p>
+<div class="custom-html-table">
 <div class="inline-table"><table style="width:100%; color: black; margin-left: auto; margin-right: auto;" class="table">
 <caption>
 <span id="tab:wdicode9">Table 15: </span>WDI Codebook
@@ -444,6 +446,8 @@ Combined Polity V score
 </tr>
 </tbody>
 </table></div>
+</div>
+<p> </p>
 <ul>
 <li>Let’s take the example from Week 7 back up. First re-run the regression I used back then.</li>
 </ul>
@@ -706,7 +710,7 @@ F-statistic: 71.55 on 2 and 166 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>and also add it to the joint model:</p>
 <div class="sourceCode" id="cb133"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">wdi_joint1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">gdppc</span> <span class="op">~</span> <span class="va">lifeexp</span> <span class="op">+</span> <span class="va">urban</span> <span class="op">+</span> <span class="va">literacy</span>, data <span class="op">=</span> <span class="va">wdi</span><span class="op">)</span></span></code></pre></div>
-<p>This should lead to these results:</p>
+<p>This should lead to these results (scroll right on the table to see Model 5):</p>
  
  
 <center>
