@@ -8,10 +8,10 @@ tab:glossary2
 fig:area68
 fig:area84
 fig:normalmean
-fig:unnamed-chunk-90
+fig:unnamed-chunk-93
 tab:glossary3
 fig:95
-fig:unnamed-chunk-95
+fig:unnamed-chunk-98
 tab:glossary4
 tab:simdcode
 fig:disalc
@@ -23,7 +23,7 @@ tab:regdata
 tab:regdata5
 tab:londoncode
 tab:casecode
-fig:unnamed-chunk-112
+fig:unnamed-chunk-115
 tab:reg91
 tab:glossary8
 tab:wdicode9

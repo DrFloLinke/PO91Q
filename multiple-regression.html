@@ -187,12 +187,12 @@ F-statistic: 227.3 on 1 and 623 DF,  p-value: &lt; 2.2e-16</code></pre>
 <li>Download the <a href="files/Week%209/WDI_PO91Q.csv">WDI_PO91Q.csv</a> data set. Data are taken from <span class="citation">World Bank (2024)</span>, <span class="citation">Miller et al. (2022)</span>, and <span class="citation">Marshall &amp; Gurr (2020)</span>.</li>
 <li>Put it into an appropriate working directory for this seminar and create a dedicated RScript and save it into the same working directory.</li>
 </ul>
-<div class="sourceCode" id="cb124"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb126"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">setwd</a></span><span class="op">(</span><span class="st">"~/Warwick/Modules/PO91Q/Seminars/Week 8"</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>Import the data set into R:</li>
 </ul>
-<div class="sourceCode" id="cb125"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb127"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">wdi</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"WDI_PO91Q.csv"</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>Once again, here is the overview of the variables available and their respective label in Table <a href="multiple-regression.html#tab:wdicode9">15</a>:</li>
@@ -451,7 +451,7 @@ Combined Polity V score
 <ul>
 <li>Let’s take the example from Week 7 back up. First re-run the regression I used back then.</li>
 </ul>
-<div class="sourceCode" id="cb126"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb128"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">wdi_life</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">gdppc</span> <span class="op">~</span> <span class="va">lifeexp</span>, data <span class="op">=</span> <span class="va">wdi</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">wdi_life</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
@@ -489,7 +489,7 @@ F-statistic: 108.4 on 1 and 167 DF,  p-value: &lt; 2.2e-16</code></pre>
 <li>Now we use a different regressor, say “Urban population (% of total)”.</li>
 <li>Specify the null and the alternative hypotheses.</li>
 </ul>
-<div class="sourceCode" id="cb128"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb130"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">wdi_urban</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">gdppc</span> <span class="op">~</span> <span class="va">urban</span>, data <span class="op">=</span> <span class="va">wdi</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">wdi_urban</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
@@ -516,7 +516,7 @@ F-statistic: 77.07 on 1 and 176 DF,  p-value: 1.417e-15</code></pre>
 <li>What does this mean for the hypotheses?</li>
 <li>If we want to assess the influence of both independent variables together, we type:</li>
 </ul>
-<div class="sourceCode" id="cb130"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb132"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">wdi_joint</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">gdppc</span> <span class="op">~</span> <span class="va">lifeexp</span> <span class="op">+</span> <span class="va">urban</span>, data <span class="op">=</span> <span class="va">wdi</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">wdi_joint</span><span class="op">)</span></span></code></pre></div>
 <pre><code>
@@ -705,10 +705,10 @@ F-statistic: 71.55 on 2 and 166 DF,  p-value: &lt; 2.2e-16</code></pre>
 <li>Specify the SRF for Model 3, paying special attention to notation.</li>
 <li>Now assume, we want to know whether education has a bearing on the level of GDP. We call:</li>
 </ul>
-<div class="sourceCode" id="cb132"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb134"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">wdi_lit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">gdppc</span> <span class="op">~</span> <span class="va">literacy</span>, data <span class="op">=</span> <span class="va">wdi</span><span class="op">)</span></span></code></pre></div>
 <p>and also add it to the joint model:</p>
-<div class="sourceCode" id="cb133"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb135"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">wdi_joint1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">gdppc</span> <span class="op">~</span> <span class="va">lifeexp</span> <span class="op">+</span> <span class="va">urban</span> <span class="op">+</span> <span class="va">literacy</span>, data <span class="op">=</span> <span class="va">wdi</span><span class="op">)</span></span></code></pre></div>
 <p>This should lead to these results:</p>
  
