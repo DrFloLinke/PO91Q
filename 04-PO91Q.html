@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Week 4 – PO91Q: Fundamentals in Quantitative Research Methods</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./05-PO91Q.html" rel="next">
+<link href="./03-PO91Q.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-7c884608bb88d9d23eddf9360d6659a5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="theme-color" content="#1d1f2b" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#1d1f2b" media="(prefers-color-scheme: light)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/Crest_white.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title"><span class="title-long">PO91Q: Fundamentals in Quantitative Research Methods</span> <span class="title-short">PO91Q</span></span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-PO91Q.html"><span class="chapter-title">Week 4</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-PO91Q.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 1</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-PO91Q.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 2</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-PO91Q.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 3</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-PO91Q.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Week 4</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-PO91Q.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 5</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-PO91Q.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 6</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-PO91Q.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 7</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-PO91Q.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 8</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-PO91Q.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 9</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-PO91Q.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 10</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-Downloads.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Downloads</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-Glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Full Glossary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-bib.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">List of References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#self-assessment-questions" id="toc-self-assessment-questions" class="nav-link active" data-scroll-target="#self-assessment-questions">Self-Assessment Questions</a></li>
+  <li><a href="#calculating-confidence-intervals" id="toc-calculating-confidence-intervals" class="nav-link" data-scroll-target="#calculating-confidence-intervals">Calculating Confidence Intervals</a>
+  <ul class="collapse">
+  <li><a href="#we-know-sigma" id="toc-we-know-sigma" class="nav-link" data-scroll-target="#we-know-sigma">1. We know <span class="math inline">\(\sigma\)</span></a></li>
+  <li><a href="#we-dont-know-sigma" id="toc-we-dont-know-sigma" class="nav-link" data-scroll-target="#we-dont-know-sigma">2. We don’t know <span class="math inline">\(\sigma\)</span></a></li>
+  </ul></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
+  <ul class="collapse">
+  <li><a href="#conceptual-exercises" id="toc-conceptual-exercises" class="nav-link" data-scroll-target="#conceptual-exercises">Conceptual Exercises</a></li>
+  <li><a href="#r-exercises---core" id="toc-r-exercises---core" class="nav-link" data-scroll-target="#r-exercises---core">R Exercises - Core</a></li>
+  <li><a href="#r-exercises---going-further" id="toc-r-exercises---going-further" class="nav-link" data-scroll-target="#r-exercises---going-further">R Exercises - Going Further</a></li>
+  <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions</a></li>
+  </ul></li>
+  <li><a href="#homework-for-week-5" id="toc-homework-for-week-5" class="nav-link" data-scroll-target="#homework-for-week-5">Homework for Week 5</a></li>
+  <li><a href="#glossary" id="toc-glossary" class="nav-link" data-scroll-target="#glossary">Glossary</a></li>
+  <li><a href="#flashcards" id="toc-flashcards" class="nav-link" data-scroll-target="#flashcards">Flashcards</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Week 4</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="self-assessment-questions" class="level1 unnumbered">
+<h1 class="unnumbered">Self-Assessment Questions<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h1>
+<p>In your own words:</p>
+<ol type="1">
+<li>What does a significance test do?</li>
+<li>Give an example of a significance test.</li>
+<li>Give an example of a hypothesis that is not testable.</li>
+<li>Explain the difference between a significance test and a confidence interval.</li>
+<li>Explain the relationship between the size of the p-value and the Type I and II Errors.</li>
+</ol>
+<div class="stop">
+<p>Please stop here and don’t go beyond this point until we have compared notes on your answers.</p>
+</div>
+</section>
+<section id="calculating-confidence-intervals" class="level1 unnumbered">
+<h1 class="unnumbered">Calculating Confidence Intervals</h1>
+<p>Just as a reminder, what is a confidence interval?</p>
+<div class="def">
+<p><strong>Confidence Interval</strong></p>
+<p>A confidence interval is an estimated range, based on a sample, that is likely to contain the true population parameter (such as the mean). If the sampling process were repeated many times, approximately ( (1 - ) % ) of the resulting intervals would contain the true parameter. The value of ( ) determines the confidence level – for example, ( = 0.05 ) corresponds to a 95% confidence level, while ( = 0.01 ) corresponds to 99%. <span class="citation" data-cites="reiche:forthcoming">(Reiche, forthcoming)</span></p>
+</div>
+<p>There are two scenarios under which we are calculating confidence intervals: (1) we know <span class="math inline">\(\sigma\)</span> (the standard deviation of the population distribution), and (2) we don’t know <span class="math inline">\(\sigma\)</span>. Let me take you through these two scenarios in turn:</p>
+<section id="we-know-sigma" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="we-know-sigma">1. We know <span class="math inline">\(\sigma\)</span></h2>
+<p>If the population distribution is known and the population standard deviation (<span class="math inline">\(\sigma\)</span>) is available, we can construct a confidence interval using the standard normal distribution (z-distribution).</p>
+<p>Assume we have a sample of student ages with sample size <span class="math inline">\(n = 81\)</span> and a sample mean <span class="math inline">\(\bar{y} = 26\)</span>. The population standard deviation is known to be <span class="math inline">\(\sigma = 9\)</span>. We aim to construct a 99% confidence interval for the true population mean age of students. (In the lecture, we considered the 95% confidence level for this same scenario.)</p>
+<p>We begin by calculating the standard error of the sample mean:</p>
+<p><span class="math display">\[\begin{equation*}
+    \sigma_{\bar{y}} = \frac{\sigma}{\sqrt{n}}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+    \sigma_{\bar{y}} = \frac{9}{\sqrt{81}} = 1
+\end{equation*}\]</span></p>
+<p>What is important to bear in mind for the construction of confidence intervals, is that we do not just need the right-tail probability, because the area we are trying to cover under the distribution is symmetrical around the mean. This is visualised in Figure @ref(fig:95) where the area is defined between <span class="math inline">\(\pm\)</span> 1.96 standard deviations around the mean.</p>
+<div id="fig-95" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-95-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/Week 4/myplot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:55.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-95-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: 95 Percent Confidence Interval around the Mean
+</figcaption>
+</figure>
+</div>
+<p>As the orange area needs to be 95%, the remaing areas to the left and right need to be equal to 5% jointly. So each of them is 2.5%. When we look into our Table with right-tail probabilities, we therefore need to look for the z-score that corresponds to 0.025 (or 2.5%). When you look in the Normal Table (see <a href="files/Downloads/Statistical Tables.pdf">Statistical Tables</a>), then you will find this at z=1.96.</p>
+<p>Now, the question arises, how many standard deviations we need for a 99% confidence interval. The area to the left and right needs to be jointly 1%, or 0.05% each side. We consult the Normal Table again, and try to find the z-score for 0.005. The exact value is not available, only either 0.0051, or 0.0049. 0.0051 would lead to a confidence interval of 98.98%, so not quite large enough. We therefore need to go for 0.0049, and the corresponding z-score of z=2.58.</p>
+<p><span class="math display">\[\begin{equation*}
+y = \bar{y} \pm 2.58 \times \sigma_{\bar{Y}}
+\end{equation*}\]</span></p>
+<p>Popping the values in we receive</p>
+<p><span class="math display">\[\begin{equation*}
+26 \pm 2.58 \times 1
+\end{equation*}\]</span></p>
+<p>As a result, we can say that we are 99% confident that the true average age of students at Warwick lies between 23.42 and 28.58. Note that this confidence interval is wider than the 95% one where the boundaries were defined as 24.04 and 27.96. As we went for higher certainty here, the confidence interval became wider. If we want our interval to contain the true average in 99 out of 100 samples, we need to cast our net wider than if we were content with 95.</p>
+</section>
+<section id="we-dont-know-sigma" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="we-dont-know-sigma">2. We don’t know <span class="math inline">\(\sigma\)</span></h2>
+<p>If we don’t know the population distribution and its standard deviation, we need to use the t-distribution. As you know from the lecture, the t-distribution is a shape shifter. Its width depends on the degrees of freedom: the more degrees of freedom we have, the more narrow, or the closer to the normal distribution it comes. With df=30 the shapes of the t-distribution and the normal distribution are almost identical. You can see this in the following Figure, comparing the yellow t-distribution for <span class="math inline">\(df=30\)</span> and the black (normal) distribution.</p>
+<div id="fig-tdistribution" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tdistribution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/Week 4/myplot2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:65.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tdistribution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Comparison of t-Distributions
+</figcaption>
+</figure>
+</div>
+<p>In reversed logic, this also means that the t-distribution is rather wide for small sample sizes (and small df). Consequently, a confidence interval of a given level (e.g.&nbsp;99%) would be much wider for a small sample size than under the normal distribution (or t-distributions with higher sample sizes). Let me illustrate this using the same sample average as for the normal distribution example above, <span class="math inline">\(\bar{y}=26\)</span>. We have a sample standard deviation (<span class="math inline">\(s\)</span>) of 2. Our sample size is very small, we only have <span class="math inline">\(n=4\)</span>. Again, we want an interval within which we find with 99% confidence the true average age of students.</p>
+<p>We start by estimating the standard error:</p>
+<p><span class="math display">\[\begin{equation*}
+    se=\frac{s}{\sqrt{n}}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+se=\frac{2}{\sqrt{4}}=1
+\end{equation*}\]</span></p>
+<p>This time we have to search in the t-Table, taking into account the degrees of freedom. As <span class="math inline">\(n=4\)</span>, this means that <span class="math inline">\(df=3\)</span>. Conveniently, the Table lists at the top the desired confidence interval. For <span class="math inline">\(df=3\)</span> and a 99% confidence interval, the corresponding t-value is 5.841. Once again, we calculate:</p>
+<p><span class="math display">\[\begin{equation*}
+\bar{y} \pm 5.841 \times se
+\end{equation*}\]</span></p>
+<p>and</p>
+<p><span class="math display">\[\begin{equation*}
+26 \pm 5.841 \times 1
+\end{equation*}\]</span></p>
+<p>The resulting boundaries are 20.159 as the lower boundary, and 31.841 as the upper boundary. This is far wider than the 99% confidence interval we obtained for the normal distribution, where the lower and upper boundaries were 23.42 and 28.58, respectively. This is a reflection of the fact that we only had a very small sample (<span class="math inline">\(n=4\)</span>) to base our inference on and therefore have a lot of uncertainty in our inference.</p>
+<p>To conclude, it is fair to say that the procedure is essentially the same as with the normal procedure, only that have to go the extra step of taking into account the degrees of freedom.</p>
+<p>You are now ready to do some exercises.</p>
+</section>
+</section>
+<section id="exercises" class="level1 unnumbered">
+<h1 class="unnumbered">Exercises</h1>
+<div class="bulb">
+<p><strong>Interpreting Significance Tests</strong></p>
+<p>In these exercises, and when reporting statistical results more generally, you’ll be required to interpret the outcome of a significance test. To do this well, it’s important to use language that reflects what null hypothesis significance testing (NHST) actually tells us, without overstating what the test can conclude.</p>
+<p>NHST works by starting with the null hypothesis - usually a claim like “there is no effect” or “there is no difference”. We use the data to test whether that assumption is plausible. If the p-value is small, it means that results as extreme as the one we observed — or more extreme — would be rare if the null hypothesis were true. So, we take that as evidence against the null. But if the p-value is large, then the data are consistent with the null. And that’s where your interpretation should stop (at least at the introductory level, to avoid stretching and overstating).</p>
+<p>There are two possible outcomes of a significance test: (1) your p-value is <strong>below</strong> the required significance level, and (2) your p-value is <strong>above</strong> the required significance level. Let’s look at these in turn:</p>
+<ol type="1">
+<li><p>If your p-value is below the required significance level, you can say things like:</p>
+<ul>
+<li>“There is evidence of an effect.”</li>
+<li>“We reject the null hypothesis.”</li>
+<li>“The data provide evidence against the null hypothesis.”</li>
+<li>“There is statistically significant evidence of a difference (or relationship, or effect).”</li>
+</ul>
+<p><span style="display:block; height: 0.5em;"></span></p>
+<p>Avoid phrasing that implies certainty, such as:</p>
+<ul>
+<li>🚫 “We proved the alternative hypothesis.”</li>
+<li>🚫 “We proved that there is an effect.”</li>
+<li>🚫 “We accept the alternative hypothesis.”</li>
+</ul></li>
+</ol>
+<p><span style="display:block; height: 0.1em;"></span></p>
+<ol start="2" type="1">
+<li><p>If your p-value is above the required significance level to reject the null hypothesis, you can say things like:</p>
+<ul>
+<li>“There is insufficient evidence for an effect (of a difference, for a relationship).”</li>
+<li>“We cannot reject the null hypothesis.”</li>
+<li>“We fail to reject the null hypothesis.”</li>
+<li>“The results are consistent with the null hypothesis.”</li>
+</ul>
+<p><span style="display:block; height: 0.5em;"></span></p>
+<p>Avoid phrasing that overstates what the test can tell you, such as:</p>
+<ul>
+<li>🚫 “We proved the null hypothesis.”</li>
+<li>🚫 “We reject the alternative hypothesis.”</li>
+<li>🚫 “The null hypothesis is true.”</li>
+</ul></li>
+</ol>
+<p><span style="display:block; height: 0.1em;"></span></p>
+<p>Having taught quantitative political analysis for many years, I know that students love to use the word “prove” when they interpret their results. But there is no proof in significance testing, because we deal with probability statements, not certainty.</p>
+</div>
+<section id="conceptual-exercises" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="conceptual-exercises">Conceptual Exercises<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></h2>
+<ol type="1">
+<li>A researcher is analysing individuals’ relative fear of being a victim of burglary on a 1-100 scale. A random sample of 9 individuals found a mean score of 47 on the scale with a sample variance of 158.76 for fear of being burgled.
+<ol type="a">
+<li>What distribution would be used to calculate an 80% confidence interval around this mean?</li>
+<li>Construct that interval.</li>
+</ol></li>
+<li>We are investigating the height of men in the UK. For this we have obtained a random sample of 100 UK men and found they had a mean height of 180cm with a standard deviation of 10cm.
+<ol type="a">
+<li>Construct a 95% confidence interval for the mean height of UK males.</li>
+<li>Select all true statements concerning the constructed confidence interval and justify your choice for each statement.
+<ol type="i">
+<li>The probability of the population mean being within the upper and lower bounds is 95%.</li>
+<li>95% of men’s heights fall between the upper and lower bound.</li>
+<li>95% of the cases in the sample fall between the upper and lower bound.</li>
+<li>On average 95% of confidence intervals constructed would contain the population mean.</li>
+<li>On average 95% of the means of samples with 100 respondents will fall within the upper and lower bands.</li>
+</ol></li>
+</ol></li>
+</ol>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="r-exercises---core" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="r-exercises---core">R Exercises - Core</h2>
+<p>These exercises will use the <a href="files/Week 4/ks2.csv">ks2</a> dataset. This data comprises fictitious<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> average grades of Key Stage 2 (KS2) students in the UK, with 1,980 KS2 students’ test scores being included for reading (<code>reading</code>), mathematics (<code>maths</code>), and grammar, punctuation, and spelling (<code>gps</code>), as well as the mean of these three test scores (<code>avg_all</code>). The test scores have been standardised, with 80 representing the lowest possible mark, 120 representing the highest possible mark, 100 representing the minimum passing mark, and -1 representing an ungraded test.</p>
+<ol type="1">
+<li>Load the <code>ks2</code> dataset into R. Remove any observations that have any ungraded test scores.</li>
+<li>Calculate the means and standard deviations of each of the three subjects. Write a brief description of the insights that can be drawn from these values.</li>
+<li>Conduct a t-test to see if the means of each of the three subjects’ marks are statistically different from 100 at the 95% confidence level. Identify three ways that suggest statistically significant or insignificant differences.</li>
+<li>Conduct a t-test to see if the mean of the average score of the three tests is statistically less than 105 at the 99% confidence level. Interpret the results.</li>
+<li>The following questions will look at students’ English abilities generally.
+<ol type="a">
+<li>Create a new variable called <code>english</code>, which consists of the average of the reading and grammar, punctuation, and spelling variables.</li>
+<li>Conduct a t-test to see if the mean of the average score of the new English variable is statistically less than 105 at the 99.9% confidence level. Interpret the results.</li>
+<li>Conduct a t-test to see if the mean of the average score of the new English variable is statistically different from 105 at the 99.9% confidence level. Interpret the results.</li>
+<li>Is the any difference in the interpretation between the two above tests? Are there any differences in the results? Why?</li>
+</ol></li>
+<li>You are tasked with investing the performance of students who passed in mathematics those who did not. For the following tests, use a 95% confidence level.
+<ol type="a">
+<li>Create a binary variable that has two categories: those who passed mathematics (100 <span class="math inline">\(\leq\)</span> mark) and those who failed mathematics (mark <span class="math inline">\(&lt;\)</span> 100).</li>
+<li>Conduct a proportion test to see if the proportion of students that fail mathematics is 10% or greater. Interpret the results.</li>
+<li>Conduct a t-test on the group who fail mathematics to see if they, on average, have marks for English statistically less than 100. Interpret the results.</li>
+<li>Conduct a t-test on the group who pass mathematics to see if they, on average, have marks for grammar, spelling, and punctuation statistically greater than 105. Interpret the results.</li>
+</ol></li>
+<li>Now it is worth investigating how students who fail at least one subject perform.
+<ol type="a">
+<li>Create a binary variable that has two categories: those who passed all three subjects (all marks greater than or equal to 100) and those who failed at least one subject (one or more marks less than 100).</li>
+<li>It can be hypothesised that the group of students who failed will have a mean of all of the test marks significantly below the pass mark of 100. Test this and interpret the findings with respect to the statistical and practical significance of the test.</li>
+</ol></li>
+</ol>
+</section>
+<section id="r-exercises---going-further" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="r-exercises---going-further">R Exercises - Going Further</h2>
+<ol type="1">
+<li>Imagine you are part of a team work working within the Department for Education, tasked with investigating this sample to produce recommendations for policymakers.
+<ol type="a">
+<li>Normalise the variable that contains the average of all three marks by setting the lowest mark (80) to 0, the highest mark (120) to 100, and the minimum pass mark (100) to 50. Justify why it might be useful to normalise these marks to this scale for non-specialist policymakers.</li>
+<li>Construct a categorical variable that consists of five categories: 0-49.99 (<code>Fail</code>), 50-59.99 (<code>Pass</code>), 60-60.99 (<code>Merit</code>), 70-79.99 (<code>Distinction</code>), and 80+ (<code>Distinction+</code>).</li>
+<li>Answer the following questions but write your answers as if intended for a non-specialist policy making with no knowledge of statistics:
+<ol type="i">
+<li>Are the averages of the <code>Pass</code>, <code>Merit</code>, and <code>Distinction</code> groups different from their middle marks (55, 65, and 75, respectively)? If so, which direction?</li>
+<li>Is the average mark of the <code>Distinction+</code> group lower than the maximum mark of the group?</li>
+<li>Is the mean mark of the <code>Fail</code> group higher than the median mark of the group? Which skew does this indicate in the distribution?</li>
+</ol></li>
+</ol></li>
+</ol>
+</section>
+<section id="solutions" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="solutions">Solutions</h2>
+<p>You can find the Solutions in the <a href="https://drfloreiche.github.io/PO91Q/11-Downloads.html">Downloads Section</a>.</p>
+</section>
+</section>
+<section id="homework-for-week-5" class="level1 unnumbered">
+<h1 class="unnumbered">Homework for Week 5</h1>
+<ul>
+<li>Finish working through this worksheet.</li>
+<li>Add a note underneath each code chunk in your RScript (by starting the line with <code>#</code>), translating the code into plain English.</li>
+<li>Read the required literature for week 5.</li>
+<li>Work through <a href="https://drfloreiche.github.io/PO91Q/flashcards.html">this week’s flashcards</a> to familiarise yourself with the relevant R functions.</li>
+<li>Find an example for each NEW function and apply it in R to ensure it works.</li>
+</ul>
+</section>
+<section id="glossary" class="level1 unnumbered">
+<h1 class="unnumbered">Glossary</h1>
+<p>&nbsp;</p>
+<div class="glossary-table">
+<div class="cell" data-tbl-colwidths="[25,75]">
+<div id="tbl-glossary4" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[25,75]">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-glossary4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell table table-sm table-striped small">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Term</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">alternative hypothesis</td>
+<td style="text-align: left;">The alternative hypothesis, denoted as <span class="math inline">\(H_1\)</span> or <span class="math inline">\(H_a\)</span>, on the other hand, proposes that there is an effect or a difference. Again, more formally, we can state that <span class="math inline">\(\mu \ne \mu_{0}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">confidence interval</td>
+<td style="text-align: left;">A confidence interval is an estimated range, based on a sample, that is likely to contain the true population parameter (such as the mean). If the sampling process were repeated many times, approximately ( (1 - ) % ) of the resulting intervals would contain the true parameter. The value of ( ) determines the – for example, ( = 0.05 ) corresponds to a 95% confidence level, while ( = 0.01 ) corresponds to 99%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">confidence level</td>
+<td style="text-align: left;">The confidence level is the proportion of confidence intervals, constructed from repeated random samples of the same population using the same method, that are expected to contain the true population parameter. It is denoted by ( 1 - ), where ( ) is the significance level. For example, a 95% confidence level implies that 95% of such intervals would contain the true parameter in the long run.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">critical value</td>
+<td style="text-align: left;">The critical value is a threshold that determines the boundary for rejecting the null hypothesis (H<span class="math inline">\(_0\)</span>) in a hypothesis test. It is a point on the probability distribution of the test statistic beyond which the null hypothesis is rejected. The critical value is chosen based on the significance level (<span class="math inline">\(\alpha\)</span>) of the test, which represents the probability of making a Type I error (i.e., rejecting a true null hypothesis)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">hypothesis</td>
+<td style="text-align: left;">In statistics, a hypothesis is a formal statement about a population parameter or relationship between variables. Hypotheses guide statistical tests to determine whether data support or refute them. The hypothesis suggesting an effect or difference is called the alternative hypothesis. The alternative hypothesis is always paired with a null-hypothesis, suggesting no effect or difference</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">null hypothesis</td>
+<td style="text-align: left;">The null hypothesis, denoted as <span class="math inline">\(H_0\)</span>, typically asserts that there is no effect or no difference – it serves as the point of comparison in the significance test. It thus assumes that the population value is equal to a specific value that indicates no effect. More formally, we can can note this as <span class="math inline">\(H_{0}: \mu = \mu_{0}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">p-value</td>
+<td style="text-align: left;">The p-value indicates the probability of obtaining a result equal to, or even more extreme than the observed value in the direction of the alternative hypothesis, assuming the null hypothesis is true. Common thresholds for significance are 0.05, 0.01, and 0.001. A smaller p-value suggests stronger evidence against the null hypothesis. The p-value is denoted as <span class="math inline">\(p\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">significance level</td>
+<td style="text-align: left;">The significance level, denoted by <span class="math inline">\(\alpha\)</span>, is the threshold used in hypothesis testing to determine if a result is statistically significant. It represents the probability of rejecting the null hypothesis when it’s actually true (a Type I error). Common levels are 0.05 or 0.01, indicating 5% or 1% risk. We will cover this properly in Week 9.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">significance test</td>
+<td style="text-align: left;">A significance test is a statistical method used to determine whether observed data provide enough evidence to reject a null hypothesis. It calculates a probability of observing data as extreme as, or more extreme than, the actual sample results, assuming the null hypothesis is true</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">test statistic</td>
+<td style="text-align: left;">A test statistic is a value calculated from the sample data that is used to decide whether to reject the null hypothesis (H<span class="math inline">\(_0\)</span>) in a hypothesis test. It quantifies the degree to which the observed data diverges from what is expected under the null hypothesis. In a t-test, the test statistic is a t-value, which measures the distance between the sample mean and the (hypothesised) population mean, expressed in units of standard errors</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Type I Error</td>
+<td style="text-align: left;">A Type I Error occurs when a null hypothesis (H<span class="math inline">\(_0\)</span>) that is actually true is incorrectly rejected. It is also known as a false positive errors, as it suggests that an effect of difference exists, when, in fact, it does not. The probability of committing a Type I Error is denoted by the significance level (<span class="math inline">\(\alpha\)</span>) of the test, which is typically set before conducting the test (e.g.&nbsp;<span class="math inline">\(\alpha\)</span> = 0.05). This means that there is a 5% chance of rejecting the true null hypothesis</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Type II Error</td>
+<td style="text-align: left;">A Type II Error occurs when a null hypothesis (H<span class="math inline">\(_0\)</span>) that is actually false is incorrectly accepted (or not rejected). It is also known as a false negative error, as it suggests that no effect or difference exists when, in fact, there is one</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-glossary4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Glossary Week 4
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+</section>
+<section id="flashcards" class="level1 unnumbered">
+<h1 class="unnumbered">Flashcards</h1>
+<div class="flashcard">
+<details>
+<summary>
+New Functions This Week
+</summary>
+<div style="padding-bottom:56.25%; position:relative; display:block; width: 100%">
+<p><iframe width="100%" height="100%" src="files/flashcards/PO91Q_Week 4_New.html" frameborder="0" allowfullscreen="" style="position:absolute; top:0; left: 0"> </iframe></p>
+</div>
+<p>
+&nbsp;
+</p>
+The data are available as a <a href="files/excelfiles/PO91Q_Week 4_New.csv">.csv file</a>.
+</details>
+</div>
+<div class="flashcard">
+<details>
+<summary>
+R Functions This Week
+</summary>
+<div style="padding-bottom:56.25%; position:relative; display:block; width: 100%">
+<p><iframe width="100%" height="100%" src="files/flashcards/PO91Q_Week 4_All.html" frameborder="0" allowfullscreen="" style="position:absolute; top:0; left: 0"> </iframe></p>
+</div>
+<p>
+&nbsp;
+</p>
+The data are available as a <a href="files/excelfiles/PO91Q_Week 4_All.csv">.csv file</a>.
+</details>
+</div>
+<div class="flashcard">
+<details>
+<summary>
+All R Functions So Far
+</summary>
+<div style="padding-bottom:56.25%; position:relative; display:block; width: 100%">
+<p><iframe width="100%" height="100%" src="files/flashcards/PO91Q_Week 4_Consolidate.html" frameborder="0" allowfullscreen="" style="position:absolute; top:0; left: 0"> </iframe></p>
+</div>
+<p>
+&nbsp;
+</p>
+The data are available as a <a href="files/excelfiles/PO91Q_Week 4_Consolidate.csv">.csv file</a>.
+</details>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-reiche:forthcoming" class="csl-entry" role="listitem">
+Reiche, F. (forthcoming). <em><span class="nocase">Introduction to Quantitative Methods in the Social Sciences</span></em>. Oxford: Oxford University Press.
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Some of the content of this worksheet is taken from <span class="citation" data-cites="reiche:forthcoming">Reiche (forthcoming)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>These are taken from <span class="citation" data-cites="reiche:forthcoming">Reiche (forthcoming)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>The means are based on KS2 scaled score averages which have been averaged over 2016-2019.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const toc = document.querySelector("nav#TOC");
+  if (toc) {
+    const link = document.createElement("div");
+    link.innerHTML = `
+      <div style="margin-top:1em; font-family: Lexend, sans-serif; font-size:0.9em;">
+        <a href="https://drfloreiche.github.io/" target="_blank" style="color:#cd6118; text-decoration:none;">
+          Back to Flo's Home
+        </a>
+      </div>
+    `;
+    toc.appendChild(link);
+  }
+});
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".delayed-download");
+
+    buttons.forEach(function (btn) {
+      const releaseDate = new Date(btn.dataset.date);
+      const now = new Date();
+
+      if (now >= releaseDate) {
+        btn.classList.remove("disabled");
+        btn.setAttribute("aria-disabled", "false");
+        btn.setAttribute("href", btn.dataset.path);
+        btn.setAttribute("download", btn.dataset.path.split('/').pop());
+        btn.innerHTML = btn.dataset.label || "📄 Download Document";
+      }
+    });
+  });
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./03-PO91Q.html" class="pagination-link" aria-label="Week 3">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Week 3</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./05-PO91Q.html" class="pagination-link" aria-label="Week 5">
+        <span class="nav-page-text"><span class="chapter-title">Week 5</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
