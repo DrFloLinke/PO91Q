@@ -494,8 +494,8 @@ Code for Data Analysis
 
     <script>
 
-      function styleCell_w50h7bfihhv81m8wxfvi(i, j, css_id) {
-          var table = document.getElementById("tinytable_w50h7bfihhv81m8wxfvi");
+      function styleCell_st3ijhctxw55c9ai8us9(i, j, css_id) {
+          var table = document.getElementById("tinytable_st3ijhctxw55c9ai8us9");
           var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -504,8 +504,8 @@ Code for Data Analysis
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
       }
-      function spanCell_w50h7bfihhv81m8wxfvi(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_w50h7bfihhv81m8wxfvi");
+      function spanCell_st3ijhctxw55c9ai8us9(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_st3ijhctxw55c9ai8us9");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
         if (!targetCell) {
           console.warn(`Cell at (${i}, ${j}) not found.`);
@@ -536,21 +536,21 @@ Code for Data Analysis
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '-1', j: 2 }, { i: '-1', j: 3 },  ], css_id: 'tinytable_css_p5524286h806pgpb7psd',}, 
-          { positions: [ { i: '6', j: 1 }, { i: '6', j: 2 }, { i: '6', j: 3 },  ], css_id: 'tinytable_css_ljb9u9k4cfwr19435nd3',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '2', j: 2 }, { i: '4', j: 2 }, { i: '1', j: 2 }, { i: '2', j: 3 }, { i: '3', j: 1 }, { i: '4', j: 3 }, { i: '5', j: 2 }, { i: '3', j: 2 }, { i: '1', j: 3 }, { i: '3', j: 3 }, { i: '5', j: 3 },  ], css_id: 'tinytable_css_ujzpxujfeck95da9ah1c',}, 
-          { positions: [ { i: '-1', j: 1 },  ], css_id: 'tinytable_css_b9o7oz0sirg6pb8q281e',}, 
-          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 },  ], css_id: 'tinytable_css_0l198h4ccmyslkskxd2m',}, 
-          { positions: [ { i: '6', j: 0 },  ], css_id: 'tinytable_css_jjbs6gxseuemnjjqahzk',}, 
-          { positions: [ { i: '1', j: 0 }, { i: '2', j: 0 }, { i: '3', j: 0 }, { i: '4', j: 0 }, { i: '5', j: 0 },  ], css_id: 'tinytable_css_gld3dc3l61ytb9tl18jl',}, 
-          { positions: [ { i: '-1', j: 0 },  ], css_id: 'tinytable_css_2gpybbqqh6sdqtpuf45v',}, 
-          { positions: [ { i: '0', j: 0 },  ], css_id: 'tinytable_css_7mo4gtssnvtpill61b17',}, 
+          { positions: [ { i: '-1', j: 2 }, { i: '-1', j: 3 },  ], css_id: 'tinytable_css_btjjh2hwibchrznjh2ta',}, 
+          { positions: [ { i: '6', j: 1 }, { i: '6', j: 2 }, { i: '6', j: 3 },  ], css_id: 'tinytable_css_i328tzoqgy0ar9u4tn4m',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '2', j: 2 }, { i: '4', j: 2 }, { i: '1', j: 2 }, { i: '2', j: 3 }, { i: '3', j: 1 }, { i: '4', j: 3 }, { i: '5', j: 2 }, { i: '3', j: 2 }, { i: '1', j: 3 }, { i: '3', j: 3 }, { i: '5', j: 3 },  ], css_id: 'tinytable_css_qqub8wyzlvj3or08obcd',}, 
+          { positions: [ { i: '-1', j: 1 },  ], css_id: 'tinytable_css_omx8hp6vmb4fcwbr8muk',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 2 }, { i: '0', j: 3 },  ], css_id: 'tinytable_css_k07prjosnhsam6c5evnx',}, 
+          { positions: [ { i: '6', j: 0 },  ], css_id: 'tinytable_css_6qo35jo8r84jjcwmawgu',}, 
+          { positions: [ { i: '1', j: 0 }, { i: '2', j: 0 }, { i: '3', j: 0 }, { i: '4', j: 0 }, { i: '5', j: 0 },  ], css_id: 'tinytable_css_5r2knnegug0anwatqq5d',}, 
+          { positions: [ { i: '-1', j: 0 },  ], css_id: 'tinytable_css_xhke9atbkq5p08xbsfoc',}, 
+          { positions: [ { i: '0', j: 0 },  ], css_id: 'tinytable_css_0om5fhjlvx6kg8wq8vb1',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_w50h7bfihhv81m8wxfvi(cell.i, cell.j, group.css_id);
+                  styleCell_st3ijhctxw55c9ai8us9(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -558,18 +558,18 @@ Code for Data Analysis
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_p5524286h806pgpb7psd, .table th.tinytable_css_p5524286h806pgpb7psd { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
-      .table td.tinytable_css_ljb9u9k4cfwr19435nd3, .table th.tinytable_css_ljb9u9k4cfwr19435nd3 { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_ujzpxujfeck95da9ah1c, .table th.tinytable_css_ujzpxujfeck95da9ah1c { text-align: center; }
-      .table td.tinytable_css_b9o7oz0sirg6pb8q281e, .table th.tinytable_css_b9o7oz0sirg6pb8q281e { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_0l198h4ccmyslkskxd2m, .table th.tinytable_css_0l198h4ccmyslkskxd2m { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_jjbs6gxseuemnjjqahzk, .table th.tinytable_css_jjbs6gxseuemnjjqahzk { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_gld3dc3l61ytb9tl18jl, .table th.tinytable_css_gld3dc3l61ytb9tl18jl { text-align: left; }
-      .table td.tinytable_css_2gpybbqqh6sdqtpuf45v, .table th.tinytable_css_2gpybbqqh6sdqtpuf45v { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
-      .table td.tinytable_css_7mo4gtssnvtpill61b17, .table th.tinytable_css_7mo4gtssnvtpill61b17 { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_btjjh2hwibchrznjh2ta, .table th.tinytable_css_btjjh2hwibchrznjh2ta { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_i328tzoqgy0ar9u4tn4m, .table th.tinytable_css_i328tzoqgy0ar9u4tn4m { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_qqub8wyzlvj3or08obcd, .table th.tinytable_css_qqub8wyzlvj3or08obcd { text-align: center; }
+      .table td.tinytable_css_omx8hp6vmb4fcwbr8muk, .table th.tinytable_css_omx8hp6vmb4fcwbr8muk { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_k07prjosnhsam6c5evnx, .table th.tinytable_css_k07prjosnhsam6c5evnx { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_6qo35jo8r84jjcwmawgu, .table th.tinytable_css_6qo35jo8r84jjcwmawgu { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_5r2knnegug0anwatqq5d, .table th.tinytable_css_5r2knnegug0anwatqq5d { text-align: left; }
+      .table td.tinytable_css_xhke9atbkq5p08xbsfoc, .table th.tinytable_css_xhke9atbkq5p08xbsfoc { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_0om5fhjlvx6kg8wq8vb1, .table th.tinytable_css_0om5fhjlvx6kg8wq8vb1 { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_w50h7bfihhv81m8wxfvi" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_st3ijhctxw55c9ai8us9" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
 <tr>
 <th scope="col" align="center" colspan="1" data-row="-1" data-col="0"> </th>
@@ -704,7 +704,7 @@ Table&nbsp;1: Regression Models for Self-Reflection Exercises
 <section id="homework" class="level1 unnumbered">
 <h1 class="unnumbered">Homework</h1>
 <ul>
-<li>Work through <a href="https://drfloreiche.github.io/PO11Q/flashcards-4.html">this week’s flashcards</a> to familiarise yourself with the relevant R functions.</li>
+<li>Work through <a href="https://drfloreiche.github.io/PO91Q/10-PO91Q.html#flashcards">this week’s flashcards</a> to familiarise yourself with the relevant R functions.</li>
 <li>Find an example for each NEW function and apply it in R to ensure it works</li>
 <li>Prepare yourself for the exam in January</li>
 </ul>
