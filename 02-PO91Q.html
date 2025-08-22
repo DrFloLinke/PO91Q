@@ -124,9 +124,21 @@ div.csl-indent {
 <meta name="theme-color" content="#1d1f2b" media="(prefers-color-scheme: light)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script>
+// This MUST come before the script src above
+window.MathJax = {
+  tex: {
+    // (Quarto already sets these, but harmless to repeat)
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  // Tell the CHTML output to use Fira
+  chtml: { font: 'mathjax-fira' }
+};
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml-nofont.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -1062,7 +1074,7 @@ Base R Solution
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(EU<span class="sc">$</span>popmio, <span class="at">breaks =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-eu-pop-basic-hist" class="quarto-float quarto-figure quarto-figure-center anchored" width="50%" data-fig-align="center">
+<div id="fig-eu-pop-basic-hist" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="50%">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-eu-pop-basic-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="02-PO91Q_files/figure-html/fig-eu-pop-basic-hist-1.png" id="fig-eu-pop-basic-hist" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" style="width:50.0%">
