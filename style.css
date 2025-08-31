@@ -826,3 +826,9 @@ header.navbar,
   border: 0 !important;
   box-shadow: none !important;
 }
+
+/* optional: slightly rounder corners */
+#quarto-sidebarnav-toggle .quarto-sidebar-toggle-title,
+#quarto-toc-toggle       .quarto-sidebar-toggle-title{
+  border-radius: 0.2rem;
+}
