@@ -786,3 +786,58 @@ header.navbar,
    Reader Mode Tabs
 ---------------------------------------- */
 
+/* Make default Bootstrap surfaces dark even in “light” scheme */
+:root,
+html[data-bs-theme="light"] {
+  --bs-body-bg:      #0b0f19;
+  --bs-secondary-bg: #0f1220;
+  --bs-tertiary-bg:  #0f1220;
+  --bs-body-color:   #e1e2ea;
+  --bs-border-color: #2b2f3c;
+}
+
+/* The two white pills when sidebars are collapsed live in the secondary nav */
+.quarto-secondary-nav .btn,
+.quarto-secondary-nav .dropdown-toggle,
+.quarto-secondary-nav .toc-dropdown .btn {
+  background: #141a29 !important;
+  color: #e1e2ea !important;
+  border: 1px solid #2b2f3c !important;
+  border-radius: .8rem !important;
+  box-shadow: none !important;
+}
+
+.quarto-secondary-nav .btn:hover,
+.quarto-secondary-nav .dropdown-toggle:hover {
+  background: #1b2031 !important;
+  color: #ffffff !important;
+}
+
+/* Keep the dropdown menu dark too */
+.quarto-secondary-nav .dropdown-menu {
+  background: #0f1220 !important;
+  color: #e1e2ea !important;
+  border: 1px solid #2b2f3c !important;
+}
+.quarto-secondary-nav .dropdown-item {
+  color: #e1e2ea !important;
+}
+.quarto-secondary-nav .dropdown-item:hover,
+.quarto-secondary-nav .dropdown-item:focus {
+  background: #141a29 !important;
+  color: #ffffff !important;
+}
+
+/* Safety net: if Quarto gives those pills bg-body/bg-white classes */
+.quarto-secondary-nav .bg-body,
+.quarto-secondary-nav .bg-white {
+  background: #141a29 !important;
+  color: #e1e2ea !important;
+  border-color: #2b2f3c !important;
+}
+
+/* Don’t let nested “body” utility classes re-lighten text inside the buttons */
+.quarto-secondary-nav .btn .text-body,
+.quarto-secondary-nav .btn .link-body-emphasis {
+  color: inherit !important;
+}
