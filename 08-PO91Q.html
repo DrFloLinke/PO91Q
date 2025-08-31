@@ -767,7 +767,7 @@ Code for Data Analysis
 <li>How does OLS fit the regression line?</li>
 <li>Why do we need a measure to assess goodness of fit?</li>
 <li>Consider the causality framework of Week 5. To what extent is bivariate regression helpful to establish causality?</li>
-<li>I have written <a href="https://drflorianreiche.shinyapps.io/shiny_reg_calc/">this app</a> (opens in a new tab) which allows you to enter up to five observations and it will automatically calculate all of the values we have covered so far. Familiarise yourself with this app, so you can use it for exam preparation.</li>
+<li>I have written <a href="https://drflorianreiche.shinyapps.io/shiny_reg_calc/">this app</a> (opens in a new tab) which allows you to enter up to five observations and it will automatically calculate regression coefficients, their standard errors, and model fit. We will be doing this (with ten observations) in the conceptual exercises below. But familiarise yourself with this app, so you can use it for exam preparation.</li>
 </ol>
 <div class="stop">
 <p>Please stop here and don’t go beyond this point until we have compared notes on your answers.</p>
@@ -1432,8 +1432,8 @@ idaci        0.0197651 0.00289364  6.830532 2.397995e-09</code></pre>
 
     <script>
 
-      function styleCell_72spajjm5mtu9imceeyx(i, j, css_id) {
-          var table = document.getElementById("tinytable_72spajjm5mtu9imceeyx");
+      function styleCell_xm3vy2imsxywhs4as0kq(i, j, css_id) {
+          var table = document.getElementById("tinytable_xm3vy2imsxywhs4as0kq");
           var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -1442,8 +1442,8 @@ idaci        0.0197651 0.00289364  6.830532 2.397995e-09</code></pre>
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
       }
-      function spanCell_72spajjm5mtu9imceeyx(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_72spajjm5mtu9imceeyx");
+      function spanCell_xm3vy2imsxywhs4as0kq(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_xm3vy2imsxywhs4as0kq");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
         if (!targetCell) {
           console.warn(`Cell at (${i}, ${j}) not found.`);
@@ -1474,20 +1474,20 @@ idaci        0.0197651 0.00289364  6.830532 2.397995e-09</code></pre>
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '4', j: 1 },  ], css_id: 'tinytable_css_585cecsgmkcbykx636gj',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 },  ], css_id: 'tinytable_css_bkjij233kike49q2sfpd',}, 
-          { positions: [ { i: '-1', j: 1 },  ], css_id: 'tinytable_css_3to1ha1fuu5otqjdfcxw',}, 
-          { positions: [ { i: '0', j: 1 },  ], css_id: 'tinytable_css_fmb4hmf3mnoj7pegweou',}, 
-          { positions: [ { i: '4', j: 0 },  ], css_id: 'tinytable_css_foilj6scc8wqhlexqkdi',}, 
-          { positions: [ { i: '1', j: 0 }, { i: '2', j: 0 }, { i: '3', j: 0 },  ], css_id: 'tinytable_css_ekk4ftrou2boy91msgk6',}, 
-          { positions: [ { i: '-1', j: 0 },  ], css_id: 'tinytable_css_ixadv7cz2b3dg1fjcww1',}, 
-          { positions: [ { i: '0', j: 0 },  ], css_id: 'tinytable_css_1o0cccj7etuq9v7u6ltv',}, 
+          { positions: [ { i: '4', j: 1 },  ], css_id: 'tinytable_css_gsf3zp2xxv651bidbqwb',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 },  ], css_id: 'tinytable_css_3gbg7gc1svy670orsomk',}, 
+          { positions: [ { i: '-1', j: 1 },  ], css_id: 'tinytable_css_ty8ll657onr1sm8k73td',}, 
+          { positions: [ { i: '0', j: 1 },  ], css_id: 'tinytable_css_pc1hutwe5psel9jy7e0b',}, 
+          { positions: [ { i: '4', j: 0 },  ], css_id: 'tinytable_css_jdvkfmhomitbxmecvkaz',}, 
+          { positions: [ { i: '1', j: 0 }, { i: '2', j: 0 }, { i: '3', j: 0 },  ], css_id: 'tinytable_css_lmgpfkwqjj1uxtetrzcs',}, 
+          { positions: [ { i: '-1', j: 0 },  ], css_id: 'tinytable_css_vysuiezko8iuawmmfd55',}, 
+          { positions: [ { i: '0', j: 0 },  ], css_id: 'tinytable_css_xn1vs2utqf59ui0w0he8',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_72spajjm5mtu9imceeyx(cell.i, cell.j, group.css_id);
+                  styleCell_xm3vy2imsxywhs4as0kq(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -1495,17 +1495,17 @@ idaci        0.0197651 0.00289364  6.830532 2.397995e-09</code></pre>
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_585cecsgmkcbykx636gj, .table th.tinytable_css_585cecsgmkcbykx636gj { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_bkjij233kike49q2sfpd, .table th.tinytable_css_bkjij233kike49q2sfpd { text-align: center; }
-      .table td.tinytable_css_3to1ha1fuu5otqjdfcxw, .table th.tinytable_css_3to1ha1fuu5otqjdfcxw { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_fmb4hmf3mnoj7pegweou, .table th.tinytable_css_fmb4hmf3mnoj7pegweou { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_foilj6scc8wqhlexqkdi, .table th.tinytable_css_foilj6scc8wqhlexqkdi { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_ekk4ftrou2boy91msgk6, .table th.tinytable_css_ekk4ftrou2boy91msgk6 { text-align: left; }
-      .table td.tinytable_css_ixadv7cz2b3dg1fjcww1, .table th.tinytable_css_ixadv7cz2b3dg1fjcww1 { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
-      .table td.tinytable_css_1o0cccj7etuq9v7u6ltv, .table th.tinytable_css_1o0cccj7etuq9v7u6ltv { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_gsf3zp2xxv651bidbqwb, .table th.tinytable_css_gsf3zp2xxv651bidbqwb { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_3gbg7gc1svy670orsomk, .table th.tinytable_css_3gbg7gc1svy670orsomk { text-align: center; }
+      .table td.tinytable_css_ty8ll657onr1sm8k73td, .table th.tinytable_css_ty8ll657onr1sm8k73td { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_pc1hutwe5psel9jy7e0b, .table th.tinytable_css_pc1hutwe5psel9jy7e0b { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_jdvkfmhomitbxmecvkaz, .table th.tinytable_css_jdvkfmhomitbxmecvkaz { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_lmgpfkwqjj1uxtetrzcs, .table th.tinytable_css_lmgpfkwqjj1uxtetrzcs { text-align: left; }
+      .table td.tinytable_css_vysuiezko8iuawmmfd55, .table th.tinytable_css_vysuiezko8iuawmmfd55 { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_xn1vs2utqf59ui0w0he8, .table th.tinytable_css_xn1vs2utqf59ui0w0he8 { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_72spajjm5mtu9imceeyx" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_xm3vy2imsxywhs4as0kq" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
 <tr>
 <th scope="col" align="center" colspan="1" data-row="-1" data-col="0"> </th>
