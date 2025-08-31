@@ -786,58 +786,43 @@ header.navbar,
    Reader Mode Tabs
 ---------------------------------------- */
 
-/* Make default Bootstrap surfaces dark even in “light” scheme */
-:root,
-html[data-bs-theme="light"] {
-  --bs-body-bg:      #0b0f19;
-  --bs-secondary-bg: #0f1220;
-  --bs-tertiary-bg:  #0f1220;
-  --bs-body-color:   #e1e2ea;
-  --bs-border-color: #2b2f3c;
+/* ==== Collapsed toggle bars ONLY (left + right) ==== */
+
+/* Title pill: orange bg, black text + arrow */
+#quarto-sidebarnav-toggle .quarto-sidebar-toggle-title,
+#quarto-toc-toggle       .quarto-sidebar-toggle-title{
+  background: #cb7334 !important;   /* orange pill */
+  color: #000 !important;            /* black text */
+  border: 0 !important;
+  box-shadow: none !important;
+  margin-bottom: 0.75rem !important; /* space before the menu so it doesn't touch */
 }
 
-/* The two white pills when sidebars are collapsed live in the secondary nav */
-.quarto-secondary-nav .btn,
-.quarto-secondary-nav .dropdown-toggle,
-.quarto-secondary-nav .toc-dropdown .btn {
-  background: #141a29 !important;
-  color: #e1e2ea !important;
-  border: 1px solid #2b2f3c !important;
-  border-radius: .8rem !important;
+/* Arrow colour */
+#quarto-sidebarnav-toggle .quarto-sidebar-toggle-title .quarto-sidebar-toggle-icon,
+#quarto-toc-toggle       .quarto-sidebar-toggle-title .quarto-sidebar-toggle-icon{
+  color: #000 !important;            /* black arrow */
+  opacity: 1 !important;
+}
+
+/* Nuke the grey shelf/underline + any panel bg/shadow behind the pill */
+#quarto-sidebarnav-toggle,
+#quarto-toc-toggle{
+  background: transparent !important;
+  border: 0 !important;
   box-shadow: none !important;
 }
-
-.quarto-secondary-nav .btn:hover,
-.quarto-secondary-nav .dropdown-toggle:hover {
-  background: #1b2031 !important;
-  color: #ffffff !important;
+#quarto-sidebarnav-toggle::after,
+#quarto-toc-toggle::after,
+#quarto-sidebarnav-toggle .quarto-sidebar-toggle-title::after,
+#quarto-toc-toggle       .quarto-sidebar-toggle-title::after,
+#quarto-sidebarnav-toggle .quarto-sidebar-toggle-title + .quarto-sidebar-toggle-contents::before,
+#quarto-toc-toggle       .quarto-sidebar-toggle-title + .quarto-sidebar-toggle-contents::before{
+  content: none !important;
 }
-
-/* Keep the dropdown menu dark too */
-.quarto-secondary-nav .dropdown-menu {
-  background: #0f1220 !important;
-  color: #e1e2ea !important;
-  border: 1px solid #2b2f3c !important;
-}
-.quarto-secondary-nav .dropdown-item {
-  color: #e1e2ea !important;
-}
-.quarto-secondary-nav .dropdown-item:hover,
-.quarto-secondary-nav .dropdown-item:focus {
-  background: #141a29 !important;
-  color: #ffffff !important;
-}
-
-/* Safety net: if Quarto gives those pills bg-body/bg-white classes */
-.quarto-secondary-nav .bg-body,
-.quarto-secondary-nav .bg-white {
-  background: #141a29 !important;
-  color: #e1e2ea !important;
-  border-color: #2b2f3c !important;
-}
-
-/* Don’t let nested “body” utility classes re-lighten text inside the buttons */
-.quarto-secondary-nav .btn .text-body,
-.quarto-secondary-nav .btn .link-body-emphasis {
-  color: inherit !important;
+#quarto-sidebarnav-toggle .quarto-sidebar-toggle-contents,
+#quarto-toc-toggle       .quarto-sidebar-toggle-contents{
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
