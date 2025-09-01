@@ -1082,25 +1082,7 @@ Base R Solution
 <li>Generate descriptive statistics for 3 of our variables.</li>
 <li>Recode the variable ‘GDP_2015’ into a ordered factor called ‘gdp_level’ with three levels called “low”, “medium”, and “high” with cut-off points of your own choosing.</li>
 <li>Produce a tabulation for ‘gdp_level’.</li>
-<li>Let’s now extend our mean and standard deviation example from earlier, by manipulating mean, median, and mode of a distribution. Use the sliders below to see how changes in these three statistics affect a distribution. Reflect first on how a new value will alter the distribution before carrying out the change.</li>
 </ol>
-<!-- Shiny app iframe -->
-<iframe id="mmm-iframe" src="https://drflorianreiche.shinyapps.io/shiny-mean-median-mode/" title="Mean • Median • Mode" style="width:100%; border:0; display:block; min-height:520px;">
-</iframe>
-
-<!-- iFrame Resizer (parent side) -->
-<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js"></script>
-<script>
-  iFrameResize({
-    // use false while debugging; lock it down after:
-    // checkOrigin: false,
-    checkOrigin: ['https://drflorianreiche.shinyapps.io'],
-    heightCalculationMethod: 'max',
-    sizeHeight: true,
-    minHeight: 520,
-    log: false
-  }, '#mmm-iframe');
-</script>
 </section>
 <section id="graphs" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="graphs">Graphs</h2>
@@ -1137,7 +1119,7 @@ Base R Solution
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(EU<span class="sc">$</span>popmio, <span class="at">breaks =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-eu-pop-basic-hist" class="quarto-float quarto-figure quarto-figure-center anchored" width="50%" data-fig-align="center">
+<div id="fig-eu-pop-basic-hist" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="50%">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-eu-pop-basic-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="02-PO91Q_files/figure-html/fig-eu-pop-basic-hist-1.png" id="fig-eu-pop-basic-hist" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" style="width:50.0%">
