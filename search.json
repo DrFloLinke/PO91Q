@@ -420,6 +420,26 @@
     ]
   },
   {
+    "objectID": "04-PO91Q.html#an-application",
+    "href": "04-PO91Q.html#an-application",
+    "title": "Week 4",
+    "section": "An Application",
+    "text": "An Application\nTo illustrate how this works in practice, I have written an application that lets you evaluate a completed one-sample t-test and plan a replication. You enter the results you observed in that test, and the app shows the statistical power at your observed \\(n\\) (two-sided, at your chosen \\(\\alpha\\)). As a special feature, you can switch to the “smallest effect size of interest” (SESOI), which lets you plan the \\(n\\) required for a meaningful effect.\nHere is how to use it:\n\nEnter the observed t-statistic and the observed sample size \\(n\\).\nChoose \\(\\alpha\\) (significance level).\nInterpret the statistical power of your test.\nOptional: turn on SESOI and pick a Cohen’s \\(d\\) (Small \\(\\approx 0.2\\), Medium \\(\\approx 0.5\\), Large \\(\\approx 0.8\\)).\n\nSESOI tells the app that only effects at least this big are meaningful.\n\nIf SESOI is off, the app uses the observed effect \\(\\hat d = t/\\sqrt{n}\\).\n\nIf SESOI is on, the app fixes the curve at your chosen \\(d\\) and, for convenience, shows the required \\(n\\) for 80%% power as an orange dotted line.\n\n\nIn order to choose \\(d\\) appropriately, pick a minimum meaningful change in real units and divide by a typical standard deviation. For example, if you think that a difference of 2 exam points from an assumed null value (such as the fail mark of 40) matters and the SD is about 10, then \\(d \\approx 2/10 = 0.2\\) (small).\n\nHow to read the Power vs \\(n\\) plot\n\nAxes and lines\n\nX-axis: sample size \\(n\\) (one-sample test).\nY-axis: power (0 to 1).\nSolid curve: analytical power for the current effect and \\(\\alpha\\).\n\nWith SESOI off: uses \\(\\hat d = t/\\sqrt{n_{\\text{obs}}}\\).\nWith SESOI on: uses your chosen \\(d\\) (SESOI).\n\nDashed horizontal line at 0.80: a common 80%% power target.\nDotted vertical line (grey): your observed \\(n\\); the dot shows power at that \\(n\\).\nDotted vertical line (orange): shown only when SESOI is on; marks the smallest \\(n\\) that reaches 0.80 power (labelled as \\(n \\approx \\dots\\) @ 80%% power).\n\nFinding the sample size you need\n\nWith SESOI on, read the orange line and label to get the sample size to plan for 80%% power at your chosen \\(\\alpha\\).\nIf the curve never hits 0.80 within the plot range, you would need a larger \\(n\\), a larger meaningful effect (bigger \\(|d|\\)), a one-sided test (only if justified), or a larger \\(\\alpha\\) (with caution).\n\nHow the controls shift the curve\n\nLarger \\(|d|\\) moves the curve up and left (fewer \\(n\\) needed).\nIncreasing \\(\\alpha\\) (for example, 0.10 vs 0.05) moves the curve up; decreasing \\(\\alpha\\) moves it down.\nChanging the observed \\(t\\) or \\(n\\) with SESOI off updates \\(\\hat d\\) and thus the curve. With SESOI on, the curve stays fixed by your chosen \\(d\\); changing \\(n\\) only moves the dot.\n\nShape and diminishing returns\n\nThe curve is steepest at small \\(n\\) and flattens as power approaches 1.\nBecause \\(t = d\\sqrt{n}\\), halving \\(|d|\\) typically requires about four times the \\(n\\) to maintain similar power.\n\nInterpreting the dot and the lines\n\nThe dot is your current power at the observed \\(n\\).\nIf the dot is below 0.80, you likely need a bigger \\(n\\) (or a larger \\(d\\) of interest, higher \\(\\alpha\\), or a justified one-sided test).\n\nRemember\n\nPower is the probability to reject the null-hypothesis given that an effect exists, or formally \\(P(\\text{reject } H_0 \\mid \\text{effect exists})\\). It is not a \\(p\\)-value and not the probability that \\(H_0\\) is true.\nYou can pair power planning with a SESOI: decide what \\(d\\) would be meaningful in your context and size your study to detect it.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 4</span>"
+    ]
+  },
+  {
+    "objectID": "04-PO91Q.html#what-this-means-in-practice",
+    "href": "04-PO91Q.html#what-this-means-in-practice",
+    "title": "Week 4",
+    "section": "What this means in practice:",
+    "text": "What this means in practice:\n\nThat a result is statistically significant does not mean that it is practically important. With very large \\(n\\), even tiny effects can be significant.\n\nEqually, insignificant results do no mean “no true effect”. With small \\(n\\), a real effect can be missed because power is low.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 4</span>"
+    ]
+  },
+  {
     "objectID": "04-PO91Q.html#considerations-for-interpreting-significance-tests",
     "href": "04-PO91Q.html#considerations-for-interpreting-significance-tests",
     "title": "Week 4",
