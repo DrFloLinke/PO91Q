@@ -486,25 +486,7 @@ Code for Data Analysis
 <li>Can we use continuous variables for cross-tabulations?</li>
 <li>Why is there no dependent and independent variable in correlation analysis?</li>
 <li>Consider the causality framework of Week 5. To what extent are (a) correlation and (b) cross-tabulations able to establish causality?</li>
-<li>Use the app below (it might take a moment to load, as it is a web-based application) to try out different configurations of crosstabulations. Reflect first on how a new value will alter the distribution before carrying out the change.</li>
 </ol>
-<iframe id="mmm-iframe" src="https://drfloreiche.github.io/shinylive/crosstab/" title="2×2 Crosstab" style="width:100%; border:0; display:block; min-height:700px;">
-</iframe>
-
-<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js"></script>
-<script>
-  iFrameResize({
-    checkOrigin: false,              // lock down later
-    heightCalculationMethod: 'max',  // robust for dynamic UIs
-    sizeHeight: true,
-    onInit: function(iframe){
-      setTimeout(function(){
-        if (iframe.iFrameResizer) iframe.iFrameResizer.resize();
-      }, 300);
-    },
-    log: false
-  }, '#mmm-iframe');
-</script>
 <div class="stop">
 <p>Please stop here and don’t go beyond this point until we have compared notes on your answers.</p>
 </div>
@@ -695,12 +677,53 @@ CIM
 </table>
 </div>
 <p>&nbsp;</p>
-<ul>
+<ol type="1">
 <li>Calculate the <span class="math inline">\(\chi^{2}\)</span>-value</li>
 <li>How many degrees of freedom does this table have? Why?</li>
 <li>Using the <a href="files/Downloads/Statistical Tables.pdf"><span class="math inline">\(\chi^2\)</span> Table</a>, what is the p-value?</li>
 <li>Are mode of transport and year of study independent in the population?</li>
-</ul>
+</ol>
+<p>The remaining questions can be answered with the help of the app below (it might take a moment to load, as it is a web-based application).</p>
+<iframe id="mmm-iframe" src="https://drfloreiche.github.io/shinylive/crosstab/" title="2×2 Crosstab" style="width:100%; border:0; display:block; min-height:700px;">
+</iframe>
+
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js"></script>
+<script>
+  iFrameResize({
+    checkOrigin: false,              // lock down later
+    heightCalculationMethod: 'max',  // robust for dynamic UIs
+    sizeHeight: true,
+    onInit: function(iframe){
+      setTimeout(function(){
+        if (iframe.iFrameResizer) iframe.iFrameResizer.resize();
+      }, 300);
+    },
+    log: false
+  }, '#mmm-iframe');
+</script>
+<ol start="5" type="1">
+<li>Small effect, big N
+<ol type="a">
+<li>Build a table with a large total N but only a slight row difference (for example, a=210, b=190, c=190, d=210).</li>
+<li>Note the χ² p-value. Now scale the same proportions down (for example, a=21, b=19, c=19, d=21).</li>
+<li>What happens to the <span class="math inline">\(\chi^2\)</span> p-value as N changes, and why? Use “Row %” to confirm the effect size stayed about the same.</li>
+</ol></li>
+<li>Same row-percentage gap, different base rates
+<ol type="a">
+<li>Construct two tables with a similar difference between the rows’ “Yes” percentages but very different column totals (base rates).
+<ul>
+<li>Example A (balanced): a=60, b=40, c=40, d=60 (N=200).</li>
+<li>Example B (skewed): a=90, b=10, c=70, d=30 (N=200).</li>
+</ul></li>
+<li>Compare χ² p-values and the “Row %” and “Column %” views. How do base rates (margins) influence the test, even when the row-percentage gap is similar?</li>
+</ol></li>
+<li>When Fisher appears (and how it compares)
+<ol type="a">
+<li>Check “Show expected counts table”. Enter a table where at least one expected count is below 5 so the app shows “Fisher p”. Example: a=1, b=4, c=4, d=1 (each expected count = 2.5).</li>
+<li>Compare the <span class="math inline">\(\chi^2\)</span> p-value and Fisher p.&nbsp;Now change to a=1, b=9, c=9, d=1 (expected counts = 5), and note that Fisher no longer appears.</li>
+<li>Explain why Fisher’s exact test is surfaced in the first case and not the second, and when you would prefer Fisher over <span class="math inline">\(\chi^2\)</span>.</li>
+</ol></li>
+</ol>
 </section>
 <section id="correlation" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="correlation">Correlation</h2>

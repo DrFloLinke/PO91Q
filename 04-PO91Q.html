@@ -276,20 +276,16 @@ window.Quarto = {
   <li><a href="#we-know-sigma" id="toc-we-know-sigma" class="nav-link" data-scroll-target="#we-know-sigma">1. We know <span class="math inline">\(\sigma\)</span></a></li>
   <li><a href="#we-dont-know-sigma" id="toc-we-dont-know-sigma" class="nav-link" data-scroll-target="#we-dont-know-sigma">2. We don’t know <span class="math inline">\(\sigma\)</span></a></li>
   </ul></li>
-  <li><a href="#confidence-intervals-exercises" id="toc-confidence-intervals-exercises" class="nav-link" data-scroll-target="#confidence-intervals-exercises">Confidence Intervals – Exercises</a>
+  <li><a href="#confidence-intervals-exercises" id="toc-confidence-intervals-exercises" class="nav-link" data-scroll-target="#confidence-intervals-exercises">Confidence Intervals – Exercises</a></li>
+  <li><a href="#significance-testing" id="toc-significance-testing" class="nav-link" data-scroll-target="#significance-testing">Significance Testing</a>
   <ul class="collapse">
-  <li><a href="#conceptual-exercises" id="toc-conceptual-exercises" class="nav-link" data-scroll-target="#conceptual-exercises">Conceptual Exercises</a></li>
-  </ul></li>
-  <li><a href="#significance-testing" id="toc-significance-testing" class="nav-link" data-scroll-target="#significance-testing">Significance Testing</a></li>
+  <li><a href="#considerations-for-interpreting-significance-tests" id="toc-considerations-for-interpreting-significance-tests" class="nav-link" data-scroll-target="#considerations-for-interpreting-significance-tests">Considerations for interpreting Significance Tests</a></li>
   <li><a href="#how-effect-size-sample-size-and-power-shape-inference" id="toc-how-effect-size-sample-size-and-power-shape-inference" class="nav-link" data-scroll-target="#how-effect-size-sample-size-and-power-shape-inference">How effect size, sample size, and power shape inference</a>
   <ul class="collapse">
   <li><a href="#cohens-d-for-a-one-sample-t-test" id="toc-cohens-d-for-a-one-sample-t-test" class="nav-link" data-scroll-target="#cohens-d-for-a-one-sample-t-test">Cohen’s <span class="math inline">\(d\)</span> for a one-sample <em>t</em>-test</a></li>
-  <li><a href="#an-application" id="toc-an-application" class="nav-link" data-scroll-target="#an-application">An Application</a>
-  <ul class="collapse">
-  <li><a href="#how-to-read-the-power-vs-n-plot" id="toc-how-to-read-the-power-vs-n-plot" class="nav-link" data-scroll-target="#how-to-read-the-power-vs-n-plot">How to read the Power vs <span class="math inline">\(n\)</span> plot</a></li>
+  <li><a href="#an-application" id="toc-an-application" class="nav-link" data-scroll-target="#an-application">An Application</a></li>
   </ul></li>
-  <li><a href="#what-this-means-in-practice" id="toc-what-this-means-in-practice" class="nav-link" data-scroll-target="#what-this-means-in-practice">What this means in practice:</a></li>
-  <li><a href="#considerations-for-interpreting-significance-tests" id="toc-considerations-for-interpreting-significance-tests" class="nav-link" data-scroll-target="#considerations-for-interpreting-significance-tests">Considerations for interpreting Significance Tests</a></li>
+  <li><a href="#exercises-working-with-the-app" id="toc-exercises-working-with-the-app" class="nav-link" data-scroll-target="#exercises-working-with-the-app">Exercises – Working with the app</a></li>
   <li><a href="#r-exercises---core" id="toc-r-exercises---core" class="nav-link" data-scroll-target="#r-exercises---core">R Exercises - Core</a></li>
   <li><a href="#r-exercises---going-further" id="toc-r-exercises---going-further" class="nav-link" data-scroll-target="#r-exercises---going-further">R Exercises - Going Further</a></li>
   <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions</a></li>
@@ -331,22 +327,7 @@ window.Quarto = {
 <li>Give an example of a hypothesis that is not testable.</li>
 <li>Explain the difference between a significance test and a confidence interval.</li>
 <li>Explain the relationship between the size of the p-value and the Type I and II Errors.</li>
-<li>Use the app below (it might take a moment to load, as it is a web-based application) to change the sample size, sample standard deviation and the desired confidence level to see how they affect the width of a confidence interval. Reflect first on how a new value will alter the distribution before carrying out the change.</li>
 </ol>
-<iframe id="mmm-iframe" src="https://drfloreiche.github.io/shinylive/confint/" title="Mean • Median • Mode" style="width:100%; border:0; display:block; min-height:560px;">
-</iframe>
-
-<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js"></script>
-<script>
-  iFrameResize({
-    checkOrigin: ['https://drfloreiche.github.io/shinylive/confint/'],
-    heightCalculationMethod: 'taggedElement',  // measure #ifr-root
-    sizeHeight: true,
-    minHeight: 560,
-    tolerance: 12,  // a few extra pixels for rounding
-    log: false
-  }, '#mmm-iframe');
-</script>
 <div class="stop">
 <p>Please stop here and don’t go beyond this point until we have compared notes on your answers.</p>
 </div>
@@ -427,9 +408,7 @@ se=\frac{2}{\sqrt{4}}=1
 </section>
 </section>
 <section id="confidence-intervals-exercises" class="level1 unnumbered">
-<h1 class="unnumbered">Confidence Intervals – Exercises</h1>
-<section id="conceptual-exercises" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="conceptual-exercises">Conceptual Exercises<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></h2>
+<h1 class="unnumbered">Confidence Intervals – Exercises<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></h1>
 <ol type="1">
 <li>A researcher is analysing individuals’ relative fear of being a victim of burglary on a 1-100 scale. A random sample of 9 individuals found a mean score of 47 on the scale with a sample variance of 158.76 for fear of being burgled.
 <ol type="a">
@@ -450,12 +429,54 @@ se=\frac{2}{\sqrt{4}}=1
 </ol></li>
 </ol>
 </section>
-</section>
 <section id="significance-testing" class="level1 unnumbered">
 <h1 class="unnumbered">Significance Testing</h1>
+<section id="considerations-for-interpreting-significance-tests" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="considerations-for-interpreting-significance-tests">Considerations for interpreting Significance Tests</h2>
+<div class="bulb">
+<p><strong>Interpreting Significance Tests</strong></p>
+<p>In these exercises, and when reporting statistical results more generally, you’ll be required to interpret the outcome of a significance test. To do this well, it’s important to use language that reflects what null hypothesis significance testing (NHST) actually tells us, without overstating what the test can conclude.</p>
+<p>NHST works by starting with the null hypothesis - usually a claim like “there is no effect” or “there is no difference”. We use the data to test whether that assumption is plausible. If the p-value is small, it means that results as extreme as the one we observed — or more extreme — would be rare if the null hypothesis were true. So, we take that as evidence against the null. But if the p-value is large, then the data are consistent with the null. And that’s where your interpretation should stop (at least at the introductory level, to avoid stretching and overstating).</p>
+<p>There are two possible outcomes of a significance test: (1) your p-value is <strong>below</strong> the required significance level, and (2) your p-value is <strong>above</strong> the required significance level. Let’s look at these in turn:</p>
+<ol type="1">
+<li><p>If your p-value is below the required significance level, you can say things like:</p>
+<ul>
+<li>“There is evidence of an effect.”</li>
+<li>“We reject the null hypothesis.”</li>
+<li>“The data provide evidence against the null hypothesis.”</li>
+<li>“There is statistically significant evidence of a difference (or relationship, or effect).”</li>
+</ul>
+<p><span style="display:block; height: 0.5em;"></span></p>
+<p>Avoid phrasing that implies certainty, such as:</p>
+<ul>
+<li>🚫 “We proved the alternative hypothesis.”</li>
+<li>🚫 “We proved that there is an effect.”</li>
+<li>🚫 “We accept the alternative hypothesis.”</li>
+</ul></li>
+</ol>
+<p><span style="display:block; height: 0.1em;"></span></p>
+<ol start="2" type="1">
+<li><p>If your p-value is above the required significance level to reject the null hypothesis, you can say things like:</p>
+<ul>
+<li>“There is insufficient evidence for an effect (of a difference, for a relationship).”</li>
+<li>“We cannot reject the null hypothesis.”</li>
+<li>“We fail to reject the null hypothesis.”</li>
+<li>“The results are consistent with the null hypothesis.”</li>
+</ul>
+<p><span style="display:block; height: 0.5em;"></span></p>
+<p>Avoid phrasing that overstates what the test can tell you, such as:</p>
+<ul>
+<li>🚫 “We proved the null hypothesis.”</li>
+<li>🚫 “We reject the alternative hypothesis.”</li>
+<li>🚫 “The null hypothesis is true.”</li>
+</ul></li>
+</ol>
+<p><span style="display:block; height: 0.1em;"></span></p>
+<p>Having taught quantitative political analysis for many years, I know that students love to use the word “prove” when they interpret their results. But there is no proof in significance testing, because we deal with probability statements, not certainty.</p>
+</div>
 </section>
-<section id="how-effect-size-sample-size-and-power-shape-inference" class="level1 unnumbered">
-<h1 class="unnumbered">How effect size, sample size, and power shape inference</h1>
+<section id="how-effect-size-sample-size-and-power-shape-inference" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="how-effect-size-sample-size-and-power-shape-inference">How effect size, sample size, and power shape inference</h2>
 <p>In statistical inference we care about two questions:</p>
 <ol type="1">
 <li><strong>Is there evidence of a real effect?</strong> (a hypothesis test / <span class="math inline">\(p\)</span>-value question)<br>
@@ -530,10 +551,11 @@ t \;=\; \frac{(\bar{x}-\mu_0)/s}{\,1/\sqrt{n}\,} \;=\; d\,\sqrt{n}.
 <p>Small <span class="math inline">\(d \approx 0.2\)</span>, Medium <span class="math inline">\(d \approx 0.5\)</span>, Large <span class="math inline">\(d \approx 0.8\)</span>. Note that these are rough guidelines, only. The onus is on you as a researcher to judge what is required/acceptable in the context of your project.</p>
 </div>
 </section>
-<section id="an-application" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="an-application">An Application</h2>
+<section id="an-application" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="an-application">An Application</h3>
 <p>To illustrate how this works in practice, I have written <a href="https://drflorianreiche.shinyapps.io/shiny_effect_size/">an application</a> that lets you evaluate a completed one-sample t-test and plan a replication. You enter the results you observed in that test, and the app shows the statistical power at your observed <span class="math inline">\(n\)</span> (two-sided, at your chosen <span class="math inline">\(\alpha\)</span>). As a special feature, you can switch to the “smallest effect size of interest” (SESOI), which lets you plan the <span class="math inline">\(n\)</span> required for a meaningful effect.</p>
-<p>Here is how to use it:</p>
+<p><br></p>
+<p><strong>Here is how to use it:</strong></p>
 <ol type="1">
 <li>Enter the observed t-statistic and the observed sample size <span class="math inline">\(n\)</span>.</li>
 <li>Choose <span class="math inline">\(\alpha\)</span> (significance level).</li>
@@ -548,8 +570,8 @@ t \;=\; \frac{(\bar{x}-\mu_0)/s}{\,1/\sqrt{n}\,} \;=\; d\,\sqrt{n}.
 </ul></li>
 </ol>
 <p>In order to choose <span class="math inline">\(d\)</span> appropriately, pick a minimum meaningful change in real units and divide by a typical standard deviation. For example, if you think that a difference of 2 exam points from an assumed null value (such as the fail mark of 40) matters and the SD is about 10, then <span class="math inline">\(d \approx 2/10 = 0.2\)</span> (small).</p>
-<section id="how-to-read-the-power-vs-n-plot" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="how-to-read-the-power-vs-n-plot">How to read the Power vs <span class="math inline">\(n\)</span> plot</h3>
+<p><br></p>
+<p><strong>How to read the Power vs <span class="math inline">\(n\)</span> plot</strong></p>
 <ul>
 <li>Axes and lines
 <ul>
@@ -591,59 +613,44 @@ t \;=\; \frac{(\bar{x}-\mu_0)/s}{\,1/\sqrt{n}\,} \;=\; d\,\sqrt{n}.
 <li>You can pair power planning with a SESOI: decide what <span class="math inline">\(d\)</span> would be meaningful in your context and size your study to detect it.</li>
 </ul></li>
 </ul>
-</section>
-</section>
-<section id="what-this-means-in-practice" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="what-this-means-in-practice">What this means in practice:</h2>
+<div class="bulb">
+<p><strong>What this means in practice:</strong></p>
 <ul>
 <li>That a result is statistically significant does not mean that it is practically important. With very large <span class="math inline">\(n\)</span>, even tiny effects can be significant.<br>
 </li>
 <li>Equally, insignificant results do no mean “no true effect”. With small <span class="math inline">\(n\)</span>, a real effect can be missed because power is low.</li>
 </ul>
-</section>
-<section id="considerations-for-interpreting-significance-tests" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="considerations-for-interpreting-significance-tests">Considerations for interpreting Significance Tests</h2>
-<div class="bulb">
-<p><strong>Interpreting Significance Tests</strong></p>
-<p>In these exercises, and when reporting statistical results more generally, you’ll be required to interpret the outcome of a significance test. To do this well, it’s important to use language that reflects what null hypothesis significance testing (NHST) actually tells us, without overstating what the test can conclude.</p>
-<p>NHST works by starting with the null hypothesis - usually a claim like “there is no effect” or “there is no difference”. We use the data to test whether that assumption is plausible. If the p-value is small, it means that results as extreme as the one we observed — or more extreme — would be rare if the null hypothesis were true. So, we take that as evidence against the null. But if the p-value is large, then the data are consistent with the null. And that’s where your interpretation should stop (at least at the introductory level, to avoid stretching and overstating).</p>
-<p>There are two possible outcomes of a significance test: (1) your p-value is <strong>below</strong> the required significance level, and (2) your p-value is <strong>above</strong> the required significance level. Let’s look at these in turn:</p>
-<ol type="1">
-<li><p>If your p-value is below the required significance level, you can say things like:</p>
-<ul>
-<li>“There is evidence of an effect.”</li>
-<li>“We reject the null hypothesis.”</li>
-<li>“The data provide evidence against the null hypothesis.”</li>
-<li>“There is statistically significant evidence of a difference (or relationship, or effect).”</li>
-</ul>
-<p><span style="display:block; height: 0.5em;"></span></p>
-<p>Avoid phrasing that implies certainty, such as:</p>
-<ul>
-<li>🚫 “We proved the alternative hypothesis.”</li>
-<li>🚫 “We proved that there is an effect.”</li>
-<li>🚫 “We accept the alternative hypothesis.”</li>
-</ul></li>
-</ol>
-<p><span style="display:block; height: 0.1em;"></span></p>
-<ol start="2" type="1">
-<li><p>If your p-value is above the required significance level to reject the null hypothesis, you can say things like:</p>
-<ul>
-<li>“There is insufficient evidence for an effect (of a difference, for a relationship).”</li>
-<li>“We cannot reject the null hypothesis.”</li>
-<li>“We fail to reject the null hypothesis.”</li>
-<li>“The results are consistent with the null hypothesis.”</li>
-</ul>
-<p><span style="display:block; height: 0.5em;"></span></p>
-<p>Avoid phrasing that overstates what the test can tell you, such as:</p>
-<ul>
-<li>🚫 “We proved the null hypothesis.”</li>
-<li>🚫 “We reject the alternative hypothesis.”</li>
-<li>🚫 “The null hypothesis is true.”</li>
-</ul></li>
-</ol>
-<p><span style="display:block; height: 0.1em;"></span></p>
-<p>Having taught quantitative political analysis for many years, I know that students love to use the word “prove” when they interpret their results. But there is no proof in significance testing, because we deal with probability statements, not certainty.</p>
 </div>
+</section>
+</section>
+<section id="exercises-working-with-the-app" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercises-working-with-the-app">Exercises – Working with the app</h2>
+<ol type="1">
+<li>Same effect size, different n (mapping <span class="math inline">\(t\)</span>, <span class="math inline">\(n\)</span>, and <span class="math inline">\(\hat d\)</span>)
+<ol type="a">
+<li>Set observed <span class="math inline">\(t=1.6\)</span> and <span class="math inline">\(n=16\)</span>. Note <span class="math inline">\(\hat d = t/\sqrt{n}\)</span> and the power at the observed <span class="math inline">\(n\)</span>.<br>
+</li>
+<li>Now keep <span class="math inline">\(\hat d\)</span> the same but increase <span class="math inline">\(n\)</span>: set <span class="math inline">\(n=64\)</span> and <span class="math inline">\(t=3.2\)</span> (since <span class="math inline">\(t = d \times \sqrt{n}\)</span>). Confirm that <span class="math inline">\(\hat d\)</span> is unchanged while power increases.<br>
+</li>
+<li>Explain why power rises with <span class="math inline">\(n\)</span> even when the underlying effect size <span class="math inline">\(\hat d\)</span> stays the same.</li>
+</ol></li>
+<li>Planning with a SESOI and <span class="math inline">\(\alpha\)</span> sensitivity
+<ol type="a">
+<li>Enter <span class="math inline">\(t=2.0\)</span> and <span class="math inline">\(n=30\)</span> (<span class="math inline">\(\alpha=0.05\)</span>). Record <span class="math inline">\(\hat d\)</span> and the power at the observed <span class="math inline">\(n\)</span>.<br>
+</li>
+<li>Turn on “Use smallest effect size of interest” and choose SESOI <span class="math inline">\(d=0.5\)</span>. Read the orange marker: the required <span class="math inline">\(n\)</span> for <span class="math inline">\(80\%\)</span> power at <span class="math inline">\(\alpha=0.05\)</span>.<br>
+</li>
+<li>Change <span class="math inline">\(\alpha\)</span> to <span class="math inline">\(0.10\)</span> and then to <span class="math inline">\(0.01\)</span>. How does the required <span class="math inline">\(n\)</span> for <span class="math inline">\(80\%\)</span> power shift as <span class="math inline">\(\alpha\)</span> changes? Explain why a stricter <span class="math inline">\(\alpha\)</span> requires a larger <span class="math inline">\(n\)</span> for the same power.</li>
+</ol></li>
+<li>Was the study well powered? Post-hoc check and replication planning
+<ol type="a">
+<li>Suppose your study reported <span class="math inline">\(t=2.1\)</span> with <span class="math inline">\(n=25\)</span> at <span class="math inline">\(\alpha=0.05\)</span>. Enter these and record <span class="math inline">\(\hat d\)</span> and the power at the observed <span class="math inline">\(n\)</span>. Is the power comfortably high?<br>
+</li>
+<li>If you wanted <span class="math inline">\(80\%\)</span> power to detect an effect around this magnitude in a replication, turn on SESOI and choose the closest option to your <span class="math inline">\(\hat d\)</span> (for example, Small <span class="math inline">\(d=0.2\)</span> if <span class="math inline">\(\hat d\)</span> is small, Medium <span class="math inline">\(d=0.5\)</span> if <span class="math inline">\(\hat d \approx 0.5\)</span>). Note the orange “<span class="math inline">\(n\)</span> for <span class="math inline">\(80\%\)</span> power” marker.<br>
+</li>
+<li>Explain why a significant result with low power can be fragile, and how choosing a SESOI (a target <span class="math inline">\(d\)</span>) helps you plan a more reliable replication sample size.</li>
+</ol></li>
+</ol>
 </section>
 <section id="r-exercises---core" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="r-exercises---core">R Exercises - Core</h2>
