@@ -310,11 +310,17 @@ window.Quarto = {
   <li><a href="#data-prep" id="toc-data-prep" class="nav-link" data-scroll-target="#data-prep">Data Prep</a></li>
   <li><a href="#video-and-rscript" id="toc-video-and-rscript" class="nav-link" data-scroll-target="#video-and-rscript">Video and RScript</a></li>
   </ul></li>
-  <li><a href="#bivariate-methods" id="toc-bivariate-methods" class="nav-link" data-scroll-target="#bivariate-methods">Bivariate Methods</a>
-  <ul class="collapse">
   <li><a href="#self-assessment-questions" id="toc-self-assessment-questions" class="nav-link" data-scroll-target="#self-assessment-questions">Self-Assessment Questions</a></li>
-  <li><a href="#calculations-by-hand" id="toc-calculations-by-hand" class="nav-link" data-scroll-target="#calculations-by-hand">Calculations by Hand</a></li>
-  <li><a href="#applied-exercises-in-r-core" id="toc-applied-exercises-in-r-core" class="nav-link" data-scroll-target="#applied-exercises-in-r-core">Applied Exercises in R (Core)</a></li>
+  <li><a href="#conceptual-exercises" id="toc-conceptual-exercises" class="nav-link" data-scroll-target="#conceptual-exercises">Conceptual Exercises</a>
+  <ul class="collapse">
+  <li><a href="#crosstabs" id="toc-crosstabs" class="nav-link" data-scroll-target="#crosstabs">Crosstabs</a></li>
+  <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation">Correlation</a>
+  <ul class="collapse">
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#applied-exercises-in-r-core" id="toc-applied-exercises-in-r-core" class="nav-link" data-scroll-target="#applied-exercises-in-r-core">Applied Exercises in R (Core)</a>
+  <ul class="collapse">
   <li><a href="#applied-exercises-in-r-going-further" id="toc-applied-exercises-in-r-going-further" class="nav-link" data-scroll-target="#applied-exercises-in-r-going-further">Applied Exercises in R (Going Further)</a>
   <ul class="collapse">
   <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">Section 1</a></li>
@@ -472,10 +478,8 @@ Code for Data Analysis
 </div>
 </section>
 </section>
-<section id="bivariate-methods" class="level1 unnumbered">
-<h1 class="unnumbered">Bivariate Methods</h1>
-<section id="self-assessment-questions" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="self-assessment-questions">Self-Assessment Questions<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h2>
+<section id="self-assessment-questions" class="level1 unnumbered">
+<h1 class="unnumbered">Self-Assessment Questions<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h1>
 <ol type="1">
 <li>Why do we need a test of statistical significance?</li>
 <li>Given an example of a one-sided, and of a two-sided test of significance.</li>
@@ -505,8 +509,10 @@ Code for Data Analysis
 <p>Please stop here and don’t go beyond this point until we have compared notes on your answers.</p>
 </div>
 </section>
-<section id="calculations-by-hand" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="calculations-by-hand">Calculations by Hand</h2>
+<section id="conceptual-exercises" class="level1">
+<h1>Conceptual Exercises</h1>
+<section id="crosstabs" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="crosstabs">Crosstabs</h2>
 <p>I have given you an example of a cross-tabulation in the lecture. Consider the following Table:</p>
 <p>&nbsp;</p>
 <div class="top-bottom-rule-only" style="width: 45%; margin: 0 auto; font-size:1.2em;">
@@ -696,8 +702,129 @@ CIM
 <li>Are mode of transport and year of study independent in the population?</li>
 </ul>
 </section>
-<section id="applied-exercises-in-r-core" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="applied-exercises-in-r-core">Applied Exercises in R (Core)</h2>
+<section id="correlation" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="correlation">Correlation</h2>
+<p>I have written yet another app! Once it loads (it will take a little time, it’s a beast), it lets you generate and explore bivariate relationships and see how Pearson’s r responds to different shapes, amounts of noise, and sample sizes. You can overlay a straight-line fit (the regression line we will explore next week) and a smooth non-linear fit (LOESS) to compare them. The current Pearson r is shown as a label on the plot. In the explanations I will refer to some relationships as “monotonic”, so here is a brief definition:</p>
+<div class="def">
+<p><strong>Monotonic means “always moving in one direction”.</strong></p>
+<p>A relationship is monotonic if, as x increases, y never reverses direction: it either never decreases (monotone increasing) or never increases (monotone decreasing). The rate can change and the curve can be curved or flat in places—it just must not switch from increasing to decreasing (or vice versa).</p>
+</div>
+<p>In the lecture we have focused on continuous data and this is preset in the app. But from the reading you (hopefully) know that other correlation coefficients exist for categorical data. You can explore an example for binary variables in the app, as well.</p>
+<!-- Single embed (drop-in template). Put this chunk anywhere in your .qmd -->
+<iframe id="shiny-embed-1" src="https://drfloreiche.github.io/shinylive/correlation/" title="Interactive app" style="width:100%; border:0; display:block; min-height:700px;" loading="lazy">
+</iframe>
+
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js"></script>
+<script>
+  iFrameResize({
+    checkOrigin: false,              // tighten for prod if you can
+    heightCalculationMethod: 'max',  // robust for dynamic UIs
+    sizeHeight: true,
+    onInit: function(iframe){
+      setTimeout(function(){
+        if (iframe && iframe.iFrameResizer) iframe.iFrameResizer.resize();
+      }, 300);
+    },
+    log: false
+  }, '#shiny-embed-1');
+</script>
+<p><strong>Getting started</strong></p>
+<ol type="1">
+<li>Under Data type, choose Continuous (scatter).</li>
+<li>Pick a Relationship pattern:
+<ul>
+<li>Linear (bivariate normal): straight-line trend with a controllable target r.</li>
+<li>Quadratic: U-shaped, clearly non-linear and non-monotonic.</li>
+<li>Cubic: monotonic but curved, a single overall direction with curvature.</li>
+</ul></li>
+<li>Adjust Sample size (n) and either Target Pearson r (for Linear) or Noise (for Quadratic and Cubic).</li>
+<li>Toggle the line of best fit (regression line) and LOESS smooth to compare linear versus non-linear fits.</li>
+<li>Use Seed to regenerate the sample while keeping settings the same.</li>
+<li>Read the Pearson r label on the plot.</li>
+</ol>
+<p><strong>Controls at a glance</strong></p>
+<ul>
+<li>Relationship pattern
+<ul>
+<li>Linear (bivariate normal): set Target Pearson r.</li>
+<li>Quadratic and Cubic: set Noise to make the pattern tighter or looser.</li>
+</ul></li>
+<li>n (Sample size): larger n stabilizes estimates.</li>
+<li>Seed: changes the random draw while keeping other settings fixed.</li>
+<li>Show least-squares line: straight-line fit.</li>
+<li>Show smooth (LOESS): flexible curve that can reveal non-linear structure.</li>
+</ul>
+<p><strong>Tips for interpretation</strong></p>
+<ul>
+<li>Pearson’s r captures linear association.</li>
+<li>Quadratic is not monotonic, so r can be near zero even when a strong U-shape is visible.</li>
+<li>Cubic is monotonic but curved; r can be pulled down by curvature even when a strong relationship exists.</li>
+<li>LOESS helps reveal curvature and local structure that a straight line can miss.</li>
+<li>Increasing n reduces sampling variability; increasing Noise weakens visible structure.</li>
+</ul>
+<section id="exercises" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="exercises">Exercises</h3>
+<section id="linear-relationships" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="linear-relationships">Linear relationships</h4>
+<ol type="1">
+<li>Set Linear, Target r = 0.60, n = 50. Record the Pearson r on the plot. Now set n = 300. How does r change, and what does this show about sample size?</li>
+<li>With Linear, try r = 0.20, n = 60. Change Seed several times. How much does r bounce around, and why?</li>
+</ol>
+</section>
+<section id="non-linear-and-non-monotonic-quadratic" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="non-linear-and-non-monotonic-quadratic">Non-linear and non-monotonic (Quadratic)</h4>
+<ol start="3" type="1">
+<li>Choose Quadratic, set Noise = 0.10, n = 200. Is r near zero despite a clear U-shape? Explain why.</li>
+<li>Increase Noise until the U-shape is hard to see. At what point do the linear and LOESS fits become similarly uninformative?</li>
+</ol>
+</section>
+<section id="non-linear-but-monotonic-cubic" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="non-linear-but-monotonic-cubic">Non-linear but monotonic (Cubic)</h4>
+<ol start="5" type="1">
+<li>Choose Cubic, set Noise = 0.15, n = 200. Compare the linear line to the LOESS curve. Does the straight line understate the visible relationship?</li>
+<li>Increase Noise gradually. How quickly does r decline as the pattern gets noisier? What does the LOESS curve reveal as noise grows?</li>
+</ol>
+</section>
+<section id="comparing-fits-lines" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="comparing-fits-lines">Comparing fits (lines)</h4>
+<ol start="7" type="1">
+<li>For Cubic with moderate Noise, toggle Least-squares line on and off and compare to LOESS. How does the straight line mislead about strength or direction?</li>
+<li>In Linear mode, when do the LOESS and linear fits essentially coincide, and why should they?</li>
+</ol>
+</section>
+<section id="sampling-variability-and-reproducibility" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sampling-variability-and-reproducibility">Sampling variability and reproducibility</h4>
+<ol start="9" type="1">
+<li>Fix a setting, for example Linear r = 0.40, n = 80, and change Seed a few times. How much does r vary? Repeat with n = 400 and compare.</li>
+<li>For Cubic with low Noise, change Seed repeatedly. How stable is r across seeds?</li>
+</ol>
+</section>
+<section id="same-r-different-story" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="same-r-different-story">Same r, different story</h4>
+<ol start="11" type="1">
+<li>Find two scenarios with similar Pearson r but different shapes (for example, Linear versus Cubic with noise tuned). How do the plots and the LOESS curve help you tell them apart?</li>
+</ol>
+</section>
+<section id="reflections" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="reflections">Reflections</h4>
+<ol start="12" type="1">
+<li>When is Pearson’s r an adequate summary, and when would you favor a non-linear description?</li>
+<li>Based on what you see in the app, how would you justify using a non-linear model rather than a linear one?</li>
+</ol>
+<div class="bulb">
+<p><strong>Takeaways</strong></p>
+<ul>
+<li>Pearson r summarizes linear, directional association.<br>
+</li>
+<li>Nonlinear, non-monotonic relationships (e.g., U-shapes) can be strong yet have r ≈ 0. <strong>Always plot your data</strong>.</li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+</section>
+<section id="applied-exercises-in-r-core" class="level1 unnumbered">
+<h1 class="unnumbered">Applied Exercises in R (Core)</h1>
 <ol type="1">
 <li>Open the European Social Survey data, wave 9. Name it conveniently and attach it</li>
 <li>Univariate Analysis (revising weeks 1-2)
@@ -738,7 +865,6 @@ CIM
 <li>Repeat the crosstabulation and correlation exercises for these two pairs of variables to test your hypotheses.</li>
 </ol></li>
 </ol>
-</section>
 <section id="applied-exercises-in-r-going-further" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="applied-exercises-in-r-going-further">Applied Exercises in R (Going Further)</h2>
 <p>There is a lot to choose from this week, take your pick. There is no need to do all of these. Aim for two sections.</p>
