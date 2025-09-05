@@ -712,23 +712,28 @@ CIM
 </ul></li>
 <li>Compare χ² p-values and the “Row %” and “Column %” views. How do base rates (margins) influence the test, even when the row-percentage gap is similar?</li>
 </ol></li>
-<li>When Fisher appears (and how it compares)
+<li>Exploring Fisher’s exact test
 <ol type="a">
-<li>Check “Show expected counts table”. Enter a table where at least one expected count is below 5 so the app shows “Fisher p”. Example: a=1, b=4, c=4, d=1 (each expected count = 2.5).</li>
-<li>Compare the <span class="math inline">\(\chi^2\)</span> p-value and Fisher p.&nbsp;Now change to a=1, b=9, c=9, d=1 (expected counts = 5), and note that Fisher no longer appears.</li>
-<li>Explain why Fisher’s exact test is surfaced in the first case and not the second, and when you would prefer Fisher over <span class="math inline">\(\chi^2\)</span>.</li>
+<li>Build some very small tables (with low cell counts). Try cases where at least one expected count is less than <span class="math inline">\(5\)</span>, and cases where all expected counts are above <span class="math inline">\(5\)</span>. Watch for when the app switches from showing a <span class="math inline">\(\chi^2\)</span> p-value to also showing a Fisher p-value.</li>
+<li>Compare the <span class="math inline">\(\chi^2\)</span> and Fisher results in these tiny-<span class="math inline">\(N\)</span> situations. Do they always agree? When do they differ most?</li>
+<li>Based on your experiments, summarize in your own words:
+<ul>
+<li>What condition seems to trigger Fisher’s test to appear?</li>
+<li>Why might researchers prefer Fisher’s exact test in those situations?</li>
+<li>In larger samples, why is <span class="math inline">\(\chi^2\)</span> usually preferred instead?</li>
+</ul></li>
 </ol></li>
 </ol>
 </section>
 <section id="correlation" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="correlation">Correlation</h2>
-<p>I have written yet another app! Once it loads (it will take a little time, it’s a beast), it lets you generate and explore bivariate relationships and see how Pearson’s r responds to different shapes, amounts of noise, and sample sizes. You can overlay a straight-line fit (the regression line we will explore next week) and a smooth non-linear fit (LOESS) to compare them. The current Pearson r is shown as a label on the plot. In the explanations I will refer to some relationships as “monotonic”, so here is a brief definition:</p>
+<p>I have written yet another app! Once it loads (it will take a little time, it’s a beast), it lets you generate and explore bivariate relationships and see how Pearson’s r responds to different shapes, amounts of noise, and sample sizes. You can overlay a straight-line fit (the regression line we will explore next week) and a smooth non-linear fit (LOESS) to compare them. The current Pearson r is shown as a label on the plot.</p>
+<p>Please note that in the explanations below I will refer to some relationships as “monotonic”, so here is a brief definition:</p>
 <div class="def">
 <p><strong>Monotonic means “always moving in one direction”.</strong></p>
-<p>A relationship is monotonic if, as x increases, y never reverses direction: it either never decreases (monotone increasing) or never increases (monotone decreasing). The rate can change and the curve can be curved or flat in places—it just must not switch from increasing to decreasing (or vice versa).</p>
+<p>A relationship is <a href="https://drfloreiche.github.io/PO91Q/12-Glossary.html">monotonic</a> if, as x increases, y never reverses direction: it either never decreases (monotone increasing) or never increases (monotone decreasing). The rate can change and the curve can be curved or flat in places – it just must not switch from increasing to decreasing (or vice versa).</p>
 </div>
-<p>In the lecture we have focused on continuous data and this is preset in the app. But from the reading you (hopefully) know that other correlation coefficients exist for categorical data. You can explore an example for binary variables in the app, as well.</p>
-<!-- Single embed (drop-in template). Put this chunk anywhere in your .qmd -->
+<p>By the way, in the lecture we have focused on continuous data and this is preset in the app. But from the reading you (hopefully) know that other correlation coefficients exist for categorical data. You can explore an example for binary variables in the app, as well.</p>
 <iframe id="shiny-embed-1" src="https://drfloreiche.github.io/shinylive/correlation/" title="Interactive app" style="width:100%; border:0; display:block; min-height:700px;" loading="lazy">
 </iframe>
 
@@ -780,51 +785,39 @@ CIM
 <li>LOESS helps reveal curvature and local structure that a straight line can miss.</li>
 <li>Increasing n reduces sampling variability; increasing Noise weakens visible structure.</li>
 </ul>
+<hr>
 <section id="exercises" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="exercises">Exercises</h3>
-<section id="linear-relationships" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="linear-relationships">Linear relationships</h4>
+<p><strong>I. Linear relationships</strong></p>
 <ol type="1">
 <li>Set Linear, Target r = 0.60, n = 50. Record the Pearson r on the plot. Now set n = 300. How does r change, and what does this show about sample size?</li>
 <li>With Linear, try r = 0.20, n = 60. Change Seed several times. How much does r bounce around, and why?</li>
 </ol>
-</section>
-<section id="non-linear-and-non-monotonic-quadratic" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="non-linear-and-non-monotonic-quadratic">Non-linear and non-monotonic (Quadratic)</h4>
+<p><strong>II. Non-linear and non-monotonic (Quadratic)</strong></p>
 <ol start="3" type="1">
 <li>Choose Quadratic, set Noise = 0.10, n = 200. Is r near zero despite a clear U-shape? Explain why.</li>
 <li>Increase Noise until the U-shape is hard to see. At what point do the linear and LOESS fits become similarly uninformative?</li>
 </ol>
-</section>
-<section id="non-linear-but-monotonic-cubic" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="non-linear-but-monotonic-cubic">Non-linear but monotonic (Cubic)</h4>
+<p><strong>III. Non-linear but monotonic (Cubic)</strong></p>
 <ol start="5" type="1">
 <li>Choose Cubic, set Noise = 0.15, n = 200. Compare the linear line to the LOESS curve. Does the straight line understate the visible relationship?</li>
 <li>Increase Noise gradually. How quickly does r decline as the pattern gets noisier? What does the LOESS curve reveal as noise grows?</li>
 </ol>
-</section>
-<section id="comparing-fits-lines" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="comparing-fits-lines">Comparing fits (lines)</h4>
+<p><strong>IV. Comparing fits (lines)</strong></p>
 <ol start="7" type="1">
 <li>For Cubic with moderate Noise, toggle Least-squares line on and off and compare to LOESS. How does the straight line mislead about strength or direction?</li>
 <li>In Linear mode, when do the LOESS and linear fits essentially coincide, and why should they?</li>
 </ol>
-</section>
-<section id="sampling-variability-and-reproducibility" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="sampling-variability-and-reproducibility">Sampling variability and reproducibility</h4>
+<p><strong>V. Sampling variability and reproducibility</strong></p>
 <ol start="9" type="1">
 <li>Fix a setting, for example Linear r = 0.40, n = 80, and change Seed a few times. How much does r vary? Repeat with n = 400 and compare.</li>
 <li>For Cubic with low Noise, change Seed repeatedly. How stable is r across seeds?</li>
 </ol>
-</section>
-<section id="same-r-different-story" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="same-r-different-story">Same r, different story</h4>
+<p><strong>VI. Same r, different story</strong></p>
 <ol start="11" type="1">
 <li>Find two scenarios with similar Pearson r but different shapes (for example, Linear versus Cubic with noise tuned). How do the plots and the LOESS curve help you tell them apart?</li>
 </ol>
-</section>
-<section id="reflections" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="reflections">Reflections</h4>
+<p><strong>VII. Reflections</strong></p>
 <ol start="12" type="1">
 <li>When is Pearson’s r an adequate summary, and when would you favor a non-linear description?</li>
 <li>Based on what you see in the app, how would you justify using a non-linear model rather than a linear one?</li>
@@ -837,7 +830,6 @@ CIM
 <li>Nonlinear, non-monotonic relationships (e.g., U-shapes) can be strong yet have r ≈ 0. <strong>Always plot your data</strong>.</li>
 </ul>
 </div>
-</section>
 </section>
 </section>
 </section>
@@ -985,6 +977,10 @@ CIM
 <td style="text-align: left;">Marginal distributions in a crosstabulation refer to the totals for each row and column, showing the overall distribution of each variable separately, regardless of the other. They are found in the margins of the table and help summarize how each variable is distributed across all categories</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">monotonic</td>
+<td style="text-align: left;">A relationship is monotonic if, as x increases, y never reverses direction: it either never decreases (monotone increasing) or never increases (monotone decreasing). The rate can change and the curve can be curved or flat in places—it just must not switch from increasing to decreasing (or vice versa).</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">statistical dependence</td>
 <td style="text-align: left;">Statistical dependence in crosstabulations refers to a situation where the distribution of one categorical variable varies across the levels of another. If the variables are dependent, knowing the value of one gives information about the other; if independent, the distribution of one remains consistent across all categories of the other</td>
 </tr>
