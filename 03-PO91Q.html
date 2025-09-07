@@ -308,7 +308,6 @@ window.Quarto = {
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
   <ul class="collapse">
   <li><a href="#exercises-calculations" id="toc-exercises-calculations" class="nav-link" data-scroll-target="#exercises-calculations">Exercises – Calculations</a></li>
-  <li><a href="#exercises-the-t-distribution" id="toc-exercises-the-t-distribution" class="nav-link" data-scroll-target="#exercises-the-t-distribution">Exercises – The t-distribution</a></li>
   <li><a href="#r-exercises---core" id="toc-r-exercises---core" class="nav-link" data-scroll-target="#r-exercises---core">R Exercises - Core</a></li>
   <li><a href="#r-exercises---going-further" id="toc-r-exercises---going-further" class="nav-link" data-scroll-target="#r-exercises---going-further">R Exercises - Going Further</a></li>
   <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions</a></li>
@@ -427,50 +426,6 @@ Figure&nbsp;4: Probability of a Council with a Crime Rate <span class="math inli
 <li>Which z-value gives you a right-tail probability of 2.5%?</li>
 <li>With a z-value of 1.13 what is the right-tail probability in %?</li>
 <li>The average mark on a fictitious module was 62.3 with a standard deviation of 8.5. What was the probability to fail the module (pass-mark=50)?</li>
-</ol>
-</section>
-<section id="exercises-the-t-distribution" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="exercises-the-t-distribution">Exercises – The t-distribution</h2>
-<p>The Student <span class="math inline">\(t\)</span> distribution is fundamental for inference when working with small samples.<br>
-This interactive app lets you explore how the shape of the distribution changes with the sample size (or degrees of freedom), and how the critical values shift depending on the significance (<span class="math inline">\(\alpha\)</span>) level and whether a test is one- or two-tailed. Use the sliders and options to see how these factors affect hypothesis testing.</p>
-<iframe id="tdist-iframe" src="https://drfloreiche.github.io/shinylive/tdis/" title="t distribution explorer" style="width:100%; border:0; display:block; min-height:600px;">
-</iframe>
-
-<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js"></script>
-<script>
-  iFrameResize({
-    checkOrigin: false,              // relax for testing; restrict later
-    heightCalculationMethod: 'max',  // robust for ShinyLive dynamic height
-    sizeHeight: true,
-    onInit: function(iframe){
-      setTimeout(function(){
-        if (iframe.iFrameResizer) iframe.iFrameResizer.resize();
-      }, 300);
-    },
-    log: false
-  }, '#tdist-iframe');
-</script>
-<p>Here are some exercises to familiarise yourself with the distribution:</p>
-<ol type="1">
-<li>How the degrees of freedom <span class="math inline">\(df\)</span> change the shape and critical values
-<ol type="a">
-<li>Set tail type = two-tailed and <span class="math inline">\(\alpha = 0.05\)</span>. Move <span class="math inline">\(n\)</span> from 3 to 50 (<span class="math inline">\(df\)</span> from 2 to 49). Record the critical values <span class="math inline">\(t_{\mathrm{crit}}\)</span> at <span class="math inline">\(n \in \{3, 5, 10, 20, 50\}\)</span>.<br>
-</li>
-<li>Compare these to the normal critical value <span class="math inline">\(z_{0.025} \approx 1.960\)</span>.<br>
-Which <span class="math inline">\(n\)</span> (or <span class="math inline">\(df\)</span>) makes <span class="math inline">\(t_{\mathrm{crit}}\)</span> within 0.05 of 1.96?<br>
-</li>
-<li>Explain why <span class="math inline">\(t\)</span> approaches the standard normal as <span class="math inline">\(df \to \infty\)</span>.</li>
-</ol></li>
-<li>One-tailed vs two-tailed critical regions
-<ol type="a">
-<li>Fix <span class="math inline">\(df = 14\)</span>. Toggle between two-tailed and one-tailed (upper) with <span class="math inline">\(\alpha = 0.05\)</span>.<br>
-Note the two cutpoints for the two-tailed test (<span class="math inline">\(\pm t_{0.025,14}\)</span>) and<br>
-the single cutpoint for the one-tailed test (<span class="math inline">\(t_{0.05,14}\)</span>).<br>
-</li>
-<li>For a test with <span class="math inline">\(H_0: \mu = \mu_0\)</span> and <span class="math inline">\(H_1: \mu &gt; \mu_0\)</span>, which cutpoint is relevant and why?<br>
-</li>
-<li>Verify with shading that the total shaded probability equals <span class="math inline">\(\alpha\)</span> in each case.</li>
-</ol></li>
 </ol>
 </section>
 <section id="r-exercises---core" class="level2 unnumbered">
