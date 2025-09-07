@@ -310,6 +310,7 @@ window.Quarto = {
   <li><a href="#significance-testing" id="toc-significance-testing" class="nav-link" data-scroll-target="#significance-testing">Significance Testing</a>
   <ul class="collapse">
   <li><a href="#considerations-for-interpreting-significance-tests" id="toc-considerations-for-interpreting-significance-tests" class="nav-link" data-scroll-target="#considerations-for-interpreting-significance-tests">Considerations for interpreting Significance Tests</a></li>
+  <li><a href="#the-t-distribution" id="toc-the-t-distribution" class="nav-link" data-scroll-target="#the-t-distribution">The t-distribution</a></li>
   <li><a href="#how-effect-size-sample-size-and-power-shape-inference" id="toc-how-effect-size-sample-size-and-power-shape-inference" class="nav-link" data-scroll-target="#how-effect-size-sample-size-and-power-shape-inference">How effect size, sample size, and power shape inference</a></li>
   <li><a href="#what-is-cohens-d" id="toc-what-is-cohens-d" class="nav-link" data-scroll-target="#what-is-cohens-d">What is Cohen’s <span class="math inline">\(d\)</span>?</a>
   <ul class="collapse">
@@ -543,6 +544,48 @@ se=\frac{2}{\sqrt{4}}=1
 <p><span style="display:block; height: 0.1em;"></span></p>
 <p>Having taught quantitative political analysis for many years, I know that students love to use the word “prove” when they interpret their results. But there is no proof in significance testing, because we deal with probability statements, not certainty.</p>
 </div>
+</section>
+<section id="the-t-distribution" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="the-t-distribution">The t-distribution</h2>
+<p>As you have seen in the lecture, the t-distribution is fundamental to conducting tests of statistical significance. Here are some exercises to familiarise yourself with the distribution. Please use the app below to find your answers.</p>
+<ol type="1">
+<li>How the degrees of freedom <span class="math inline">\(df\)</span> change the shape and critical values
+<ol type="a">
+<li>Set tail type = two-tailed and <span class="math inline">\(\alpha = 0.05\)</span>. Move <span class="math inline">\(n\)</span> from 3 to 50 (<span class="math inline">\(df\)</span> from 2 to 49). Record the critical values <span class="math inline">\(t_{\mathrm{crit}}\)</span> at <span class="math inline">\(n \in \{3, 5, 10, 20, 50\}\)</span>.<br>
+</li>
+<li>Compare these to the normal critical value <span class="math inline">\(z_{0.025} \approx 1.960\)</span>.<br>
+Which <span class="math inline">\(n\)</span> (or <span class="math inline">\(df\)</span>) makes <span class="math inline">\(t_{\mathrm{crit}}\)</span> within 0.05 of 1.96?<br>
+</li>
+<li>Explain why <span class="math inline">\(t\)</span> approaches the standard normal as <span class="math inline">\(df \to \infty\)</span>.</li>
+</ol></li>
+<li>One-tailed vs two-tailed critical regions
+<ol type="a">
+<li>Fix <span class="math inline">\(df = 14\)</span>. Toggle between two-tailed and one-tailed (upper) with <span class="math inline">\(\alpha = 0.05\)</span>.<br>
+Note the two cutpoints for the two-tailed test (<span class="math inline">\(\pm t_{0.025,14}\)</span>) and<br>
+the single cutpoint for the one-tailed test (<span class="math inline">\(t_{0.05,14}\)</span>).<br>
+</li>
+<li>For a test with <span class="math inline">\(H_0: \mu = \mu_0\)</span> and <span class="math inline">\(H_1: \mu &gt; \mu_0\)</span>, which cutpoint is relevant and why?<br>
+</li>
+<li>Verify with shading that the total shaded probability equals <span class="math inline">\(\alpha\)</span> in each case.</li>
+</ol></li>
+</ol>
+<iframe id="tdist-iframe" src="https://drfloreiche.github.io/shinylive/tdis/" title="t distribution explorer" style="width:100%; border:0; display:block; min-height:600px;">
+</iframe>
+
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js"></script>
+<script>
+  iFrameResize({
+    checkOrigin: false,              // relax for testing; restrict later
+    heightCalculationMethod: 'max',  // robust for ShinyLive dynamic height
+    sizeHeight: true,
+    onInit: function(iframe){
+      setTimeout(function(){
+        if (iframe.iFrameResizer) iframe.iFrameResizer.resize();
+      }, 300);
+    },
+    log: false
+  }, '#tdist-iframe');
+</script>
 </section>
 <section id="how-effect-size-sample-size-and-power-shape-inference" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="how-effect-size-sample-size-and-power-shape-inference">How effect size, sample size, and power shape inference</h2>

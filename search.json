@@ -330,16 +330,6 @@
     ]
   },
   {
-    "objectID": "03-PO91Q.html#exercises-the-t-distribution",
-    "href": "03-PO91Q.html#exercises-the-t-distribution",
-    "title": "Week 3",
-    "section": "Exercises – The t-distribution",
-    "text": "Exercises – The t-distribution\nThe Student \\(t\\) distribution is fundamental for inference when working with small samples.\nThis interactive app lets you explore how the shape of the distribution changes with the sample size (or degrees of freedom), and how the critical values shift depending on the significance (\\(\\alpha\\)) level and whether a test is one- or two-tailed. Use the sliders and options to see how these factors affect hypothesis testing.\n\n\n\n\n\nHere are some exercises to familiarise yourself with the distribution:\n\nHow the degrees of freedom \\(df\\) change the shape and critical values\n\nSet tail type = two-tailed and \\(\\alpha = 0.05\\). Move \\(n\\) from 3 to 50 (\\(df\\) from 2 to 49). Record the critical values \\(t_{\\mathrm{crit}}\\) at \\(n \\in \\{3, 5, 10, 20, 50\\}\\).\n\nCompare these to the normal critical value \\(z_{0.025} \\approx 1.960\\).\nWhich \\(n\\) (or \\(df\\)) makes \\(t_{\\mathrm{crit}}\\) within 0.05 of 1.96?\n\nExplain why \\(t\\) approaches the standard normal as \\(df \\to \\infty\\).\n\nOne-tailed vs two-tailed critical regions\n\nFix \\(df = 14\\). Toggle between two-tailed and one-tailed (upper) with \\(\\alpha = 0.05\\).\nNote the two cutpoints for the two-tailed test (\\(\\pm t_{0.025,14}\\)) and\nthe single cutpoint for the one-tailed test (\\(t_{0.05,14}\\)).\n\nFor a test with \\(H_0: \\mu = \\mu_0\\) and \\(H_1: \\mu &gt; \\mu_0\\), which cutpoint is relevant and why?\n\nVerify with shading that the total shaded probability equals \\(\\alpha\\) in each case.",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 3</span>"
-    ]
-  },
-  {
     "objectID": "03-PO91Q.html#r-exercises---core",
     "href": "03-PO91Q.html#r-exercises---core",
     "title": "Week 3",
@@ -415,6 +405,16 @@
     "title": "Week 4",
     "section": "Considerations for interpreting Significance Tests",
     "text": "Considerations for interpreting Significance Tests\n\nInterpreting Significance Tests\nIn these exercises, and when reporting statistical results more generally, you’ll be required to interpret the outcome of a significance test. To do this well, it’s important to use language that reflects what null hypothesis significance testing (NHST) actually tells us, without overstating what the test can conclude.\nNHST works by starting with the null hypothesis - usually a claim like “there is no effect” or “there is no difference”. We use the data to test whether that assumption is plausible. If the p-value is small, it means that results as extreme as the one we observed — or more extreme — would be rare if the null hypothesis were true. So, we take that as evidence against the null. But if the p-value is large, then the data are consistent with the null. And that’s where your interpretation should stop (at least at the introductory level, to avoid stretching and overstating).\nThere are two possible outcomes of a significance test: (1) your p-value is below the required significance level, and (2) your p-value is above the required significance level. Let’s look at these in turn:\n\nIf your p-value is below the required significance level, you can say things like:\n\n“There is evidence of an effect.”\n“We reject the null hypothesis.”\n“The data provide evidence against the null hypothesis.”\n“There is statistically significant evidence of a difference (or relationship, or effect).”\n\n\nAvoid phrasing that implies certainty, such as:\n\n🚫 “We proved the alternative hypothesis.”\n🚫 “We proved that there is an effect.”\n🚫 “We accept the alternative hypothesis.”\n\n\n\n\nIf your p-value is above the required significance level to reject the null hypothesis, you can say things like:\n\n“There is insufficient evidence for an effect (of a difference, for a relationship).”\n“We cannot reject the null hypothesis.”\n“We fail to reject the null hypothesis.”\n“The results are consistent with the null hypothesis.”\n\n\nAvoid phrasing that overstates what the test can tell you, such as:\n\n🚫 “We proved the null hypothesis.”\n🚫 “We reject the alternative hypothesis.”\n🚫 “The null hypothesis is true.”\n\n\n\nHaving taught quantitative political analysis for many years, I know that students love to use the word “prove” when they interpret their results. But there is no proof in significance testing, because we deal with probability statements, not certainty.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 4</span>"
+    ]
+  },
+  {
+    "objectID": "04-PO91Q.html#the-t-distribution",
+    "href": "04-PO91Q.html#the-t-distribution",
+    "title": "Week 4",
+    "section": "The t-distribution",
+    "text": "The t-distribution\nAs you have seen in the lecture, the t-distribution is fundamental to conducting tests of statistical significance. Here are some exercises to familiarise yourself with the distribution. Please use the app below to find your answers.\n\nHow the degrees of freedom \\(df\\) change the shape and critical values\n\nSet tail type = two-tailed and \\(\\alpha = 0.05\\). Move \\(n\\) from 3 to 50 (\\(df\\) from 2 to 49). Record the critical values \\(t_{\\mathrm{crit}}\\) at \\(n \\in \\{3, 5, 10, 20, 50\\}\\).\n\nCompare these to the normal critical value \\(z_{0.025} \\approx 1.960\\).\nWhich \\(n\\) (or \\(df\\)) makes \\(t_{\\mathrm{crit}}\\) within 0.05 of 1.96?\n\nExplain why \\(t\\) approaches the standard normal as \\(df \\to \\infty\\).\n\nOne-tailed vs two-tailed critical regions\n\nFix \\(df = 14\\). Toggle between two-tailed and one-tailed (upper) with \\(\\alpha = 0.05\\).\nNote the two cutpoints for the two-tailed test (\\(\\pm t_{0.025,14}\\)) and\nthe single cutpoint for the one-tailed test (\\(t_{0.05,14}\\)).\n\nFor a test with \\(H_0: \\mu = \\mu_0\\) and \\(H_1: \\mu &gt; \\mu_0\\), which cutpoint is relevant and why?\n\nVerify with shading that the total shaded probability equals \\(\\alpha\\) in each case.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 4</span>"
     ]
