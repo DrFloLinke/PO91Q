@@ -1432,8 +1432,8 @@ idaci        0.0197651 0.00289364  6.830532 2.397995e-09</code></pre>
 
     <script>
 
-      function styleCell_97ymsojngfls3k64w3tl(i, j, css_id) {
-          var table = document.getElementById("tinytable_97ymsojngfls3k64w3tl");
+      function styleCell_ck0l5a2qkj5zw31ogb8b(i, j, css_id) {
+          var table = document.getElementById("tinytable_ck0l5a2qkj5zw31ogb8b");
           var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -1442,8 +1442,8 @@ idaci        0.0197651 0.00289364  6.830532 2.397995e-09</code></pre>
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
       }
-      function spanCell_97ymsojngfls3k64w3tl(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_97ymsojngfls3k64w3tl");
+      function spanCell_ck0l5a2qkj5zw31ogb8b(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_ck0l5a2qkj5zw31ogb8b");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
         if (!targetCell) {
           console.warn(`Cell at (${i}, ${j}) not found.`);
@@ -1474,20 +1474,20 @@ idaci        0.0197651 0.00289364  6.830532 2.397995e-09</code></pre>
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '4', j: 1 },  ], css_id: 'tinytable_css_dxhkfii6u1i1oqezoqkf',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 },  ], css_id: 'tinytable_css_u9teugqnjcwiebu2v0xl',}, 
-          { positions: [ { i: '-1', j: 1 },  ], css_id: 'tinytable_css_scbcbxric5pr3619pfxt',}, 
-          { positions: [ { i: '0', j: 1 },  ], css_id: 'tinytable_css_iul73eaclzejsqz5echs',}, 
-          { positions: [ { i: '4', j: 0 },  ], css_id: 'tinytable_css_gyetb15lmxt4f5jsq7fj',}, 
-          { positions: [ { i: '1', j: 0 }, { i: '2', j: 0 }, { i: '3', j: 0 },  ], css_id: 'tinytable_css_47idv9ay22munxl9lh0r',}, 
-          { positions: [ { i: '-1', j: 0 },  ], css_id: 'tinytable_css_sitwh8atytxpedxs7557',}, 
-          { positions: [ { i: '0', j: 0 },  ], css_id: 'tinytable_css_xos6h4ph489fu475bqu3',}, 
+          { positions: [ { i: '4', j: 1 },  ], css_id: 'tinytable_css_cafkf2vtm05blpmjtex6',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 },  ], css_id: 'tinytable_css_9dev4pc176i8srpgynhc',}, 
+          { positions: [ { i: '-1', j: 1 },  ], css_id: 'tinytable_css_xwct5m0sfa28xbsshh85',}, 
+          { positions: [ { i: '0', j: 1 },  ], css_id: 'tinytable_css_ybd5av9b8myt1qa2ftf1',}, 
+          { positions: [ { i: '4', j: 0 },  ], css_id: 'tinytable_css_35lw53rsgw5ypicc6vwd',}, 
+          { positions: [ { i: '1', j: 0 }, { i: '2', j: 0 }, { i: '3', j: 0 },  ], css_id: 'tinytable_css_trczrcqurrxdz369267t',}, 
+          { positions: [ { i: '-1', j: 0 },  ], css_id: 'tinytable_css_4nfmpk5hqb9pkpk8i09v',}, 
+          { positions: [ { i: '0', j: 0 },  ], css_id: 'tinytable_css_wospy8c158uhhenolqxo',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_97ymsojngfls3k64w3tl(cell.i, cell.j, group.css_id);
+                  styleCell_ck0l5a2qkj5zw31ogb8b(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -1495,17 +1495,17 @@ idaci        0.0197651 0.00289364  6.830532 2.397995e-09</code></pre>
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_dxhkfii6u1i1oqezoqkf, .table th.tinytable_css_dxhkfii6u1i1oqezoqkf { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_u9teugqnjcwiebu2v0xl, .table th.tinytable_css_u9teugqnjcwiebu2v0xl { text-align: center; }
-      .table td.tinytable_css_scbcbxric5pr3619pfxt, .table th.tinytable_css_scbcbxric5pr3619pfxt { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_iul73eaclzejsqz5echs, .table th.tinytable_css_iul73eaclzejsqz5echs { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_gyetb15lmxt4f5jsq7fj, .table th.tinytable_css_gyetb15lmxt4f5jsq7fj { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_47idv9ay22munxl9lh0r, .table th.tinytable_css_47idv9ay22munxl9lh0r { text-align: left; }
-      .table td.tinytable_css_sitwh8atytxpedxs7557, .table th.tinytable_css_sitwh8atytxpedxs7557 { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
-      .table td.tinytable_css_xos6h4ph489fu475bqu3, .table th.tinytable_css_xos6h4ph489fu475bqu3 { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_cafkf2vtm05blpmjtex6, .table th.tinytable_css_cafkf2vtm05blpmjtex6 { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_9dev4pc176i8srpgynhc, .table th.tinytable_css_9dev4pc176i8srpgynhc { text-align: center; }
+      .table td.tinytable_css_xwct5m0sfa28xbsshh85, .table th.tinytable_css_xwct5m0sfa28xbsshh85 { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_ybd5av9b8myt1qa2ftf1, .table th.tinytable_css_ybd5av9b8myt1qa2ftf1 { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_35lw53rsgw5ypicc6vwd, .table th.tinytable_css_35lw53rsgw5ypicc6vwd { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_trczrcqurrxdz369267t, .table th.tinytable_css_trczrcqurrxdz369267t { text-align: left; }
+      .table td.tinytable_css_4nfmpk5hqb9pkpk8i09v, .table th.tinytable_css_4nfmpk5hqb9pkpk8i09v { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_wospy8c158uhhenolqxo, .table th.tinytable_css_wospy8c158uhhenolqxo { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_97ymsojngfls3k64w3tl" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_ck0l5a2qkj5zw31ogb8b" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
 <tr>
 <th scope="col" align="center" colspan="1" data-row="-1" data-col="0"> </th>
@@ -1685,7 +1685,7 @@ Table&nbsp;6: Trust in government vs.&nbsp;exposure to corruption news
 </tr>
 <tr class="even">
 <td style="text-align: left;">population regression function</td>
-<td style="text-align: left;">The Population Regression Function (PRF) describes the expected distribution of <span class="math inline">\(y\)</span>, given the values of the independent variable(s) <span class="math inline">\(x\)</span>. It is also called the conditional expectation function (CEF) and can be denoted as <span class="math inline">\(E(y_{i}&amp;#124;x_{i})\)</span></td>
+<td style="text-align: left;">The Population Regression Function (PRF) describes the expected distribution of <span class="math inline">\(y\)</span>, given the values of the independent variable(s) <span class="math inline">\(x\)</span>. It is also called the conditional expectation function (CEF) and can be denoted as <span class="math inline">\(E(y_{i} \mid x_{i})\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">regression</td>
