@@ -190,21 +190,11 @@
     ]
   },
   {
-    "objectID": "02-PO91Q.html#descriptive-statistics",
-    "href": "02-PO91Q.html#descriptive-statistics",
+    "objectID": "02-PO91Q.html#calculations-by-hand",
+    "href": "02-PO91Q.html#calculations-by-hand",
     "title": "Week 2",
-    "section": "Descriptive Statistics",
-    "text": "Descriptive Statistics\nWe have covered quite a large number of descriptive statistics, so far. These are:\n\nMean\nMedian\n\nMode\nStandard Deviation\nVariance\nQuartiles and Percentiles\nRange\nInterquartile Range\n\nUse the app below (it might take a moment to load, as it is a web-based application) to evaluate how the mean, median, and mode influence the shape of a distribution. Reflect first on how a new value will alter the distribution before carrying out the change.\n\n\n\n\n\n\n\nDescriptive statistics are a lot of effort to calculate by hand, especially for larger data sets, but R can do these with a few intuitive commands. First up is the mean.\n\nmean(EU$pop18)\n\n[1] 18311106\n\n\nThen the median:\n\nmedian(EU$pop18)\n\n[1] 9300319\n\n\nYou can get information on the quartiles (remember that the median is the second quartile), the mean, as well as the minimum and maximum through one, simple command:\n\nsummary(EU$pop18)\n\n    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. \n  475701  3781345  9300319 18311106 17766718 82850000 \n\n\nIf you want a specific percentile, say the 10\\(^\\text{th}\\), you can use the quantile() function:\n\nquantile(EU$pop18, p=0.1)\n\n    10% \n1182664 \n\n\nAnd this brings us neatly to measures of variability. Next up is the range; you can either calculate this with two commands by finding out the minimum and maximum separately, or just ask R to give you both values straight away:\n\nmin(EU$pop18)\n\n[1] 475701\n\nmax(EU$pop18)\n\n[1] 82850000\n\nrange(EU$pop18)\n\n[1]   475701 82850000\n\n\nThe stadard deviation is rather long-winded to calculate by hand, but the R command is short and sweet:\n\nsd(EU$pop18)\n\n[1] 23787945\n\n\nIf you want to see how the mean and the standard deviation change a distribution, use the sliders below. Reflect first on how a new value will alter the distribution before carrying out the change.\n\n\n\n\n\n\n\nAs you know, the variance is the squared standard deviation, but you can calculate it with its own command in R, too:\n\nvar(EU$pop18)\n\n[1] 5.658663e+14\n\n\n\nDescriptive Statistics\n\n\n\nNow that you have all the relevant tools at hand, complete the following tasks:\n\nGenerate descriptive statistics for 3 of our variables.\nRecode the variable ‘GDP_2015’ into a ordered factor called ‘gdp_level’ with three levels called “low”, “medium”, and “high” with cut-off points of your own choosing.\nProduce a tabulation for ‘gdp_level’.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 2</span>"
-    ]
-  },
-  {
-    "objectID": "02-PO91Q.html#graphs",
-    "href": "02-PO91Q.html#graphs",
-    "title": "Week 2",
-    "section": "Graphs",
-    "text": "Graphs\nR is probably the most powerful statistics programme for creating graphs. As this is an introductory level module, and we only have so much time available in the seminars, I will only be able to introduce you to the most commonly used ones; in the first instance histograms and boxplots. I will then introduce you to the package ggplot2 which is simply the best invention since sliced bread, as it gives you pretty much endless optionality in customising graphs to show exactly what you want.\nWhenever you produce a graph and you use it in an essay, your dissertation, or article, it is crucial that the graph is able to communicate its message independently from the text. So, a reader should be able to understand the graph and be able to appreciate fully its message without having to read the text. In a similar fashion, the text should always be written in such a way that a reader is able to understand it without having to look at the graph. This is a principle which equally applies to tables (more on this on PO12Q). If you do not follow this principle in the assessments on my modules, you will be marked down.\nChapter 4 in “The Visual Display of Quantitative Information” by Tufte (2001) is on the reading list as an essential item, but there are some more principles he sets out at the start of the book (p. 13) which are worthwhile repeating here:\n\nExcellence in statistical graphics consists of complex ideas communicated with clarity, precision, and efficiency. Graphical displays should\n\n\n\nshow the data\ninduce the viewer to think about the substance rather than about methodology, graphic design, the technology of graphic production, or something else\navoid distorting what the data have to say\npresent many numbers in a small space\nmake large data sets coherent\nencourage the eye to compare different pieces of data\nreveal the data at several levels of detail, from a broad overview to the fine structure\nserve a reasonably clear purpose: description, exploration, tabulation, or decoration\nbe closely integrated with the statistical and verbal descriptions of a data set.\n\n\n\nGraphics reveal data. Indeed graphics can be more precise and revealing than conventional statistical computations.",
+    "section": "Calculations by Hand",
+    "text": "Calculations by Hand\nIf you want to practice calculating descriptive statistics by hand (might be exam relevant), I have written a small app that will help you check the calculations for any data set up to five observations.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 2</span>"
     ]
@@ -240,31 +230,11 @@
     ]
   },
   {
-    "objectID": "02-PO91Q.html#organising-code-in-the-rscript",
-    "href": "02-PO91Q.html#organising-code-in-the-rscript",
-    "title": "Week 2",
-    "section": "Organising Code in the RScript",
-    "text": "Organising Code in the RScript\nNow is probably a good time to make you aware of how I have been organising code which runs over several lines. I could also have written the code of the last graph as\n\nggplot(data = EU) + \n  geom_histogram(binwidth = 20, boundary = 0, aes(x= popmio, y = (..count..)/sum(..count..)*100)) + scale_x_continuous(breaks = seq(0, 100, 20)) + labs(x=\"Population\", y=\"percent\") + theme_classic()\n\nbut this would have made it rather difficult to disentangle and to spot the structure of the graph straight away. So it is also a good idea to structure the code in a logical way which allows a reader to understand it as easily as possible. R is very smart in the way it indents the next line after pressing “enter” in an RScript automatically to the appropriate position. You see for example that in\n\nggplot(data = EU) + \n  geom_histogram(binwidth = 20, boundary = 0,\n                 aes(x= popmio, \n                     y = (..count..)/sum(..count..)*100)) +\n  scale_x_continuous(breaks = seq(0, 100, 20)) +\n  labs(x=\"Population (in million)\", y=\"percent\") +\n  theme_classic()\n\nthe aes which belongs to the geom_histogram layer is indented just so it starts flush with the first argument (binwidth) within this layer.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 2</span>"
-    ]
-  },
-  {
     "objectID": "02-PO91Q.html#exercises",
     "href": "02-PO91Q.html#exercises",
     "title": "Week 2",
     "section": "Exercises",
     "text": "Exercises\nUsing these commands, and moving beyond with the help of today’s reading, complete the following tasks:\n\nProduce two base-R graphs of different types (e.g. histogram, bar chart, box-and-whisker plot) for separate variables in the EU data set.\nProduce two ggplot graphs of different types (e.g. histogram, bar chart, box-and-whisker plot) for separate variables in the EU data set. Google to find more geoms.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 2</span>"
-    ]
-  },
-  {
-    "objectID": "02-PO91Q.html#captions-for-tables-and-figures-in-word",
-    "href": "02-PO91Q.html#captions-for-tables-and-figures-in-word",
-    "title": "Week 2",
-    "section": "Captions for Tables and Figures in Word",
-    "text": "Captions for Tables and Figures in Word\nIn essays, your dissertation and in articles, you will have to refer to tables and figures in the text. Now, you can do this by writing “the figure below”. But this is not very elegant. Also, what happens if you change the layout and all of a sudden “the figure below” becomes “the figure above”. This not only causes additional work because you have to edit the text and check all references to tables and figures once you are done (which is tedious beyond description), but there is also the risk that you miss one or a few in the process.\nMS Word has a nifty function that allows you to insert captions for figures and tables, and then to insert cross-references into the text which get updated automatically before you send the document to the printer. Here is how to do it:\nSay, you have a figure inserted into Word. You now click on it, then hover over the bottom right-hand square, and right-click with your mouse. From the resulting context menu you select “Insert Caption”.\n\n\n\nInsert caption\n\n\nThis results in the following window:\n\n\n\nCaption\n\n\nSelect whether the item you want to describe is a figure, or a table. Then make sure you place the caption “below” the item (this is default). Then type your caption into the box at the top, such as “Figure 1: Skewness of Distributions”. Make sure the caption is telling. The reader needs to know from the caption what the figure or table is about. When you click OK, the document looks like this:\n\n\n\n\n\nNow you start writing the text and come to the point where you refer to the figure in question. Here, all you have to do is to select “Insert” and “Cross-Reference”” \n\n\n\n\n\nand select the following options in the pop-up window:\n\n\n\n\n\nYour text will then look like this:\n\n\n\n\n\nYou don’t have to worry now about the sequence of numbering any more. If you insert another figure above this one, and insert a cross-reference in the text again, the sequence is automatically updated and our former “Figure 1” becomes “Figure 2”. Tables and figures have separate sequences of numbering.\nOne last word on the display of data in tables: DO NOT screenshot tables from R and insert them into your presentations. They look ugly and unprofessional. Make the effort and create a proper table, either in Word or Excel and populate it manually with the data from R. The insertion of captions and cross-references is the same as described above.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 2</span>"
     ]
