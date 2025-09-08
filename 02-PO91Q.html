@@ -320,15 +320,22 @@ window.Quarto = {
   <li><a href="#ordering-data" id="toc-ordering-data" class="nav-link" data-scroll-target="#ordering-data">Ordering Data</a></li>
   <li><a href="#grouping-data" id="toc-grouping-data" class="nav-link" data-scroll-target="#grouping-data">Grouping Data</a></li>
   <li><a href="#combining-ordering-and-grouping-data" id="toc-combining-ordering-and-grouping-data" class="nav-link" data-scroll-target="#combining-ordering-and-grouping-data">Combining Ordering and Grouping Data</a></li>
-  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics">Descriptive Statistics</a></li>
-  <li><a href="#graphs" id="toc-graphs" class="nav-link" data-scroll-target="#graphs">Graphs</a></li>
+  </ul></li>
+  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics">Descriptive Statistics</a>
+  <ul class="collapse">
+  <li><a href="#calculations-by-hand" id="toc-calculations-by-hand" class="nav-link" data-scroll-target="#calculations-by-hand">Calculations by Hand</a></li>
+  </ul></li>
+  <li><a href="#graphs" id="toc-graphs" class="nav-link" data-scroll-target="#graphs">Graphs</a>
+  <ul class="collapse">
   <li><a href="#basic-graphs" id="toc-basic-graphs" class="nav-link" data-scroll-target="#basic-graphs">Basic Graphs</a></li>
   <li><a href="#advanced-graphs" id="toc-advanced-graphs" class="nav-link" data-scroll-target="#advanced-graphs">Advanced Graphs</a></li>
   <li><a href="#even-more-advanced-graphs" id="toc-even-more-advanced-graphs" class="nav-link" data-scroll-target="#even-more-advanced-graphs">Even More Advanced Graphs</a></li>
-  <li><a href="#organising-code-in-the-rscript" id="toc-organising-code-in-the-rscript" class="nav-link" data-scroll-target="#organising-code-in-the-rscript">Organising Code in the RScript</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
-  <li><a href="#captions-for-tables-and-figures-in-word" id="toc-captions-for-tables-and-figures-in-word" class="nav-link" data-scroll-target="#captions-for-tables-and-figures-in-word">Captions for Tables and Figures in Word</a></li>
   </ul></li>
+  <li><a href="#organising-code-in-the-rscript" id="toc-organising-code-in-the-rscript" class="nav-link" data-scroll-target="#organising-code-in-the-rscript">Organising Code in the RScript</a>
+  <ul class="collapse">
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  </ul></li>
+  <li><a href="#captions-for-tables-and-figures-in-word" id="toc-captions-for-tables-and-figures-in-word" class="nav-link" data-scroll-target="#captions-for-tables-and-figures-in-word">Captions for Tables and Figures in Word</a></li>
   <li><a href="#exercises-1" id="toc-exercises-1" class="nav-link" data-scroll-target="#exercises-1">Exercises</a>
   <ul class="collapse">
   <li><a href="#exploring-the-ess-core-exercises" id="toc-exploring-the-ess-core-exercises" class="nav-link" data-scroll-target="#exploring-the-ess-core-exercises">Exploring the ESS – Core Exercises</a></li>
@@ -976,8 +983,9 @@ Base R Solution
 </details>
 </div>
 </section>
-<section id="descriptive-statistics" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="descriptive-statistics">Descriptive Statistics</h2>
+</section>
+<section id="descriptive-statistics" class="level1 unnumbered">
+<h1 class="unnumbered">Descriptive Statistics</h1>
 <p>We have covered quite a large number of descriptive statistics, so far. These are:</p>
 <ul>
 <li>Mean</li>
@@ -1053,7 +1061,7 @@ Base R Solution
 <pre><code>[1]   475701 82850000</code></pre>
 </div>
 </div>
-<p>The stadard deviation is rather long-winded to calculate by hand, but the R command is short and sweet:</p>
+<p>The standard deviation is rather long-winded to calculate by hand, but the R command is short and sweet:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(EU<span class="sc">$</span>pop18)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1096,9 +1104,13 @@ Base R Solution
 <li>Recode the variable ‘GDP_2015’ into a ordered factor called ‘gdp_level’ with three levels called “low”, “medium”, and “high” with cut-off points of your own choosing.</li>
 <li>Produce a tabulation for ‘gdp_level’.</li>
 </ol>
+<section id="calculations-by-hand" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="calculations-by-hand">Calculations by Hand</h2>
+<p>If you want to practice calculating descriptive statistics by hand (might be exam relevant), I have written a <a href="https://drfloreiche.github.io/shinylive/descriptives/">small app</a> that will help you check the calculations for any data set up to five observations.</p>
 </section>
-<section id="graphs" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="graphs">Graphs</h2>
+</section>
+<section id="graphs" class="level1 unnumbered">
+<h1 class="unnumbered">Graphs</h1>
 <p>R is probably <em>the</em> most powerful statistics programme for creating graphs. As this is an introductory level module, and we only have so much time available in the seminars, I will only be able to introduce you to the most commonly used ones; in the first instance histograms and boxplots. I will then introduce you to the package <code>ggplot2</code> which is simply the best invention since sliced bread, as it gives you pretty much endless optionality in customising graphs to show exactly what you want.</p>
 <p>Whenever you produce a graph and you use it in an essay, your dissertation, or article, it is crucial that the graph is able to communicate its message <em>independently</em> from the text. So, a reader should be able to understand the graph and be able to appreciate fully its message without having to read the text. In a similar fashion, the text should always be written in such a way that a reader is able to understand it <em>without having to look at the graph</em>. This is a principle which equally applies to tables (more on this on PO12Q). If you do not follow this principle in the assessments on my modules, you will be marked down.</p>
 <p>Chapter 4 in “The Visual Display of Quantitative Information” by <span class="citation" data-cites="tufte:2001">Tufte (2001)</span> is on the reading list as an essential item, but there are some more principles he sets out at the start of the book (p.&nbsp;13) which are worthwhile repeating here:</p>
@@ -1121,7 +1133,6 @@ Base R Solution
 <blockquote class="blockquote">
 <p>Graphics reveal data. Indeed graphics can be more precise and revealing than conventional statistical computations.</p>
 </blockquote>
-</section>
 <section id="basic-graphs" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="basic-graphs">Basic Graphs</h2>
 <p>Let’s start with a histogram of the variable <code>pop18</code>. The range of the <code>pop18</code> variable is about 82 million - this is rather unwieldy to imagine and also to put onto axes of graphs, as they would mostly consist of zeros. So let’s express the population of each countries in million instead:</p>
@@ -1371,8 +1382,9 @@ Figure&nbsp;7: Histogram of EU Population with GGPLOT in Percent
 </iframe>
 </div>
 </section>
-<section id="organising-code-in-the-rscript" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="organising-code-in-the-rscript">Organising Code in the RScript</h2>
+</section>
+<section id="organising-code-in-the-rscript" class="level1 unnumbered">
+<h1 class="unnumbered">Organising Code in the RScript</h1>
 <p>Now is probably a good time to make you aware of how I have been organising code which runs over several lines. I could also have written the code of the last graph as</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> EU) <span class="sc">+</span> </span>
@@ -1389,7 +1401,6 @@ Figure&nbsp;7: Histogram of EU Population with GGPLOT in Percent
 <span id="cb87-7"><a href="#cb87-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>the <code>aes</code> which belongs to the <code>geom_histogram</code> layer is indented just so it starts flush with the first argument (<code>binwidth</code>) within this layer.</p>
-</section>
 <section id="exercises" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="exercises">Exercises</h2>
 <p>Using these commands, and moving beyond with the help of today’s reading, complete the following tasks:</p>
@@ -1398,8 +1409,9 @@ Figure&nbsp;7: Histogram of EU Population with GGPLOT in Percent
 <li>Produce two <code>ggplot</code> graphs of different types (e.g.&nbsp;histogram, bar chart, box-and-whisker plot) for separate variables in the EU data set. Google to find more geoms.</li>
 </ol>
 </section>
-<section id="captions-for-tables-and-figures-in-word" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="captions-for-tables-and-figures-in-word">Captions for Tables and Figures in Word</h2>
+</section>
+<section id="captions-for-tables-and-figures-in-word" class="level1 unnumbered">
+<h1 class="unnumbered">Captions for Tables and Figures in Word</h1>
 <p>In essays, your dissertation and in articles, you will have to refer to tables and figures in the text. Now, you can do this by writing “the figure below”. But this is not very elegant. Also, what happens if you change the layout and all of a sudden “the figure below” becomes “the figure above”. This not only causes additional work because you have to edit the text and check all references to tables and figures once you are done (which is tedious beyond description), but there is also the risk that you miss one or a few in the process.</p>
 <p>MS Word has a nifty function that allows you to insert captions for figures and tables, and then to insert cross-references into the text which get updated automatically before you send the document to the printer. Here is how to do it:</p>
 <p>Say, you have a figure inserted into Word. You now click on it, then hover over the bottom right-hand square, and right-click with your mouse. From the resulting context menu you select “Insert Caption”.</p>
@@ -1442,7 +1454,6 @@ Figure&nbsp;7: Histogram of EU Population with GGPLOT in Percent
 </div>
 <p>You don’t have to worry now about the sequence of numbering any more. If you insert another figure above this one, and insert a cross-reference in the text again, the sequence is automatically updated and our former “Figure 1” becomes “Figure 2”. Tables and figures have separate sequences of numbering.</p>
 <p>One last word on the display of data in tables: <strong><em>DO NOT</em></strong> screenshot tables from R and insert them into your presentations. They look ugly and unprofessional. Make the effort and create a proper table, either in Word or Excel and populate it manually with the data from R. The insertion of captions and cross-references is the same as described above.</p>
-</section>
 </section>
 <section id="exercises-1" class="level1 unnumbered">
 <h1 class="unnumbered">Exercises</h1>
