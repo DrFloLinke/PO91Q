@@ -767,7 +767,7 @@ Code for Data Analysis
 <li>How does OLS fit the regression line?</li>
 <li>Why do we need a measure to assess goodness of fit?</li>
 <li>Consider the causality framework of Week 5. To what extent is bivariate regression helpful to establish causality?</li>
-<li>I have written <a href="https://drfloreiche.github.io/shinylive/reg_calc/">this app</a> (opens in a new tab and might take a few moments to load, as it is a web-based app) which allows you to enter up to five observations and it will automatically calculate regression coefficients, their standard errors, and model fit. We will be doing this (with ten observations) in the conceptual exercises below. But familiarise yourself with this app, so you can use it for exam preparation.</li>
+<li>I have written <a href="https://drflolinke.github.io/shinylive/reg_calc/">this app</a> (opens in a new tab and might take a few moments to load, as it is a web-based app) which allows you to enter up to five observations and it will automatically calculate regression coefficients, their standard errors, and model fit. We will be doing this (with ten observations) in the conceptual exercises below. But familiarise yourself with this app, so you can use it for exam preparation.</li>
 </ol>
 <div class="stop">
 <p>Please stop here and don’t go beyond this point until we have compared notes on your answers.</p>
@@ -1432,8 +1432,8 @@ idaci        0.0197651 0.00289364  6.830532 2.397995e-09</code></pre>
 
     <script>
 
-      function styleCell_ck0l5a2qkj5zw31ogb8b(i, j, css_id) {
-          var table = document.getElementById("tinytable_ck0l5a2qkj5zw31ogb8b");
+      function styleCell_8bnn4fhq60czf5ikm9bi(i, j, css_id) {
+          var table = document.getElementById("tinytable_8bnn4fhq60czf5ikm9bi");
           var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -1442,8 +1442,8 @@ idaci        0.0197651 0.00289364  6.830532 2.397995e-09</code></pre>
               console.warn(`Cell at (${i}, ${j}) not found.`);
           }
       }
-      function spanCell_ck0l5a2qkj5zw31ogb8b(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_ck0l5a2qkj5zw31ogb8b");
+      function spanCell_8bnn4fhq60czf5ikm9bi(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_8bnn4fhq60czf5ikm9bi");
         const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
         if (!targetCell) {
           console.warn(`Cell at (${i}, ${j}) not found.`);
@@ -1474,20 +1474,20 @@ idaci        0.0197651 0.00289364  6.830532 2.397995e-09</code></pre>
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: '4', j: 1 },  ], css_id: 'tinytable_css_cafkf2vtm05blpmjtex6',}, 
-          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 },  ], css_id: 'tinytable_css_9dev4pc176i8srpgynhc',}, 
-          { positions: [ { i: '-1', j: 1 },  ], css_id: 'tinytable_css_xwct5m0sfa28xbsshh85',}, 
-          { positions: [ { i: '0', j: 1 },  ], css_id: 'tinytable_css_ybd5av9b8myt1qa2ftf1',}, 
-          { positions: [ { i: '4', j: 0 },  ], css_id: 'tinytable_css_35lw53rsgw5ypicc6vwd',}, 
-          { positions: [ { i: '1', j: 0 }, { i: '2', j: 0 }, { i: '3', j: 0 },  ], css_id: 'tinytable_css_trczrcqurrxdz369267t',}, 
-          { positions: [ { i: '-1', j: 0 },  ], css_id: 'tinytable_css_4nfmpk5hqb9pkpk8i09v',}, 
-          { positions: [ { i: '0', j: 0 },  ], css_id: 'tinytable_css_wospy8c158uhhenolqxo',}, 
+          { positions: [ { i: '4', j: 1 },  ], css_id: 'tinytable_css_qw82n2ungzyxtw282c1b',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 },  ], css_id: 'tinytable_css_txjmxqtqibxzh3pwgrgz',}, 
+          { positions: [ { i: '-1', j: 1 },  ], css_id: 'tinytable_css_wv3wyesjy7oicp7g5u1p',}, 
+          { positions: [ { i: '0', j: 1 },  ], css_id: 'tinytable_css_cq6pfifuat6p1h9iproz',}, 
+          { positions: [ { i: '4', j: 0 },  ], css_id: 'tinytable_css_04y3a957vl61gyg735ga',}, 
+          { positions: [ { i: '1', j: 0 }, { i: '2', j: 0 }, { i: '3', j: 0 },  ], css_id: 'tinytable_css_077zva1zo82lpim2sz9u',}, 
+          { positions: [ { i: '-1', j: 0 },  ], css_id: 'tinytable_css_yjqll65mnumhgdbrmru6',}, 
+          { positions: [ { i: '0', j: 0 },  ], css_id: 'tinytable_css_mizddhpo0pbsibbnohd8',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_ck0l5a2qkj5zw31ogb8b(cell.i, cell.j, group.css_id);
+                  styleCell_8bnn4fhq60czf5ikm9bi(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -1495,17 +1495,17 @@ idaci        0.0197651 0.00289364  6.830532 2.397995e-09</code></pre>
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_cafkf2vtm05blpmjtex6, .table th.tinytable_css_cafkf2vtm05blpmjtex6 { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_9dev4pc176i8srpgynhc, .table th.tinytable_css_9dev4pc176i8srpgynhc { text-align: center; }
-      .table td.tinytable_css_xwct5m0sfa28xbsshh85, .table th.tinytable_css_xwct5m0sfa28xbsshh85 { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_ybd5av9b8myt1qa2ftf1, .table th.tinytable_css_ybd5av9b8myt1qa2ftf1 { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_35lw53rsgw5ypicc6vwd, .table th.tinytable_css_35lw53rsgw5ypicc6vwd { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_trczrcqurrxdz369267t, .table th.tinytable_css_trczrcqurrxdz369267t { text-align: left; }
-      .table td.tinytable_css_4nfmpk5hqb9pkpk8i09v, .table th.tinytable_css_4nfmpk5hqb9pkpk8i09v { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
-      .table td.tinytable_css_wospy8c158uhhenolqxo, .table th.tinytable_css_wospy8c158uhhenolqxo { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_qw82n2ungzyxtw282c1b, .table th.tinytable_css_qw82n2ungzyxtw282c1b { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_txjmxqtqibxzh3pwgrgz, .table th.tinytable_css_txjmxqtqibxzh3pwgrgz { text-align: center; }
+      .table td.tinytable_css_wv3wyesjy7oicp7g5u1p, .table th.tinytable_css_wv3wyesjy7oicp7g5u1p { text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_cq6pfifuat6p1h9iproz, .table th.tinytable_css_cq6pfifuat6p1h9iproz { text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_04y3a957vl61gyg735ga, .table th.tinytable_css_04y3a957vl61gyg735ga { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_077zva1zo82lpim2sz9u, .table th.tinytable_css_077zva1zo82lpim2sz9u { text-align: left; }
+      .table td.tinytable_css_yjqll65mnumhgdbrmru6, .table th.tinytable_css_yjqll65mnumhgdbrmru6 { text-align: left; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_mizddhpo0pbsibbnohd8, .table th.tinytable_css_mizddhpo0pbsibbnohd8 { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_ck0l5a2qkj5zw31ogb8b" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_8bnn4fhq60czf5ikm9bi" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
 <tr>
 <th scope="col" align="center" colspan="1" data-row="-1" data-col="0"> </th>
@@ -1566,16 +1566,16 @@ Table&nbsp;5: Regression Models
 </section>
 <section id="solutions" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="solutions">Solutions</h2>
-<p>You can find the Solutions in the <a href="https://drfloreiche.github.io/PO91Q/11-Downloads.html">Downloads Section</a>.</p>
+<p>You can find the Solutions in the <a href="https://drflolinke.github.io/PO91Q/11-Downloads.html">Downloads Section</a>.</p>
 </section>
 </section>
 <section id="homework-for-week-9" class="level1 unnumbered">
 <h1 class="unnumbered">Homework for Week 9</h1>
 <ol type="1">
 <li>Finish working through this worksheet.</li>
-<li>Complete the <a href="https://drfloreiche.github.io/PO91Q/08-PO91Q.html#case-study">Case Study</a>.</li>
+<li>Complete the <a href="https://drflolinke.github.io/PO91Q/08-PO91Q.html#case-study">Case Study</a>.</li>
 <li>Add a note underneath each code chunk in your RScript (by starting the line with <code>#</code>), translating the code into plain English.</li>
-<li>With the data set in <a href="#tbl-reghome" class="quarto-xref">Table&nbsp;<span>6</span></a>, answer the following questions. Only check your answers with the <a href="https://drfloreiche.github.io/shinylive/reg_calc/">app</a> once you have calculated this manually by hand, only using a calculator.
+<li>With the data set in <a href="#tbl-reghome" class="quarto-xref">Table&nbsp;<span>6</span></a>, answer the following questions. Only check your answers with the <a href="https://drflolinke.github.io/shinylive/reg_calc/">app</a> once you have calculated this manually by hand, only using a calculator.
 <ol type="a">
 <li>Specify the null and alternative hypothesis underpinning a corresponding regression model.</li>
 <li>Fit a linear regression model of the type <span class="math inline">\(y_{i}=\beta_{0}+\beta_{1} x_{i}+ \epsilon_{i}\)</span> to the data in <a href="#tbl-reghome" class="quarto-xref">Table&nbsp;<span>6</span></a>.</li>
@@ -1585,9 +1585,9 @@ Table&nbsp;5: Regression Models
 <li>Determine whether we can reject the null hypothesis at a 95% confidence level.</li>
 </ol></li>
 <li>Read the required literature for week 9.</li>
-<li>Work through <a href="https://drfloreiche.github.io/PO91Q/08-PO91Q.html#flashcards">this week’s flashcards</a> to familiarise yourself with the relevant R functions.</li>
+<li>Work through <a href="https://drflolinke.github.io/PO91Q/08-PO91Q.html#flashcards">this week’s flashcards</a> to familiarise yourself with the relevant R functions.</li>
 <li>Find an example for each NEW function and apply it in R to ensure it works.</li>
-<li>Before coming to the seminar, I encourage you to work through the <a href="https://drfloreiche.github.io/PO91Q/09-PO91Q.html#methods-methods-methods">Methods, Methods, Methods</a> Section of Week 9. This will take you through the relevant components of regression analysis in R.</li>
+<li>Before coming to the seminar, I encourage you to work through the <a href="https://drflolinke.github.io/PO91Q/09-PO91Q.html#methods-methods-methods">Methods, Methods, Methods</a> Section of Week 9. This will take you through the relevant components of regression analysis in R.</li>
 </ol>
 <p><br></p>
 <div class="custom-html-table">
@@ -1777,14 +1777,14 @@ GOV.UK. (2013). <em><span class="nocase">National Statistics: Income and tax by 
 <div id="ref-hoc:nd" class="csl-entry" role="listitem">
 House of Commons Library. (n.d.). <em><span>Data Dashboard</span></em>. <a href="https://commonslibrary.parliament.uk/type/data-dashboard/">https://commonslibrary.parliament.uk/type/data-dashboard/</a>
 </div>
+<div id="ref-linke:forthcoming" class="csl-entry" role="listitem">
+Linke, F. (forthcoming). <em><span class="nocase">Introduction to Quantitative Methods in the Social Sciences</span></em>. Oxford: Oxford University Press.
+</div>
 <div id="ref-london:2010" class="csl-entry" role="listitem">
 London Data Store. (2010). <em><span>London Parliamentary Constituency Profiles 2010</span></em>. <a href="https://data.london.gov.uk/dataset/london-parliamentary-constituency-profiles">https://data.london.gov.uk/dataset/london-parliamentary-constituency-profiles</a>
 </div>
 <div id="ref-london:2013" class="csl-entry" role="listitem">
 London Data Store. (2013). <em><span class="nocase">Ward Profiles and Atlas</span></em>. <a href="https://data.london.gov.uk/dataset/ward-profiles-and-atlas">https://data.london.gov.uk/dataset/ward-profiles-and-atlas</a>
-</div>
-<div id="ref-reiche:forthcoming" class="csl-entry" role="listitem">
-Reiche, F. (forthcoming). <em><span class="nocase">Introduction to Quantitative Methods in the Social Sciences</span></em>. Oxford: Oxford University Press.
 </div>
 <div id="ref-stimson:na" class="csl-entry" role="listitem">
 Stimson, J. A. (n.d.). <em><span class="nocase">Professional Writing in Political Science: A Highly opinionated Essay</span></em>. <a href="http://stimson.web.unc.edu/files/2018/02/Writing.pdf">http://stimson.web.unc.edu/files/2018/02/Writing.pdf</a>
@@ -1794,8 +1794,8 @@ Stimson, J. A. (n.d.). <em><span class="nocase">Professional Writing in Politica
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Some of the content of this worksheet is taken from <span class="citation" data-cites="reiche:forthcoming">Reiche (forthcoming)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>These exercises are taken from Chapter 9 in <span class="citation" data-cites="reiche:forthcoming">Reiche (forthcoming)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Some of the content of this worksheet is taken from <span class="citation" data-cites="linke:forthcoming">Linke (forthcoming)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>These exercises are taken from Chapter 9 in <span class="citation" data-cites="linke:forthcoming">Linke (forthcoming)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>The structure of this study was originally designed by Oleksiy Bondarenko. I have slightly altered it in subsequent years.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>

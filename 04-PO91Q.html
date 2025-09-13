@@ -369,7 +369,7 @@ window.Quarto = {
 <p>Just as a reminder, what is a confidence interval?</p>
 <div class="def">
 <p><strong>Confidence Interval</strong></p>
-<p>A confidence interval is an estimated range, based on a sample, that is likely to contain the true population parameter (such as the mean). If the sampling process were repeated many times, approximately ( (1 - ) % ) of the resulting intervals would contain the true parameter. The value of ( ) determines the confidence level – for example, ( = 0.05 ) corresponds to a 95% confidence level, while ( = 0.01 ) corresponds to 99%. <span class="citation" data-cites="reiche:forthcoming">(Reiche, forthcoming)</span></p>
+<p>A confidence interval is an estimated range, based on a sample, that is likely to contain the true population parameter (such as the mean). If the sampling process were repeated many times, approximately ( (1 - ) % ) of the resulting intervals would contain the true parameter. The value of ( ) determines the confidence level – for example, ( = 0.05 ) corresponds to a 95% confidence level, while ( = 0.01 ) corresponds to 99%. <span class="citation" data-cites="linke:forthcoming">(Linke, forthcoming)</span></p>
 </div>
 <p>There are two scenarios under which we are calculating confidence intervals: (1) we know <span class="math inline">\(\sigma\)</span> (the standard deviation of the population distribution), and (2) we don’t know <span class="math inline">\(\sigma\)</span>. Let me take you through these two scenarios in turn:</p>
 <section id="we-know-sigma" class="level2 unnumbered">
@@ -464,13 +464,13 @@ se=\frac{2}{\sqrt{4}}=1
 <li>Holding <span class="math inline">\(n=12\)</span> fixed, find <span class="math inline">\(s\)</span> such that the full CI width is exactly <span class="math inline">\(0.9\)</span> at <span class="math inline">\(90\%\)</span>. Solve <span class="math inline">\(2\,t^* \cdot \dfrac{s}{\sqrt{12}} = 0.9\)</span> by adjusting <span class="math inline">\(s\)</span> in the app.</li>
 </ol></li>
 </ol>
-<iframe id="mmm-iframe" src="https://drfloreiche.github.io/shinylive/confint/" title="Mean • Median • Mode" style="width:100%; border:0; display:block; min-height:560px;">
+<iframe id="mmm-iframe" src="https://drflolinke.github.io/shinylive/confint/" title="Mean • Median • Mode" style="width:100%; border:0; display:block; min-height:560px;">
 </iframe>
 
 <script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js"></script>
 <script>
   iFrameResize({
-    checkOrigin: ['https://drfloreiche.github.io/shinylive/confint/'],
+    checkOrigin: ['https://drflolinke.github.io/shinylive/confint/'],
     heightCalculationMethod: 'taggedElement',  // measure #ifr-root
     sizeHeight: true,
     minHeight: 560,
@@ -569,7 +569,7 @@ the single cutpoint for the one-tailed test (<span class="math inline">\(t_{0.05
 <li>Verify with shading that the total shaded probability equals <span class="math inline">\(\alpha\)</span> in each case.</li>
 </ol></li>
 </ol>
-<iframe id="tdist-iframe" src="https://drfloreiche.github.io/shinylive/tdis/" title="t distribution explorer" style="width:100%; border:0; display:block; min-height:600px;">
+<iframe id="tdist-iframe" src="https://drflolinke.github.io/shinylive/tdis/" title="t distribution explorer" style="width:100%; border:0; display:block; min-height:600px;">
 </iframe>
 
 <script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js"></script>
@@ -597,9 +597,9 @@ the single cutpoint for the one-tailed test (<span class="math inline">\(t_{0.05
 </ol>
 <p>Three ideas determine how confidently we can answer these:</p>
 <ul>
-<li><a href="https://drfloreiche.github.io/PO91Q/12-Glossary.html">Effect size</a>: the magnitude of the difference or relationship. Larger effects are easier to spot and usually more practically important.</li>
+<li><a href="https://drflolinke.github.io/PO91Q/12-Glossary.html">Effect size</a>: the magnitude of the difference or relationship. Larger effects are easier to spot and usually more practically important.</li>
 <li>Sample size (<span class="math inline">\(n\)</span>): how much data we have. Bigger <span class="math inline">\(n\)</span> reduces sampling noise, tightens confidence intervals, and increases the chance of detecting real effects.</li>
-<li><a href="https://drfloreiche.github.io/PO91Q/12-Glossary.html">Power (aka “Sensitivity”)</a>: the probability that a test will detect a true effect (reject <span class="math inline">\(H_0\)</span> when it is false). Power grows with larger effects and larger samples, and shrinks when you demand stronger evidence (smaller <span class="math inline">\(\alpha\)</span>) or when variability is high.</li>
+<li><a href="https://drflolinke.github.io/PO91Q/12-Glossary.html">Power (aka “Sensitivity”)</a>: the probability that a test will detect a true effect (reject <span class="math inline">\(H_0\)</span> when it is false). Power grows with larger effects and larger samples, and shrinks when you demand stronger evidence (smaller <span class="math inline">\(\alpha\)</span>) or when variability is high.</li>
 </ul>
 <p>It is important to consider effect size, sample size, and statistical power together when designing or interpreting a study. A very small effect can become statistically significant with a sufficiently large <span class="math inline">\(n\)</span>, yet still be of little practical importance. <span class="citation" data-cites="prz:2000">Przeworski et al. (2000)</span> and <span class="citation" data-cites="boix:2003">Boix &amp; Stokes (2003)</span>, for example, agree “that the impact of GDP on democratization in the postwar period is negligible, even though it may be statistically significant.” <span class="citation" data-cites="epstein:2006">(Epstein et al., 2006)</span> Conversely, with too small a sample, even a moderate effect may fail to reach significance simply because statistical power is inadequate. Good study planning therefore requires balancing the smallest effect that is considered meaningful (the minimum important difference) against a sample size that provides adequate power at the chosen significance level <span class="math inline">\(\alpha\)</span>. As a rough guide, I have summarised some scenarios for the interplay of effect size and sample size on statistical power.</p>
 <p><br></p>
@@ -722,7 +722,7 @@ t &amp;\;=\; \frac{\bar{x}-\mu_0}{\,s/\sqrt{n}\,} = \frac{(\bar{x}-\mu_0)\cdot(1
 </section>
 <section id="an-application" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="an-application">An Application</h3>
-<p>To illustrate how this works in practice, I have written <a href="https://drflorianreiche.shinyapps.io/shiny_effect_size/">an application</a> that lets you evaluate a completed one-sample t-test and plan a replication. You enter the results you observed in that test, and the app shows the statistical power at your observed <span class="math inline">\(n\)</span> (two-sided, at your chosen <span class="math inline">\(\alpha\)</span>). As a special feature, you can switch to the “smallest effect size of interest” (SESOI), which lets you plan the <span class="math inline">\(n\)</span> required for a meaningful effect.</p>
+<p>To illustrate how this works in practice, I have written <a href="https://drflorianlinke.shinyapps.io/shiny_effect_size/">an application</a> that lets you evaluate a completed one-sample t-test and plan a replication. You enter the results you observed in that test, and the app shows the statistical power at your observed <span class="math inline">\(n\)</span> (two-sided, at your chosen <span class="math inline">\(\alpha\)</span>). As a special feature, you can switch to the “smallest effect size of interest” (SESOI), which lets you plan the <span class="math inline">\(n\)</span> required for a meaningful effect.</p>
 <p><br></p>
 <p><strong>Here is how to use it:</strong></p>
 <ol type="1">
@@ -956,7 +956,7 @@ T \sim t_{\mathrm{df}}(\text{ncp} = \delta)
 </section>
 <section id="solutions" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="solutions">Solutions</h2>
-<p>You can find the Solutions in the <a href="https://drfloreiche.github.io/PO91Q/11-Downloads.html">Downloads Section</a>.</p>
+<p>You can find the Solutions in the <a href="https://drflolinke.github.io/PO91Q/11-Downloads.html">Downloads Section</a>.</p>
 </section>
 </section>
 <section id="homework-for-week-5" class="level1 unnumbered">
@@ -965,7 +965,7 @@ T \sim t_{\mathrm{df}}(\text{ncp} = \delta)
 <li>Finish working through this worksheet.</li>
 <li>Add a note underneath each code chunk in your RScript (by starting the line with <code>#</code>), translating the code into plain English.</li>
 <li>Read the required literature for week 5.</li>
-<li>Work through <a href="https://drfloreiche.github.io/PO91Q/04-PO91Q.html#flashcards">this week’s flashcards</a> to familiarise yourself with the relevant R functions.</li>
+<li>Work through <a href="https://drflolinke.github.io/PO91Q/04-PO91Q.html#flashcards">this week’s flashcards</a> to familiarise yourself with the relevant R functions.</li>
 <li>Find an example for each NEW function and apply it in R to ensure it works.</li>
 </ul>
 </section>
@@ -1121,19 +1121,19 @@ Epstein, D. L., Bates, R., Goldstone, J., Kristensen, I., &amp; O’Halloran, S.
 <div id="ref-lakens:2013" class="csl-entry" role="listitem">
 Lakens, D. (2013). Calculating and reporting effect sizes to facilitate cumulative science: A practical primer for t-tests and ANOVAs. <em>Frontiers in Psychology</em>, <em>4</em>. <a href="https://doi.org/10.3389/fpsyg.2013.00863">https://doi.org/10.3389/fpsyg.2013.00863</a>
 </div>
+<div id="ref-linke:forthcoming" class="csl-entry" role="listitem">
+Linke, F. (forthcoming). <em><span class="nocase">Introduction to Quantitative Methods in the Social Sciences</span></em>. Oxford: Oxford University Press.
+</div>
 <div id="ref-prz:2000" class="csl-entry" role="listitem">
 Przeworski, A., Alvarez, M. E., Cheibub, J. A., &amp; Limongi, F. (2000). <em><span class="nocase">Democracy and Development - Political Institutions and Well-Being in the World, 1950-1990</span></em>. Cambridge: Cambridge University Press. <a href="https://doi.org/10.1017/CBO9780511804946">https://doi.org/10.1017/CBO9780511804946</a>
-</div>
-<div id="ref-reiche:forthcoming" class="csl-entry" role="listitem">
-Reiche, F. (forthcoming). <em><span class="nocase">Introduction to Quantitative Methods in the Social Sciences</span></em>. Oxford: Oxford University Press.
 </div>
 </div>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Some of the content of this worksheet is taken from <span class="citation" data-cites="reiche:forthcoming">Reiche (forthcoming)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>These are taken from <span class="citation" data-cites="reiche:forthcoming">Reiche (forthcoming)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Some of the content of this worksheet is taken from <span class="citation" data-cites="linke:forthcoming">Linke (forthcoming)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>These are taken from <span class="citation" data-cites="linke:forthcoming">Linke (forthcoming)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>The means are based on KS2 scaled score averages which have been averaged over 2016-2019.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
