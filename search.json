@@ -1072,51 +1072,51 @@
   {
     "objectID": "13-Quarto.html",
     "href": "13-Quarto.html",
-    "title": "Quarto",
+    "title": "Intro to Quarto",
     "section": "",
     "text": "What is Quarto?\nQuarto is “an open-source scientific and technical publishing system”1 which is in each and every way superior to MS Word and Apple Pages. You might ask yourself now why I am including it here when PO91Q is exam-assessed and you won’t have a chance to use it on this module. The reason is that you can use Quarto through R and seamlessly integrate any statistical output you create in the rendered PDF document. Quarto even creates a semi-automated list of references for you! So, this might be a very handy tool for PO92Q, or even your dissertation. However, before you embark on writing your assessment in Quarto, please consult the module director whether they are happy to accept submissions in pdf format – not all module directors will accept PDF documents.\nLet me now explain in a bit more depth why you should switch from Word/Pages to Quarto.",
     "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Quarto</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Intro to Quarto</span>"
     ]
   },
   {
     "objectID": "13-Quarto.html#rendering",
     "href": "13-Quarto.html#rendering",
-    "title": "Quarto",
+    "title": "Intro to Quarto",
     "section": "Rendering",
     "text": "Rendering\nTo convert the qmd file to a pdf, you will have to “render” the qmd file. An icon with an arrow is located in the task bar at the top whenever you have an qmd file open. Click it to start the conversion.\n\nWhen there is a mistake in your qmd file, such as an unbalanced bracket in a code chunk, for example, R will not render the pdf. Therefore, render your document regularly, so that you can trace the error more easily.",
     "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Quarto</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Intro to Quarto</span>"
     ]
   },
   {
     "objectID": "13-Quarto.html#the-template-explained",
     "href": "13-Quarto.html#the-template-explained",
-    "title": "Quarto",
+    "title": "Intro to Quarto",
     "section": "The Template Explained",
     "text": "The Template Explained\nThere is quite a bit of formatting going on in the qmd file, and this is what all of this code achieves:\n\nLight grey background to improve readability (a little present to myself for marking)\nFont size 12, one-half spacing\nMain font: Latin Modern Sans Serif for legibility\nMaths font: Fira Maths, ditto\nTitle page with module name, your registration number, submission date, and word count. No page number.\nPage numbering in Roman numerals for table of contents, list of figures, and list of tables\nTable of contents, list of figures, and list of tables are automatic\nPage numbering in Arabic numerals from the start of the text\nAll captions are placed beneath figures and tables\nFully adjustable size of modelsummary table (controlled via percentage of text width), so you can control the number of words the table “costs”\nAutomatic page break if there are fewer than seven lines after a (sub-)section heading\nAutomatic List of References, formatted in APA (American Psychological Association) style\nAppendix after the List of References\nCode chunks are set by default not to show the code in the rendered file. Messages, warnings, and errors are suppressed",
     "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Quarto</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Intro to Quarto</span>"
     ]
   },
   {
     "objectID": "13-Quarto.html#assessment-submission",
     "href": "13-Quarto.html#assessment-submission",
-    "title": "Quarto",
+    "title": "Intro to Quarto",
     "section": "Assessment Submission",
     "text": "Assessment Submission\nWhen it comes to submitting your assessment, please only submit the rendered pdf, and NOT the qmd file.\nPlease ensure that you have copied and pasted your complete RScript into the Appendix section of the template. By complete I mean a script that takes you (or anybody else) from loading the original data sets I provide to the output you include in the report you submit on Tabula. The script should be properly annotated to make your work reproducible and easy to follow.\n\n\n\n\nAgresti, A. (2018). Statistical Methods for the Social Sciences (Fifth Edition). Harlow: Pearson.",
     "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Quarto</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Intro to Quarto</span>"
     ]
   },
   {
     "objectID": "13-Quarto.html#footnotes",
     "href": "13-Quarto.html#footnotes",
-    "title": "Quarto",
+    "title": "Intro to Quarto",
     "section": "",
     "text": "https://quarto.org/↩︎\nYou can create absolute and relative file paths to other locations, but let’s not over-complicate things here.↩︎\nOtherwise, this will be placed into the document as the very last thing, but because you have an appendix, I needed to overrule this behaviour in the template.↩︎",
     "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Quarto</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Intro to Quarto</span>"
     ]
   },
   {
