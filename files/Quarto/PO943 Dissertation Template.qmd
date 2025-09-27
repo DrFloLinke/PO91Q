@@ -24,6 +24,8 @@ include-in-header:
     \usepackage{float}
     \usepackage{tikz}     % for the box on the cover page
     \usetikzlibrary{calc} % for the box on the cover page
+    \usepackage{tabularx} % for the two-column fillable table on the PAIS cover
+    \usepackage{array}    % to style table rules/columns
     \newcommand*{\titleGM}{%
     \begin{tikzpicture}[remember picture,overlay]
     \draw[line width=1pt]
@@ -65,7 +67,7 @@ include-in-header:
     \renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}} % …subsubsections
     \PassOptionsToPackage{table}{xcolor}  % xcolor for setting grey background
     \definecolor{lightgray}{HTML}{f0f0f0} % choose grey for background
-    \pagecolor{lightgray}                 % set background color
+    \pagecolor{lightgray}                 % set background color (applies to ALL pages)
     \usepackage{makecell}  % allow line breaks in modelsummary
     \usepackage{setspace}  % allow onehalfspacing
     \usepackage{needspace} % the remainder forces page breaks if
@@ -83,7 +85,78 @@ include-in-header:
     \sisetup{detect-family=true, detect-weight=true}
     \usepackage{unicode-math}
     \setmathfont{Fira Math}
+    \usepackage{xurl}
+    \urlstyle{same}
 ---
+
+```{=latex}
+% ---------- FIRST PAGE: PAIS Essay Submission Cover Sheet ----------
+\newpage
+\thispagestyle{empty}
+
+% Make links blue on this page only (text stays black)
+\begingroup
+\hypersetup{linkcolor=blue,urlcolor=blue,citecolor=blue}
+
+\begin{center}
+{\Large\bfseries PAIS MA\par}
+\vspace{0.6\baselineskip}
+{\large\bfseries Essay Submission Cover Sheet\par}
+\end{center}
+
+\vspace{0.6\baselineskip}
+
+\noindent Submit one electronic document, with this cover sheet as the first page, followed by your essay, via the e-submission page of the website:
+\url{https://tabula.warwick.ac.uk/coursework/}
+
+\vspace{0.9\baselineskip}
+
+\noindent The Department does not accept submission by email or hard copy.\enspace
+You should read the online MA Handbook carefully for information on presentation, abstracts, word counts, plagiarism, late penalties etc.
+
+\vspace{0.9\baselineskip}
+
+\noindent Statement on plagiarism:\enspace
+By submitting this form I acknowledge that I have read and understood the Department’s notes on “Plagiarism” contained in the MA Handbook: \\ \url{https://warwick.ac.uk/fac/soc/pais/currentstudents/postgraduatemasters/mahandbook/academicintegrity/}
+
+\vspace{0.9\baselineskip}
+
+\begin{center}
+\textbf{Provide the following information:}
+\end{center}
+
+\vspace{0.5\baselineskip}
+
+\setlength{\arrayrulewidth}{1.2pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\raggedright\bfseries\arraybackslash}p{0.36\textwidth}|X|}
+\hline
+MA Programme & <Your Programme> \\
+\hline
+Student ID number & <Your Warwick ID> \\
+\hline
+Name and number of Module & PO943: Dissertation \\
+\hline
+Assignment & Dissertation \\
+\hline
+Module Tutor & <Name of Module Director> \\
+\hline
+Essay Title & <Your Aqssessment Title> \\
+\hline
+Is the above title Pre-approved or Negotiated? & Pre-Approved / Negotiated (delete as appropriate)\\
+\hline
+Word count without illustrations & <Number of Words (raw)> \\
+\hline
+Word count for illustrations & <Number of Words (illustrations)> \\
+\hline
+Total word count & <Number of Words (total)> \\
+\hline
+\end{tabularx}
+
+\endgroup
+\newpage
+
+```
 
 ```{r setup, include=FALSE}
 # global options for code chunks
