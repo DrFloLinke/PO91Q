@@ -350,16 +350,6 @@
     ]
   },
   {
-    "objectID": "04-PO91Q.html#the-t-distribution",
-    "href": "04-PO91Q.html#the-t-distribution",
-    "title": "Week 4",
-    "section": "The t-distribution",
-    "text": "The t-distribution\nThis section is optional. I have included it so that you can familiarise yourself a little more with the t-distribution if this still seems a bit unclear to you. In this case, complete the following exercises, using the app below to find your answers. Otherwise, skip straight to Calculating Confidence Intervals.\n\nHow the degrees of freedom \\(df\\) change the shape and critical values\n\nSet tail type = two-tailed and \\(\\alpha = 0.05\\). Move \\(n\\) from 3 to 50 (\\(df\\) from 2 to 49). Record the critical values \\(t_{\\mathrm{crit}}\\) for \\(n \\in \\{3, 5, 10, 20, 50\\}\\) (this reads as “for all n in 3,5,10,20,50”).\n\nCompare these to the normal critical value \\(z_{0.025} \\approx 1.960\\).\nWhich \\(n\\) (or \\(df\\)) makes \\(t_{\\mathrm{crit}}\\) within 0.05 of 1.96?\n\nExplain why \\(t\\) approaches the standard normal as \\(df \\to \\infty\\).\n\nOne-tailed vs two-tailed critical regions\n\nFix \\(df = 14\\). Toggle between two-tailed and one-tailed (upper) with \\(\\alpha = 0.05\\).\nNote the two cutpoints for the two-tailed test (\\(\\pm t_{0.025,14}\\)) and\nthe single cutpoint for the one-tailed test (\\(t_{0.05,14}\\)).\n\nFor a test with \\(H_0: \\mu = \\mu_0\\) and \\(H_1: \\mu &gt; \\mu_0\\), which cutpoint is relevant and why?\n\nVerify with shading that the total shaded probability equals \\(\\alpha\\) in each case.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 4</span>"
-    ]
-  },
-  {
     "objectID": "04-PO91Q.html#we-know-sigma",
     "href": "04-PO91Q.html#we-know-sigma",
     "title": "Week 4",
