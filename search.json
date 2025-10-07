@@ -264,7 +264,7 @@
     "href": "02-PO91Q.html#footnotes",
     "title": "Week 2",
     "section": "",
-    "text": "These questions are taken from Linke (forthcoming).↩︎\nhttps://cran.r-project.org/web/packages/ updated 06 October 2025↩︎\nThere is a command called order(), but it is not part of the tidyverse, and as this package is steadily on the rise in coding, I am only showing you this here.↩︎\nAll applications on this module were written with the assistance of ChatGPT.↩︎",
+    "text": "These questions are taken from Linke (forthcoming).↩︎\nhttps://cran.r-project.org/web/packages/ updated 07 October 2025↩︎\nThere is a command called order(), but it is not part of the tidyverse, and as this package is steadily on the rise in coding, I am only showing you this here.↩︎\nAll applications on this module were written with the assistance of ChatGPT.↩︎",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 2</span>"
     ]
