@@ -1075,7 +1075,7 @@ div.compact > .title::before {
   border-radius: 50%;
   background-color: #993333;        /* red fill */
   border: 1.5px solid #e1e2ea;           /* thin white rim */
-  color: #e1e2ea;                      /* white exclamation */
+  color: #e1e2ea  ;                      /* white exclamation */
   font-weight: bold;
   font-size: 1em;
   line-height: 1;
