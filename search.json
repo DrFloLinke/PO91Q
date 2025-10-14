@@ -134,7 +134,7 @@
     "href": "02-PO91Q.html#opening-your-data-set",
     "title": "Week 2",
     "section": "Opening your Data Set",
-    "text": "Opening your Data Set\nWe are now ready to open a data set in R - where it is called a “data frame”. For this, we create a new object EU, and ask R to read “Sheet 1”” of the Excel file “EU.xlsx” which we placed in the working directory earlier\n\nlibrary(readxl)\nEU &lt;- read_excel(\"EU.xlsx\", sheet=\"Sheet1\")\n\nWe can now use our data in R!\n\nLoading the Data Set\n\n\n\n\nPlease do not use the “Import Dataset” button in the Environment, but do this properly, manually. We sometimes need to set options for importing data sets, and the “pointy, clicky” approach won’t be able to offer you what you need.",
+    "text": "Opening your Data Set\nWe are now ready to open a data set in R - where it is called a “data frame”. We will start with a smaller data set to start off with, to give you chance to view it properly and understand the manipulation commands better. For this, download the file EU.xlsx and place it in this week’s working directory. Now load this data set into R, creating a new object called EU:\n\nlibrary(readxl)\nEU &lt;- read_excel(\"EU.xlsx\", sheet=\"Sheet1\")\n\nWe can now use our data in R!\n\nLoading the Data Set\n\n\n\n\nPlease do not use the “Import Dataset” button in the Environment, but do this properly, manually. We sometimes need to set options for importing data sets, and the “pointy, clicky” approach won’t be able to offer you what you need.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 2</span>"
     ]
@@ -264,7 +264,7 @@
     "href": "02-PO91Q.html#footnotes",
     "title": "Week 2",
     "section": "",
-    "text": "These questions are taken from Linke (forthcoming).↩︎\nhttps://cran.r-project.org/web/packages/ updated 13 October 2025↩︎\nThere is a command called order(), but it is not part of the tidyverse, and as this package is steadily on the rise in coding, I am only showing you this here.↩︎\nAll applications on this module were written with the assistance of ChatGPT.↩︎",
+    "text": "These questions are taken from Linke (forthcoming).↩︎\nhttps://cran.r-project.org/web/packages/ updated 14 October 2025↩︎\nThere is a command called order(), but it is not part of the tidyverse, and as this package is steadily on the rise in coding, I am only showing you this here.↩︎\nAll applications on this module were written with the assistance of ChatGPT.↩︎",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 2</span>"
     ]
