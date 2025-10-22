@@ -1092,3 +1092,11 @@ div.compact p:last-child {
 div.compact p {
   margin: 0.5em 0.5em;
 }
+
+/* ----------------------------------------
+   In-Line Maths
+---------------------------------------- */
+
+mjx-container[jax="CHTML"][display="inline"] { white-space: nowrap; }
+.math.inline { white-space: nowrap; }
+.katex { white-space: nowrap; }
