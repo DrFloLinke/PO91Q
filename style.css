@@ -518,7 +518,7 @@ pre:not(.sourceCode) {
 table, th, td {
   color: var(--fg) !important;
   background-color: var(--bg) !important;
-  border-color: 1px solid #adbdd1 !important;
+  /* border-color: 1px solid #adbdd1 !important; */
   font-size: 0.9em;
 }
 
@@ -566,13 +566,6 @@ table { caption-side: bottom; }
 .top-bottom-rule-only thead strong {
   font-weight: inherit !important;
 }
-
-
-
-
-
-
-
 
 
 
@@ -1106,19 +1099,3 @@ mjx-container[jax="CHTML"][display="inline"] { white-space: nowrap; }
 .katex { white-space: nowrap; }
 
 
-
-/* -------------------------------------------------
-   tinytable alignment: stub left, everything else centered
-   ------------------------------------------------- */
-
-/* default: center all tinytable cells */
-table.tinytable th,
-table.tinytable td {
-  text-align: center !important;
-}
-
-/* stub column (first column) left-aligned */
-table.tinytable thead tr th:first-child,
-table.tinytable tbody tr td:first-child {
-  text-align: left !important;
-}
