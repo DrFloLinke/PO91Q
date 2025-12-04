@@ -298,6 +298,5 @@ plotPlane(model5, plotx1 = "gdppc", plotx2 = "lifeexp",
           cex.main = 0.95,
           font.main = 1,
           adj = 0,
-          family="FS Me",
           npp=10, 
           theta=325, phi=10)
