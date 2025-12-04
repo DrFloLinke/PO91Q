@@ -518,7 +518,7 @@ pre:not(.sourceCode) {
 table, th, td {
   color: var(--fg) !important;
   background-color: var(--bg) !important;
-  border-color: #adbdd1 !important;
+  border-color: 1px solid #adbdd1 !important;
   font-size: 0.9em;
 }
 
