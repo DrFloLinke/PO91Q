@@ -1104,9 +1104,3 @@ div.compact p {
 mjx-container[jax="CHTML"][display="inline"] { white-space: nowrap; }
 .math.inline { white-space: nowrap; }
 .katex { white-space: nowrap; }
-
-
-table.tinytable {
-  --bs-border-color: #ffffff;
-  --bs-table-border-color: #ffffff;
-}
