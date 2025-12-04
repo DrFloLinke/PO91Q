@@ -1099,3 +1099,18 @@ mjx-container[jax="CHTML"][display="inline"] { white-space: nowrap; }
 .katex { white-space: nowrap; }
 
 
+/* -------------------------------------------------
+   tinytable alignment: stub left, everything else centered
+   ------------------------------------------------- */
+
+/* default: center all tinytable cells */
+table.tinytable th,
+table.tinytable td {
+  text-align: center !important;
+}
+
+/* stub column (first column) left-aligned */
+table.tinytable thead tr th:first-child,
+table.tinytable tbody tr td:first-child {
+  text-align: left !important;
+}
