@@ -1127,16 +1127,6 @@ table.tinytable {
   border-spacing: 0 !important;
 }
 
-/* Double line at the TOP of every tinytable */
-table.tinytable thead tr:first-child th {
-  border-top: 4px double #ffffff !important;
-}
-
-/* Double line at the BOTTOM of every tinytable */
-table.tinytable tfoot tr:last-child td,
-table.tinytable tbody tr:last-child td {
-  border-bottom: 4px double #ffffff !important;
-}
 
 /* Left-align tinytable footnotes (significance notes) */
 table.tinytable tfoot td {
