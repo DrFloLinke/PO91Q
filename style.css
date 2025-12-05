@@ -1116,16 +1116,43 @@ table.tinytable tbody tr td:first-child {
 }
 
 
+
+/* -------------------------------------------------
+   tinytable borders: custom horizontal rules
+   ------------------------------------------------- */
+   
+/* tinytable: make sure Chrome uses cell borders */
 table.tinytable {
-border-collapse: separate !important;
-border-spacing: 0 !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
 }
 
-table.tinytable thead tr:last-child th {
-border-bottom: 2px solid #ffffff !important;
+/* header line – shared by both */
+.tt-twoiv table.tinytable thead tr:last-child th,
+.tt-threeiv table.tinytable thead tr:last-child th {
+  border-bottom: 2px solid #ffffff !important;
 }
 
-table.tinytable tbody tr:nth-child(6) td,
-table.tinytable tbody tr:nth-child(9) td {
-border-bottom: 2px solid #ffffff !important;
+/* 2-IV layout: lines under rows 6 and 9 */
+.tt-twoiv table.tinytable tbody tr:nth-child(6) td,
+.tt-twoiv table.tinytable tbody tr:nth-child(9) td {
+  border-bottom: 2px solid #ffffff !important;
+}
+
+/* 3-IV layout: lines under rows 8 and 11 */
+.tt-threeiv table.tinytable tbody tr:nth-child(8) td,
+.tt-threeiv table.tinytable tbody tr:nth-child(11) td {
+  border-bottom: 2px solid #ffffff !important;
+}
+
+/* ---- header separator line between group row and model row ---- */
+
+/* 2-IV table */
+.tt-twoiv table.tinytable thead tr:nth-child(1) th {
+  border-bottom: 2px solid #ffffff !important;
+}
+
+/* 3-IV table */
+.tt-threeiv table.tinytable thead tr:nth-child(1) th {
+  border-bottom: 2px solid #ffffff !important;
 }
