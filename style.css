@@ -1120,3 +1120,12 @@ table.tinytable {
 border-collapse: separate !important;
 border-spacing: 0 !important;
 }
+
+table.tinytable thead tr:last-child th {
+border-bottom: 2px solid #ffffff !important;
+}
+
+table.tinytable tbody tr:nth-child(6) td,
+table.tinytable tbody tr:nth-child(9) td {
+border-bottom: 2px solid #ffffff !important;
+}
