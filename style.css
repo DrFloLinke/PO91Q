@@ -1114,3 +1114,9 @@ table.tinytable thead tr th:first-child,
 table.tinytable tbody tr td:first-child {
   text-align: left !important;
 }
+
+
+table.tinytable {
+border-collapse: separate !important;
+border-spacing: 0 !important;
+}
