@@ -1,0 +1,6 @@
+"term","package","description","title"
+"contrasts","stats","Get and Set Contrast Matrices (find reference category)","New Functions in Week 10"
+"droplevels","base","Drop Unused Levels from Factors",""
+"is.element","base","Check if a value is element of a vector",""
+"relevel","stats","Reorder Levels of Factor",""
+"log","base","log (default base = e)",""
