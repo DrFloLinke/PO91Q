@@ -1,0 +1,130 @@
+---
+title: "PO91Q: Fundamentals in Quantitative Research Methods"
+subtitle: "Worksheet Week 3 - Solutions"
+logo: "/Users/u1373867/Dropbox/Markdown/Crest.png"
+
+author: 
+  - name: Dr Florian Linke
+  - email: Florian.Linke@warwick.ac.uk
+
+# Template vars your LaTeX uses
+fontsize: 10pt
+skipsize: 12pt
+table: true
+
+# Bibliography
+bibliography: "/Library/CloudStorage/OneDrive-UniversityofWarwick/Warwick/Modules/PO91Q/referencesPO91Q.bib"
+biblio-style: apa
+biblio-title: "List of References"
+
+format:
+  pdf:
+    number-sections: true
+    keep-tex: true
+    pdf-engine: lualatex
+    toc: false
+    toc-depth: 1
+    cite-method: biblatex
+    template: "/Users/u1373867/Dropbox/Markdown/pdf/pdftemplate_quarto.tex"
+    listings: true
+    include-in-header:
+      - "/Users/u1373867/Dropbox/Markdown/preamble.tex"
+      - text: |
+          \pagecolor{lightgray}
+          \renewcommand{\toprule}{\specialrule{.08em}{.05em}{.17em}\hline}
+          \renewcommand{\bottomrule}{\hline\specialrule{.08em}{.17em}{.05em}}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE, warning = FALSE, message = FALSE, error = FALSE, collapse = TRUE
+)
+
+# Set font size for all code chunks
+knitr::knit_hooks$set(size = function(before, options, envir) {
+  if (before) {
+    if (is.character(options$size)) return(paste0("\\", options$size, "\n"))
+    else if (isTRUE(options$size)) return("\\fontsize{7}{7}\\selectfont\n")
+  } else {
+    return("\\normalsize\n")
+  }
+})
+
+knitr::opts_chunk$set(size = TRUE)
+
+extrafont::loadfonts(quiet = TRUE)
+```
+
+\onehalfspacing
+
+# Exercises -- Calculations {-}
+
+1. 
+a. Billy is looking for the heaviest bag possible and finds one that is 1082 g. What is the probability of finding a heavier bag?  
+    &nbsp;   
+    $\color{waraubergine}\mu = 1000$  
+    $\color{waraubergine}\sigma = 50$  
+    $\color{waraubergine}x = 1082$  
+    &nbsp;  
+    $\color{waraubergine}\text{Normally distributed, so find a z-score for the observed value. Heavier means }$  
+    $\color{waraubergine}\text{right tail.}$  
+    &nbsp;  
+    $\color{waraubergine}Z = (x - \mu) / \sigma$  
+    $\color{waraubergine}Z = (1082 - 1000) / 50$  
+    $\color{waraubergine}Z =  1.64$  
+    &nbsp;  
+    $\color{waraubergine}\text{Consult tables area under right tail, close to 0.05. Therefore, probability}$
+    $\color{waraubergine}\text{is 5\%.}$    
+
+b. What is the probability that Billy will find a bag lighter than 870g?  
+    &nbsp;  
+    $\color{waraubergine}\mu = 1000$  
+    $\color{waraubergine}\sigma = 50$  
+    $\color{waraubergine}x = 870$  
+    &nbsp;  
+    $\color{waraubergine}\text{Normally distributed so find a z-score for the observed value.}$  
+    &nbsp;  
+    $\color{waraubergine}Z = (x - \mu) / \sigma$  
+    $\color{waraubergine}Z = (870 - 1000) / 50$  
+    $\color{waraubergine}Z =  -2.6$  
+    &nbsp;  
+    $\color{waraubergine}\text{Consult table's area under right tail, probability is equal to 0.0047. For a positive}$  
+    $\color{waraubergine}\text{z-score this would indicate the probability of a heavier bag, but because our}$  
+    $\color{waraubergine}\text{z score is negative, it shows the probability of a lighter bag. This probability}$  
+    $\color{waraubergine}\text{is less than 0.5\%.}$  
+
+\newpage
+
+c. How would the results of a. and b. change if the standard deviation was only 40g?  
+    &nbsp;  
+    $\color{waraubergine}\text{\textbf{For a.}}$  
+    $\color{waraubergine}\mu = 1000$  
+    $\color{waraubergine}\sigma = 40$  
+    $\color{waraubergine}x = 1082$  
+    $\color{waraubergine}Z = (x - \mu) / \sigma$  
+    $\color{waraubergine}Z = (1082 - 1000) / 40$  
+    $\color{waraubergine}Z =  2.05$  
+    $\color{waraubergine}\text{Probability is 2\% now.}$  
+    &nbsp;  
+    $\color{waraubergine}\text{\textbf{For b.}}$  
+    $\color{waraubergine}\mu = 1000$  
+    $\color{waraubergine}\sigma = 40$  
+    $\color{waraubergine}x = 870$  
+    $\color{waraubergine}Z = (x - \mu) / \sigma$  
+    $\color{waraubergine}Z = (870 - 1000) / 40$  
+    $\color{waraubergine}Z =  -3.25$  
+    $\color{waraubergine}\text{Probability is now about 0.1\%}$  
+    &nbsp;  
+    $\color{waraubergine}\text{Both of these probabilities are smaller and are a direct reflection of a more}$  
+    $\color{waraubergine}\text{narrow distribution.}$  
+2. 1.96
+\vspace{0.25cm}
+3. 12.92%
+\vspace{0.25cm}
+4. $\frac{50-62.3}{8.5}=-1.447059$ $\rightarrow$ 7.35%
+
+
+
+# R Exercises {-}
+
+See RScript in the [Online Companion](https://drflolinke.github.io/PO91Q/11-Downloads.html)
