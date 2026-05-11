@@ -906,6 +906,26 @@ exports.init = init;
   }
 })();
 </script>
+
+<script>
+(function() {
+  function addBanner() {
+    if (!/\/20\d{2}-20\d{2}\//.test(window.location.pathname)) return;
+    if (document.getElementById("archive-banner")) return;
+    var b = document.createElement("div");
+    b.id = "archive-banner";
+    b.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:9999;background:#993333;color:#fff;text-align:center;padding:0.5rem 1rem;font-family:Lexend,sans-serif;font-size:0.85rem;font-weight:600;letter-spacing:0.04em";
+    b.textContent = "\uD83D\uDCC1 ARCHIVE \u2014 2025/26 Academic Year. This is not the current version of the companion.";
+    document.body.prepend(b);
+    document.body.style.paddingTop = "2.5rem";
+  }
+  // Try immediately
+  addBanner();
+  // Also try after DOM changes (catches post-decryption render)
+  var observer = new MutationObserver(function() { addBanner(); });
+  observer.observe(document.body, { childList: true, subtree: false });
+})();
+</script>
 </body>
 </html>
 
