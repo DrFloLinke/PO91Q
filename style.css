@@ -719,39 +719,36 @@ header.navbar,
   border-color: var(--panel-2) !important;
 }
 
-/* Dropdown menu container */
+
+// Force the correct dropdown style everywhere
+#quarto-header .navbar .dropdown-menu,
+.navbar .dropdown-menu,
 .dropdown-menu {
-  background-color: #44496f;
-  color: #e1e2ea;
-  border: 1.0px solid #C87339;
-  border-radius: 5px;
+  background-color: #44496f !important;
+  color: #e1e2ea !important;
+  border: 1px solid #C87339 !important;
+  border-radius: 5px !important;
 }
 
-/* Dropdown items */
-.dropdown-item {
-  color: #e1e2ea;
+#quarto-header .navbar .dropdown-menu .dropdown-item,
+.navbar .dropdown-menu .dropdown-item,
+.dropdown-menu .dropdown-item {
+  color: #e1e2ea !important;
+  background-color: transparent !important;
   font-family: 'Lexend', sans-serif;
   font-weight: 350;
-  text-decoration: none;
+
+  &:hover, &:focus {
+    background-color: #30344f !important;
+    color: #e1e2ea !important;
+  }
 }
 
-.dropdown-item:hover {
-  background-color: #30344f;
-  color: #e1e2ea;
-}
-
-/* The text span itself */
+// The span text inside the dropdown toggle
 .dropdown-text {
-  color: #e1e2ea;
+  color: #e1e2ea !important;
   font-family: 'Lexend', sans-serif;
   font-weight: 350;
-}
-
-/* Active/current item */
-.dropdown-item.active,
-.dropdown-item[aria-current="page"] {
-  background: transparent;
-  color: #be5a16;  /* your orange accent */
 }
 
 /* Toggler icon visible on dark bg */
