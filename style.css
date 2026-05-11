@@ -719,6 +719,41 @@ header.navbar,
   border-color: var(--panel-2) !important;
 }
 
+/* Dropdown menu container */
+.dropdown-menu {
+  background-color: #44496f;
+  color: #e1e2ea;
+  border: 1.0px solid #C87339;
+  border-radius: 5px;
+}
+
+/* Dropdown items */
+.dropdown-item {
+  color: #e1e2ea;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 350;
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  background-color: #30344f;
+  color: #e1e2ea;
+}
+
+/* The text span itself */
+.dropdown-text {
+  color: #e1e2ea;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 350;
+}
+
+/* Active/current item */
+.dropdown-item.active,
+.dropdown-item[aria-current="page"] {
+  background: transparent;
+  color: #be5a16;  /* your orange accent */
+}
+
 /* Toggler icon visible on dark bg */
 .navbar-toggler { border-color: var(--panel-2) !important; }
 .navbar .navbar-toggler-icon {
