@@ -1,0 +1,197 @@
+---
+title: "PO91Q: Fundamentals in Quantitative Research Methods"
+subtitle: "Worksheet Week 8 - Solutions"
+logo: "/Users/u1373867/Dropbox/Markdown/Crest.png"
+
+author: 
+  - name: Dr Florian Linke
+  - email: Florian.Linke@warwick.ac.uk
+
+# Template vars your LaTeX uses
+fontsize: 10pt
+skipsize: 12pt
+table: true
+
+# Bibliography
+bibliography: "/Library/CloudStorage/OneDrive-UniversityofWarwick/Warwick/Modules/PO91Q/referencesPO91Q.bib"
+biblio-style: apa
+biblio-title: "List of References"
+
+format:
+  pdf:
+    number-sections: true
+    keep-tex: true
+    pdf-engine: lualatex
+    toc: false
+    toc-depth: 1
+    cite-method: biblatex
+    template: "/Users/u1373867/Dropbox/Markdown/pdf/pdftemplate_quarto.tex"
+    listings: true
+    include-in-header:
+      - "/Users/u1373867/Dropbox/Markdown/preamble.tex"
+      - text: |
+          \pagecolor{lightgray}
+          \renewcommand{\toprule}{\specialrule{.08em}{.05em}{.17em}\hline}
+          \renewcommand{\bottomrule}{\hline\specialrule{.08em}{.17em}{.05em}}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE, warning = FALSE, message = FALSE, error = FALSE, collapse = TRUE
+)
+
+# Set font size for all code chunks
+knitr::knit_hooks$set(size = function(before, options, envir) {
+  if (before) {
+    if (is.character(options$size)) return(paste0("\\", options$size, "\n"))
+    else if (isTRUE(options$size)) return("\\fontsize{7}{7}\\selectfont\n")
+  } else {
+    return("\\normalsize\n")
+  }
+})
+
+knitr::opts_chunk$set(size = TRUE)
+
+extrafont::loadfonts(quiet = TRUE)
+```
+
+
+\onehalfspacing
+
+# Core - Applied
+
+
+1. Assuming a regression model of the type $Y_{i}=\beta_{0}+ \beta_{1}X_{i}+\epsilon_{i}$, calculate the estimators for $\beta_{0}$ and $\beta_{1}$. Use Table \ref{tbl:regcalc} as a guide to the required intermediary calculations. 
+
+
+\FloatBarrier
+\begin{table}[!htbp]\centering
+\renewcommand{\arraystretch}{1.1}
+\begin{tabularx}{0.75\linewidth}{ccc
+  >{\centering\arraybackslash}X
+  >{\centering\arraybackslash}X
+  >{\centering\arraybackslash}X
+  >{\centering\arraybackslash}X}
+  & \\[-1.8ex]\T
+  & \\[-1.5ex]
+  \multicolumn{1}{c}{i} &
+  \multicolumn{1}{c}{age} &
+  \multicolumn{1}{c}{income} &
+  \multicolumn{1}{c}{$y-\bar{y}$} &
+  \multicolumn{1}{c}{$x-\bar{x}$} &
+  \multicolumn{1}{c}{$(x-\bar{x})^{2}$} &
+  \multicolumn{1}{c}{$(x-\bar{x})(y-\bar{y})$}\\
+  & \multicolumn{1}{c}{(x)} &
+    \multicolumn{1}{c}{(y)} & & & & \\
+  & & & & & & \\[-0.8ex]
+  \hline
+  & & & & \\[-0.8ex]
+  1  & 22 &  700 &  -795 & -17 & 289 & 13515 \\
+  2  & 19 &  650 &  -845 & -20 & 400 & 16900 \\
+  3  & 56 & 2300 &   805 &  17 & 289 & 13685 \\
+  4  & 45 & 1900 &   405 &   6 &  36 &  2430 \\
+  5  & 37 & 2000 &   505 &  -2 &   4 & -1010 \\
+  6  & 23 &  900 &  -595 & -16 & 256 &  9520 \\
+  7  & 32 & 1000 &  -495 &  -7 &  49 &  3465 \\
+  8  & 65 & 2500 &  1005 &  26 & 676 & 26130 \\
+  9  & 43 & 1800 &   305 &   4 &  16 &  1220 \\
+  10 & 48 & 1200 &  -295 &   9 &  81 & -2655 \\
+  & & & & & & \\[-0.8ex]
+  \hline
+  & & & & & & \\[-0.8ex]
+  MEAN & 39 & 1495 & & & & \\
+  SUM  &    &      & & & 2096 & 83200 \\
+  \\[-1.8ex]\B
+\end{tabularx}
+\caption{Intermediary Regression Calculations}
+\label{tbl:regcalc}
+\end{table}
+\FloatBarrier
+
+
+
+
+\begin{align*}\label{eq:beta1est}
+\hat{\beta_{0}} &=  \bar{Y} - \hat{\beta_{1}}\bar{X} \\[0.25ex]
+                &= 1495 - 39.69 \times 39 \\
+                &= -53.09
+\end{align*}
+
+\begin{align*}
+\hat{\beta_{1}} &= \dfrac{\Sigma_{i=1}^{N} (X_{i}-\bar{X})(Y_{i}-\bar{Y})}{\Sigma_{i=1}^{N} (X_{i} - \bar{X})^{2}} \\[0.25ex]
+                &= \frac{83200}{2096} \\
+                &= 39.69
+\end{align*}
+
+
+2. Specify the SRF and interpret the estimators of $\beta_{0}$ and $\beta_{1}$.
+
+\begin{equation*}
+\widehat{\text{income}} = -53.09 + 39.7 \; \text{age}
+\end{equation*}
+
+- At age zero, a person would have an income of -53.09, on average.
+- For every additional year of age, a person;s income increases by 39.7 units, on average.
+
+\vspace{1.5cm}
+
+3. Calculate the coefficient of determination, $r^{2}$, with $\hat{Y_{i}}= \widehat{-53.1} + \widehat{39.7} X_{i}$.
+
+\FloatBarrier
+\begingroup
+\centering
+\fontsize{11}{11}\selectfont
+\setlength{\tabcolsep}{6pt}
+
+\begin{longtable}{ccccccccc}
+\toprule
+  &&&&&&&& \\[-1.5ex]
+i & age (x) & income (y) & $(y-\bar y)^2$ & $\hat y$ & $(\hat y-\bar y)$ & $(\hat y-\bar y)^2$ & $(y-\hat y)$ & $(y-\hat y)^2$ \\
+\midrule
+\endfirsthead
+\toprule
+i & age (x) & income (y) & $(y-\bar y)^2$ & $\hat y$ & $(\hat y-\bar y)$ & $(\hat y-\bar y)^2$ & $(y-\hat y)$ & $(y-\hat y)^2$ \\
+\midrule
+\endhead
+\midrule \multicolumn{9}{r}{\itshape continues on next page}\\
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
+
+1  & 22 & 700  & 632025  & 820.3  & -674.7 & 455220.09  & -120.3 & 14472.09 \\
+2  & 19 & 650  & 714025  & 701.2  & -793.8 & 630118.44  & -51.2  & 2621.44 \\
+3  & 56 & 2300 & 648025  & 2170.1 & 675.1  & 455760.01  & 129.9  & 16874.01 \\
+4  & 45 & 1900 & 164025  & 1733.4 & 238.4  & 56834.56   & 166.6  & 27755.56 \\
+5  & 37 & 2000 & 255025  & 1415.8 & -79.2  & 6272.64    & 584.2  & 341289.64 \\
+6  & 23 & 900  & 354025  & 860.0  & -635.0 & 403225.00  & 40.0   & 1600.00 \\
+7  & 32 & 1000 & 245025  & 1217.3 & -277.7 & 77117.29   & -217.3 & 47219.29 \\
+8  & 65 & 2500 & 1010025 & 2527.4 & 1032.4 & 1065849.76 & -27.4  & 750.76 \\
+9  & 43 & 1800 & 93025   & 1654.0 & 159.0  & 25281.00   & 146.0  & 21316.00 \\
+10 & 48 & 1200 & 87025   & 1852.5 & 357.5  & 127806.25  & -652.5 & 425756.25 \\
+\midrule
+\textbf{MEAN} & 39 & 1495 &  &  &  &  &  & \\
+\textbf{SUM}  &    &      & 4202250 &  &  & 3303485 &  & 899655 \\
+\end{longtable}
+\captionsetup{type=table}
+\caption{Intermediary Regression Calculations}
+\label{tbl:regcalc}
+\endgroup
+\FloatBarrier
+
+\newpage
+
+\begin{align*}
+R^2 &= \frac{\text{ESS}}{\text{TSS}} \\[1ex]
+                &= \frac{3303485}{4202250} \\[1ex]
+                &= 0.79
+\end{align*}
+
+or
+
+\begin{align*}
+R^2 &= 1 - \frac{\text{RSS}}{\text{TSS}} \\[1ex]
+                &= \frac{899655}{4202250} \\[1ex]
+                &= 0.79
+\end{align*}
+
