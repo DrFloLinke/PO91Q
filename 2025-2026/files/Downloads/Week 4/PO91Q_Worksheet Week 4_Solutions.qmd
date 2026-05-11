@@ -1,0 +1,225 @@
+---
+title: "PO91Q: Fundamentals in Quantitative Research Methods"
+subtitle: "Worksheet Week 4 - Solutions"
+logo: "/Users/u1373867/Dropbox/Markdown/Crest.png"
+
+author: 
+  - name: Dr Florian Linke
+  - email: Florian.Linke@warwick.ac.uk
+
+# Template vars your LaTeX uses
+fontsize: 10pt
+skipsize: 12pt
+table: true
+
+# Bibliography
+bibliography: "/Library/CloudStorage/OneDrive-UniversityofWarwick/Warwick/Modules/PO91Q/referencesPO91Q.bib"
+biblio-style: apa
+biblio-title: "List of References"
+
+format:
+  pdf:
+    number-sections: true
+    keep-tex: false
+    pdf-engine: lualatex
+    toc: false
+    toc-depth: 1
+    cite-method: biblatex
+    template: "/Users/u1373867/Dropbox/Markdown/pdf/pdftemplate_quarto.tex"
+    listings: true
+    include-in-header:
+      - "/Users/u1373867/Dropbox/Markdown/preamble.tex"
+      - text: |
+          \pagecolor{lightgray}
+          \renewcommand{\toprule}{\specialrule{.08em}{.05em}{.17em}\hline}
+          \renewcommand{\bottomrule}{\hline\specialrule{.08em}{.17em}{.05em}}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE, warning = FALSE, message = FALSE, error = FALSE, collapse = TRUE
+)
+
+# Set font size for all code chunks
+knitr::knit_hooks$set(size = function(before, options, envir) {
+  if (before) {
+    if (is.character(options$size)) return(paste0("\\", options$size, "\n"))
+    else if (isTRUE(options$size)) return("\\fontsize{7}{7}\\selectfont\n")
+  } else {
+    return("\\normalsize\n")
+  }
+})
+
+knitr::opts_chunk$set(size = TRUE)
+
+extrafont::loadfonts(quiet = TRUE)
+```
+
+
+
+\onehalfspacing
+
+# Confidence Intervals {-}
+
+## Confidence Interval Dynamics {-}
+
+1. Exploring the role of sample size
+   With $95\%$ level ($\alpha=0.05$) and $s=0.9$, the half-width is
+
+   $$
+   \text{half-width}=t^*\,\frac{s}{\sqrt{n}},\quad t^* = t_{0.025,\,df},\; df = n-1.
+   $$
+
+   Using standard $t$–quantiles:
+
+   - $n=3$ ($df=2$): $t^* \approx 4.303 \;\Rightarrow\; \text{half-width} \approx 2.236$
+   - $n=5$ ($df=4$): $t^* \approx 2.776 \;\Rightarrow\; \text{half-width} \approx 1.118$
+   - $n=10$ ($df=9$): $t^* \approx 2.262 \;\Rightarrow\; \text{half-width} \approx 0.643$
+   - $n=15$ ($df=14$): $t^* \approx 2.145 \;\Rightarrow\; \text{half-width} \approx 0.498$
+   - $n=20$ ($df=19$): $t^* \approx 2.093 \;\Rightarrow\; \text{half-width} \approx 0.421$
+   - $n=30$ ($df=29$): $t^* \approx 2.045 \;\Rightarrow\; \text{half-width} \approx 0.336$
+
+2. Confidence level and $t^*$
+
+   a) Fix $n=10$ ($df=9$), $s=0.9$; two-tailed $t^*$:
+      - $80\%$: $t_{0.10,9} \approx 1.383$
+      - $90\%$: $t_{0.05,9} \approx 1.833$
+      - $95\%$: $t_{0.025,9} \approx 2.262$
+      - $99\%$: $t_{0.005,9} \approx 3.250$
+
+   b) Higher confidence $\Rightarrow$ smaller $\alpha$ $\Rightarrow$ fatter central region $\Rightarrow$ larger quantile $t^*$; hence $2\,t^*\,\dfrac{s}{\sqrt{n}}$ increases with the level.
+
+   c) Width ratio (same $n,s$) is the ratio of the two values of $t^*$:
+
+   $$
+   \frac{\text{width}_{99\%}}{\text{width}_{90\%}}
+   =\frac{t_{0.005,9}}{t_{0.05,9}}
+   \approx \frac{3.250}{1.833}\approx 1.77.
+   $$
+
+\newpage
+
+3. Trade-off between variability and sample size
+   a) At $95\%$, half-width $= t^*\,\dfrac{s}{\sqrt{n}}$.
+      - $(n,s)=(8,0.6)$: $df=7$, $t^*\approx 2.365$, so $\text{half-width}\approx 2.365\cdot \dfrac{0.6}{\sqrt{8}}\approx 0.502$
+      - $(n,s)=(20,1.0)$: $df=19$, $t^*\approx 2.093$, so $\text{half-width}\approx 2.093\cdot \dfrac{1.0}{\sqrt{20}}\approx 0.468$
+
+      Thus $(8,0.6)$ is (slightly) wider—smaller $n$ and larger $t^*$ outweigh the smaller $s$.
+
+   b) Keep $s=0.9$, level $95\%$. Need $t^*\,\dfrac{0.9}{\sqrt{n}}\le 0.30$.
+      Using $t_{0.025,\,n-1}$, the smallest $n$ that satisfies this is about $n\approx 37$
+      (since $t_{0.025,36}\approx 2.03$ gives $2.03\cdot 0.9/\sqrt{37}\approx 0.30$).
+
+   c) Hold $n=12$ ($df=11$), level $90\%$ so $t^*=t_{0.05,11}\approx 1.796$.
+      Full width $=0.9$ means
+
+   $$
+   2\,t^*\,\frac{s}{\sqrt{12}}=0.9
+   \;\;\Rightarrow\;\;
+   s=\frac{0.9\,\sqrt{12}}{2\,t^*}
+   \approx \frac{0.9\cdot 3.464}{2\cdot 1.796}
+   \approx 0.868.
+   $$
+
+
+## Calculations {-}
+
+1. A researcher is analysing individuals’ relative fear of being a victim of burglary on a 1-100 scale. A random sample of 9 individuals found a mean score of 47 on the scale with a sample variance of 158.76 for fear of being burgled.  
+    &nbsp;  
+    a. What distribution would be used to calculate an 80% confidence interval around this mean?  
+    $\color{waraubergine}\text{A t-distribution as we don’t know the population standard deviation and n is}$  
+    $\color{waraubergine}\text{small.}$  
+    b. Construct that interval.  
+    &nbsp;  
+    $\color{waraubergine}\bar{x} = 47$   
+    $\color{waraubergine}n = 9$  
+    $\color{waraubergine}\text{t from tables = 1.397}$  
+    &nbsp;  
+    $\color{waraubergine}s = \sqrt{158.76}$  
+    $\color{waraubergine}s = 12.6$  
+    &nbsp;  
+    $\color{waraubergine}\text{Confidence interval formula}$    
+    $\color{waraubergine}\bar{x} \pm t \times \frac{s}{\sqrt{n}}$  
+    $\color{waraubergine}\text{Lower bound}$   
+    $\color{waraubergine}47 - 1.397 \times \frac{12.6}{\sqrt{9}} = 47 - 5.867  = 41.13$  
+    &nbsp;  
+    $\color{waraubergine}\text{Upper bound}$    
+    $\color{waraubergine}47 + 1.397 \times \frac{12.6}{\sqrt{9}} = 47 + 5.867  = 52.87$  
+    &nbsp;  
+\newpage
+2. We are investigating the height of men in the UK. For this we have obtained a random sample of 100 UK men and found they had a mean height of 180cm with a standard deviation of 10cm.
+    a. Construct a 95% confidence interval for the mean height of UK males.  
+    &nbsp;  
+    $\color{waraubergine}\bar{x} = 180$  
+    $\color{waraubergine}s = 10$  
+    $\color{waraubergine}n = 100$  
+    &nbsp;  
+    $\color{waraubergine}\text{As the population standard deviation is not known, the t distribution and t}$  
+    $\color{waraubergine}\text{need to be used.}$  
+    &nbsp;  
+    $\color{waraubergine}\text{Find the t-score for a 95\% confidence interval in the t-table with 99 df.}$  
+    $\color{waraubergine}t = 1.984$  
+    &nbsp;  
+    $\color{waraubergine}\text{Confidence interval:}$  
+    $\color{waraubergine}\bar{x} \pm t \times \frac{s}{\sqrt{n}}$  
+    &nbsp;  
+    $\color{waraubergine}\text{Lower bound:}$  
+    $\color{waraubergine}180 - 1.984 \times \frac{10}{\sqrt{100}} = 180 - 1.984 = 178.02$  
+    $\color{waraubergine}\text{Upper bound:}$  
+    $\color{waraubergine}180 + 1.984 \times \frac{10}{\sqrt{100}} = 181.98$  
+    &nbsp;  
+    b. Select all true statements concerning the constructed confidence interval and justify your choice for each statement.
+        &nbsp;  
+        i.	The probability of the population mean being within the upper and lower bounds is 95%.  
+$\color{waraubergine}\text{FALSE - The population mean is fixed but unknown and therefore can}$  
+$\color{waraubergine}\text{either be inside the bounds or outside. The Probability is therefore 50\%.}$  
+        ii.	95% of men’s heights fall between the upper and lower bound.  
+$\color{waraubergine}\text{FALSE - The distribution calculated is not the distribution of men’s height,}$  
+$\color{waraubergine}\text{but the sampling distribution of the mean male height.}$  
+        iii.	95% of the cases in the sample fall between the upper and lower bound.  
+$\color{waraubergine}\text{FALSE - The distribution calculated is not of men’s height in this sample,}$  
+$\color{waraubergine}\text{but the sampling distribution of the mean male height.}$  
+        iv.	On average 95% of confidence intervals constructed would contain the population mean.  
+$\color{waraubergine}\text{TRUE}$  
+\newpage
+        v.	On average 95% of the means of samples with 100 respondents will fall within the upper and lower bands.  
+$\color{waraubergine}\text{FALSE - This confidence interval is not making statements about various}$  
+$\color{waraubergine}\text{sample means but rather about the population mean.}$  
+        vi.	On average 95% of the sample means equal the population mean.  
+$\color{waraubergine}\text{FALSE - The confidence interval is a range and does not make claims about}$  
+$\color{waraubergine}\text{where the population mean is exactly.}$  
+
+
+
+# Significance Testing {-}
+
+# Exercises -- The t-distribution {-}
+
+1. How $df$ changes the shape and critical values  
+   Using two-tailed, $\alpha = 0.05$ (so $t_{\mathrm{crit}} = t_{0.025, df}$ with $df = n - 1$):  
+   - $n = 3$ ($df = 2$): $t_{\mathrm{crit}} \approx 4.303$
+   - $n = 5$ ($df = 4$): $t_{\mathrm{crit}} \approx 2.776$
+   - $n = 10$ ($df = 9$): $t_{\mathrm{crit}} \approx 2.262$
+   - $n = 20$ ($df = 19$): $t_{\mathrm{crit}} \approx 2.093$
+   - $n = 50$ ($df = 49$): $t_{\mathrm{crit}} \approx 2.009$
+
+   The normal reference is $z_{0.025} \approx 1.960$.  
+   Within 0.05 of 1.96 occurs by $n \approx 50$ ($df = 49$, $2.009$ is 0.049 above 1.96).
+
+   Explanation: as $df \to \infty$, the $t$ distribution $\to N(0,1)$, so tails thin and $t_{\mathrm{crit}}$ decreases toward 1.96.
+
+2. One-tailed vs two-tailed critical regions  
+   With $df = 14$ and $\alpha = 0.05$:  
+   - Two-tailed: $t_{0.025,14} \approx 2.145$, cut points at $\pm 2.145$
+   - One-tailed (upper): $t_{0.05,14} \approx 1.761$, single cut point at $+1.761$  
+
+   For $H_0: \mu = \mu_0$ vs $H_1: \mu > \mu_0$, the one-tailed threshold $t_{0.05,14}$ is relevant because only the upper tail provides evidence against $H_0$.
+
+   In both cases, the shaded area equals $\alpha$:
+   - two-tailed shades two symmetric regions each of area $\alpha/2$;
+   - one-tailed shades a single upper tail of area $\alpha$.
+
+
+# Applied Exercises {-}
+
+See RScript in the [Online Companion](https://drflolinke.github.io/PO91Q/11-Downloads.html)
