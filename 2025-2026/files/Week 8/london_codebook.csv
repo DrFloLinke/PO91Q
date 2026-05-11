@@ -1,0 +1,19 @@
+﻿variable,label,year
+ward ,Ward name, n/a
+borough,Borough Name,n/a
+inner,Binary classification of whether the ward is inner or outer London (based on ONS classification),n/a
+area ,Land area (km2) ,n/a
+population ,Population 2015,2015
+children ,Number of people aged 0-15 ,2015
+adults ,Number of people aged 16-64,2015
+elderly ,Number of people aged 65+,2015
+age ,Mean age of population,2013
+education,Percentage of population with level 4 qualifications and above,2011
+crime,"Crimes committed per 1,000 residents",2015
+employed ,Number of people aged 16-64 in employment,2015
+benefits,Percentage of population claiming work-related benefits,2011
+migration,Net rate of worker-aged migration,2012
+income,Median household income (GBP),2013
+houseprice,Median house price (GBP),2014
+cars,Average number of cars per household,2011
+turnout,Turnout at the 2012 mayoral election (%),2012

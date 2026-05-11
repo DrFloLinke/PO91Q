@@ -1,0 +1,19 @@
+﻿Term,Description
+categorical,"Describing the qualitative categories of a characteristic, for example different religions"
+constant,A variable which does not vary
+continuous,Can assume any value within defined measurement boundaries
+descriptive statistics,Summarise information about the centre and variability of a variable
+deviation,The deviation $d$ of an observation $y_{i}$ from the sample mean $\bar{y}$ is the difference between them: $d=y_{i}-\bar{y}$
+dichotomous,"Can only assume two mutually exclusive, but internally homogeneous qualitative categories"
+discrete,The result of a counting process
+histogram,Displays through rectangles the frequency with which the values of a continuous variable occur in specific ranges
+interquartile range,The difference between the 3$^{\text{rd}}$ and the 1$^{\text{st}}$ quartiles
+mean,Is equal to the sum of the observations divided by the number of observations
+median,Separates the lower half from the upper half of observations
+mode,Is the most frequently occurring value
+percentile,"In ordered data, the percentile refers to the value of a variable below which a certain proportion of observations falls"
+outlier,"Defined as a value larger than the third quartile plus 1.5 times the interquartile range, or the first quartile minus 1.5 times the interquartile range"
+quartile,Divides ordered data into four equal parts and indicates the percentage of observations that falls into the respective quartile and below
+range,The difference between the largest and the smallest observation
+standard deviation,The standard deviation s is defined as \begin{equation*}s=\sqrt{\frac{\text{sum of squared deviations}}{\text{sample size} -1}}=\sqrt{\frac{\Sigma(y_{i} - \bar{y})^2}{n-1}}\end{equation*}
+variance,Is equal to the squared standard deviation

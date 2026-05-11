@@ -1,0 +1,15 @@
+﻿Term,Description
+coefficient,A coefficient is a numerical expression which is multiplied with the value of a variable
+coefficient of determination,Indicates the proportion of the variation in the dependent variable which is explained through the independent variable. It is defined as $\frac{\text{Explained Sum of Squares}}{\text{Total Sum of Squares}}$
+conditional expectation function,see Population Regression Function (PRF)
+error term,The error term quantifies the distance between each observation and the corresponding point on the regression line. The terms are denoted as $\epsilon_{i}$
+Explained Sum of Squares,The variation that can be explained by the regression
+intercept,The intercept is the point at which the regression line intersects the y-axis. In this book we denote it as $\beta_{0}$
+OLS,The method of fitting a regression line by means of minimizing the sum of the squared distances between the observations and the estimated values
+population regression function,"The Population Regression Function (PRF) describes the expected distribution of $y$, given the values of the independent variable(s) $x$. It is also called the conditional expectation function (CEF) and can be denoted as $E(y_{i} \mid x_{i})$"
+regression,Regression analysis determines the direction and magnitude of influence of one or more independent variables on a dependent variable
+regression line,The regression line describes how the dependent variable is functionally related to the values of the independent variable. It it defined by the intercept $\beta_{0}$ and the slope $\beta_{1}$
+residual,An estimation of the error term. The difference between an observation $y_{i}$ and the estimated value $\hat{y}_{i}$. Denoted as $\hat{\epsilon}_{i}$
+Residual Sum of Squares,The variation that cannot be explained by the regression
+Sample Regression Function,A regression line based on a randomly drawn sample
+slope,"A slope is defined as rise over run, and so it tells us how many units of y we need to climb (or descend if the slope is negative) for every additional unit of the independent variable $x$"

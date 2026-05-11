@@ -1,0 +1,5 @@
+﻿variable,label
+Council\_area,Council area name
+alc16,Hospital stays related to alcohol use: standardised ratio
+mortality16,Standardised mortality ratio (2011-2014)
+mortality20,Standardised mortality ratio (2014-2018)

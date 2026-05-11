@@ -1,0 +1,5 @@
+﻿Term,Description
+Adjusted R-Squared,"The coefficient of determination for multiple regression, and penalises the researcher for including more IVs"
+model building,"Running a number of regression models, each testing a different combination of variables"
+parsimony,"Refers to the principle ""as many as necessary, as few as possible""."
+partial slope coefficient,"A partial slope coefficient measures the influence of a variable in multiple regression, holding all other independent variables in the model constant"

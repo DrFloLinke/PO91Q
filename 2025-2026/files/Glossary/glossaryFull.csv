@@ -1,0 +1,124 @@
+﻿Term,Description
+Adjusted R-Squared,"The coefficient of determination for multiple regression, and penalises the researcher for including more IVs"
+alternative hypothesis,"The alternative hypothesis, denoted as $H_1$ or $H_a$, on the other hand, proposes that there is an effect or a difference. Again, more formally, we can state that $\mu \ne \mu_{0}$"
+analysis,A detailed evaluation of data to discover their structure and relevant information to answer a research question
+asymmetry,"The notion that while X causes Y, Y does not cause X. It is established with temporal priority, manipulated events, and/or the independence of causes (see @brady:2011)"
+attribute,A component or characteristic of a concept
+background concept,"The broad constellation of meanings and understandings associated with the concept [@adcock:2001, p. 531]"
+case,Unit of analysis (rows in our dataset/table)
+categorical,"Describing the qualitative categories of a characteristic, for example different religions"
+causal,"In order to establish a causal relationship, the following criteria must be met concurrently: <br> <ol><li>Relevance of the variables within the broader theoretical and empirical context of the research<ol type=""A""><li>Clear Theoretical Framework</li><li>Clear conceptualization</li><li>Exclusion of alternative explanations</li></ol></li><li>Asymmetry</li><li>Significant (and sufficiently strong) statistical association</li></ol>"
+causal loop,"Y causes itself (e.g., health; happiness, wealth)"
+central limit theorem,"In random sampling with a large sample size -- where n=30 is usually sufficient -- the sampling distribution of the sample mean $\bar{y}$ will be approximately normally distributed, irrespective of the shape of the population distribution"
+coefficient,A coefficient is a numerical expression which is multiplied with the value of a variable
+coefficient of determination,Indicates the proportion of the variation in the dependent variable which is explained through the independent variable. It is defined as $\frac{\text{Explained Sum of Squares}}{\text{Total Sum of Squares}}$
+concept,"Abstract ideas which form the building blocks of theories [@bryman:2021, p. 150]"
+conceptualisation,"Formulating a systematized concept through reasoning about the background concept, in light of the goals of research  [@adcock:2001, p. 531]"
+conditional distributions,The number of subjects observed at all combinations of possible outcomes for the two (or more) categorical variables in the crosstabulation
+conditional expectation function,see Population Regression Function (PRF)
+confidence interval,"A confidence interval is an estimated range, based on a sample, that is likely to contain the true population parameter (such as the mean). If the sampling process were repeated many times, approximately $(1 - \alpha) \cdot 100$ \% of the resulting intervals would contain the true parameter. The value of $\alpha$ determines the confidence level -- for example, $\alpha = 0.05$ corresponds to a 95\% confidence level, while $\alpha = 0.01$ corresponds to 99\%"
+confidence level,"The confidence level is the proportion of confidence intervals, constructed from repeated random samples of the same population using the same method, that are expected to contain the true population parameter. It is denoted by $1 - \alpha$, where $\alpha$ is the significance level. For example, a 95\% confidence level implies that 95\% of such intervals would contain the true parameter in the long run."
+constant,A variable which does not vary
+continuous,Can assume any value within defined measurement boundaries
+correlation,The statistical dependence of two random variables which is determined by pairwise comparison of values
+correlation,Assesses the statistical dependence of two random variables by a pairwise comparison of values
+covariance,"A measure which assesses the degree to which the values of two variables ($X_i$ and $X_j$) vary together. It is defined as $\operatorname{Cov}(x,y) = \frac{1}{n-1}\sum (x_i-\bar{x})(y_i-\bar{y})$."
+critical value,"The critical value is a threshold that determines the boundary for rejecting the null hypothesis (H$_0$) in a hypothesis test. It is a point on the probability distribution of the test statistic beyond which the null hypothesis is rejected. The critical value is chosen based on the significance level ($\alpha$) of the test, which represents the probability of making a Type I error (i.e., rejecting a true null hypothesis)"
+cross-sectional data,Look at different units (or cross-sections) $i$ at a single point in time
+crosstabulation,"Crosstabulations, or contingency tables, display the number of subjects observed at all combinations of possible outcomes for two (or more) categorical variables in matrix format"
+data,Derives from the Latin \enquote{datum} which means \enquote{given}. For our purposes it is a collection of numbers (or quantities) for the purpose of analysis
+data set,"A collection of numerical values for individual observations, separated into distinctive variables"
+degrees of freedom,Degrees of freedom express constraints on our estimation process by specifying how many values in the calculation are free to vary
+dependent variable,Is dependent through some statistical or stochastic process on the value of an independent variable
+descriptive statistics,Summarise information about the centre and variability of a variable
+deviation,The deviation $d$ of an observation $y_{i}$ from the sample mean $\bar{y}$ is the difference between them: $d=y_{i}-\bar{y}$
+dichotomous,"Can only assume two mutually exclusive, but internally homogeneous qualitative categories"
+discrete,The result of a counting process
+distribution,"Refers to the display of the values a variable can assume, together with their respective absolute or relative frequency"
+dummy variable,"Dummy variables are dichotomous, categorical variables which indicate the presence or the absence of a characteristic"
+effect size,The magnitude of the difference or relationship. Larger effects are easier to spot and usually more practically important
+error term,The error term quantifies the distance between each observation and the corresponding point on the regression line. The terms are denoted as $\epsilon_{i}$
+Explained Sum of Squares,The variation that can be explained by the regression
+generalisability,The ability to apply the findings made on the basis of a representative sample to the population
+histogram,Displays through rectangles the frequency with which the values of a continuous variable occur in specific ranges
+hypothesis,"In statistics, a hypothesis is a formal statement about a population parameter or relationship between variables. Hypotheses guide statistical tests to determine whether data support or refute them. The hypothesis suggesting an effect or difference is called the alternative hypothesis. The alternative hypothesis is always paired with a null-hypothesis, suggesting no effect or difference"
+independent variable,"Influences or helps us predict the level of a dependent variable. It is often treated as fixed, or ""given"" in statistical analysis, and is sometimes also called ""explanatory variable"""
+inference,Making predictions about the wider population or about the future
+interaction effect,"An interaction effect occurs when the effect of one independent variable, $x_1$, on a dependent variable, $y$, depends on the level of another independent variable, $x_2$. In other words, the impact of $x_1$ on $y$ is not constant but varies depending on the value of $x_2$, indicating that the two variables jointly influence the outcome in a non-additive way"
+intercept,The intercept is the point at which the regression line intersects the y-axis. In this book we denote it as $\beta_{0}$
+interpretation,The explanation of results to answer the research question
+interquartile range,The difference between the 3$^{\text{rd}}$ and the 1$^{\text{st}}$ quartiles
+intervening variable,"An intervening variable is a variable that explains the relationship between two other variables, such that $x_1$ affects $x_2$, and in turn, $x_2$ affects $y$. In this case, the effect of $x_1$ on $y$ is indirect, operating through the intervening variable $x_2$. This is also referred to as indirect causality"
+literature review,An analytical summary of the literature relating to a particular topic with the objective of identifying a gap and thus motivating a research question
+logarithm,"Logarithm is defined as the exponent or power to which a base must be raised to yield a given number. Expressed mathematically, $x$ is the logarithm of $n$ to the base $b$ if $b^x = n$, in which case $x = log_b n$"
+marginal distributions,"Marginal distributions in a crosstabulation refer to the totals for each row and column, showing the overall distribution of each variable separately, regardless of the other. They are found in the margins of the table and help summarize how each variable is distributed across all categories"
+mean,Is equal to the sum of the observations divided by the number of observations
+measurement,Refers to the selection of a measure or variable
+median,Separates the lower half from the upper half of observations
+method,A tool for systematic investigation
+mode,Is the most frequently occurring value
+model building,"Running a number of regression models, each testing a different combination of variables"
+monotonic,"A relationship is monotonic if, as x increases, y never reverses direction: it either never decreases (monotone increasing) or never increases (monotone decreasing). The rate can change and the curve can be curved or flat in places—it just must not switch from increasing to decreasing (or vice versa)."
+multicausality,"Multicausality refers to a situation in which an outcome variable $y$ is influenced by multiple independent variables, such that $x_1$, $x_2$, $x_3$, \ldots all contribute to explaining variations in $y$. In this context, no single variable fully accounts for changes in $y$; instead, the outcome is the result of the combined effects of several causes. We distinguish a speacial case here in which the independent variables are interdependent"
+non-probability sampling,In non-probability sampling not every unit has the same probability of being sampled
+normal distribution,"The normal distribution is a bell-shaped probability distribution that is symmetrical around the mean. Approximately 68\% of values fall within 1 standard deviation of the mean, 96\% within 2 standard deviations, and 99.7\% within 3 standard deviations. This is known as the empirical rule."
+null hypothesis,"The null hypothesis, denoted as $H_0$, typically asserts that there is no effect or no difference -- it serves as the point of comparison in the significance test. It thus assumes that the population value is equal to a specific value that indicates no effect. More formally, we can can note this as $H_{0}: \mu = \mu_{0}$"
+OLS,The method of fitting a regression line by means of minimizing the sum of the squared distances between the observations and the estimated values
+outlier,"Defined as a value larger than the third quartile plus 1.5 times the interquartile range, or the first quartile minus 1.5 times the interquartile range"
+p-value,"The p-value indicates the probability of obtaining a result equal to, or even more extreme than the observed value in the direction of the alternative hypothesis, assuming the null hypothesis is true. Common thresholds for significance are 0.05, 0.01, and 0.001. A smaller p-value suggests stronger evidence against the null hypothesis. The p-value is denoted as $p$"
+parameter,A parameter is the value a statistic would assume in the long run. It is also called the Expected Value
+parsimony,"Refers to the principle ""as many as necessary, as few as possible""."
+partial slope coefficient,"A partial slope coefficient measures the influence of a variable in multiple regression, holding all other independent variables in the model constant"
+percentile,"In ordered data, the percentile refers to the value of a variable below which a certain proportion of observations falls"
+polynomial,"A polynomial is a function of a variable $x$ that can be written as a finite sum of powers of $x$ multiplied by coefficients, for example $$ y = \beta_0 + \beta_1 x + \beta_2 x^2 + \cdots + \beta_k x^k, $$ where $k$ is a non-negative integer and the coefficients $\beta_0, \beta_1, \ldots, \beta_k$ are fixed constants"
+population,Collection of all cases which possess certain pre-defined characteristics
+population distribution,The probability distribution of the population
+population regression function,"The Population Regression Function (PRF) describes the expected distribution of $y$, given the values of the independent variable(s) $x$. It is also called the conditional expectation function (CEF) and can be denoted as $E(y_{i} \mid x_{i})$"
+power,"Also known as ""sensitivity"". It is the probability that a test will detect a true effect (reject $H_0$ when it is false). Power grows with larger effects and larger samples, and shrinks when you demand stronger evidence (smaller $\alpha$) or when variability is high"
+primary data,Primary data are data you have collected yourself
+probability,Refers to how many times out of a total number of cases a particular event occurs. We can also see it as the chance of a particular event occurring
+probability sampling,"In probability sampling all units have the same probability of entering the sample. In addition, all possible combinations of n cases must have the same probability to be selected"
+QM,The process of testing theoretical propositions through the analysis of numerical data in order to provide an answer to a research question
+quartile,Divides ordered data into four equal parts and indicates the percentage of observations that falls into the respective quartile and below
+range,The difference between the largest and the smallest observation
+reference category,The category of a dummy variable in respect to which the effect on the value of the dependent variable is displayed
+regression,Regression analysis determines the direction and magnitude of influence of one or more independent variables on a dependent variable
+regression line,The regression line describes how the dependent variable is functionally related to the values of the independent variable. It it defined by the intercept $\beta_{0}$ and the slope $\beta_{1}$
+reliability,Refers to the extent to which repeated measurement produces the same results
+representative sample,A sample which contains all characteristic of the population in accurate proportions
+research question,A specific enquiry relating to a particular topic or subject. It forms the starting point of the research cycle
+residual,An estimation of the error term. The difference between an observation $y_{i}$ and the estimated value $\hat{y}_{i}$. Denoted as $\hat{\epsilon}_{i}$
+Residual Sum of Squares,The variation that cannot be explained by the regression
+reverse causality,"Causality runs from x to y. If y could also cause x, then we deal with reverse causality"
+sample,A sub-group of the population
+sample distribution,The probability distribution of a sample
+Sample Regression Function,A regression line based on a randomly drawn sample
+sampling,The process of selecting sampling units from the population
+sampling,The process of selecting sampling units from the population
+sampling distribution,"The probability distribution of a sample statistics, such as the mean. It can be derived from repeated sampling, or by estimation"
+sampling error,The extent to which the mean of the population and the mean of the sample differ from one another
+sampling method,The way the sample is created
+secondary data,Secondary data are data which have been collected by somebody else
+significance level,"The significance level, denoted by $\alpha$, is the threshold used in hypothesis testing to determine if a result is statistically significant. It represents the probability of rejecting the null hypothesis when it's actually true (a Type I error). Common levels are 0.05 or 0.01, indicating 5\% or 1\% risk. We will cover this properly in Week 9."
+significance test,"A significance test is a statistical method used to determine whether observed data provide enough evidence to reject a null hypothesis. It calculates a probability of observing data as extreme as, or more extreme than, the actual sample results, assuming the null hypothesis is true"
+slope,"A slope is defined as rise over run, and so it tells us how many units of y we need to climb (or descend if the slope is negative) for every additional unit of the independent variable $x$"
+Social Sciences,Are concerned with the study of society and seek to scientifically describe and explain the behaviour of actors
+spurious,"A relationship between two variables, $x_1$ and $y$, is said to be spurious when it appears to exist in a simple analysis but disappears or weakens substantially once a third variable, $x_2$, is introduced into the analysis. This suggests that the observed association between $x_1$ and $y$ was not causal, but rather the result of a confounding influence from $x_2$"
+standard deviation,The standard deviation s is defined as \begin{equation*}s=\sqrt{\frac{\text{sum of squared deviations}}{\text{sample size} -1}}=\sqrt{\frac{\Sigma(y_{i} - \bar{y})^2}{n-1}}\end{equation*}
+standard error,The standard deviation of the sampling distribution. It is defined as:\begin{equation*}\sigma_{\bar{y}} = \frac{\sigma}{\sqrt{n}}\end{equation*}
+statistical analysis,he descriptive and inferential elements of Statistics
+statistical dependence,"Statistical dependence in crosstabulations refers to a situation where the distribution of one categorical variable varies across the levels of another. If the variables are dependent, knowing the value of one gives information about the other; if independent, the distribution of one remains consistent across all categories of the other"
+Statistics,"Statistics is the science of collecting, organising, analysing and interpretingnumerical data to assist in making a more informed decision"
+suppressor,"A suppressor variable is a variable, $x_2$, that increases the predictive validity of another variable, $x_1$, on an outcome $y$ by accounting for irrelevant or misleading variance in $x_1$. In other words, the relationship between $x_1$ and $y$ becomes stronger or more apparent when $x_2$ is included in the analysis, even though $x_2$ may have little or no direct relationship with $y$"
+symmetry,"In the context of causation, symmetry is understood as the law-like regularity of events. There needs to be a recipe (causal mechanism) which regularly produces effects from causes (see @brady:2011)"
+systematized concept,"A specific formulation of a concept used by a given scholar or group of scholars; commonly involves an explicit definition  [@adcock:2001, p. 531]"
+t-distribution,The t-Distribution is bell-shaped and symmetrical around a mean of zero. Its shape is dependent on the degrees of freedom in the estimation process.
+test statistic,"A test statistic is a value calculated from the sample data that is used to decide whether to reject the null hypothesis (H$_0$) in a hypothesis test. It quantifies the degree to which the observed data diverges from what is expected under the null hypothesis. In a t-test, the test statistic is a t-value, which measures the distance between the sample mean and the (hypothesised) population mean, expressed in units of standard errors"
+theory,A formal set of ideas that is intended to explain why something happens or exists [@oxford]
+Type I Error,"A Type I Error occurs when a null hypothesis (H$_0$) that is actually true is incorrectly rejected. It is also known as a false positive errors, as it suggests that an effect of difference exists, when, in fact, it does not. The probability of committing a Type I Error is denoted by the significance level ($\alpha$) of the test, which is typically set before conducting the test (e.g. $\alpha$ = 0.05). This means that there is a 5\% chance of rejecting the true null hypothesis"
+Type II Error,"A Type II Error occurs when a null hypothesis (H$_0$) that is actually false is incorrectly accepted (or not rejected). It is also known as a false negative error, as it suggests that no effect or difference exists when, in fact, there is one"
+validity,"The extent to which the measure (variable) you choose genuinely represents the concept in question. The word comes from the Latin word ""validus"" which means ""strong"""
+value,Numerical expressions taken by variables (close ended or open ended list)
+variable,"An element of a conceptual component which varies. We also call these ""measures"""
+variance,Is equal to the squared standard deviation
+z-score,"The z-score, sometimes also referred to as z-value, expresses in units of standard deviation how far an observation of interest falls away from the mean. It is defined as \begin{equation*}z = \frac{\text{observation} - \text{mean}}{\text{standard deviation}}=\frac{y-\mu}{\sigma}\end{equation*}"

@@ -1,0 +1,20 @@
+﻿Term,Description
+central limit theorem,"In random sampling with a large sample size -- where n=30 is usually sufficient -- the sampling distribution of the sample mean $\bar{y}$ will be approximately normally distributed, irrespective of the shape of the population distribution"
+degrees of freedom,Degrees of freedom express constraints on our estimation process by specifying how many values in the calculation are free to vary
+distribution,"Refers to the display of the values a variable can assume, together with their respective absolute or relative frequency"
+generalisability,The ability to apply the findings made on the basis of a representative sample to the population
+non-probability sampling,In non-probability sampling not every unit has the same probability of being sampled
+normal distribution,"The normal distribution is a bell-shaped probability distribution that is symmetrical around the mean. Approximately 68\% of values fall within 1 standard deviation of the mean, 96\% within 2 standard deviations, and 99.7\% within 3 standard deviations. This is known as the empirical rule."
+parameter,A parameter is the value a statistic would assume in the long run. It is also called the Expected Value
+population distribution,The probability distribution of the population
+probability,Refers to how many times out of a total number of cases a particular event occurs. We can also see it as the chance of a particular event occurring
+probability sampling,"In probability sampling all units have the same probability of entering the sample. In addition, all possible combinations of n cases must have the same probability to be selected"
+representative sample,A sample which contains all characteristic of the population in accurate proportions
+sample,A sub-group of the population
+sample distribution,The probability distribution of a sample
+sampling,The process of selecting sampling units from the population
+sampling distribution,"The probability distribution of a sample statistics, such as the mean. It can be derived from repeated sampling, or by estimation"
+sampling error,The extent to which the mean of the population and the mean of the sample differ from one another
+standard error,The standard deviation of the sampling distribution. It is defined as:\begin{equation*}\sigma_{\bar{y}} = \frac{\sigma}{\sqrt{n}}\end{equation*}
+t-distribution,The t-Distribution is bell-shaped and symmetrical around a mean of zero. Its shape is dependent on the degrees of freedom in the estimation process.
+z-score,"The z-score, sometimes also referred to as z-value, expresses in units of standard deviation how far an observation of interest falls away from the mean. It is defined as \begin{equation*}z = \frac{\text{observation} - \text{mean}}{\text{standard deviation}}=\frac{y-\mu}{\sigma}\end{equation*}"

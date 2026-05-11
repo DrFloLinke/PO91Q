@@ -1,0 +1,5 @@
+﻿Term,Description
+dummy variable,"Dummy variables are dichotomous, categorical variables which indicate the presence or the absence of a characteristic"
+logarithm,"Logarithm is defined as the exponent or power to which a base must be raised to yield a given number. Expressed mathematically, $x$ is the logarithm of $n$ to the base $b$ if $b^x = n$, in which case $x = log_b n$"
+polynomial,"A polynomial is a function of a variable $x$ that can be written as a finite sum of powers of $x$ multiplied by coefficients, for example $$ y = \beta_0 + \beta_1 x + \beta_2 x^2 + \cdots + \beta_k x^k, $$ where $k$ is a non-negative integer and the coefficients $\beta_0, \beta_1, \ldots, \beta_k$ are fixed constants"
+reference category,The category of a dummy variable in respect to which the effect on the value of the dependent variable is displayed

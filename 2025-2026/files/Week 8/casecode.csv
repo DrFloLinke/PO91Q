@@ -1,0 +1,6 @@
+﻿variable,label,year
+const,Parliamentary constituency,n/a
+gcse,An average score based on a pupil's best eight grades in a group of GCSEs. The maximum a pupil can achieve is 90 points.,2019
+eth\_min,Percent of population composed by ethnic minorities,2011
+idaci,The Income Deprivation Affecting Children Index rank - how it compares to other constituencies,2015/16
+income,Mean income by constituency,2017/18

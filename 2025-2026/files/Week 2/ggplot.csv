@@ -1,0 +1,8 @@
+﻿Data Frame,The data you wish to visualize.
+Aesthetic Mappings,"Here you specify how the data are assigned to colour, size, etc. For now, this is the variable for which we want to create a graphical distribution."
+Geom,"Short for ""geometry"". Use a geom function to represent data points through geometric objects, such as points, lines, etc. Each function returns a layer."
+Stat,"You can include statistical summaries through this, such as smoothing, or regression lines."
+Position,Position adjustments determine how to arrange geoms that would otherwise occupy the same space.
+Facets,Facets divide a plot into sub-plots based on the values of one or more discrete variables.
+Scale,"Maps data values to the visual values of an aesthetic. For example female=pink, male=blue."
+Coordinates,How do the numbers get translated onto the plot? We are not going to look at this on this module.

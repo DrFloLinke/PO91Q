@@ -1,0 +1,10 @@
+﻿Term,Description
+conditional distributions,The number of subjects observed at all combinations of possible outcomes for the two (or more) categorical variables in the crosstabulation
+covariance,"A measure which assesses the degree to which the values of two variables ($X_i$ and $X_j$) vary together. It is defined as $\operatorname{Cov}(x,y) = \frac{1}{n-1}\sum (x_i-\bar{x})(y_i-\bar{y})$."
+correlation,Assesses the statistical dependence of two random variables by a pairwise comparison of values
+crosstabulation,"Crosstabulations, or contingency tables, display the number of subjects observed at all combinations of possible outcomes for two (or more) categorical variables in matrix format"
+dependent variable,Is dependent through some statistical or stochastic process on the value of an independent variable
+independent variable,"Influences or helps us predict the level of a dependent variable. It is often treated as fixed, or ""given"" in statistical analysis, and is sometimes also called ""explanatory variable"""
+marginal distributions,"Marginal distributions in a crosstabulation refer to the totals for each row and column, showing the overall distribution of each variable separately, regardless of the other. They are found in the margins of the table and help summarize how each variable is distributed across all categories"
+monotonic,"A relationship is monotonic if, as x increases, y never reverses direction: it either never decreases (monotone increasing) or never increases (monotone decreasing). The rate can change and the curve can be curved or flat in places—it just must not switch from increasing to decreasing (or vice versa)."
+statistical dependence,"Statistical dependence in crosstabulations refers to a situation where the distribution of one categorical variable varies across the levels of another. If the variables are dependent, knowing the value of one gives information about the other; if independent, the distribution of one remains consistent across all categories of the other"

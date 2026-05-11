@@ -1,0 +1,30 @@
+﻿variable,label
+Country Name,Country Name
+Country Code,Country Code
+year,year
+democracy,"0 = Autocracy, 1 = Dictatorship (Boix et al., 2018)"
+gdppc,GDP per capita (constant 2010 US$)
+gdpgrowth,Absolute growth of per capita GDP to previous year (constant 2010 US Dollars) 
+enrl_gross,"School enrollment, primary (% gross) "
+enrl_net,"School enrollment, primary (% net) "
+agri,Employment in agriculture (% of total employment) (modeled ILO estimate) 
+slums,Population living in slums (% of urban population)
+telephone,Fixed telephone subscriptions (per 100 people)
+internet,Individuals using the Internet (% of population)
+tax,Tax revenue (% of GDP) 
+electricity,Access to electricity (% of population)
+mobile,Mobile cellular subscriptions (per 100 people) 
+service,"Services, value added (% of GDP)"
+oil,Oil rents (% of GDP)
+natural,Total natural resources rents (% of GDP)
+literacy,"Literacy rate, adult total (% of people ages 15 and above)"
+prim_compl,"Primary completion rate, total (% of relevant age group)"
+infant,"Mortality rate, infant (per 1,000 live births)"
+hosp,"Hospital beds (per 1,000 people)"
+tub,"Incidence of tuberculosis (per 100,000 people) "
+health_ex,Current health expenditure (% of GDP)
+ineq,Income share held by lowest 10%
+unemploy,"Unemployment, total (% of total labor force) (modeled ILO estimate)"
+lifeexp,"Life expectancy at birth, total (years) "
+urban,Urban population (% of total population)
+polity5,Combined Polity V score 
