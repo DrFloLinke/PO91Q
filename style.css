@@ -711,6 +711,30 @@ header.navbar,
   background-color: var(--bg) !important;
 }
 
+/* Dropdown */
+
+ul.dropdown-menu.dropdown-menu-end {
+  background-color: #44496f !important;
+  border: 1px solid #C87339 !important;
+  border-radius: 5px !important;
+}
+
+ul.dropdown-menu.dropdown-menu-end li a.dropdown-item {
+  color: #e1e2ea !important;
+  background-color: transparent !important;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 350;
+}
+
+ul.dropdown-menu.dropdown-menu-end li a.dropdown-item:hover,
+ul.dropdown-menu.dropdown-menu-end li a.dropdown-item:focus {
+  background-color: #30344f !important;
+  color: #e1e2ea !important;
+}
+
+ul.dropdown-menu.dropdown-menu-end li a.dropdown-item .dropdown-text {
+  color: #e1e2ea !important;
+}
 
 /* Toggler icon visible on dark bg */
 .navbar-toggler { border-color: var(--panel-2) !important; }
@@ -1246,30 +1270,4 @@ a.delayed-link.is-disabled {
 /* After release (normal link behaviour) */
 a.delayed-link.is-enabled {
   cursor: pointer;
-}
-
-
-
-/* Dropdown */
-ul.dropdown-menu.dropdown-menu-end {
-  background-color: #44496f !important;
-  border: 1px solid #C87339 !important;
-  border-radius: 5px !important;
-}
-
-ul.dropdown-menu.dropdown-menu-end li a.dropdown-item {
-  color: #e1e2ea !important;
-  background-color: transparent !important;
-  font-family: 'Lexend', sans-serif;
-  font-weight: 350;
-}
-
-ul.dropdown-menu.dropdown-menu-end li a.dropdown-item:hover,
-ul.dropdown-menu.dropdown-menu-end li a.dropdown-item:focus {
-  background-color: #30344f !important;
-  color: #e1e2ea !important;
-}
-
-ul.dropdown-menu.dropdown-menu-end li a.dropdown-item .dropdown-text {
-  color: #e1e2ea !important;
 }
