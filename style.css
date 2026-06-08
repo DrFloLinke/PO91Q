@@ -358,6 +358,17 @@ code, kbd, samp {
   border: none !important;
 }
 
+/* Inline code that is also a link → render in link orange, nothing else */
+main a code:not(pre code),
+main a:visited code:not(pre code),
+main a:hover code:not(pre code),
+main a:active code:not(pre code) {
+  color: var(--accent) !important;   /* hyperlink orange */
+  font-weight: 350;                  /* body weight, no bold */
+  text-decoration: none;             /* no underline */
+  /* keeps Recursive mono + the code background you already set */
+}
+
 /* ----------------------------------------
    Code blocks + copy button
 ---------------------------------------- */

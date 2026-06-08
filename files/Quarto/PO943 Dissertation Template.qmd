@@ -173,15 +173,7 @@ theme_po33q <- theme_classic()+
           legend.box.background = element_rect(fill='transparent')) #transparent legend panel)
 ```
 
-```{=latex}
-\DefTblrTemplate{firsthead,middlehead,lasthead}{default}{}
-\DefTblrTemplate{firstfoot,middlefoot}{default}{}
-\DefTblrTemplate{lastfoot}{default}% 
-{
-  \UseTblrTemplate{note}{default}
-  \UseTblrTemplate{caption}{default}
-}
-```
+
 
 \thispagestyle{empty}
 
@@ -263,9 +255,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 \FloatBarrier
 ::: {#tbl-conceptualisation tbl-cap="Conceptualisation and Measurement"}
----
-tbl-cap-location: bottom
----
 \fontsize{8}{10}\selectfont
 \centering
 \begin{tabular}{lll}
